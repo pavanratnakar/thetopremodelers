@@ -18,8 +18,13 @@ class Page{
     }
     public function printHeader($meta=null){
         $return='
-        <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
-        <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xml:lang="en">
+        <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+            "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+        <html dir="ltr" lang="en-US" xml:lang="en"
+            xmlns="http://www.w3.org/1999/xhtml"
+            xmlns:og="http://ogp.me/ns#"
+            xmlns:fb="https://www.facebook.com/2008/fbml"
+            itemscope itemtype="http://schema.org/">
             <head>';
         $return.=$this->printMeta($meta);
         $return.=$this->printCss('herve_css');
@@ -49,8 +54,8 @@ class Page{
         if($meta){
             $title = $this->currentPage->title.' | '.$meta['title'];
             $description = $meta['description'];
-            if($meta['keywords']){
-                $keywords = $meta['keywords'];
+            if($meta['keywords'] || $meta['keywords']===false){
+                $keywords = ($meta['keywords']===false) ? '' : $meta['keywords'];
             }
         } else {
             $title = $this->currentPage->title;
@@ -89,9 +94,9 @@ class Page{
         <meta property="fb:admins" content="100000417819011" />
         <!-- END OF OG META TAGS -->
         <!-- GOOGLE PLUS TAGS -->
-        <meta itemprop="name" content="'.$title.'">
-        <meta itemprop="description" content="'.$description.'">
-        <meta itemprop="image" content="http://www.thetopremodelers.com/images/global/logo.png">
+        <meta itemprop="name" content="'.$title.'" />
+        <meta itemprop="description" content="'.$description.'" />
+        <meta itemprop="image" content="http://www.thetopremodelers.com/images/global/logo.png" />
         <!-- END OF GOOGLE PLUS TAGS -->
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />

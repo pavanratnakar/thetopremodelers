@@ -43,9 +43,10 @@ class Place {
     }
     public function getMeta($placeName) {
         $placeDetails = $this->getPlaceDetails($placeName);
+        $keywords = ($placeName==='dallas_texas') ? 'general contractor dallas' : false;
         return array(
-            'keywords'=>'dallas roofing contractors, dallas roofing companies, general contractor dallas',
-            'description'=>'We are the only company providing roofing contractors in '.$placeDetails['place_title'].' ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company. Matching you with our prescreened Contractors for '.$placeDetails['place_title'],
+            'keywords'=>$keywords,
+            'description'=>'We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company',
             'title'=>$placeDetails['place_title']
         );
     }

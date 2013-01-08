@@ -236,8 +236,8 @@ class Contractor{
     }
     public function getContractorsMeta($details){
         return array(
-            'keywords'=>'',
-            'description'=>'We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company. Submit and Get Matched to Prescreened Contractors for '.$details[0]['section_title'].' under '.$details[0]['category_title'].' for '.$details[0]['place_title'],
+            'keywords'=>false,
+            'description'=>'We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company',
             'title'=>$details[0]['place_title'].' | '.$details[0]['category_title'].' | '.$details[0]['section_title'].' | Contractors'
         );
     }

@@ -94,14 +94,15 @@ class Category{
                 $i++;
             }
         }
+        $keywords = ($placeName==='Dallas, TX (Texas)') ? '' : false;
         return array(
-            'keywords'=>'',
+            'keywords'=>$keywords,
             'description'=>$description,
             'title'=>$placeName.' | '.$category_title
         );
     }
     public function getDescription($category_title,$place_title) {
-        return 'We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company. Get Matched to Top-Rated '.$category_title.' for '.$place_title;
+        return 'We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company';
     }
     public function __destruct() {
         $this->mysqli->close();

@@ -106,13 +106,13 @@ class Section {
             }
         }
         return array(
-            'keywords'=>'',
+            'keywords'=>false,
             'description'=>$description,
             'title'=>$place_title.' | '.$category_title.' | '.$section_title
         );
     }
     public function getDescription($place_title,$category_title,$section_title) {
-        return 'We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company. Submit and Get Matched to Prescreened '.$section_title.' under '.$category_title.' for '.$place_title;
+        return 'We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company';
     }
     public function __destruct() {
         $this->mysqli->close();
