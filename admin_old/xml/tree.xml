@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding="utf-8"?>
+<rows>
+    <page>1</page>
+    <total>1</total>
+    <records>1</records>
+    <row><cell>000</cell><cell>Category Module</cell><cell></cell><cell>0</cell><cell>001</cell><cell>049</cell><cell>false</cell><cell>false</cell></row>
+    <row><cell>001</cell><cell>Category Operation</cell><cell>controller/ajaxController.php?submodule=category</cell><cell>1</cell><cell>012</cell><cell>015</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>011</cell><cell>Category Articles</cell><cell>controller/ajaxController.php?submodule=article</cell><cell>1</cell><cell>022</cell><cell>025</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>050</cell><cell>Sections Module</cell><cell></cell><cell>0</cell><cell>051</cell><cell>099</cell><cell>false</cell><cell>false</cell></row>
+    <row><cell>051</cell><cell>Section Operation</cell><cell>controller/ajaxController.php?submodule=section</cell><cell>1</cell><cell>062</cell><cell>065</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>052</cell><cell>Section Mapping</cell><cell>controller/ajaxController.php?submodule=categorySection</cell><cell>1</cell><cell>072</cell><cell>075</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>100</cell><cell>Question Module</cell><cell></cell><cell>0</cell><cell>101</cell><cell>199</cell><cell>false</cell><cell>false</cell></row>
+    <row><cell>101</cell><cell>Question Operation</cell><cell>controller/ajaxController.php?submodule=question</cell><cell>1</cell><cell>112</cell><cell>115</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>111</cell><cell>Question Mapping</cell><cell>controller/ajaxController.php?submodule=sectionQuestion</cell><cell>1</cell><cell>122</cell><cell>125</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>200</cell><cell>Answer Module</cell><cell></cell><cell>0</cell><cell>201</cell><cell>299</cell><cell>false</cell><cell>false</cell></row>
+    <row><cell>201</cell><cell>Answer Operation</cell><cell>controller/ajaxController.php?submodule=answer</cell><cell>1</cell><cell>212</cell><cell>215</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>202</cell><cell>Answer Mapping</cell><cell>controller/ajaxController.php?submodule=questionAnswer</cell><cell>1</cell><cell>222</cell><cell>225</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>300</cell><cell>Articles Module</cell><cell></cell><cell>0</cell><cell>301</cell><cell>399</cell><cell>false</cell><cell>false</cell></row>
+    <row><cell>301</cell><cell>Articles Operations</cell><cell>controller/ajaxController.php?submodule=article</cell><cell>1</cell><cell>302</cell><cell>305</cell><cell>true</cell><cell>true</cell></row>
+</rows>

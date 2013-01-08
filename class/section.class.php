@@ -1,0 +1,121 @@
+<?php
+class Section {
+    private $mysqli;
+    private $utils;
+    private $section;
+    private $sections;
+    private $categoryName;
+    private $placeName;
+    public function __construct($categoryName,$placeName) {
+        $this->mysqli=new mysqli(Config::$db_server,Config::$db_username,Config::$db_password,Config::$db_database);
+        $this->utils=new Utils();
+        $this->categoryName = $this->mysqli->real_escape_string($categoryName);
+        $this->placeName = $this->mysqli->real_escape_string($placeName);
+    }
+    public function getSectionDetails($sectionName) {
+        $sectionName=$this->mysqli->real_escape_string($sectionName);
+        $query="SELECT *
+                    FROM 
+                    ".Config::$tables['section_table']." a
+                    WHERE section_name='".$sectionName."'";
+
+        if ($result = $this->mysqli->query($query)) {
+            $i=0;
+            while ($row = $result->fetch_object()) {
+                $response[$i]['section_title']=$row->section_title;
+                $i++;
+            }
+        }
+        return $response[0];
+    }
+    public function getSections() {
+        $query="SELECT c.section_id, c.section_name, c.section_title , a.active
+                    FROM
+                    ".Config::$tables['categorySection_table']." a
+                    LEFT JOIN
+                    ".Config::$tables['placeCategory_table']." b ON b.placeCategory_id=a.placeCategory_id
+                    LEFT JOIN 
+                    ".Config::$tables['section_table']." c ON c.section_id=a.section_id
+                    LEFT JOIN
+                    ".Config::$tables['category_table']." d ON b.category_id=d.category_id                 
+                    LEFT JOIN
+                    ".Config::$tables['place_table']." e ON e.place_id=b.place_id
+                    WHERE c.delete_flag=0 AND d.category_name='".$this->categoryName."' AND e.place_name='".$this->placeName."' 
+                    ORDER BY a.categorysection_order ASC";
+        if ($result = $this->mysqli->query($query)) {
+            $i=0;
+            while ($row = $result->fetch_object()) {
+                $response[$i]['section_id']=$row->section_id;
+                $response[$i]['section_name']=$row->section_name;
+                $response[$i]['section_title']=$row->section_title;
+                $response[$i]['active']=$row->active;
+                $i++;
+            }
+        }
+        $this->sections = $response;
+        return $response;
+    }
+    public function getFormatedSections() {
+        $this->getSections();
+        $response = '';
+        for($i=0;$i<sizeof($this->sections);$i++){
+            $href= ($this->sections[$i]['active']) ? Config::$site_url.$this->placeName.'/'.$this->categoryName.'/need/'.$this->sections[$i]['section_name'] : Config::$site_url.'contact-us';;
+            $class= ($this->sections[$i]['active']) ? 'active' : 'inactive';
+            $response .= '<li><a class="'.$class.'" title="'.$this->sections[$i]['section_title'].'" href="'.$href.'">'.$this->sections[$i]['section_title'].'</a></li>';
+        }
+        return $response;
+    }
+    public function getSectionTitleByName($sectionName) {
+        $sectionName=$this->mysqli->real_escape_string($sectionName);
+        $query="SELECT section_title
+                    FROM 
+                    ".Config::$tables['section_table']." a
+                    WHERE section_name='".$sectionName."'";
+
+        if ($result = $this->mysqli->query($query)) {
+            $i=0;
+            while ($row = $result->fetch_object()) {
+                $response[$i]['section_title']=$row->section_title;
+                $i++;
+            }
+        }
+        return $response[0]['section_title'];
+    }
+    public function getMeta($sectionName) {
+        $sectionName=$this->mysqli->real_escape_string($sectionName);
+        $query="SELECT c.section_title , d.category_title , e.place_title
+                    FROM
+                    ".Config::$tables['categorySection_table']." a
+                    LEFT JOIN
+                    ".Config::$tables['placeCategory_table']." b ON b.placeCategory_id=a.placeCategory_id
+                    LEFT JOIN 
+                    ".Config::$tables['section_table']." c ON c.section_id=a.section_id
+                    LEFT JOIN
+                    ".Config::$tables['category_table']." d ON b.category_id=d.category_id                 
+                    LEFT JOIN
+                    ".Config::$tables['place_table']." e ON e.place_id=b.place_id
+                    WHERE c.delete_flag=0 AND d.category_name='".$this->categoryName."' AND c.section_name='".$sectionName."' AND e.place_name='".$this->placeName."'";
+        if ($result = $this->mysqli->query($query)) {
+            $i=0;
+            while ($row = $result->fetch_object()) {
+                $place_title=$row->place_title;
+                $category_title=$row->category_title;
+                $section_title=$row->section_title;
+                $description=$this->getDescription($row->place_title,$row->category_title,$row->section_title);
+                $i++;
+            }
+        }
+        return array(
+            'keywords'=>'',
+            'description'=>$description,
+            'title'=>$place_title.' | '.$category_title.' | '.$section_title
+        );
+    }
+    public function getDescription($place_title,$category_title,$section_title) {
+        return 'We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company. Submit and Get Matched to Prescreened '.$section_title.' under '.$category_title.' for '.$place_title;
+    }
+    public function __destruct() {
+        $this->mysqli->close();
+    }
+}
+?>

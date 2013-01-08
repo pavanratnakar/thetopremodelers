@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<pages>
+    <page>
+        <id>0</id>
+        <class>home</class>
+        <name>Home</name>
+        <link>index.php</link>
+        <navigation>1</navigation>
+        <template></template>
+        <title>The Top Remodelers | Dallas Roofing Company | Dallas Roofing contractors</title>
+        <description>We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company</description>
+        <keywords>Dallas roofing contractors,Dallas roofing companies</keywords>
+        <breadcrum>0</breadcrum>
+        <css>0</css>
+        <js>1</js>
+    </page>
+    <page>
+        <id>1</id>
+        <class>customer-advantage</class>
+        <name>Customer advantage</name>
+        <link>customer-advantage.php</link>
+        <template>layout-1</template>
+        <navigation>1</navigation>
+        <title>The Top Remodelers | Dallas Roofing Company | Customer Advantage</title>
+        <description>We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company</description>
+        <keywords>Dallas roofing contractors,Dallas roofing companies</keywords>
+        <breadcrum>0</breadcrum>
+        <css>0</css>
+        <js>0</js>
+    </page>
+    <page>
+        <id>2</id>
+        <class>category</class>
+        <name>Category</name>
+        <link>category</link>
+        <template></template>
+        <navigation>0</navigation>
+        <title>The Top Remodelers | Dallas Roofing Company</title>
+        <description>We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company</description>
+        <keywords>Dallas roofing contractors,Dallas roofing companies</keywords>
+        <breadcrum>0,2</breadcrum>
+        <css>0</css>
+        <js>1</js>
+    </page>
+    <page>
+        <id>3</id>
+        <class>need</class>
+        <name>Need</name>
+        <link>need</link>
+        <template></template>
+        <navigation>0</navigation>
+        <title>The Top Remodelers | Dallas Roofing Company</title>
+        <description>We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company</description>
+        <keywords>Dallas roofing contractors,Dallas roofing companies</keywords>
+        <breadcrum>0,3</breadcrum>
+        <css>0</css>
+        <js>1</js>
+    </page>
+    <page>
+        <id>4</id>
+        <class>place-request</class>
+        <name>Contact us</name>
+        <link>contact-us</link>
+        <template></template>
+        <navigation>1</navigation>
+        <title>The Top Remodelers | Dallas Roofing Company | Place Request</title>
+        <description>We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company</description>
+        <keywords>Dallas roofing contractors,Dallas roofing companies</keywords>
+        <breadcrum>0</breadcrum>
+        <css>0</css>
+        <js>1</js>
+    </page>
+    <page>
+        <id>5</id>
+        <class>not-found</class>
+        <name>Page Not Found</name>
+        <link>404</link>
+        <template>layout-1</template>
+        <navigation>0</navigation>
+        <title>The Top Remodelers | Dallas Roofing Company | Not Found</title>
+        <description>We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company</description>
+        <keywords>Dallas roofing contractors,Dallas roofing companies</keywords>
+        <breadcrum>0</breadcrum>
+        <css>0</css>
+        <js>0</js>
+    </page>
+    <page>
+        <id>6</id>
+        <class>article</class>
+        <name>Article</name>
+        <link>article</link>
+        <template>layout-1</template>
+        <navigation>0</navigation>
+        <title>The Top Remodelers | Dallas Roofing Company | Article</title>
+        <description>We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company</description>
+        <keywords>Dallas roofing contractors,Dallas roofing companies</keywords>
+        <breadcrum>0</breadcrum>
+        <css>0</css>
+        <js>1</js>
+    </page>
+    <page>
+        <id>7</id>
+        <class>place</class>
+        <name>Place</name>
+        <link>place</link>
+        <template></template>
+        <navigation>0</navigation>
+        <title>The Top Remodelers | Dallas Roofing Company</title>
+        <description>We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company</description>
+        <keywords>Dallas roofing contractors,Dallas roofing companies</keywords>
+        <breadcrum>0</breadcrum>
+        <css>0</css>
+        <js>0</js>
+    </page>
+    <page>
+        <id>8</id>
+        <class>contractors</class>
+        <name>Contractors</name>
+        <link>contractors</link>
+        <template>layout-2</template>
+        <navigation>0</navigation>
+        <title>The Top Remodelers | Dallas Roofing Company</title>
+        <description>We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company</description>
+        <keywords>Dallas roofing contractors,Dallas roofing companies</keywords>
+        <breadcrum>0</breadcrum>
+        <css>0</css>
+        <js>1</js>
+    </page>
+    <page>
+        <id>9</id>
+        <class>places</class>
+        <name>Places</name>
+        <link>places</link>
+        <template>layout-1</template>
+        <navigation>0</navigation>
+        <title>The Top Remodelers | Dallas Roofing Company | Places</title>
+        <description>We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company</description>
+        <keywords>Dallas roofing contractors,Dallas roofing companies</keywords>
+        <breadcrum>0</breadcrum>
+        <css>0</css>
+        <js>0</js>
+    </page>
+    <page>
+        <id>9</id>
+        <class>contractor</class>
+        <name>Contractor</name>
+        <link>contractor</link>
+        <template>layout-2</template>
+        <navigation>0</navigation>
+        <title>The Top Remodelers | Dallas Roofing Company</title>
+        <description>We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company</description>
+        <keywords>Dallas roofing contractors,Dallas roofing companies</keywords>
+        <breadcrum>0</breadcrum>
+        <css>0</css>
+        <js>1</js>
+    </page>
+</pages>

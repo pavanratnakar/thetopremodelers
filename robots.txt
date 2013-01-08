@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /stats/
+Disallow: /old_site/
+Disallow: /plugins/
+Disallow: /mail/
+Disallow: /global/
+Disallow: /js/
+Disallow: /min/
+Disallow: /css/
+Disallow: /admin/
+Disallow: /controller/
+Disallow: /class/
+Disallow: /xml/

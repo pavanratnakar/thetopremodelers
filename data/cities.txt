@@ -1,0 +1,174 @@
+75001	Standard	Addison	Dallas County
+75006	Standard	Carrollton	Dallas County
+75011	PO Box	Carrollton	Dallas County
+75014	PO Box	Irving	Dallas County
+75015	PO Box	Irving	Dallas County
+75016	PO Box	Irving	Dallas County
+75017	PO Box	Irving	Dallas County
+75019	Standard	Coppell	Dallas County
+75030	PO Box	Rowlett	Dallas County
+75037	Unique	"Irving, Neiman Marcus"	Dallas County
+75038	Standard	Irving	Dallas County
+75039	Standard	Irving	Dallas County
+75040	Standard	Garland	Dallas County
+75041	Standard	Garland	Dallas County
+75042	Standard	Garland	Dallas County
+75043	Standard	Garland	Dallas County
+75044	Standard	Garland	Dallas County
+75045	PO Box	Garland	Dallas County
+75046	PO Box	Garland	Dallas County
+75047	PO Box	Garland	Dallas County
+75048	Standard	"Sachse, Garland"	Dallas County
+75049	PO Box	Garland	Dallas County
+75050	Standard	Grand Prairie	Dallas County
+75051	Standard	Grand Prairie	Dallas County
+75052	Standard	Grand Prairie	Dallas County
+75053	PO Box	Grand Prairie	Dallas County
+75060	Standard	Irving	Dallas County
+75061	Standard	Irving	Dallas County
+75062	Standard	Irving	Dallas County
+75063	Standard	Irving	Dallas County
+75080	Standard	Richardson	Dallas County
+75081	Standard	Richardson	Dallas County
+75083	PO Box	Richardson	Dallas County
+75085	PO Box	Richardson	Dallas County
+75088	Standard	Rowlett	Dallas County
+75089	Standard	Rowlett	Dallas County
+75099	Unique	Coppell	Dallas County
+75104	Standard	Cedar Hill	Dallas County
+75106	PO Box	Cedar Hill	Dallas County
+75115	Standard	Desoto	Dallas County
+75116	Standard	Duncanville	Dallas County
+75123	PO Box	Desoto	Dallas County
+75134	Standard	Lancaster	Dallas County
+75137	Standard	Duncanville	Dallas County
+75138	PO Box	Duncanville	Dallas County
+75141	Standard	Hutchins	Dallas County
+75146	Standard	Lancaster	Dallas County
+75149	Standard	Mesquite	Dallas County
+75150	Standard	Mesquite	Dallas County
+75159	Standard	"Seagoville, Combine"	Dallas County
+75172	Standard	Wilmer	Dallas County
+75180	Standard	"Balch Springs, Mesquite"	Dallas County
+75181	Standard	"Mesquite, Balch Springs"	Dallas County
+75182	Standard	"Sunnyvale, Mesquite"	Dallas County
+75185	PO Box	Mesquite	Dallas County
+75187	PO Box	Mesquite	Dallas County
+75201	Standard	Dallas	Dallas County
+75202	Standard	Dallas	Dallas County
+75203	Standard	Dallas	Dallas County
+75204	Standard	Dallas	Dallas County
+75205	Standard	Dallas	Dallas County
+75206	Standard	Dallas	Dallas County
+75207	Standard	Dallas	Dallas County
+75208	Standard	Dallas	Dallas County
+75209	Standard	Dallas	Dallas County
+75210	Standard	Dallas	Dallas County
+75211	Standard	Dallas	Dallas County
+75212	Standard	Dallas	Dallas County
+75214	Standard	Dallas	Dallas County
+75215	Standard	Dallas	Dallas County
+75216	Standard	Dallas	Dallas County
+75217	Standard	Dallas	Dallas County
+75218	Standard	Dallas	Dallas County
+75219	Standard	Dallas	Dallas County
+75220	Standard	Dallas	Dallas County
+75221	PO Box	Dallas	Dallas County
+75222	PO Box	Dallas	Dallas County
+75223	Standard	Dallas	Dallas County
+75224	Standard	Dallas	Dallas County
+75225	Standard	Dallas	Dallas County
+75226	Standard	Dallas	Dallas County
+75227	Standard	Dallas	Dallas County
+75228	Standard	Dallas	Dallas County
+75229	Standard	Dallas	Dallas County
+75230	Standard	Dallas	Dallas County
+75231	Standard	Dallas	Dallas County
+75232	Standard	Dallas	Dallas County
+75233	Standard	Dallas	Dallas County
+75234	Standard	"Dallas, Farmers Branch, Farmers Brnch"	Dallas County
+75235	Standard	Dallas	Dallas County
+75236	Standard	Dallas	Dallas County
+75237	Standard	Dallas	Dallas County
+75238	Standard	Dallas	Dallas County
+75240	Standard	Dallas	Dallas County
+75241	Standard	Dallas	Dallas County
+75242	Standard	Dallas	Dallas County
+75243	Standard	Dallas	Dallas County
+75244	Standard	"Dallas, Farmers Branch, Farmers Brnch, North Bra..."	Dallas County
+75245	Standard	Dallas	Dallas County
+75246	Standard	Dallas	Dallas County
+75247	Standard	Dallas	Dallas County
+75248	Standard	Dallas	Dallas County
+75249	Standard	Dallas	Dallas County
+75250	PO Box	Dallas	Dallas County
+75251	Standard	Dallas	Dallas County
+75253	Standard	Dallas	Dallas County
+75254	Standard	Dallas	Dallas County
+75258	Standard	Dallas	Dallas County
+75260	Standard	Dallas	Dallas County
+75262	PO Box	Dallas	Dallas County
+75263	PO Box	Dallas	Dallas County
+75264	PO Box	Dallas	Dallas County
+75265	PO Box	Dallas	Dallas County
+75266	PO Box	Dallas	Dallas County
+75267	PO Box	Dallas	Dallas County
+75270	Standard	Dallas	Dallas County
+75275	Unique	Dallas	Dallas County
+75277	Unique	Dallas	Dallas County
+75283	Unique	Dallas	Dallas County
+75284	Unique	Dallas	Dallas County
+75285	Unique	Dallas	Dallas County
+75286	Unique	Dallas	Dallas County
+75301	Unique	Dallas	Dallas County
+75303	Unique	Dallas	Dallas County
+75310	Unique	Dallas	Dallas County
+75312	Unique	Dallas	Dallas County
+75313	PO Box	Dallas	Dallas County
+75315	PO Box	Dallas	Dallas County
+75320	Unique	Dallas	Dallas County
+75323	Unique	Dallas	Dallas County
+75326	Unique	Dallas	Dallas County
+75334	PO Box	Dallas	Dallas County
+75336	PO Box	Dallas	Dallas County
+75339	PO Box	Dallas	Dallas County
+75340	PO Box	Dallas	Dallas County
+75342	Standard	Dallas	Dallas County
+75343	PO Box	Dallas	Dallas County
+75344	PO Box	Dallas	Dallas County
+75353	Unique	"Dallas, Montgomery Ward"	Dallas County
+75354	PO Box	Dallas	Dallas County
+75355	PO Box	Dallas	Dallas County
+75356	PO Box	Dallas	Dallas County
+75357	PO Box	Dallas	Dallas County
+75358	Unique	Dallas	Dallas County
+75359	PO Box	Dallas	Dallas County
+75360	PO Box	Dallas	Dallas County
+75363	Unique	Dallas	Dallas County
+75364	Unique	Dallas	Dallas County
+75367	PO Box	Dallas	Dallas County
+75368	Unique	Dallas	Dallas County
+75370	PO Box	Dallas	Dallas County
+75371	PO Box	Dallas	Dallas County
+75372	PO Box	Dallas	Dallas County
+75373	Unique	Dallas	Dallas County
+75374	PO Box	Dallas	Dallas County
+75376	PO Box	Dallas	Dallas County
+75378	PO Box	Dallas	Dallas County
+75379	PO Box	Dallas	Dallas County
+75380	PO Box	Dallas	Dallas County
+75381	PO Box	Dallas	Dallas County
+75382	PO Box	Dallas	Dallas County
+75386	Unique	"Dallas, Fingerhut Corp"	Dallas County
+75387	Unique	Dallas	Dallas County
+75388	Unique	Dallas	Dallas County
+75389	Unique	Dallas	Dallas County
+75390	Unique	Dallas	Dallas County
+75391	Unique	Dallas	Dallas County
+75392	Unique	Dallas	Dallas County
+75393	Unique	Dallas	Dallas County
+75394	Unique	Dallas	Dallas County
+75395	Unique	Dallas	Dallas County
+75396	Unique	Dallas	Dallas County
+75397	Unique	Dallas	Dallas County
+75398	Standard	Dallas	Dallas County

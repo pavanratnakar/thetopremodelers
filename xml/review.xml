@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<reviews>
+    <review>
+        <id>1</id>
+        <location>Dallas, TX</location>
+        <rating>5</rating>
+        <title>Install or Replace an Asphalt Shingle RoofShingle Roof</title>
+        <description>Absolutely FANTASTIC!! The crew showed up on time, cleaned up every day, and produced an excellent end product. All the staff was friendly, courteous, and honest. Highly recommend</description>
+        <link>0</link>
+    </review>
+    <review>
+        <id>2</id>
+        <location>Dallas, TX</location>
+        <rating>4.5</rating>
+        <title>Repair an Asphalt Shingle Roof Shingle Roof</title>
+        <description>I had an excellent experience; the owner explained everything to me and presented options for my choice. He answered all my questions clearly .His crew were very hard working, did a great</description>
+        <link>0</link>
+    </review>
+    <review>
+        <id>3</id>
+        <location>Dallas, TX</location>
+        <rating>4</rating>
+        <title>Repair an Asphalt Shingle Roof</title>
+        <description>Friendly, professional and well organized. Completed repair quickly and cleaned his work area.  The job was completed on time and for a very attractive price. Excellent to work with and would highly recommend to any body</description>
+        <link>0</link>
+    </review>
+</reviews>

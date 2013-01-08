@@ -1,0 +1,13 @@
+*{margin:0;padding:0;}
+body {color: #845118;font-family:"Trebuchet MS",Verdana,Geneva,Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;text-align:left;}
+h1{padding:20px 0;color: #845118;font-weight: normal;text-align: left;text-shadow: 0 0 2px #845118;font-size:2.2em;}
+h2{padding:10px 0;margin:0 0 10px 0;font-size:1.3em;color: #999;font-weight: normal;padding-bottom: 5px;text-align: left;text-shadow: 0 0 1px #FFFFFF;}
+h3{padding:10px 0;margin:0;font-size:1.2em;color: #999;font-weight: normal;text-align: left;text-shadow: 0 0 1px #FFFFFF;}
+h4{padding:10px 0 0 10px;margin:0;font-size:1.1em;color: #999;font-weight: normal;text-align: left;text-shadow: 0 0 1px #FFFFFF;}
+a {text-decoration: none;color: #15ADFF;cursor:pointer;}
+a:hover {color: white;}
+textarea {resize: none;}
+.left{float:left;display:inline;}
+.right{float:right;display:inline;}
+.clear{clear:both;}
+#wrapper{width:900px;margin:0 auto;}
