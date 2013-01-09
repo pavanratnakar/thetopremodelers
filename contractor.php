@@ -25,7 +25,7 @@
             <div class="main-content-container clearfix">
                 <div class="content clearfix">
                     <div class="main left">
-                        <div id="top" class="sub clearfix">
+                        <div id="top" class="sub top clearfix">
                             <h2><?php echo $contractorDetails['contractor_title']?></h2>
                             <div class="entry-body">
                                 <div class="clearfix">
@@ -89,7 +89,7 @@
                                         echo '<ul>';
                                         $category = $value['category_title'];
                                     }
-                                    echo '<li><a href="#">'.$value['section_title'].'</a></li>';
+                                    echo '<li>'.$value['section_title'].'</li>';
                                 }
                                 echo '</ul>';
                                 ?>

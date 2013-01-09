@@ -33,7 +33,7 @@
         <class>category</class>
         <name>Category</name>
         <link>category</link>
-        <template></template>
+        <template>layout-2</template>
         <navigation>0</navigation>
         <title>The Top Remodelers | Dallas Roofing Company</title>
         <description>We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company</description>
@@ -47,7 +47,7 @@
         <class>need</class>
         <name>Need</name>
         <link>need</link>
-        <template></template>
+        <template>layout-1</template>
         <navigation>0</navigation>
         <title>The Top Remodelers | Dallas Roofing Company</title>
         <description>We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company</description>
@@ -103,7 +103,7 @@
         <class>place</class>
         <name>Place</name>
         <link>place</link>
-        <template></template>
+        <template>layout-1</template>
         <navigation>0</navigation>
         <title>The Top Remodelers | Dallas Roofing Company</title>
         <description>We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company</description>

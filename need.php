@@ -22,8 +22,9 @@
     }
     echo $pageController->printHeader($section->getMeta($sectionName));
 ?>
+            <?php echo $pageController->printNavigation(); ?>
             <div class="main-content-container clearfix">
-                <div class="header">
+                <div class="header utility-container">
                     <?php echo $pageController->printUserStepsText(2); ?>
                     <div class="back-button clearfix">
                         <a class="clearfix" title="Back" href="<?php echo Config::$site_url.$placeName ?>/category/<?php echo $categoryName ?>">

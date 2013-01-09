@@ -15,8 +15,9 @@
     }
     echo $pageController->printHeader($pageController->getMeta('place',$placeName)); 
 ?>
+            <?php echo $pageController->printNavigation(); ?>
             <div class="main-content-container clearfix">
-                <div class="header">
+                <div class="header utility-container">
                     <?php echo $pageController->printUserStepsText(1); ?>
                     <div class="back-button clearfix">
                         <a class="clearfix" title="Back" href="<?php echo Config::$site_url ?>">
@@ -29,7 +30,7 @@
                         <h2>Matching you with our prescreened Contractors for <?php echo $placeDetails['place_title'] ?></h2>
                         <div class="left clearfix first">
                             <ul class="top">
-                                <li>Additions &amp; Remodels</li>
+                                <li><h3>Additions &amp; Remodels</h3></li>
                             </ul>
                             <ul class="list clearfix">
                                 <?php echo $pageController->getFormatedCategories(1,$placeName); ?>
@@ -37,7 +38,7 @@
                         </div>
                         <div class="left clearfix">
                             <ul class="top">
-                                <li>Handyman Services</li>
+                                <li><h3>Handyman Services</h3></li>
                             </ul>
                             <ul class="list clearfix">
                                 <?php echo $pageController->getFormatedCategories(2,$placeName); ?>

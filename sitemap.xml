@@ -32,6 +32,11 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>http://www.thetopremodelers.com/places</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>http://www.thetopremodelers.com/place/dallas_texas</loc>
   <changefreq>monthly</changefreq>
   <priority>0.80</priority>
@@ -62,7 +67,17 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/dallas_texas/roofing_contractors/need/asphalt_shingle_roofing_install_replace</loc>
+  <loc>http://www.thetopremodelers.com/place/addison_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/carrollton_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/dallas_texas/roofing_contractors/need/asphalt_shingle_roofing_repair</loc>
   <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
@@ -127,6 +142,111 @@
   <priority>0.64</priority>
 </url>
 <url>
+  <loc>http://www.thetopremodelers.com/place/coppell_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/rowlett_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/irving_neiman_marcus_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/garland_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/sachse,%20garland_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/grand%20prairie_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/richardson_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/cedar_hill_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/desoto_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/duncanville_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/lancaster_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/hutchins_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/mesquite_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/seagoville_combine_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/wilmer_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/balch_springs_mesquite</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/mesquite_balch_springs_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/sunnyvale_mesquite_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/dallas_farmers_branch,%20farmers_brnch_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/dallas_montgomery%20ward_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/dallas_fingerhut_corp_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
   <loc>http://www.thetopremodelers.com/arlington_texas/category/roofing_contractors</loc>
   <changefreq>monthly</changefreq>
   <priority>0.64</priority>
@@ -152,28 +272,68 @@
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/arlington_texas/roofing_contractors/need/asphalt_shingle_roofing_install_replace</loc>
+  <loc>http://www.thetopremodelers.com/addison_texas/category/roofing_contractors</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/carrollton_texas/category/roofing_contractors</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/coppell_texas/category/roofing_contractors</loc>
   <changefreq>monthly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/forthworth_texas/roofing_contractors/need/asphalt_shingle_roofing_install_replace</loc>
+  <loc>http://www.thetopremodelers.com/rowlett_texas/category/roofing_contractors</loc>
   <changefreq>monthly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/midland_texas/roofing_contractors/need/asphalt_shingle_roofing_install_replace</loc>
+  <loc>http://www.thetopremodelers.com/arlington_texas/roofing_contractors/need/asphalt_shingle_roofing_repair</loc>
   <changefreq>monthly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/irving_texas/roofing_contractors/need/asphalt_shingle_roofing_install_replace</loc>
+  <loc>http://www.thetopremodelers.com/forthworth_texas/roofing_contractors/need/asphalt_shingle_roofing_repair</loc>
   <changefreq>monthly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/frisco_texas/roofing_contractors/need/asphalt_shingle_roofing_install_replace</loc>
+  <loc>http://www.thetopremodelers.com/midland_texas/roofing_contractors/need/asphalt_shingle_roofing_repair</loc>
   <changefreq>monthly</changefreq>
   <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/irving_texas/roofing_contractors/need/asphalt_shingle_roofing_repair</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/frisco_texas/roofing_contractors/need/asphalt_shingle_roofing_repair</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/addison_texas/roofing_contractors/need/asphalt_shingle_roofing_repair</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/carrollton_texas/roofing_contractors/need/asphalt_shingle_roofing_repair</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/coppell_texas/roofing_contractors/need/asphalt_shingle_roofing_repair</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/rowlett_texas/roofing_contractors/need/asphalt_shingle_roofing_repair</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
 </url>
 </urlset>

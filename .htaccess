@@ -99,6 +99,7 @@ RewriteRule ^article/(.*)$ article.php?article=$1
 RewriteRule ^need/roofing_contractors/asphalt_shingle_roofing_install_replace$ http://www.thetopremodelers.com/dallas_texas/roofing_contractors/need/asphalt_shingle_roofing_install_replace [R=301,L]
 RewriteRule ^need/dallas_roofing_contractors/asphalt_shingle_roofing_install_replace$ http://www.thetopremodelers.com/dallas_texas/roofing_contractors/need/asphalt_shingle_roofing_install_replace [R=301,L]
 RewriteRule ^(.*)/(.*)/need/(.*)$ need.php?place=$1&category=$2&section=$3
+RewriteRule ^(.*)/(.*)/contractors$ contractors.php?place=$1&category=$2
 RewriteRule ^(.*)/(.*)/(.*)/contractors/(.*)/(.*)$ contractors.php?place=$1&category=$2&section=$3&sort=$4&page=$5
 RewriteRule ^(.*)/(.*)/(.*)/contractors/$ contractors.php?place=$1&category=$2&section=$3
 RewriteRule ^contractor/(.*)$ contractor.php?name=$1
