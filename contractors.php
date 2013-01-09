@@ -37,7 +37,7 @@
                 <div class="content clearfix">
                     <h2><?php echo $categoryDetails[0]['category_title'].' in '.$placeDetails['place_title'].' with '.$sectionDetails['section_title'].' speciality'?></h2>
                     <div class="main left">
-                        <div class="sub">
+                        <div class="sub top">
                             <ul>
                                 <li class="options clearfix">
                                     <form method="post" class="find-contractors">

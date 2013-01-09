@@ -42,8 +42,6 @@ class Section {
                     ".Config::$tables['place_table']." e ON e.place_id=b.place_id
                     WHERE c.delete_flag=0 AND d.category_name='".$this->categoryName."' AND e.place_name='".$this->placeName."' 
                     ORDER BY a.categorysection_order ASC";
-
-                    echo $query;
         if ($result = $this->mysqli->query($query)) {
             $i=0;
             while ($row = $result->fetch_object()) {
