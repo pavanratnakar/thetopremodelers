@@ -74,7 +74,8 @@ class CategorySection extends General{
         if ($section_id=="All" && $this->getSections()) {
             $i=1;
             foreach($this->getSections() as $key=>$value) {
-                if ($result2 = $this->mysqli->query("SELECT COUNT(*) AS count FROM ".$this->table." WHERE section_id=".$value." AND placeCategory_id=".$category_id."")){
+                $query2 = "SELECT COUNT(*) AS count FROM ".$this->table." WHERE section_id=".$value." AND placeCategory_id=".$category_id."";
+                if ($result2 = $this->mysqli->query($query2)){
                     while ($row2 = $result2->fetch_object()){
                         $count = $row2->count;
                         if ($count == 0) {
@@ -90,8 +91,7 @@ class CategorySection extends General{
             $query = "INSERT INTO ".$this->table."(placeCategory_id,section_id,categorysection_order,active) VALUES('$category_id','$section_id','$categorysection_order','$active')";
             $result = $this->mysqli->query($query);
             if ($result) {
-                if($this->mysqli->affected_rows>0)
-                {
+                if($this->mysqli->affected_rows>0){
                     return TRUE;
                 }
             }
