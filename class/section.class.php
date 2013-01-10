@@ -68,8 +68,8 @@ class Section {
         $this->getSections();
         $response = '';
         for($i=0;$i<sizeof($this->sections);$i++){
-            $href= ($this->sections[$i]['active']) ? Config::$site_url.$this->placeName.'/'.$this->categoryName.'/need/'.$this->sections[$i]['section_name'] : Config::$site_url.'contact-us';;
-            $class= ($this->sections[$i]['active']) ? 'active' : 'inactive';
+            $href= ($this->sections[$i]['section_id']==1) ? Config::$site_url.$this->placeName.'/'.$this->categoryName.'/need/'.$this->sections[$i]['section_name'] : Config::$site_url.'contact-us';;
+            $class= ($this->sections[$i]['section_id']==1) ? 'active' : 'inactive';
             $response .= '<li><a class="'.$class.'" title="'.$this->sections[$i]['section_title'].'" href="'.$href.'">'.$this->sections[$i]['section_title'].'</a></li>';
         }
         return $response;

@@ -5,6 +5,25 @@ var herve_grid = {
         herve_grid.menu.resize();
         herve_grid.jqgrid.init();
         herve_grid.menu.init();
+        herve_grid.events.init();
+    },
+    events : {
+        init : function(){
+            $('.purge button').live('click', function(event){
+                $.ajax({url: $.url+"/admin/controller/ajaxController.php?purge="+$(this).attr('id').replace('purge-',''), dataType: "json", cache: true, async: false, success: function(data, result) {
+
+                }});
+            });
+            $('.purge button').live('hover', function(event){
+                if ($(this).hasClass('ui-state-default')) {
+                    $(this).addClass('ui-state-hover');
+                    $(this).removeClass('ui-state-default');
+                } else {
+                    $(this).removeClass('ui-state-hover');
+                    $(this).addClass('ui-state-default');
+                }
+            });
+        }
     },
     theme : {
         width:760,

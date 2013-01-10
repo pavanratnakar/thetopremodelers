@@ -15,5 +15,14 @@ class PageController extends PageControllerBase{
 if (isset($_REQUEST['submodule'])) {
     $pageController=new PageController();
     $pageController->printSubModules($_REQUEST['submodule']);
+} else if (isset($_REQUEST['purge'])) {
+    include_once(Config::$admin_path.'class/purge.class.php');
+    $pageController=new PageController();
+    $purge = new Purge();
+    if ($_REQUEST['purge'] === 'hard') {
+        echo $purge->hardDelete();
+    } else if ($_REQUEST['purge'] === 'soft') {
+        echo $purge->softDelete();
+    }
 }
 ?>

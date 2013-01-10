@@ -1,15 +1,12 @@
 <?php
 include_once(Config::$site_path.'global/Class/page.class.php');
-class Page extends PageBase
-{
-    public function __construct()
-    {
+class Page extends PageBase{
+    public function __construct(){
         $this->title='The Top Remodelers | Admin Module';
         $this->description='The Top Remodelers Admin Module';
         $this->keywords='';
     }
-    public function printSubModules($subModule,$firstDate=null,$lastDate=null)
-    {
+    public function printSubModules($subModule,$firstDate=null,$lastDate=null){
         $return='';
         $return.='<div class="optionContainer left">';
         if($firstDate)

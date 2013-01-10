@@ -1,9 +1,7 @@
 <?php
 include_once(Config::$site_path.'admin/class/general.class.php');
-class Section extends General
-{
-    public function getDetails($page,$limit,$sidx,$sord,$wh="")
-    {
+class Section extends General{
+    public function getDetails($page,$limit,$sidx,$sord,$wh=""){
         $page=$this->mysqli->real_escape_string($page);
         $limit=$this->mysqli->real_escape_string($limit);
         $sidx=$this->mysqli->real_escape_string($sidx);

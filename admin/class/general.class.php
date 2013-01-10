@@ -1,4 +1,5 @@
 <?php
+include_once(Config::$site_path.'admin/class/purge.class.php');
 class General {
     protected $mysqli;
     protected $utils;
@@ -6,6 +7,7 @@ class General {
     protected $id;
     protected $type;
     protected $select_type;
+    protected $purge;
     /**
     * Constructor creates DB object, UTIL object and sets class specific Table
     */
@@ -16,6 +18,7 @@ class General {
         $this->type = $type;
         $this->id = $type.'_id';
         $this->select_type = $this->type."_title";
+        $this->purge = new Purge();
     }
     /**
     * Returns array for drop down
@@ -38,7 +41,8 @@ class General {
     public function deleteDetails($id) {
         $id=$this->mysqli->real_escape_string($id);
         if ($result = $this->mysqli->query("UPDATE ".$this->table." SET delete_flag=TRUE WHERE ".$this->id."='".$id."'")) {
-            if($this->mysqli->affected_rows>0) {
+            if ($this->mysqli->affected_rows>0) {
+                $this->purge->softDelete();
                 return TRUE;
             }
         }

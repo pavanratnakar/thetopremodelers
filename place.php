@@ -17,11 +17,11 @@
 ?>
             <?php echo $pageController->printNavigation(); ?>
             <div class="main-content-container clearfix">
-                <div class="header utility-container">
+                <div class="header">
                     <?php echo $pageController->printUserStepsText(1); ?>
                     <div class="back-button clearfix">
-                        <a class="clearfix" title="Back" href="<?php echo Config::$site_url ?>">
-                            <img width="104" height="34" src="<?php echo Config::$site_url.'/images/global/buttons/back-button.jpg' ?>" title="Back" alt="Back"/>
+                        <a class="button orange small rounded" title="Back" href="<?php echo Config::$site_url ?>places">
+                            Back
                         </a>
                     </div>
                 </div>

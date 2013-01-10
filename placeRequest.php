@@ -81,7 +81,7 @@
                                                 <?php
                                                 }
                                                 ?>
-                                                <input class="submit" type="submit" value="Submit"/>  
+                                                <input class="submit button gray small" type="submit" value="Submit"/>  
                                             </p>
                                         </div>
                                     </form>

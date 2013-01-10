@@ -101,6 +101,9 @@
                                                             <img alt="<?php echo $value['contractor_title'] ?>" src="/images/contractors/<?php echo $value['contractor_name']?>.jpg">
                                                         </a>
                                                     </div>
+                                                    <div class="get-quote left">
+                                                        <a href="<?php echo Config::$site_url.$placeName.'/'.$categoryName.'/need/'.$sectionName ?>" class="small orange button" href="#">Get a Quote</a>
+                                                    </div>
                                                 </div>
                                                 <div class="left contact-details">
                                                     <div class="ratings-reviews">

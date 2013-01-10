@@ -24,11 +24,11 @@
 ?>
             <?php echo $pageController->printNavigation(); ?>
             <div class="main-content-container clearfix">
-                <div class="header utility-container">
+                <div class="header">
                     <?php echo $pageController->printUserStepsText(2); ?>
                     <div class="back-button clearfix">
-                        <a class="clearfix" title="Back" href="<?php echo Config::$site_url.$placeName ?>/category/<?php echo $categoryName ?>">
-                            <img width="104" height="34" src="<?php echo Config::$site_url.'/images/global/buttons/back-button.jpg' ?>" title="Back" alt="Back"/>
+                        <a class="button orange small rounded" title="Back" href="<?php echo Config::$site_url.$placeName ?>/category/<?php echo $categoryName ?>">
+                            Back
                         </a>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                                 <?php echo $formatQuestions; ?>
                             </ol>
                         </fieldset>
-                        <input class="submit" type="submit" value="Continue"/>
+                        <input class="submit button blue small" type="submit" value="Continue"/>
                      </form>
                  </div>
                 <?php echo $pageController->printFooterLinks(); ?>

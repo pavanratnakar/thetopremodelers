@@ -121,10 +121,10 @@ class Contractor{
                     ".Config::$tables['contractor_table']." a
                     LEFT JOIN
                     ".Config::$tables['contractorRating_table']." b ON a.contractor_id=b.contractor_id
-                    WHERE a.contractor_name='".$contractorName."'AND 
-                    a.delete_flag=FALSE
-                    AND b.delete_flag=FALSE
-                    GROUP BY a.contractor_name";
+                    WHERE 
+                    a.contractor_name='".$contractorName."' 
+                    AND a.delete_flag=FALSE
+                    GROUP BY a.contractor_id";
         if ($result = $this->mysqli->query($query)) {
             $i=0;
             while ($row = $result->fetch_object()) {

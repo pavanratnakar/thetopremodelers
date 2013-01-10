@@ -22,7 +22,16 @@
                         </ul>
                         <div id="tabs-1">
                             <h1>TheTopRemoderlers.com Admin Panel</h1>
-                            <h2>Work in progress</h2>
+                            <div class="purge">
+                                <button href="javascript:void(0);" class="fm-button ui-button ui-button-text ui-state-default ui-corner-all fm-button-icon-left" id="purge-soft">
+                                    <span class="ui-icon ui-icon-trash"></span>
+                                    Purge Soft
+                                </button>
+                                <button class="fm-button ui-button ui-button-text ui-state-default ui-corner-all fm-button-icon-left" id="purge-hard">
+                                    <span class="ui-icon ui-icon-trash"></span>
+                                    Purge Hard
+                                </button>                        
+                            </div>
                         </div>
                     </div>
                 </div>

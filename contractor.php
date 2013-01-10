@@ -11,8 +11,8 @@
     $contractor = $pageController->getContractor();
     $contractorDetails = $contractor->getContractor($contractorName);
     if (!$contractorDetails){
-        header( 'Location: '.Config::$site_url.'404.php');
-        exit;
+        //header( 'Location: '.Config::$site_url.'404.php');
+        //exit;
     }
     $contractorRatingDetails = $contractor->getRatingForContractor(array('contractor_id'=>$contractorDetails['contractor_id']));
     $jumpListData['profile'] = array('title'=>'Profile');
@@ -58,6 +58,9 @@
                                             echo '<div class="address">'.$contractorDetails['contractor_address'].'</div>';
                                         }
                                         ?>
+                                    </div>
+                                    <div class="right options">
+                                        <a href="javascript:void(0);" class="small orange button" href="#">Get a Quote</a>
                                     </div>
                                 </div>
                                 <div class="social-sharing">
