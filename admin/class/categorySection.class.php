@@ -34,7 +34,6 @@ class CategorySection extends General{
                     ".Config::$tables['place_table']." e ON e.place_id=b.place_id
                     WHERE a.delete_flag=0 ".$wh."
                     ORDER BY ".$sidx." ". $sord." LIMIT ".$start." , ".$limit;
-                    //echo $query;
                 $result1 = $this->mysqli->query($query);
                 if ($result1) {
                     $responce->page = $page;
@@ -66,39 +65,102 @@ class CategorySection extends General{
             return $responce;
         }
     }
-    public function addDetails($category_id,$section_id,$categorysection_order,$active){
+    public function getPlaceChildren($place_id) {
+        $place_id=$this->mysqli->real_escape_string($place_id);
+        $query="SELECT place_id
+                    FROM 
+                    ".Config::$tables['place_table']." a
+                    WHERE a.under=".$place_id."";
+        $result1 = $this->mysqli->query($query);
+        if ($result1) {
+            $i=0;
+            while ($row1 = $result1->fetch_object()) {
+                $responce[$row1->place_id]=$row1->place_id;
+                $i++;
+            }
+            return $responce;
+        }
+    }
+    public function getCategories() {
+        $query="SELECT category_id
+                    FROM 
+                    ".Config::$tables['category_table']."";
+        $result1 = $this->mysqli->query($query);
+        if ($result1) {
+            $i=0;
+            while ($row1 = $result1->fetch_object()) {
+                $responce[$row1->category_id]=$row1->category_id;
+                $i++;
+            }
+            return $responce;
+        }
+    }
+    public function getPlaceCategories($placeIdArray,$categoryIdArray) {
+        $i = 0;
+        foreach($placeIdArray as $placeIdKey=>$placeIdValue) {
+            foreach($categoryIdArray as $categoryIdKey=>$categoryIdValue) {
+                $query="SELECT a.placeCategory_id
+                            FROM 
+                            ".Config::$tables['placeCategory_table']." a
+                            WHERE delete_flag=0 AND place_id=".$placeIdValue." AND category_id=".$categoryIdValue."";
+                $result = $this->mysqli->query($query);
+                if ($result) {
+                    while ($row = $result->fetch_object()) {
+                        $responce[$row->placeCategory_id]=$row->placeCategory_id;
+                        $i++;
+                    }
+                }
+            }
+        }
+        return $responce;
+    }
+    public function addDetails($place_id,$category_id,$section_id,$categorysection_order,$active){
+        $place_id=$this->mysqli->real_escape_string($place_id);
         $category_id=$this->mysqli->real_escape_string($category_id);
         $section_id=$this->mysqli->real_escape_string($section_id);
         $categorysection_order=$this->mysqli->real_escape_string($categorysection_order);
         $active=$this->mysqli->real_escape_string($active);
+        if ($this->getPlaceChildren($place_id)) {
+            $placeIds = $this->getPlaceChildren($place_id);  
+        } else {
+            $placeIds = array(
+                $place_id => $place_id
+            );
+        }
+        if ($category_id == 'All') {
+            $categoryIds = $this->getCategories();
+        } else {
+            $categoryIds = array(
+                $category_id => $category_id
+            );
+        }
         if ($section_id=="All" && $this->getSections()) {
-            $i=1;
-            foreach($this->getSections() as $key=>$value) {
-                $query2 = "SELECT COUNT(*) AS count FROM ".$this->table." WHERE section_id=".$value." AND placeCategory_id=".$category_id."";
-                if ($result2 = $this->mysqli->query($query2)){
-                    while ($row2 = $result2->fetch_object()){
-                        $count = $row2->count;
+            $sectionIds = $this->getSections();
+        } else {
+            $sectionIds = array(
+                $section_id => $section_id
+            ); 
+        }
+        $placeCategoryIds = $this->getPlaceCategories($placeIds,$categoryIds);
+        foreach($placeCategoryIds as $placeCategoryIdKey=>$placeCategoryIdValue) {
+            foreach($sectionIds as $sectionIdKey=>$sectionKeyValue) {
+                $i = 1;
+                $query = "SELECT COUNT(*) AS count FROM ".$this->table." WHERE section_id=".$sectionKeyValue." AND placeCategory_id=".$placeCategoryIdValue."";
+                if ($result = $this->mysqli->query($query)) {
+                    while ($row = $result->fetch_object()) {
+                        $count = $row->count;
                         if ($count == 0) {
-                            $query1 = "INSERT INTO ".$this->table."(placeCategory_id,section_id,categorysection_order,active) VALUES('$category_id','$value','$i','$active')";
+                            $query1 = "INSERT INTO ".$this->table."(placeCategory_id,section_id,categorysection_order,active) VALUES('$placeCategoryIdValue','$sectionKeyValue','$i','$active')";
                             $result1 = $this->mysqli->query($query1);
                         }
                     }
                 }
                 $i++;
             }
-            return TRUE; 
-        } else {
-            $query = "INSERT INTO ".$this->table."(placeCategory_id,section_id,categorysection_order,active) VALUES('$category_id','$section_id','$categorysection_order','$active')";
-            $result = $this->mysqli->query($query);
-            if ($result) {
-                if($this->mysqli->affected_rows>0){
-                    return TRUE;
-                }
-            }
-            return FALSE;
         }
     }
-    public function editDetails($category_id,$section_id,$categorysection_order,$active,$id){
+    public function editDetails($place_id,$category_id,$section_id,$categorysection_order,$active,$id){
+        $place_id=$this->mysqli->real_escape_string($category_id);
         $category_id=$this->mysqli->real_escape_string($category_id);
         $section_id=$this->mysqli->real_escape_string($section_id);
         $categorysection_order=$this->mysqli->real_escape_string($categorysection_order);

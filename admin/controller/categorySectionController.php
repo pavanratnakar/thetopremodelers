@@ -104,6 +104,7 @@ class categorySectionController{
         /* ADD */
         if($oper=='add'){
             $response=$this->categorySection->addDetails(
+                $this->utils->checkValues($_POST['place_title']),
                 $this->utils->checkValues($_POST['category_title']),
                 $this->utils->checkValues($_POST['section_title']),
                 $this->utils->checkValues($_POST['categorysection_order']),
@@ -121,6 +122,7 @@ class categorySectionController{
         /* EDIT */
         else if($oper=='edit'){
             $response=$this->categorySection->editDetails(
+                $this->utils->checkValues($_POST['place_title']),
                 $this->utils->checkValues($_POST['category_title']),
                 $this->utils->checkValues($_POST['section_title']),
                 $this->utils->checkValues($_POST['categorysection_order']),

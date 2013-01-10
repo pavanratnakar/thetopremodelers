@@ -5,9 +5,14 @@ class Config{
     // static $site_path  = '/var/chroot/home/content/02/7362402/html/';
     // static $site_url  = 'http://www.thetopremodelers.com/';
 
-    static $root_path  = 'H:/WEB/WEBSITE/thetopremodelers/thetopremodelers/';
-    static $admin_path = 'H:/WEB/WEBSITE/thetopremodelers/thetopremodelers/admin/';
-    static $site_path  = 'H:/WEB/WEBSITE/thetopremodelers/thetopremodelers/';
+    // static $root_path  = 'H:/WEB/WEBSITE/thetopremodelers/thetopremodelers/';
+    // static $admin_path = 'H:/WEB/WEBSITE/thetopremodelers/thetopremodelers/admin/';
+    // static $site_path  = 'H:/WEB/WEBSITE/thetopremodelers/thetopremodelers/';
+    // static $site_url  = 'http://thetopremodelers.localhost/';
+
+    static $root_path  = '/Applications/XAMPP/xamppfiles/htdocs/thetopremodelers/';
+    static $admin_path = '/Applications/XAMPP/xamppfiles/htdocs/thetopremodelers/admin/';
+    static $site_path  = '/Applications/XAMPP/xamppfiles/htdocs/thetopremodelers/';
     static $site_url  = 'http://thetopremodelers.localhost/';
 
     /* DB CONFIG */

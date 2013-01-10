@@ -102,6 +102,7 @@ class ContractorMapping extends General{
         }
         foreach($placeIds as $placeKey=>$placeValue) {
             $placeCategoryQuery = "SELECT placeCategory_id FROM ".Config::$tables['placeCategory_table']." WHERE place_id=".$placeValue." AND category_id=".$category_id."";
+            echo $placeCategoryQuery;
             if ($placeResults = $this->mysqli->query($placeCategoryQuery)){
                 while ($placeResultRow = $placeResults->fetch_object()){
                     if ($section_id == 'All') {
@@ -114,14 +115,16 @@ class ContractorMapping extends General{
                             }
                         }
                     }
-                    foreach($categorySectionIds as $categorySectionKey=>$categorySectionValue) {
-                        $categorySectionQuery = "SELECT COUNT(*) AS count FROM ".$this->table." WHERE contractor_id=".$contractor_id." AND categorySection_id=".$categorySectionValue."";
-                        if ($result2 = $this->mysqli->query($categorySectionQuery)){
-                            while ($row2 = $result2->fetch_object()){
-                                $count = $row2->count;
-                                if ($count == 0) {
-                                    $query = "INSERT INTO ".$this->table."(categorySection_id,contractor_id,active) VALUES('$categorySectionValue','$contractor_id','$active')";
-                                    $result = $this->mysqli->query($query);
+                    if ($categorySectionIds) {
+                        foreach($categorySectionIds as $categorySectionKey=>$categorySectionValue) {
+                            $categorySectionQuery = "SELECT COUNT(*) AS count FROM ".$this->table." WHERE contractor_id=".$contractor_id." AND categorySection_id=".$categorySectionValue."";
+                            if ($result2 = $this->mysqli->query($categorySectionQuery)){
+                                while ($row2 = $result2->fetch_object()){
+                                    $count = $row2->count;
+                                    if ($count == 0) {
+                                        $query = "INSERT INTO ".$this->table."(categorySection_id,contractor_id,active) VALUES('$categorySectionValue','$contractor_id','$active')";
+                                        $result = $this->mysqli->query($query);
+                                    }
                                 }
                             }
                         }

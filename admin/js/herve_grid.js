@@ -131,7 +131,7 @@ var herve_grid = {
                         {name:'under',index:'under', width:herve_grid.theme.note_width,formoptions:{label: 'Parent'},align:"center", sortable:true,editable: true,editrules: { required: false } ,edittype:"select",editoptions: {value: (":;"+this.places.replace('"','')).replace('"','') } }
                     ],
                     rowNum:100,
-                    rowList:[100,200,300,400,500,600,700,800,900,1000],
+                    rowList:[100,500,1000,1500,2000,2500,3000],
                     pager: herve_grid.jqgrid.place.page,
                     sortname: 'place_name',
                     viewrecords: true,
@@ -179,7 +179,7 @@ var herve_grid = {
                         {name:'type',index:'type', width:herve_grid.theme.note_width,formoptions:{label: 'Type'},align:"center", sortable:true,editable: true,editrules: { required: false } ,edittype:"select", editoptions: {value: "Standard:Standard;PO Box:PO Box;Unique:Unique" } }
                     ],
                     rowNum:100,
-                    rowList:[100,200,300,400,500,600,700,800,900,1000],
+                    rowList:[100,500,1000,1500,2000,2500,3000],
                     pager: herve_grid.jqgrid.placeCode.page,
                     sortname: 'place_title',
                     viewrecords: true,
@@ -229,7 +229,7 @@ var herve_grid = {
                         {name:'active',index:'active', width:herve_grid.theme.note_width,formoptions:{label: 'Active'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"select",editoptions:{value:"1:True;0:False"}}
                     ],
                     rowNum:100,
-                    rowList:[100,200,300,400,500,600,700,800,900,1000],
+                    rowList:[100,500,1000,1500,2000,2500,3000],
                     pager: herve_grid.jqgrid.category.page,
                     sortname: 'category_order',
                     viewrecords: true,
@@ -278,7 +278,7 @@ var herve_grid = {
                         {name:'active',index:'active', width:herve_grid.theme.note_width,formoptions:{label: 'Active'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"select",editoptions:{value:"1:True;0:False"}}
                     ],
                     rowNum:100,
-                    rowList:[100,200,300,400,500,600,700,800,900,1000],
+                    rowList:[100,500,1000,1500,2000,2500,3000],
                     pager: herve_grid.jqgrid.placeCategory.page,
                     sortname: 'place_title',
                     viewrecords: true,
@@ -324,7 +324,7 @@ var herve_grid = {
                         {name:'section_title',index:'section_title', width:herve_grid.theme.note_width,formoptions:{label: 'Section Title'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"textarea", editoptions:{rows:"2",cols:"20"}}
                     ],
                     rowNum:100,
-                    rowList:[100,200,300,400,500,600,700,800,900,1000],
+                    rowList:[100,500,1000,1500,2000,2500,3000],
                     pager: herve_grid.jqgrid.section.page,
                     sortname: 'section_title',
                     viewrecords: true,
@@ -358,15 +358,17 @@ var herve_grid = {
                 herve_grid.jqgrid.crud(herve_grid.jqgrid.categorySection.id,herve_grid.jqgrid.categorySection.page);
             },
             setup   :   function() {
-                $('#TblGrid_categorySection #place_title').live('change', function(event){
-                    $.ajax({url: $.url+"/admin/controller/placeCategoryController.php?ref=select&type=placeCategory&place_id="+$('#TblGrid_categorySection #place_title').val(), dataType: "json", cache: true, async: false, success: function(data, result) {
-                        if (!result) alert('Failure to retrieve the Answers.');
-                        //$(herve_grid.jqgrid.categorySection.id).jqGrid.setColProp('category_name', {editoptions : data});
-                        herve_grid.lib.selectRefresh($('#TblGrid_categorySection #tr_category_title select'),data);
-                    }}).responseText;
-                });
+                // $('#TblGrid_categorySection #place_title').live('change', function(event){
+                //     $.ajax({url: $.url+"/admin/controller/placeCategoryController.php?ref=select&type=placeCategory&place_id="+$('#TblGrid_categorySection #place_title').val(), dataType: "json", cache: true, async: false, success: function(data, result) {
+                //         if (!result) alert('Failure to retrieve the Answers.');
+                //         //$(herve_grid.jqgrid.categorySection.id).jqGrid.setColProp('category_name', {editoptions : data});
+                //         herve_grid.lib.selectRefresh($('#TblGrid_categorySection #tr_category_title select'),data);
+                //     }}).responseText;
+                // });
                 this.places=$.ajax({url: $.url+"/admin/controller/placeController.php?ref=select&type=place", dataType: "json", cache: true, async: false, success: function(data, result) {if (!result) alert('Failure to retrieve the Answers.');}}).responseText;
                 this.sections=$.ajax({url: $.url+"/admin/controller/sectionController.php?ref=select&type=section", dataType: "json", cache: true, async: false, success: function(data, result) {if (!result) alert('Failure to retrieve the Questions.');}}).responseText;
+                this.categories=$.ajax({url: $.url+"/admin/controller/categoryController.php?ref=select&type=category", dataType: "json", cache: true, async: false, success: function(data, result) {if (!result) alert('Failure to retrieve the Category.');}}).responseText;
+
                 $(herve_grid.jqgrid.categorySection.id).jqGrid({
                     url:$.url+'/admin/controller/categorySectionController.php?ref=details',
                     datatype: "json",
@@ -376,13 +378,13 @@ var herve_grid = {
                     colModel:[
                         {name:'categorySection_id',index:'categorySection_id',hidden:true,align:'center',editable:false, sorttype:'int',key:true},
                         {name:'place_title',index:'place_title', width:herve_grid.theme.note_width,formoptions:{label: 'Place'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"select",editoptions: { value: (this.places.replace('"','')).replace('"','') } },
-                        {name:'category_title',index:'category_title', width:herve_grid.theme.note_width,formoptions:{label: 'Category'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"select", editoptions : { value: ":--Please Select Place--" }},
+                        {name:'category_title',index:'category_title', width:herve_grid.theme.note_width,formoptions:{label: 'Category'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"select", editoptions: { value: (this.categories.replace('"','')).replace('"','') } },
                         {name:'section_title',index:'section_title', width:herve_grid.theme.note_width,formoptions:{label: 'Section'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"select",editoptions: { value: ('All:All;'+this.sections.replace('"','')).replace('"','') } },
                         {name:'categorysection_order',index:'categorysection_order', width:herve_grid.theme.note_width,formoptions:{label: 'Order'},align:"center", sortable:true,editable: true,editrules: { required: false } ,edittype:"textarea", editoptions:{rows:"2",cols:"20"}},
                         {name:'active',index:'active', width:herve_grid.theme.note_width,formoptions:{label: 'Active'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"select",editoptions:{value:"1:True;0:False"}}
                     ],
                     rowNum:100,
-                    rowList:[100,200,300,400,500,600,700,800,900,1000],
+                    rowList:[100,500,1000,1500,2000,2500,3000],
                     pager: herve_grid.jqgrid.categorySection.page,
                     sortname: 'categorysection_order',
                     viewrecords: true,
@@ -430,7 +432,7 @@ var herve_grid = {
                         {name:'contractor_address',index:'contractor_address', width:herve_grid.theme.note_width,formoptions:{label: 'Contractor Address'},align:"center", sortable:true,editable: true,editrules: { required: false } ,edittype:"textarea", editoptions:{rows:"2",cols:"20"}},
                         {name:'contractor_name',index:'contractor_name', width:herve_grid.theme.note_width,formoptions:{label: 'Contractor Name'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"textarea", editoptions:{rows:"2",cols:"20"}}                    ],
                     rowNum:100,
-                    rowList:[100,200,300,400,500,600,700,800,900,1000],
+                    rowList:[100,500,1000,1500,2000,2500,3000],
                     pager: herve_grid.jqgrid.contractor.page,
                     sortname: 'contractor_name',
                     viewrecords: true,
@@ -513,7 +515,7 @@ var herve_grid = {
                         {name:'active',index:'active', width:herve_grid.theme.note_width,formoptions:{label: 'Active'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"select",editoptions:{value:"1:True;0:False"}}
                     ],
                     rowNum:100,
-                    rowList:[100,200,300,400,500,600,700,800,900,1000],
+                    rowList:[100,500,1000,1500,2000,2500,3000],
                     pager: herve_grid.jqgrid.contractorMapping.page,
                     sortname: 'contractorMapping_id',
                     viewrecords: true,
@@ -567,7 +569,7 @@ var herve_grid = {
                         {name:'project',index:'project', width:herve_grid.theme.note_width,formoptions:{label: 'Project'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"textarea", editoptions:{rows:"2",cols:"20"}}
                     ],
                     rowNum:100,
-                    rowList:[100,200,300,400,500,600,700,800,900,1000],
+                    rowList:[100,500,1000,1500,2000,2500,3000],
                     pager: herve_grid.jqgrid.contractorRating.page,
                     sortname: 'score',
                     viewrecords: true,
