@@ -36,7 +36,15 @@ class ContractorMapping extends General{
                     ".Config::$tables['section_table']." f ON f.section_id=b.section_id
                     LEFT JOIN
                     ".Config::$tables['contractor_table']." g ON g.contractor_id=a.contractor_id
-                    WHERE a.delete_flag=0 ".$wh."
+                    WHERE 
+                    a.delete_flag=FALSE 
+                    AND b.delete_flag=FALSE 
+                    AND c.delete_flag=FALSE 
+                    AND d.delete_flag=FALSE 
+                    AND e.delete_flag=FALSE 
+                    AND f.delete_flag=FALSE 
+                    AND g.delete_flag=FALSE 
+                    ".$wh."
                     ORDER BY ".$sidx." ". $sord." LIMIT ".$start." , ".$limit;
                 $result1 = $this->mysqli->query($query);
                 if ($result1) {
@@ -59,7 +67,9 @@ class ContractorMapping extends General{
         $query="SELECT categorySection_id
                     FROM 
                     ".Config::$tables['categorySection_table']." a
-                    WHERE a.placeCategory_id=".$placeCategory_id."";
+                    WHERE
+                    a.delete_flag=FALSE 
+                    AND a.placeCategory_id=".$placeCategory_id."";
         $result1 = $this->mysqli->query($query);
         if ($result1) {
             $i=0;
@@ -75,7 +85,9 @@ class ContractorMapping extends General{
         $query="SELECT place_id
                     FROM 
                     ".Config::$tables['place_table']." a
-                    WHERE a.under=".$place_id."";
+                    WHERE 
+                    a.delete_flag=FALSE
+                    AND a.under=".$place_id."";
         $result1 = $this->mysqli->query($query);
         if ($result1) {
             $i=0;
@@ -101,14 +113,14 @@ class ContractorMapping extends General{
             );
         }
         foreach($placeIds as $placeKey=>$placeValue) {
-            $placeCategoryQuery = "SELECT placeCategory_id FROM ".Config::$tables['placeCategory_table']." WHERE place_id=".$placeValue." AND category_id=".$category_id."";
+            $placeCategoryQuery = "SELECT placeCategory_id FROM ".Config::$tables['placeCategory_table']." WHERE place_id=".$placeValue." AND delete_flag=FALSE AND category_id=".$category_id."";
             echo $placeCategoryQuery;
             if ($placeResults = $this->mysqli->query($placeCategoryQuery)){
                 while ($placeResultRow = $placeResults->fetch_object()){
                     if ($section_id == 'All') {
                         $categorySectionIds = $this->getCategorySections($placeResultRow->placeCategory_id);
                     } else {
-                        $categorySectionQuery = "SELECT categorySection_id FROM ".Config::$tables['categorySection_table']." WHERE placeCategory_id=".$placeResultRow->placeCategory_id." AND section_id=".$section_id."";
+                        $categorySectionQuery = "SELECT categorySection_id FROM ".Config::$tables['categorySection_table']." WHERE placeCategory_id=".$placeResultRow->placeCategory_id." AND delete_flag=FALSE AND section_id=".$section_id."";
                         if ($categorySectionResults = $this->mysqli->query($categorySectionQuery)) {
                             while ($categorySectionRow = $categorySectionResults->fetch_object()){
                                 $categorySectionIds[$categorySectionRow->categorySection_id] = $categorySectionRow->categorySection_id;

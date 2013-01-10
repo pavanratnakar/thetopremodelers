@@ -9,7 +9,9 @@ class Place {
         $query="SELECT *
                     FROM 
                     ".Config::$tables['place_table']." a
-                    WHERE place_name='".$placeName."'";
+                    WHERE 
+                    place_name='".$placeName."'
+                    AND a.delete_flag=FALSE";
 
         if ($result = $this->mysqli->query($query)) {
             $i=0;
@@ -30,7 +32,11 @@ class Place {
         }
         $query="SELECT *
                     FROM 
-                    ".Config::$tables['place_table']." a WHERE under!=0 ORDER BY place_id ASC ".$limit."";
+                    ".Config::$tables['place_table']." a 
+                    WHERE 
+                    a.delete_flag=FALSE
+                    AND under!=0 
+                    ORDER BY place_id ASC ".$limit."";
         if ($result = $this->mysqli->query($query)) {
             $i=0;
             while ($row = $result->fetch_object()) {

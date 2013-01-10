@@ -12,22 +12,24 @@ class Section extends General
         if ($result = $this->mysqli->query($query)){
             while ($row = $result->fetch_object()){
                 $count = $row->count;
-                if( $count >0 ){
+                if ($count > 0) {
                     $total_pages = ceil($count/$limit);
-                }else{
+                } else {
                     $total_pages = 0;
                 }
-                if ($page > $total_pages){
+                if ($page > $total_pages) {
                     $page=$total_pages;
                 }
                 $start = $limit*$page - $limit; // do not put $limit*($page - 1)
-                if ($start<0){
+                if ($start<0) {
                     $start = 0;
                 }
                 $query="SELECT a.section_id,a.section_name,a.section_title
                     FROM 
                     ".$this->table." a 
-                    WHERE a.delete_flag=0 ".$wh."
+                    WHERE 
+                    a.delete_flag=FALSE 
+                    ".$wh."
                     ORDER BY ".$sidx." ". $sord." LIMIT ".$start." , ".$limit;
 
                 $result1 = $this->mysqli->query($query);
@@ -46,28 +48,24 @@ class Section extends General
             }
         }
     }
-    public function addDetails($section_name,$section_title)
-    {
+    public function addDetails($section_name,$section_title){
         $section_name=$this->mysqli->real_escape_string($section_name);
         $section_title=$this->mysqli->real_escape_string($section_title);
         $result = $this->mysqli->query("INSERT INTO ".$this->table."(section_name,section_title) VALUES('$section_name','$section_title')");
-        if ($result) 
-        {
-            if($this->mysqli->affected_rows>0)
-            {
+        if ($result) {
+            if ($this->mysqli->affected_rows>0) {
                 return TRUE;
             }
         }
         return FALSE;
     }
-    public function editDetails($section_name,$section_title,$section_id)
-    {
+    public function editDetails($section_name,$section_title,$section_id){
         $section_name=$this->mysqli->real_escape_string($section_name);
         $section_title=$this->mysqli->real_escape_string($section_title);
         $id=$this->mysqli->real_escape_string($id);
         $result = $this->mysqli->query("UPDATE ".$this->table." SET section_name='$section_name',section_title='$section_title' WHERE ".$this->id."='".$section_id."'");
         if ($result){
-            if($this->mysqli->affected_rows>0){
+            if ($this->mysqli->affected_rows>0) {
                 return TRUE;
             }
         }

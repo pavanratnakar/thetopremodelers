@@ -17,7 +17,12 @@ class Category{
                     ".Config::$tables['placeCategory_table']." b ON a.category_id=b.category_id
                     LEFT JOIN 
                     ".Config::$tables['place_table']." c ON c.place_id=b.place_id
-                    WHERE a.delete_flag=0 AND a.active=1 AND c.place_name='".$place_name."'";
+                    WHERE 
+                    a.delete_flag=FALSE
+                    AND b.delete_flag=FALSE
+                    AND c.delete_flag=FALSE
+                    AND a.active=1 
+                    AND c.place_name='".$place_name."'";
         if ($result = $this->mysqli->query($query)) {
             $i=0;
             while ($row = $result->fetch_object()) {
@@ -37,7 +42,9 @@ class Category{
         $query="SELECT a.category_id, a.category_name, a.category_value, a.active
                     FROM 
                     ".Config::$tables['category_table']." a
-                    WHERE a.delete_flag=0 ".$position_query."
+                    WHERE 
+                    a.delete_flag=FALSE 
+                    ".$position_query."
                     ORDER BY a.category_order ASC";
 
         if ($result = $this->mysqli->query($query)) {
@@ -68,7 +75,9 @@ class Category{
         $query="SELECT category_value
                     FROM 
                     ".Config::$tables['category_table']." a
-                    WHERE category_name='".$categoryName."'";
+                    WHERE 
+                    category_name='".$categoryName."'
+                    AND a.delete_flag=FALSE";
 
         if ($result = $this->mysqli->query($query)) {
             $i=0;
@@ -84,7 +93,9 @@ class Category{
         $query="SELECT category_title, category_value
                     FROM 
                     ".Config::$tables['category_table']." a
-                    WHERE category_name='".$categoryName."'";
+                    WHERE 
+                    category_name='".$categoryName."'
+                    AND a.delete_flag=FALSE";
         if ($result = $this->mysqli->query($query)) {
             $i=0;
             while ($row = $result->fetch_object()) {

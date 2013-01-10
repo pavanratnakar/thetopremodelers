@@ -25,7 +25,9 @@ class Contractor extends General{
                 $query="SELECT a.contractor_id,a.contractor_title,a.contractor_description,a.contractor_phone,a.contractor_address,a.contractor_name
                     FROM 
                     ".$this->table." a 
-                    WHERE a.delete_flag=FALSE ".$wh."
+                    WHERE 
+                    a.delete_flag=FALSE 
+                    ".$wh."
                     ORDER BY ".$sidx." ". $sord." LIMIT ".$start." , ".$limit;
                 $result1 = $this->mysqli->query($query);
                 if ($result1) {

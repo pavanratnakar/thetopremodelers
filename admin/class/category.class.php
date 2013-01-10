@@ -25,7 +25,9 @@ class Category extends General{
                 $query="SELECT a.category_id,a.category_title,a.category_name,a.category_value,a.category_order,a.position,a.active
                     FROM 
                     ".$this->table." a 
-                    WHERE a.delete_flag=FALSE ".$wh."
+                    WHERE 
+                    a.delete_flag=FALSE 
+                    ".$wh."
                     ORDER BY ".$sidx." ". $sord." LIMIT ".$start." , ".$limit;
                 $result1 = $this->mysqli->query($query);
                 if ($result1) {
@@ -79,7 +81,9 @@ class Category extends General{
         $query="SELECT category_id,category_value
                     FROM 
                     ".$this->table." a 
-                    WHERE delete_flag=FALSE AND category_value IS NOT NULL";
+                    WHERE 
+                    delete_flag=FALSE 
+                    AND category_value IS NOT NULL";
         if ($result = $this->mysqli->query($query)){
             while ($row = $result->fetch_object()){
                 if ($type=='json') {

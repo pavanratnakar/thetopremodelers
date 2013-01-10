@@ -37,7 +37,6 @@ class General {
     }
     public function deleteDetails($id) {
         $id=$this->mysqli->real_escape_string($id);
-        echo "UPDATE ".$this->table." SET delete_flag=TRUE WHERE ".$this->id."='".$id."'";
         if ($result = $this->mysqli->query("UPDATE ".$this->table." SET delete_flag=TRUE WHERE ".$this->id."='".$id."'")) {
             if($this->mysqli->affected_rows>0) {
                 return TRUE;

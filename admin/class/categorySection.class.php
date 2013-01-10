@@ -32,7 +32,13 @@ class CategorySection extends General{
                     ".Config::$tables['category_table']." d ON b.category_id=d.category_id                    
                     LEFT JOIN
                     ".Config::$tables['place_table']." e ON e.place_id=b.place_id
-                    WHERE a.delete_flag=0 ".$wh."
+                    WHERE 
+                    a.delete_flag=FALSE 
+                    ANd b.delete_flag=FALSE 
+                    AND c.delete_flag=FALSE 
+                    AND d.delete_flag=FALSE 
+                    AND e.delete_flag=FALSE 
+                    ".$wh."
                     ORDER BY ".$sidx." ". $sord." LIMIT ".$start." , ".$limit;
                 $result1 = $this->mysqli->query($query);
                 if ($result1) {
@@ -54,7 +60,8 @@ class CategorySection extends General{
         $query="SELECT a.section_id
                     FROM 
                     ".Config::$tables['section_table']." a
-                    WHERE delete_flag=0";
+                    WHERE 
+                    delete_flag=FALSE";
         $result1 = $this->mysqli->query($query);
         if ($result1) {
             $i=0;
@@ -70,7 +77,9 @@ class CategorySection extends General{
         $query="SELECT place_id
                     FROM 
                     ".Config::$tables['place_table']." a
-                    WHERE a.under=".$place_id."";
+                    WHERE 
+                    a.delete_flag=FALSE 
+                    AND a.under=".$place_id."";
         $result1 = $this->mysqli->query($query);
         if ($result1) {
             $i=0;
@@ -84,7 +93,9 @@ class CategorySection extends General{
     public function getCategories() {
         $query="SELECT category_id
                     FROM 
-                    ".Config::$tables['category_table']."";
+                    ".Config::$tables['category_table']."
+                    WHERE 
+                    a.delete_flag=FALSE";
         $result1 = $this->mysqli->query($query);
         if ($result1) {
             $i=0;
@@ -102,7 +113,10 @@ class CategorySection extends General{
                 $query="SELECT a.placeCategory_id
                             FROM 
                             ".Config::$tables['placeCategory_table']." a
-                            WHERE delete_flag=0 AND place_id=".$placeIdValue." AND category_id=".$categoryIdValue."";
+                            WHERE 
+                            a.delete_flag=FALSE 
+                            AND place_id=".$placeIdValue." 
+                            AND category_id=".$categoryIdValue."";
                 $result = $this->mysqli->query($query);
                 if ($result) {
                     while ($row = $result->fetch_object()) {
@@ -145,7 +159,10 @@ class CategorySection extends General{
         foreach($placeCategoryIds as $placeCategoryIdKey=>$placeCategoryIdValue) {
             foreach($sectionIds as $sectionIdKey=>$sectionKeyValue) {
                 $i = 1;
-                $query = "SELECT COUNT(*) AS count FROM ".$this->table." WHERE section_id=".$sectionKeyValue." AND placeCategory_id=".$placeCategoryIdValue."";
+                $query = "SELECT COUNT(*) AS count FROM ".$this->table." 
+                    WHERE 
+                    section_id=".$sectionKeyValue." 
+                    AND placeCategory_id=".$placeCategoryIdValue."";
                 if ($result = $this->mysqli->query($query)) {
                     while ($row = $result->fetch_object()) {
                         $count = $row->count;
@@ -183,8 +200,10 @@ class CategorySection extends General{
             ".$this->table." a
             LEFT JOIN 
             ".Config::$tables['section_table']." b ON b.section_id=a.section_id
-            WHERE a.placeCategory_id=".$placeCategory_id."
-            ";
+            WHERE 
+            a.delete_flag=FALSE 
+            AND b.delete_flag=FALSE 
+            AND a.placeCategory_id=".$placeCategory_id."";
         if ($result = $this->mysqli->query($query)){
             while ($row = $result->fetch_object()){
                 if ($type=='json') {

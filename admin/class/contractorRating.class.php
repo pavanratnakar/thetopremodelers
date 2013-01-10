@@ -26,7 +26,10 @@ class contractorRating extends General{
                     ".$this->table." a
                     LEFT JOIN
                     ".Config::$tables['contractor_table']." b ON b.contractor_id=a.contractor_id
-                    WHERE a.delete_flag=0 ".$wh."
+                    WHERE 
+                    a.delete_flag=FALSE 
+                    AND b.delete_flag=FALSE
+                    ".$wh."
                     ORDER BY ".$sidx." ". $sord." LIMIT ".$start." , ".$limit;
                     //echo $query;
                 $result1 = $this->mysqli->query($query);

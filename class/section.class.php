@@ -17,7 +17,9 @@ class Section {
         $query="SELECT *
                     FROM 
                     ".Config::$tables['section_table']." a
-                    WHERE section_name='".$sectionName."'";
+                    WHERE 
+                    section_name='".$sectionName."'
+                    AND a.delete_flag=FALSE";
 
         if ($result = $this->mysqli->query($query)) {
             $i=0;
@@ -40,7 +42,14 @@ class Section {
                     ".Config::$tables['category_table']." d ON b.category_id=d.category_id                 
                     LEFT JOIN
                     ".Config::$tables['place_table']." e ON e.place_id=b.place_id
-                    WHERE c.delete_flag=0 AND d.category_name='".$this->categoryName."' AND e.place_name='".$this->placeName."' 
+                    WHERE 
+                    a.delete_flag=FALSE 
+                    AND b.delete_flag=FALSE 
+                    AND c.delete_flag=FALSE 
+                    AND d.delete_flag=FALSE 
+                    AND e.delete_flag=FALSE 
+                    AND d.category_name='".$this->categoryName."' 
+                    AND e.place_name='".$this->placeName."' 
                     ORDER BY a.categorysection_order ASC";
         if ($result = $this->mysqli->query($query)) {
             $i=0;
@@ -70,7 +79,9 @@ class Section {
         $query="SELECT section_title
                     FROM 
                     ".Config::$tables['section_table']." a
-                    WHERE section_name='".$sectionName."'";
+                    WHERE 
+                    section_name='".$sectionName."'
+                    AND a.delete_flag=FALSE";
 
         if ($result = $this->mysqli->query($query)) {
             $i=0;
@@ -94,7 +105,15 @@ class Section {
                     ".Config::$tables['category_table']." d ON b.category_id=d.category_id                 
                     LEFT JOIN
                     ".Config::$tables['place_table']." e ON e.place_id=b.place_id
-                    WHERE c.delete_flag=0 AND d.category_name='".$this->categoryName."' AND c.section_name='".$sectionName."' AND e.place_name='".$this->placeName."'";
+                    WHERE 
+                    a.delete_flag=FALSE 
+                    AND b.delete_flag=FALSE 
+                    AND c.delete_flag=FALSE 
+                    AND d.delete_flag=FALSE 
+                    AND e.delete_flag=FALSE 
+                    AND d.category_name='".$this->categoryName."' 
+                    AND c.section_name='".$sectionName."' 
+                    AND e.place_name='".$this->placeName."'";
         if ($result = $this->mysqli->query($query)) {
             $i=0;
             while ($row = $result->fetch_object()) {

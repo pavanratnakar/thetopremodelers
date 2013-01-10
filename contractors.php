@@ -26,9 +26,9 @@
     $page = $pageController->getUtils()->checkValues($_GET['page']) ? $pageController->getUtils()->checkValues($_GET['page']) : 1;
     $contractorDetails = $contractor->getContractors($placeName,$categoryName,$sectionName,$sort,$page);
     $allContractorDetails = $contractor->getAllContractors($placeName,$categoryName,$sectionName);
-    if (sizeof($contractorDetails) == 0){
+    if (sizeof($contractorDetails) == 0) {
         //header( 'Location: '.Config::$site_url.'404.php');
-        exit;
+        //exit;
     }
     echo $pageController->printHeader($contractor->getContractorsMeta($contractorDetails));
 ?>

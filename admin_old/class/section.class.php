@@ -27,7 +27,9 @@ class Section extends General
                 $query="SELECT a.section_id,a.section_name,a.section_title,a.section_value
                     FROM 
                     ".$this->table." a 
-                    WHERE a.delete_flag=0 ".$wh."
+                    WHERE 
+                    a.delete_flag=FALSE 
+                    ".$wh."
                     ORDER BY ".$sidx." ". $sord." LIMIT ".$start." , ".$limit;
 
                 $result1 = $this->mysqli->query($query);

@@ -41,11 +41,18 @@ class Contractor{
                     LEFT JOIN
                     ".Config::$tables['category_table']." h ON h.category_id=e.category_id
                     WHERE
-                    a.delete_flag=0
-                    AND f.section_name='".$sectionName."'
-                    AND g.place_name='".$placeName."'
-                    AND h.category_name='".$categoryName."'
-                    GROUP BY a.contractor_title
+                    a.delete_flag=FALSE 
+                    AND b.delete_flag=FALSE 
+                    AND c.delete_flag=FALSE 
+                    AND d.delete_flag=FALSE 
+                    AND e.delete_flag=FALSE 
+                    AND f.delete_flag=FALSE 
+                    AND g.delete_flag=FALSE 
+                    AND h.delete_flag=FALSE 
+                    AND f.section_name='".$sectionName."' 
+                    AND g.place_name='".$placeName."' 
+                    AND h.category_name='".$categoryName."' 
+                    GROUP BY a.contractor_id
                     ".$orderBy."";
                     //LIMIT ".$start.", ".Config::$paginationLimit."";
          if ($result = $this->mysqli->query($query)) {
@@ -87,7 +94,18 @@ class Contractor{
                     ".Config::$tables['contractor_table']." g ON g.contractor_id=a.contractor_id
                     LEFT JOIN
                     ".Config::$tables['contractorRating_table']." h ON h.contractor_id=g.contractor_id
-                    WHERE f.section_name='".$sectionName."' AND d.category_name='".$categoryName."' AND e.place_name='".$placeName."' AND g.delete_flag=0
+                    WHERE
+                    a.delete_flag=FALSE
+                    AND b.delete_flag=FALSE
+                    AND c.delete_flag=FALSE
+                    AND d.delete_flag=FALSE
+                    AND e.delete_flag=FALSE
+                    AND f.delete_flag=FALSE
+                    AND g.delete_flag=FALSE
+                    AND h.delete_flag=FALSE
+                    AND f.section_name='".$sectionName."' 
+                    AND d.category_name='".$categoryName."' 
+                    AND e.place_name='".$placeName."'
                     GROUP BY g.contractor_id";
          if ($result = $this->mysqli->query($query)) {
             $i=0;
@@ -105,7 +123,9 @@ class Contractor{
                     ".Config::$tables['contractor_table']." a
                     LEFT JOIN
                     ".Config::$tables['contractorRating_table']." b ON a.contractor_id=b.contractor_id
-                    WHERE a.contractor_name='".$contractorName."'AND a.delete_flag=0
+                    WHERE a.contractor_name='".$contractorName."'AND 
+                    a.delete_flag=FALSE
+                    AND b.delete_flag=FALSE
                     GROUP BY a.contractor_name";
         if ($result = $this->mysqli->query($query)) {
             $i=0;
@@ -141,7 +161,12 @@ class Contractor{
                     LEFT JOIN
                     ".Config::$tables['category_table']." f ON f.category_id=d.category_id
                     WHERE
-                    a.delete_flag=0
+                    a.delete_flag=FALSE
+                    AND b.delete_flag=FALSE
+                    AND c.delete_flag=FALSE
+                    AND d.delete_flag=FALSE
+                    AND e.delete_flag=FALSE
+                    AND f.delete_flag=FALSE
                     AND a.contractor_id='".$contractor_id."'
                     GROUP BY e.section_title";
             if ($result = $this->mysqli->query($query)) {
@@ -172,7 +197,12 @@ class Contractor{
                     LEFT JOIN
                     ".Config::$tables['place_table']." f ON f.place_id=d.place_id
                     WHERE
-                    a.delete_flag=0
+                    a.delete_flag=FALSE
+                    AND b.delete_flag=FALSE
+                    AND c.delete_flag=FALSE
+                    AND d.delete_flag=FALSE
+                    AND e.delete_flag=FALSE
+                    AND f.delete_flag=FALSE
                     AND a.contractor_id='".$contractor_id."'
                     GROUP BY f.place_id";
             if ($result = $this->mysqli->query($query)) {
@@ -196,8 +226,9 @@ class Contractor{
                     LEFT JOIN
                     ".Config::$tables['place_table']." c ON c.place_id=b.place_id
                     WHERE
-                    a.delete_flag=0
-                    AND b.delete_flag=0
+                    a.delete_flag=FALSE
+                    AND b.delete_flag=FALSE
+                    AND c.delete_flag=FALSE
                     AND a.contractor_id='".$contractor_id."'";
             if ($result = $this->mysqli->query($query)) {
                 $i=0;
@@ -221,7 +252,7 @@ class Contractor{
                     FROM 
                     ".Config::$tables['contractorRating_table']." a
                     WHERE
-                    a.delete_flag=0
+                    a.delete_flag=FALSE
                     AND a.contractor_id='".$contractor_id."'
                     GROUP BY a.score";
             if ($result = $this->mysqli->query($query)) {

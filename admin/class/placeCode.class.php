@@ -27,7 +27,10 @@ class PlaceCode extends General{
                     ".$this->table." a
                     LEFT JOIN 
                     ".Config::$tables['place_table']." b ON b.place_id=a.place_id
-                    WHERE a.delete_flag=0 ".$wh."
+                    WHERE 
+                    a.delete_flag=FALSE 
+                    AND b.delete_flag=FALSE
+                    ".$wh."
                     ORDER BY ".$sidx." ". $sord." LIMIT ".$start." , ".$limit;
                 $result1 = $this->mysqli->query($query);
                 if ($result1) {

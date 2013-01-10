@@ -25,7 +25,9 @@ class Place extends General{
                 $query="SELECT a.place_id,a.place_title,a.place_name,a.under
                     FROM 
                     ".$this->table." a 
-                    WHERE a.delete_flag=FALSE ".$wh."
+                    WHERE 
+                    a.delete_flag=FALSE 
+                    ".$wh."
                     ORDER BY ".$sidx." ". $sord." LIMIT ".$start." , ".$limit;
                 $result1 = $this->mysqli->query($query);
                 if ($result1) {

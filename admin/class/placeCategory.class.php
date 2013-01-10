@@ -28,7 +28,11 @@ class PlaceCategory extends General{
                     ".Config::$tables['place_table']." b ON b.place_id=a.place_id
                     LEFT JOIN
                     ".Config::$tables['category_table']." c ON a.category_id=c.category_id
-                    WHERE a.delete_flag=0 ".$wh."
+                    WHERE 
+                    a.delete_flag=FALSE 
+                    AND b.delete_flag=FALSE
+                    AND c.delete_flag=FALSE
+                    ".$wh."
                     ORDER BY ".$sidx." ". $sord." LIMIT ".$start." , ".$limit;
                 $result1 = $this->mysqli->query($query);
                 if ($result1) {
@@ -65,7 +69,9 @@ class PlaceCategory extends General{
         $query="SELECT place_id
                     FROM 
                     ".Config::$tables['place_table']." a
-                    WHERE a.under=".$place_id."";
+                    WHERE 
+                    a.delete_flag=FALSE
+                    AND a.under=".$place_id."";
         $result1 = $this->mysqli->query($query);
         if ($result1) {
             $i=0;
@@ -114,30 +120,6 @@ class PlaceCategory extends General{
             }
         }
         return FALSE;
-
-        //     foreach($this->getPlaceChildren($place_id) as $key=>$value) {
-        //         if ($result2 = $this->mysqli->query("SELECT COUNT(*) AS count FROM ".$this->table." WHERE place_id=".$value." AND category_id=".$category_id."")){
-        //             while ($row2 = $result2->fetch_object()){
-        //                 $count = $row2->count;
-        //                 if ($count == 0) {
-        //                     $query1 = "INSERT INTO ".$this->table."(place_id,category_id,active) VALUES('".$value."','$category_id','$active')";
-        //                     $result1 = $this->mysqli->query($query1);
-        //                 }
-        //             }
-        //         }
-        //     }
-        //     return TRUE; 
-        // } else {
-        //     $query = "INSERT INTO ".$this->table."(place_id,category_id,active) VALUES('$place_id','$category_id','$active')";
-        //     $result = $this->mysqli->query($query);
-        //     if ($result) {
-        //         if($this->mysqli->affected_rows>0)
-        //         {
-        //             return TRUE;
-        //         }
-        //     }
-        //     return FALSE;
-        // }
     }
     public function editDetails($place_id,$category_id,$active,$id){
         $place_id=$this->mysqli->real_escape_string($place_id);
@@ -155,13 +137,15 @@ class PlaceCategory extends General{
     public function getSelect($place_id,$type='json') {
         $i=1;
         $place_id=$this->mysqli->real_escape_string($place_id);
-        $query="SELECT a.placeCategory_id,c.category_name as category_name,a.active
+        $query="SELECT a.placeCategory_id,b.category_name as category_name,a.active
             FROM 
             ".$this->table." a
             LEFT JOIN 
-            ".Config::$tables['category_table']." c ON a.category_id=c.category_id
-            WHERE a.place_id=".$place_id."
-            ";
+            ".Config::$tables['category_table']." b ON a.category_id=b.category_id
+            WHERE 
+            a.delete_flag=FALSE
+            AND b.delete_flag=FALSE
+            AND a.place_id=".$place_id."";
         if ($result = $this->mysqli->query($query)){
             while ($row = $result->fetch_object()){
                 if ($type=='json') {
