@@ -25,7 +25,7 @@ class Config{
     static $db_password='';
 
     static $db_database='newtopremodelers';
-    static $paginationLimit=10;
+    static $paginationLimit=30;
     /* DB CONFIG */
     
     /* TABLES */

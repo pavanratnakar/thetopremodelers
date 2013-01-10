@@ -41,17 +41,16 @@ class Contractor{
                     LEFT JOIN
                     ".Config::$tables['category_table']." h ON h.category_id=e.category_id
                     WHERE
-                    a.delete_flag=FALSE 
-                    AND b.delete_flag=FALSE 
+                    a.delete_flag=FALSE
                     AND c.delete_flag=FALSE 
                     AND d.delete_flag=FALSE 
                     AND e.delete_flag=FALSE 
                     AND f.delete_flag=FALSE 
                     AND g.delete_flag=FALSE 
                     AND h.delete_flag=FALSE 
-                    AND f.section_name='".$sectionName."' 
+                    AND f.section_name='".$sectionName."'
                     AND g.place_name='".$placeName."' 
-                    AND h.category_name='".$categoryName."' 
+                    AND h.category_name='".$categoryName."'  
                     GROUP BY a.contractor_id
                     ".$orderBy."";
                     //LIMIT ".$start.", ".Config::$paginationLimit."";
@@ -79,34 +78,33 @@ class Contractor{
         $sectionName=$this->mysqli->real_escape_string($sectionName);
         $query="SELECT COUNT(*) as total_count
                     FROM 
-                    ".Config::$tables['contractorMapping_table']." a
+                    ".Config::$tables['contractor_table']." a
                     LEFT JOIN
-                    ".Config::$tables['categorySection_table']." b ON a.categorySection_id=b.categorySection_id
+                    ".Config::$tables['contractorRating_table']." b ON a.contractor_id=b.contractor_id
                     LEFT JOIN
-                    ".Config::$tables['placeCategory_table']." c ON b.placeCategory_id=c.placeCategory_id
+                    ".Config::$tables['contractorMapping_table']." c ON c.contractor_id=a.contractor_id
                     LEFT JOIN
-                    ".Config::$tables['category_table']." d ON c.category_id=d.category_id
+                    ".Config::$tables['categorySection_table']." d ON d.categorySection_id=c.categorySection_id
                     LEFT JOIN
-                    ".Config::$tables['place_table']." e ON e.place_id=c.place_id
+                    ".Config::$tables['placeCategory_table']." e ON e.placeCategory_id=d.placeCategory_id
                     LEFT JOIN
-                    ".Config::$tables['section_table']." f ON f.section_id=b.section_id
+                    ".Config::$tables['section_table']." f ON f.section_id=d.section_id
                     LEFT JOIN
-                    ".Config::$tables['contractor_table']." g ON g.contractor_id=a.contractor_id
+                    ".Config::$tables['place_table']." g ON g.place_id=e.place_id
                     LEFT JOIN
-                    ".Config::$tables['contractorRating_table']." h ON h.contractor_id=g.contractor_id
+                    ".Config::$tables['category_table']." h ON h.category_id=e.category_id
                     WHERE
                     a.delete_flag=FALSE
-                    AND b.delete_flag=FALSE
-                    AND c.delete_flag=FALSE
-                    AND d.delete_flag=FALSE
-                    AND e.delete_flag=FALSE
-                    AND f.delete_flag=FALSE
-                    AND g.delete_flag=FALSE
-                    AND h.delete_flag=FALSE
-                    AND f.section_name='".$sectionName."' 
-                    AND d.category_name='".$categoryName."' 
-                    AND e.place_name='".$placeName."'
-                    GROUP BY g.contractor_id";
+                    AND c.delete_flag=FALSE 
+                    AND d.delete_flag=FALSE 
+                    AND e.delete_flag=FALSE 
+                    AND f.delete_flag=FALSE 
+                    AND g.delete_flag=FALSE 
+                    AND h.delete_flag=FALSE 
+                    AND f.section_name='".$sectionName."'
+                    AND g.place_name='".$placeName."' 
+                    AND h.category_name='".$categoryName."' 
+                    GROUP BY a.contractor_id";
          if ($result = $this->mysqli->query($query)) {
             $i=0;
             while ($row = $result->fetch_object()) {

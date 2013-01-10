@@ -38,7 +38,7 @@ var herve_contractors = {
                 }
             }});
 		});
-        $('.category_select').live('change', function(event){  	
+        $('.category_select').live('change', function(event){
             $.ajax({url: "/controller/ajaxController.php?ref=sectionSelect&place_name="+$('.place_select').val()+"&category_name="+$('.category_select').val(), dataType: "json", cache: true, async: false, success: function(data1, result1) {
                 if (!result) {
                     alert('Failure to retrieve the Categories.');
@@ -53,7 +53,7 @@ var herve_contractors = {
                 }
             }});
         });
-        $('.find-contractors').live('submit', function(event){   
+        $('.find-contractors').live('submit', function(event){
             var place_name = $('.place_select').val(),
                 category_name = $('.category_select').val(),
                 section_name = $('.section_select').val();
@@ -74,9 +74,14 @@ var herve_contractors = {
         });
     },
     findSelection : function(e){
-        pageNumber = e.pageNumber || $('.paginate').find('.current').data('page') || 1;
-        sortType = e.sortType || $('.contractorsSort select').val();
-        window.open(herve.getNth(window.location.href,'/','7')+'/'+sortType+'/'+pageNumber,'_self');
+        var place_name = $('.place_select').val(),
+            category_name = $('.category_select').val(),
+            section_name = $('.section_select').val(),
+            pageNumber = e.pageNumber || $('.paginate').find('.current').data('page') || 1;
+            sortType = e.sortType || $('.contractorsSort select').val();
+            url = 'http://www.thetopremodelers.com/'+place_name+'/'+category_name+'/'+section_name+'/contractors/';
+
+        window.open(herve.getNth(url,'/','7')+'/'+sortType+'/'+pageNumber,'_self');
     },
     viewMore : function(){
         var showChar = 296;
@@ -105,7 +110,7 @@ var herve_contractors = {
             return false;
         });
     }
-}
+};
 $(document).ready(function(){
     herve_contractors.init();
 });
