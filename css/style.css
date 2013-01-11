@@ -429,7 +429,7 @@ body.category .main li{padding:0 0 12px 5px;list-style: disc inside none;}
 .contractors .sub li h4{padding:0 0 6px 0;}
 .contractors .entry-body .ratings-reviews {width:auto;}
 .contractors .paginate{font-size:0.8em;}
-.select-options{width:87%;}
+.contractors .select-options{width:85%;padding:10px 0 0 0;}
 .contractors .select-options select{width:32%}
 .contractors .not-found{color: #333333;font-size: 0.916em;}
 .contractors a.morelink {margin:5px 0 0 0;font-weight:normal;float:left;display:inline;}

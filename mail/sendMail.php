@@ -53,8 +53,6 @@ $message .= '
         <br/><hr/><b>Customer Details For Security</b><hr/>
         <b>IP Address Used</b> :  '.$utils->ip_address_to_number($_SERVER['REMOTE_ADDR']).'<br /><br/>
         ';
-echo $message;
-exit;
 $status=$mail->sendMailFunction(
     'Customer Interest Mail : Estimates Required',
     $message

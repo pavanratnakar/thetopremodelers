@@ -69,7 +69,7 @@
                                             </select>
                                         </div>
                                         <div class="right">
-                                            <button class="submit" type="submit">Select</button>
+                                            <button class="button green rounded small submit " type="submit">Select</button>
                                         </div>
                                     </form>
                                 </li>

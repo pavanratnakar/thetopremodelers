@@ -87,8 +87,8 @@ RewriteRule ^.* - [F,L]
 
 #www redirect
 RewriteEngine On
-RewriteCond %{HTTP_HOST} !^www\.thetopremodelers\.com$ [NC]
-RewriteRule ^(.*)$ http://www.thetopremodelers.com/$1 [L,R=301]
+#RewriteCond %{HTTP_HOST} !^www\.thetopremodelers\.com$ [NC]
+#RewriteRule ^(.*)$ http://www.thetopremodelers.com/$1 [L,R=301]
 RewriteRule ^dallas/category/roofing_contractors$ http://www.thetopremodelers.com/dallas_texas/category/roofing_contractors [R=301,L]
 RewriteRule ^place/(.*)$ place.php?name=$1
 RewriteRule ^category/roofing_contractors$ dallas/category/roofing_contractors [R=301,L]
