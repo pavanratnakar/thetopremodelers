@@ -240,7 +240,7 @@ class PageController{
                                         }
                                         if ($contractorDetails['review_count']) {
                                             $return.= '<p>'.$contractorDetails['review_count'].' Reviews</p>';
-                                            $return.= '<p><a href="#ratings-reviews" title="See all reviews">See all reviews</a></p>';
+                                            $return.= '<p><a href="'.Config::$site_url.'contractor/'. $contractorDetails['contractor_name'].'#ratings-reviews" title="See all reviews">See all reviews</a></p>';
                                         }
                                         if (!$contractorDetails['average_score'] && !$contractorDetails['review_count']) {
                                             $return.= '<p><i>Yet to be rated</i></p>';
