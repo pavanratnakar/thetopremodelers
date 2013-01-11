@@ -1,6 +1,6 @@
 <?php
     include_once($_SERVER['DOCUMENT_ROOT'].'/config.class.php');
-    if(!$_GET['category'] || !$_GET['section']){
+    if(!$_GET['category'] || !$_GET['section'] || !$_GET['place']){
         header( 'Location: '.Config::$site_url.'index.php');
         exit;
     }
@@ -15,6 +15,18 @@
     $sectionName = $pageController->getUtils()->checkValues($_GET['section']);
     $section = $pageController->getSection($categoryName,$placeName);
     $sectionDetails = $section->getSectionDetails($sectionName);
+    if ($_GET['contractor']) {
+        $contractorName = $pageController->getUtils()->checkValues($_GET['contractor']);
+        $contractor = $pageController->getContractor();
+        $contractorDetails = $contractor->getContractor($contractorName);
+    }
+    if ($contractorDetails) {
+        $back = Config::$site_url.$placeName.'/'.$categoryName.'/'.$sectionName.'/contractors/';
+        $submit = Config::$site_url.$placeName.'/'.$categoryName.'/'.$sectionName.'/'.$contractorName.'/placeRequest';
+    } else {
+        $back = Config::$site_url.$placeName.'/category/'.$categoryName;
+        $submit = Config::$site_url.$placeName.'/'.$categoryName.'/'.$sectionName.'/placeRequest';
+    }
     $formatQuestions = $pageController->formatQuestions($placeName,$categoryName,$sectionName);
     if (!$formatQuestions) {
         header( 'Location: '.Config::$site_url.'404.php');
@@ -27,14 +39,23 @@
                 <div class="header">
                     <?php echo $pageController->printUserStepsText(2); ?>
                     <div class="back-button clearfix">
-                        <a class="button orange small rounded" title="Back" href="<?php echo Config::$site_url.$placeName ?>/category/<?php echo $categoryName ?>">
+                        <a class="button orange small rounded" title="Back" href="<?php echo $back ?>">
                             Back
                         </a>
                     </div>
                 </div>
                 <div class="content">
-                    <h2>Submit and Get Matched to Prescreened <?php echo $sectionDetails['section_title']?> under <?php echo $categoryDetails[0]['category_title'];?> for <?php echo $placeDetails['place_title']; ?></h2>
-                    <form id="questionForm" action="<?php echo Config::$site_url ?><?php echo $placeName ?>/<?php echo $categoryName ?>/<?php echo $sectionName ?>/placeRequest" method="post">
+                    <?php
+                        if ($contractorDetails) { ?>
+                        <div class="contractor clearfix">
+                        <?php echo $pageController->getContractorDetails($contractorDetails); ?>   
+                        </div>
+                        <h2>Request a Quote: <?php echo $sectionDetails['section_title']?> for <?php echo $placeDetails['place_title']; ?></h2>
+
+                    <?php } else { ?>
+                    <h2>Submit and Get Matched to Prescreened <?php echo $sectionDetails['section_title']?> for <?php echo $placeDetails['place_title']; ?></h2>
+                    <?php } ?>
+                    <form id="questionForm" action="<?php echo $submit ?>" method="post">
                         <fieldset>
                             <ol>
                                 <?php echo $formatQuestions; ?>

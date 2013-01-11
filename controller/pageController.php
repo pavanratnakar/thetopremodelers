@@ -223,5 +223,53 @@ class PageController{
     public function facebookComment($data){
         return $this->page->facebookComment($data);
     }
+    public function getContractorDetails($contractorDetails,$quote=null){
+        $return = '
+                            <h2>'.$contractorDetails['contractor_title'].'</h2>
+                            <div class="entry-body">
+                                <div class="clearfix">
+                                    <div class="left first-container">
+                                        <div class="entry-image">
+                                            <img alt="'.$contractorDetails['contractor_title'].'" src="/images/contractors/'.$contractorDetails['contractor_name'].'.jpg">
+                                        </div>
+                                    </div>
+                                    <div class="left ratings-reviews">';
+                                        if ($contractorDetails['average_score']) {
+                                            $return.= '<p><i class="rating-static rating-'.($contractorDetails['average_score']*10).'"></i></p>';
+                                            $return.= '<p><span class="rating-score">'.$contractorDetails['average_score'].'</span></p>';
+                                        }
+                                        if ($contractorDetails['review_count']) {
+                                            $return.= '<p>'.$contractorDetails['review_count'].' Reviews</p>';
+                                            $return.= '<p><a href="#ratings-reviews" title="See all reviews">See all reviews</a></p>';
+                                        }
+                                        if (!$contractorDetails['average_score'] && !$contractorDetails['review_count']) {
+                                            $return.= '<p><i>Yet to be rated</i></p>';
+                                        }
+                        $return.=  '</div>
+                                    <div class="left contact-details">';
+                                        if ($contractorDetails['contractor_phone']) {
+                                            $return.= '<span class="telephone">'.$contractorDetails['contractor_phone'].'</span>';
+                                        }
+                                        if ($contractorDetails['contractor_address']) {
+                                            $return.= '<div class="address">'.$contractorDetails['contractor_address'].'</div>';
+                                        }
+                        $return.=  '</div>';
+                        if ($quote)
+                        $return.=  '<div class="right options">
+                                        <a href="javascript:void(0);" class="small orange button">Get a Quote</a>
+                                    </div>';
+                         $return.= '</div>
+                                <div class="social-sharing">
+                                    <span class="st_fbrec" displayText="Facebook Recommend"</span>
+                                    <span class="st_plusone" displayText="Google +1"></span>
+                                    <span class="st_pinterestfollow" displayText="Pinterest Follow"></span>
+                                    <span class="st_twitterfollow" displayText="Twitter Follow"></span>
+                                    <span class="st_sharethis" displayText="ShareThis"></span>
+                                    <span class="st_email" displayText="Email"></span>
+                                </div>
+                            </div>
+        ';
+        return $return;
+    }
 }
 ?>

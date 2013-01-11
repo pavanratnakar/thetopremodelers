@@ -27,8 +27,8 @@
     $contractorDetails = $contractor->getContractors($placeName,$categoryName,$sectionName,$sort,$page);
     $allContractorDetails = $contractor->getAllContractors($placeName,$categoryName,$sectionName);
     if (sizeof($contractorDetails) == 0) {
-        //header( 'Location: '.Config::$site_url.'404.php');
-        //exit;
+        header( 'Location: '.Config::$site_url.'404.php');
+        exit;
     }
     echo $pageController->printHeader($contractor->getContractorsMeta($contractorDetails));
 ?>
@@ -102,7 +102,7 @@
                                                         </a>
                                                     </div>
                                                     <div class="get-quote left">
-                                                        <a href="<?php echo Config::$site_url.$placeName.'/'.$categoryName.'/need/'.$sectionName ?>" class="small orange button" href="#">Get a Quote</a>
+                                                        <a href="<?php echo Config::$site_url.$placeName.'/'.$categoryName.'/'.$sectionName.'/'.$value['contractor_name'].'/need' ?>" class="small orange button" href="#">Get a Quote</a>
                                                     </div>
                                                 </div>
                                                 <div class="left contact-details">

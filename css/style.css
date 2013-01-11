@@ -416,6 +416,7 @@ body.category .main ul{margin:10px 0 0 0;font-size:0.9em;display:inline-block;}
 body.category .main li{padding:0 0 12px 5px;list-style: disc inside none;}
 /* end of Category */
 /* start of Need */
+.need .contractor {border-bottom:1px solid #E0D5C8;border-top:1px solid #E0D5C8;padding:10px 0;margin-bottom:20px;}
 .need #questionForm .rowElem{margin:0 0 30px;font-weight:bold;}
 .need #questionForm .rowElem label{color:#845118;font-size:1em;margin:5px 0;}
 .need #questionForm .rowElem label.error{color:red;font-size:0.7em;margin: 0 0 0 19px;}

@@ -1,8 +1,5 @@
 var herve_contractor = {
     init : function(){
-        this.initsEvents();
-    },
-    initsEvents : function(){
         this.shareThis();
     },
     shareThis : function(){

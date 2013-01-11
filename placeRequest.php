@@ -4,7 +4,7 @@
     $pageController=new PageController(4);
     echo $pageController->printHeader(); 
     $utils = $pageController->getUtils();
-    if(sizeof($_POST)==0 || !$_GET['category'] || !$_GET['place'] || !$_GET['section']){
+    if (sizeof($_POST)==0 || !$_GET['category'] || !$_GET['place'] || !$_GET['section'] || !$_GET['contractor']) {
         $categoryName = null;
     } else {
         foreach ($_POST as $key => $value) {
@@ -16,6 +16,7 @@
         $placeName =  $utils->checkValues($_GET['place']);
         $categoryName =  $utils->checkValues($_GET['category']);
         $sectionName = $utils->checkValues($_GET['section']);
+        $contractorName = $utils->checkValues($_GET['contractor']);
         $questionPair = substr($questionPair,0,-1);
         $answerPair = substr($answerPair,0,-1);
     }
@@ -76,6 +77,7 @@
                                                 <input id="categoryName" type="hidden" value="<?php echo $categoryName ?>"/>
                                                 <input id="sectionName" type="hidden" value="<?php echo $sectionName; ?>"/>
                                                 <input id="placeName" type="hidden" value="<?php echo $placeName; ?>"/>
+                                                <input id="contractorName" type="hidden" value="<?php echo $contractorName; ?>"/>
                                                 <input id="questionPair" type="hidden" value="<?php echo $questionPair ?>"/>
                                                 <input id="answerPair" type="hidden" value="<?php echo $answerPair ?>"/>
                                                 <?php

@@ -93,8 +93,7 @@ var herveContact = {
                 errorPlacement: function(error, element) {
                     error.appendTo($(".formStatus"));
                 },
-                submitHandler: function() 
-                {
+                submitHandler: function() {
                     var email=$('#emailId').val(),
                         name=$('#firstName').val()+' '+$('#lastName').val(),
                         address=$('#address').val(),
@@ -110,6 +109,7 @@ var herveContact = {
                         categoryName = $('#categoryName').val() ? '&categoryName='+$('#categoryName').val() : '',
                         placeName = $('#placeName').val() ? '&placeName='+$('#placeName').val() : '',
                         sectionName = $('#sectionName').val() ? '&sectionName='+$('#sectionName').val() : '',
+                        contractorName = $('#contractorName').val() ? '&contractorName='+$('#contractorName').val() : '',
                         emailTemplate = $.manageAjax.create('emailTemplate'),
                         parentDiv = $("form#"+herveContact.form.id).parent();
 
@@ -120,7 +120,7 @@ var herveContact = {
                             $.ajax(
                             {
                                 url: $.url+"/mail/sendMail.php",
-                                data: "ref=sendMail&email="+email+"&name="+name+"&address="+address+"&city="+city+"&zip="+zip+"&phone="+phone+"&contactTime="+contactTime+"&message="+message+"&subscribe="+subscribe+questionPair+answerPair+categoryName+sectionName+placeName+"&jsoncallback=?",
+                                data: "ref=sendMail&email="+email+"&name="+name+"&address="+address+"&city="+city+"&zip="+zip+"&phone="+phone+"&contactTime="+contactTime+"&message="+message+"&subscribe="+subscribe+questionPair+answerPair+categoryName+sectionName+placeName+contractorName+"&jsoncallback=?",
                                 dataType: "json",
                                 type: "POST",
                                 cache: true,

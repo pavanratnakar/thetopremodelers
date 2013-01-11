@@ -11,8 +11,8 @@
     $contractor = $pageController->getContractor();
     $contractorDetails = $contractor->getContractor($contractorName);
     if (!$contractorDetails){
-        //header( 'Location: '.Config::$site_url.'404.php');
-        //exit;
+        header( 'Location: '.Config::$site_url.'404.php');
+        exit;
     }
     $contractorRatingDetails = $contractor->getRatingForContractor(array('contractor_id'=>$contractorDetails['contractor_id']));
     $jumpListData['profile'] = array('title'=>'Profile');
@@ -26,52 +26,7 @@
                 <div class="content clearfix">
                     <div class="main left">
                         <div id="top" class="sub top clearfix">
-                            <h2><?php echo $contractorDetails['contractor_title']?></h2>
-                            <div class="entry-body">
-                                <div class="clearfix">
-                                    <div class="left first-container">
-                                        <div class="entry-image">
-                                            <img alt="<?php echo $contractorDetails['contractor_title'] ?>" src="/images/contractors/<?php echo $contractorDetails['contractor_name']?>.jpg">
-                                        </div>
-                                    </div>
-                                    <div class="left ratings-reviews">
-                                        <?php
-                                        if ($contractorDetails['average_score']) {
-                                            echo '<p><i class="rating-static rating-'.($contractorDetails['average_score']*10).'"></i></p>';
-                                            echo '<p><span class="rating-score">'.$contractorDetails['average_score'].'</span></p>';
-                                        }
-                                        if ($contractorDetails['review_count']) {
-                                            echo '<p>'.$contractorDetails['review_count'].' Reviews</p>';
-                                            echo '<p><a href="#ratings-reviews" title="See all reviews">See all reviews</a></p>';
-                                        }
-                                        if (!$contractorDetails['average_score'] && !$contractorDetails['review_count']) {
-                                            echo '<p><i>Yet to be rated</i></p>';
-                                        }
-                                        ?>
-                                    </div>
-                                    <div class="left contact-details">
-                                        <?php
-                                        if ($contractorDetails['contractor_phone']) {
-                                            echo '<span class="telephone">'.$contractorDetails['contractor_phone'].'</span>';
-                                        }
-                                        if ($contractorDetails['contractor_address']) {
-                                            echo '<div class="address">'.$contractorDetails['contractor_address'].'</div>';
-                                        }
-                                        ?>
-                                    </div>
-                                    <div class="right options">
-                                        <a href="javascript:void(0);" class="small orange button" href="#">Get a Quote</a>
-                                    </div>
-                                </div>
-                                <div class="social-sharing">
-                                    <span class='st_fbrec' displayText='Facebook Recommend'></span>
-                                    <span class='st_plusone' displayText='Google +1'></span>
-                                    <span class='st_pinterestfollow' displayText='Pinterest Follow'></span>
-                                    <span class='st_twitterfollow' displayText='Twitter Follow'></span>
-                                    <span class='st_sharethis' displayText='ShareThis'></span>
-                                    <span class='st_email' displayText='Email'></span>
-                                </div>
-                            </div>
+                        <?php echo $pageController->getContractorDetails($contractorDetails,true); ?>   
                         </div>
                         <?php echo $pageController->jumpList($jumpListData,'profile'); ?>
                         <div id="profile" class="sub">
