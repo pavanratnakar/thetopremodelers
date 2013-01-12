@@ -14,12 +14,11 @@ class MailClass{
         $mail->Subject  = $subject;
         $mail->AltBody  = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
         $mail->AddAddress('mike@thetopremodelers.com', 'Mike');
-
         $mail->AddBCC('pavanratnakar@gmail.com', 'Pavan Ratnakar');
         $mail->ConfirmReadingTo = 'pavanratnakar@gmail.com';
         $mail->MsgHTML($message);
         $status=$mail->Send();
-        if(!$status) {
+        if (!$status) {
             return FALSE;
         } else {
             return TRUE;
