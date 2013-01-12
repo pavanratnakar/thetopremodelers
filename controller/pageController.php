@@ -37,42 +37,42 @@ class PageController{
     public function printFooterLinks(){
         $return='
         <div id="footer">
-            <div class="footer-wrapper clearfix">
-                <div class="footer-top">
-                    <div class="column city_selector">
-                        <h3>Cities we cover | <a href="'.Config::$site_url.'places" title="More Cities">More Cities &#8250;</a></h3>
-                        '.$this->citySelector().'
-                    </div>
-                    <div class="column about_us">
-                        <h3>About Us</h3>
-                        <div class="footer_about">
-                            <p>We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company</p>                         
-                            <p>&nbsp;</p>
-                            <p>Address: <b>2003 michigan ave, Dallas tx 75216</b></p>
-                            <p>Telephone: <b>1(214)303 9771</b></p>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="footer-wrapper clearfix">
-                    <div class="column copyrights">
-                        <p>Copyright &copy; '.date("Y").'. All Rights Reserved.</p>
-                    </div>
-                    <div class="column links">
-                        <p>';
-                        $i=0;
-                        foreach ($this->page->getPages() as $page) {
-                            if($page->navigation==1){
-                                $return.='<a href="'.Config::$site_url.$page->link.'" title="'.$page->name.'">'.$page->name.'</a>';
-                                $i++;
-                            }
-                        }
-                        $return .= '</p>
-                    </div>
-                </div>
-            </div>            
+        <div class="footer-wrapper clearfix">
+        <div class="footer-top">
+        <div class="column city_selector">
+        <h3>Cities we cover | <a href="'.Config::$site_url.'places" title="More Cities">More Cities &#8250;</a></h3>
+        '.$this->citySelector().'
+        </div>
+        <div class="column about_us">
+        <h3>About Us</h3>
+        <div class="footer_about">
+        <p>We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company</p>                         
+        <p>&nbsp;</p>
+        <p>Address: <b>2003 michigan ave, Dallas tx 75216</b></p>
+        <p>Telephone: <b>1(214)303 9771</b></p>
+        </div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        </div>
+        <div class="footer-bottom">
+        <div class="footer-wrapper clearfix">
+        <div class="column copyrights">
+        <p>Copyright &copy; '.date("Y").'. All Rights Reserved.</p>
+        </div>
+        <div class="column links">
+        <p>';
+        $i=0;
+        foreach ($this->page->getPages() as $page) {
+            if($page->navigation==1){
+                $return.='<a href="'.Config::$site_url.$page->link.'" title="'.$page->name.'">'.$page->name.'</a>';
+                $i++;
+            }
+        }
+        $return .= '</p>
+        </div>
+        </div>
+        </div>            
         </div>';
         return $return;
     }
@@ -201,7 +201,7 @@ class PageController{
             'WV'=>"West Virginia",  
             'WI'=>"Wisconsin",  
             'WY'=>"Wyoming"
-        );
+            );
         foreach($state_list as $key => $value){
             echo '<option value="'.$key.'">'.$value.'</option>';
         }
@@ -225,49 +225,49 @@ class PageController{
     }
     public function getContractorDetails($contractorDetails,$quote=null){
         $return = '
-                            <h2>'.$contractorDetails['contractor_title'].'</h2>
-                            <div class="entry-body">
-                                <div class="clearfix">
-                                    <div class="left first-container">
-                                        <div class="entry-image">
-                                            <img alt="'.$contractorDetails['contractor_title'].'" src="/images/contractors/'.$contractorDetails['contractor_name'].'.jpg">
-                                        </div>
-                                    </div>
-                                    <div class="left ratings-reviews">';
-                                        if ($contractorDetails['average_score']) {
-                                            $return.= '<p><i class="rating-static rating-'.($contractorDetails['average_score']*10).'"></i></p>';
-                                            $return.= '<p><span class="rating-score">'.$contractorDetails['average_score'].'</span></p>';
-                                        }
-                                        if ($contractorDetails['review_count']) {
-                                            $return.= '<p>'.$contractorDetails['review_count'].' Reviews</p>';
-                                            $return.= '<p><a href="'.Config::$site_url.'contractor/'. $contractorDetails['contractor_name'].'#ratings-reviews" title="See all reviews">See all reviews</a></p>';
-                                        }
-                                        if (!$contractorDetails['average_score'] && !$contractorDetails['review_count']) {
-                                            $return.= '<p><i>Yet to be rated</i></p>';
-                                        }
-                        $return.=  '</div>
-                                    <div class="left contact-details">';
-                                        if ($contractorDetails['contractor_phone']) {
-                                            $return.= '<span class="telephone">'.$contractorDetails['contractor_phone'].'</span>';
-                                        }
-                                        if ($contractorDetails['contractor_address']) {
-                                            $return.= '<div class="address">'.$contractorDetails['contractor_address'].'</div>';
-                                        }
-                        $return.=  '</div>';
-                        if ($quote)
-                        $return.=  '<div class="right options">
-                                        <a href="javascript:void(0);" class="small orange button">Get a Quote</a>
-                                    </div>';
-                         $return.= '</div>
-                                <div class="social-sharing">
-                                    <span class="st_fbrec" displayText="Facebook Recommend"</span>
-                                    <span class="st_plusone" displayText="Google +1"></span>
-                                    <span class="st_pinterestfollow" displayText="Pinterest Follow"></span>
-                                    <span class="st_twitterfollow" displayText="Twitter Follow"></span>
-                                    <span class="st_sharethis" displayText="ShareThis"></span>
-                                    <span class="st_email" displayText="Email"></span>
-                                </div>
-                            </div>
+        <h2>'.$contractorDetails['contractor_title'].'</h2>
+        <div class="entry-body">
+        <div class="clearfix">
+        <div class="left first-container">
+        <div class="entry-image">
+        <img alt="'.$contractorDetails['contractor_title'].'" src="/images/contractors/'.$contractorDetails['contractor_name'].'.jpg">
+        </div>
+        </div>
+        <div class="left ratings-reviews">';
+        if ($contractorDetails['average_score']) {
+            $return.= '<p><i class="rating-static rating-'.($contractorDetails['average_score']*10).'"></i></p>';
+            $return.= '<p><span class="rating-score">'.$contractorDetails['average_score'].'</span></p>';
+        }
+        if ($contractorDetails['review_count']) {
+            $return.= '<p>'.$contractorDetails['review_count'].' Reviews</p>';
+            $return.= '<p><a href="'.Config::$site_url.'contractor/'. $contractorDetails['contractor_name'].'#ratings-reviews" title="See all reviews">See all reviews</a></p>';
+        }
+        if (!$contractorDetails['average_score'] && !$contractorDetails['review_count']) {
+            $return.= '<p><i>Yet to be rated</i></p>';
+        }
+        $return.=  '</div>
+        <div class="left contact-details">';
+        if ($contractorDetails['contractor_phone']) {
+            $return.= '<span class="telephone">'.$contractorDetails['contractor_phone'].'</span>';
+        }
+        if ($contractorDetails['contractor_address']) {
+            $return.= '<div class="address">'.$contractorDetails['contractor_address'].'</div>';
+        }
+        $return.=  '</div>';
+        if ($quote)
+            $return.=  '<div class="right options">
+        <a href="javascript:void(0);" data-name="'.$contractorDetails['contractor_name'].'" id="contractorSelect-'.$contractorDetails['contractor_name'].'" class="get-quote small orange button">Get a Quote</a>
+        </div>';
+        $return.= '</div>
+        <div class="social-sharing">
+        <span class="st_fbrec" displayText="Facebook Recommend"</span>
+        <span class="st_plusone" displayText="Google +1"></span>
+        <span class="st_pinterestfollow" displayText="Pinterest Follow"></span>
+        <span class="st_twitterfollow" displayText="Twitter Follow"></span>
+        <span class="st_sharethis" displayText="ShareThis"></span>
+        <span class="st_email" displayText="Email"></span>
+        </div>
+        </div>
         ';
         return $return;
     }

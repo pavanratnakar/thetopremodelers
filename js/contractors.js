@@ -6,18 +6,17 @@ var herve_contractors = {
     initsEvents : function(){
         var t = this;
         $('.place_select').live('change', function(event){
-        	$.ajax({url: "/controller/ajaxController.php?ref=categorySelect&place_name="+$('.place_select').val(), dataType: "json", cache: true, async: false, success: function(data, result) {
-               	if (!result) {
-                	alert('Failure to retrieve the Answers.');
+            $.ajax({url: "/controller/ajaxController.php?ref=categorySelect&place_name="+$('.place_select').val(), dataType: "json", cache: true, async: false, success: function(data, result) {
+                if (!result) {
+                    alert('Failure to retrieve the Answers.');
                 } else {
                     var category_name = null;
-                    console.log(result);
                     $.each(data, function(key, value) {
-                   		category_name = category_name || value['category_name'];
+                        category_name = category_name || value['category_name'];
                     });
                     $.ajax({url: "/controller/ajaxController.php?ref=sectionSelect&place_name="+$('.place_select').val()+"&category_name="+category_name, dataType: "json", cache: true, async: false, success: function(data1, result1) {
-                    	if (!result) {
-                        	alert('Failure to retrieve the Categories.');
+                        if (!result) {
+                            alert('Failure to retrieve the Categories.');
                         } else {
                             $('.section_select').empty();
                             $.each(data1, function(key, value) {
@@ -37,7 +36,7 @@ var herve_contractors = {
                     });
                 }
             }});
-		});
+        });
         $('.category_select').live('change', function(event){
             $.ajax({url: "/controller/ajaxController.php?ref=sectionSelect&place_name="+$('.place_select').val()+"&category_name="+$('.category_select').val(), dataType: "json", cache: true, async: false, success: function(data1, result1) {
                 if (!result) {
@@ -58,7 +57,7 @@ var herve_contractors = {
                 category_name = $('.category_select').val(),
                 section_name = $('.section_select').val();
             if (place_name && category_name && section_name) {
-                window.open('http://www.thetopremodelers.com/'+place_name+'/'+category_name+'/'+section_name+'/contractors/','_self');
+                window.open($.url+'/'+place_name+'/'+category_name+'/'+section_name+'/contractors/','_self');
             }
             return false;
         });
@@ -79,7 +78,7 @@ var herve_contractors = {
             section_name = $('.section_select').val(),
             pageNumber = e.pageNumber || $('.paginate').find('.current').data('page') || 1;
             sortType = e.sortType || $('.contractorsSort select').val();
-            url = 'http://www.thetopremodelers.com/'+place_name+'/'+category_name+'/'+section_name+'/contractors/';
+            url = $.url+'/'+place_name+'/'+category_name+'/'+section_name+'/contractors/';
 
         window.open(herve.getNth(url,'/','7')+'/'+sortType+'/'+pageNumber,'_self');
     },

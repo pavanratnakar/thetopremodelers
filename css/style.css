@@ -316,8 +316,8 @@ body.layout-1 .main-content-container{margin:53px 0 40px;}
     font-size: 1.71em;
     font-weight: bold;
     line-height: 1.333em;
-    color:#383838 !important;
-    text-decoration: none !important;
+    color:#383838;
+    text-decoration: none;
 }
 .layout-1 .header {margin:10px 20px;padding:10px;position:relative;}
 .layout-1 .sub{border: 1px solid #E0D5C8;}
@@ -333,8 +333,8 @@ body.layout-2 .main-content-container{margin:53px 0 40px;}
     font-size: 24px;
     font-weight: bold;
     line-height: 26px;
-    color:#383838 !important;
-    text-decoration: none !important;
+    color:#383838;
+    text-decoration: none;
     margin:0 0 10px 0;
 }
 .layout-2 .header {margin:10px 20px;padding:10px;position:relative;}
@@ -448,6 +448,9 @@ body.category .main li{padding:0 0 12px 5px;list-style: disc inside none;}
 .contractor .rating-date span{color:#666;}
 .contractor .details{padding-top:10px;font-weight:bold;line-height:1.5em;}
 .contractor .review{padding-top:10px;line-height:1.3em;}
+.contractorQuoteSelection{width:500px;}
+.contractorQuoteSelection .select-options{width:83%;padding:10px 0 0 0;}
+.contractorQuoteSelection select{width:30%;margin:0 10px 0 0;}
 /* end of Contractor */
 /* start of place request */
 body.place-request{ background: url("../images/inner/inner-background.jpg") repeat-x scroll 0 0 transparent;}

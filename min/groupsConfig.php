@@ -41,9 +41,6 @@ return array(
     'herve_home_js' => array(
         '//js/home.js'
     ),
-    'herve_category_js' => array(
-        '//js/category.js'
-    ),
     'herve_place-request_js' => array(
         '//global/js/jquery/jquery.ajax.js',
         '//global/js/jquery/jquery.validate.min.js',
@@ -67,11 +64,16 @@ return array(
         '//js/question.js'
     ),
     'herve_contractors_js' => array(
+        '//global/js/config.js',
         '//js/contractors.js'
+    ),
+    'herve_contractor_css' => array(
+        '//global/js/plugins/boxy/stylesheets/boxy.css',
     ),
     'herve_contractor_js' => array(
         '//global/js/config.js',
         '//global/js/sharethis/button.js',
+        '//global/js/plugins/boxy/javascripts/jquery.boxy.js',
         '//js/contractor.js'
     )
     ///HERVE ///
