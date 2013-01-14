@@ -44,7 +44,8 @@ class Config{
         'article_table' => 'rene_article',
         'contractor_table' => 'rene_contractor',
         'contractorMapping_table' => 'rene_contractor_mapping',
-        'contractorRating_table' => 'rene_contractor_rating'
+        'contractorRating_table' => 'rene_contractor_rating',
+        'contractorImage_table' => 'rene_contractor_image'
     );
     /* TABLES */
 }

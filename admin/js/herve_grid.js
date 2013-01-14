@@ -613,6 +613,54 @@ var herve_grid = {
                 });
             }
         },
+        contractorImage: {
+            id      :   "#contractorImage",
+            page    :   "#p_contractorImage",
+            select  :   "#contractorImage_select",
+            init    :   function() {
+                this.setup();
+                herve_grid.jqgrid.crud(herve_grid.jqgrid.contractorImage.id,herve_grid.jqgrid.contractorImage.page);
+            },
+            setup   :   function() {
+                this.contractors=$.ajax({url: $.url+"/admin/controller/contractorController.php?ref=select&type=contractor", dataType: "json", cache: true, async: false, success: function(data, result) {if (!result) alert('Failure to retrieve the Contractors.');}}).responseText;
+                $(herve_grid.jqgrid.contractorImage.id).jqGrid({
+                    url:$.url+'/admin/controller/contractorImageController.php?ref=details',
+                    datatype: "json",
+                    height: 'auto',
+                    width: herve_grid.theme.width,
+                    colNames:['Id','Contractor Name','Image Id','Type'],
+                    colModel:[
+                        {name:'contractorImage_id',index:'contractorImage_id',hidden:true,align:'center',editable:false, sorttype:'int',key:true},
+                        {name:'contractor_title',index:'contractor_title', width:herve_grid.theme.note_width,formoptions:{label: 'Contractor'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"select",editoptions: {value: (this.contractors.replace('"','')).replace('"','') } },
+                        {name:'image_id',index:'image_id', width:herve_grid.theme.note_width,formoptions:{label: 'Image Id'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"select",editoptions: {value: (this.contractors.replace('"','')).replace('"','') } },
+                        {name:'type',index:'type', width:herve_grid.theme.note_width,formoptions:{label: 'Type'},align:"center", sortable:true,editable: true,edittype:"select",editoptions: {value: ('1:Profile;2:Other')} }
+                    ],
+                    rowNum:100,
+                    rowList:[100,500,1000,1500,2000,2500,3000],
+                    pager: herve_grid.jqgrid.contractorImage.page,
+                    sortname: 'score',
+                    viewrecords: true,
+                    sortorder: "asc",
+                    multiselect: false,
+                    subGrid: false,
+                    caption: "Contractor Mapping",
+                    editurl:$.url+"/admin/controller/contractorImageController.php?ref=operation",
+                    grouping: true,
+                    groupingView : {
+                        groupField : ['contractor_title'],
+                        groupColumnShow : [true],
+                        groupText : ['<b>{0} - {1} Item(s)</b>'],
+                        groupCollapse : false,
+                        groupOrder: ['desc'],
+                        groupSummary : [true],
+                        showSummaryOnHide: true,
+                        groupDataSorted : true
+                    },
+                    footerrow: true,
+                    userDataOnFooter: true
+                });
+            }
+        },
         crud : function($id,$type){
             $($id).jqGrid('navGrid',$type,
             {add:true, view:true, del:true,edit:true},
