@@ -143,7 +143,7 @@ class Contractor{
         return $response[0];
     }
     public function getSectionsForContractor($details){
-        $query="SELECT f.category_title,e.section_title,e.section_id,e.section_name
+        $query="SELECT f.category_title,e.section_title,e.section_id,e.section_name,c.categorysection_order
         FROM 
         ".Config::$tables['contractor_table']." a
         LEFT JOIN
@@ -179,7 +179,9 @@ class Contractor{
             $category_id=$this->mysqli->real_escape_string($details['category_id']);
             $query .= "AND f.category_id='".$category_id."' ";
         }
-        $query .= "GROUP BY e.section_title";
+        $query .= "
+        GROUP BY e.section_title
+        ORDER BY c.categorysection_order ASC";
         if ($result = $this->mysqli->query($query)) {
             $i=0;
             while ($row = $result->fetch_object()) {

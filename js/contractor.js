@@ -66,10 +66,10 @@ var herve_contractor = {
                 }
             }});
         });
-        $('form.contractorQuoteSelection').live('submit', function(event){
-            var placeName = $(this).find('.place_select').val(),
-                categoryName = $(this).find('.category_select').val(),
-                sectionName = $(this).find('.section_select').val(),
+        $('form.contractorQuoteSelection .submit').live('click', function(event){
+            var placeName = $(this).closest('form').find('.place_select').val(),
+                categoryName = $(this).closest('form').find('.category_select').val(),
+                sectionName = $(this).closest('form').find('.section_select').val(),
                 contractorName = $(this).closest('form').attr('id').replace('contractorQuoteSelection-','')
             if (placeName && categoryName && sectionName && contractorName) {
                 window.open($.url+'/'+placeName+'/'+categoryName+'/'+sectionName+'/'+contractorName+'/need','_self');
