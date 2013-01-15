@@ -121,6 +121,13 @@ echo $pageController->printHeader($contractor->getMeta($contractorDetails));
             <?php echo $pageController->jumpList($jumpListData,'top'); ?>
         </div>
         <div class="sidebar right">
+            <div class="sidebar-container noBorder" id="certified-rating">
+                <div class="sidebar-content image">
+                    <img src="<?php echo Config::$site_url.'images/contractor/stamp_final.png' ?>" title="Certified Ratings" alt="Certified Ratings"></a>
+                    <h4>Hire with Confidence</h4>
+                    <p>This service provider has passed our screening process including checks for criminal background and bankruptcy.</p>
+                </div>
+            </div>
             <div class="sidebar-container">
                 <div class="sidebar-header">
                     <h3>Today&rsquo;s Best Offers</h3>
@@ -129,6 +136,36 @@ echo $pageController->printHeader($contractor->getMeta($contractorDetails));
                     <img src="<?php echo Config::$site_url.'images/global/sidebar/solar_system.png' ?>" title="Hire our pros and win 6000 watt solar system" alt="Hire our pros and win 6000 watt solar system"></a>
                 </div>
             </div>
+            <?php
+            $contractorRatingDistribution = $contractor->getRatingDistributionForContractor(array('contractor_id'=>$contractorDetails['contractor_id']));
+            if ($contractorRatingDistribution) {?>
+            <div class="sidebar-container" id="rating-distribution">
+                <div class="sidebar-header">
+                    <h3>Rating Distribution</h3>
+                </div>
+                <div class="sidebar-content">
+                    <ul>
+                        <?php
+                        for ($i=5;$i>0;$i--) {
+                            if ($contractorRatingDistribution[$i]) {
+                                $barPercentage = ($contractorRatingDistribution[$i]*100)/sizeof($contractorRatingDetails);
+                            } else {
+                                $barPercentage = 0;
+                            }
+                            echo '
+                            <li class="clearfix">
+                            <h6 class="left">'.$i.' Stars</h6>
+                            <div class="left horizontal-bar-container">
+                            <div class="horizontal-bar" style="width:'.$barPercentage.'%;"></div>
+                            </div>
+                            </li>
+                            ';
+                        }
+                        ?>
+                    </ul>
+                </div>
+            </div>
+            <?php } ?>
             <div class="sidebar-container">
                 <div class="sidebar-header">
                     <h3>Roofing Library</h3>
@@ -170,36 +207,6 @@ echo $pageController->printHeader($contractor->getMeta($contractorDetails));
                     </ul>
                 </div>
             </div>
-            <?php
-            $contractorRatingDistribution = $contractor->getRatingDistributionForContractor(array('contractor_id'=>$contractorDetails['contractor_id']));
-            if ($contractorRatingDistribution) {?>
-            <div class="sidebar-container" id="rating-distribution">
-                <div class="sidebar-header">
-                    <h3>Rating Distribution</h3>
-                </div>
-                <div class="sidebar-content">
-                    <ul>
-                        <?php
-                        for ($i=5;$i>0;$i--) {
-                            if ($contractorRatingDistribution[$i]) {
-                                $barPercentage = ($contractorRatingDistribution[$i]*100)/sizeof($contractorRatingDetails);
-                            } else {
-                                $barPercentage = 0;
-                            }
-                            echo '
-                            <li class="clearfix">
-                            <h6 class="left">'.$i.' Stars</h6>
-                            <div class="left horizontal-bar-container">
-                            <div class="horizontal-bar" style="width:'.$barPercentage.'%;"></div>
-                            </div>
-                            </li>
-                            ';
-                        }
-                        ?>
-                    </ul>
-                </div>
-            </div>
-            <?php } ?>
         </div>
     </div>
     <?php echo $pageController->printFooterLinks(); ?>

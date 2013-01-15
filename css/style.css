@@ -359,20 +359,21 @@ body.layout-2 .main-content-container{margin:53px 0 40px;}
 .layout-2 .sidebar .sidebar-container{
     border: 1px solid #E0D5C8;
     margin-bottom:15px;
-    background: none repeat scroll 0 0 #FFF !important;
-    font-size: 1em !important;
-    font-weight: bold !important;
-    line-height: 1.1em !important;
-    padding: 0 !important;
+    background: none repeat scroll 0 0 #FFF;
+    font-size: 1em;
+    line-height: 1em;
+    padding: 0;
 }
+.layout-2 .sidebar .sidebar-container.noBorder{border:none;}
 .layout-2 .sidebar .sidebar-container .sidebar-header,
 .layout-2 .sidebar .sidebar-container .sidebar-content{margin:0;padding:10px 15px;}
-.layout-2 .sidebar .sidebar-container .sidebar-content.image{padding:5px;}
-.layout-2 .sidebar .sidebar-container .sidebar-content.image img{width:270px;}
+.layout-2 .sidebar .sidebar-container .sidebar-content.image{padding:0px;}
+.layout-2 .sidebar .sidebar-container .sidebar-content.image img{display:block;margin-left:auto;margin-right: auto;}
 .layout-2 .sidebar .sidebar-container .sidebar-header{background: #F8F7F1;border-bottom: 1px solid #E0D5C8;}
 .layout-2 .sidebar .sidebar-container .sidebar-header h3{color:#5C5954;}
+.layout-2 .sidebar-content p{font-size:0.9em;line-height:1.3em;color:#333333;}
 .layout-2 .sidebar-content ul{margin:0;}
-.layout-2 .sidebar-content ul h4{color:#5C5954;font-size:1em;padding:10px 0;}
+.layout-2 .sidebar-content h4{color:#5C5954;font-size:1em;padding:10px 0;}
 .layout-2 .sidebar-content ul li{padding:2px 0;}
 .layout-2 .sidebar-content ul li.first-child h4{padding-top:5px;}
 .layout-2 .sidebar-content ul li li{list-style: disc inside none;padding-left:6px;}
@@ -383,7 +384,10 @@ body.layout-2 .main-content-container{margin:53px 0 40px;}
 #rating-distribution li{padding:5px 0;}
 #rating-distribution h6{width:23%;}
 #rating-distribution .horizontal-bar-container{width:74%;}
-/* eod of sidebar */
+#certified-rating {background:#FBFBFD;margin-bottom:25px;}
+#certified-rating h4{text-align:center;font-size:1.2em;}
+#certified-rating p{text-align:center;}
+/* end of sidebar */
 /* start of entry */
 .entry-image img{width:200px;}
 .entry-title a{font-family: 'Open Sans',sans-serif;font-size: 14px;font-weight: 600;line-height: 20px;}
