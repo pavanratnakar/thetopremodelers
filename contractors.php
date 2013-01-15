@@ -166,6 +166,14 @@ echo $pageController->printHeader($contractor->getContractorsMeta($contractorDet
 <div class="sidebar right">
     <div class="sidebar-container">
         <div class="sidebar-header">
+            <h3>Today&rsquo;s Best Offers</h3>
+        </div>
+        <div class="sidebar-content image">
+            <img src="<?php echo Config::$site_url.'images/global/sidebar/solar_system.png' ?>" title="Hire our pros and win 6000 watt solar system" alt="Hire our pros and win 6000 watt solar system"></a>
+        </div>
+    </div>
+    <div class="sidebar-container">
+        <div class="sidebar-header">
             <h3>Roofing Library</h3>
         </div>
         <div class="sidebar-content">

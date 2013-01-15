@@ -358,7 +358,7 @@ body.layout-2 .main-content-container{margin:53px 0 40px;}
 }
 .layout-2 .sidebar .sidebar-container{
     border: 1px solid #E0D5C8;
-    margin-bottom:25px;
+    margin-bottom:15px;
     background: none repeat scroll 0 0 #FFF !important;
     font-size: 1em !important;
     font-weight: bold !important;
@@ -367,6 +367,8 @@ body.layout-2 .main-content-container{margin:53px 0 40px;}
 }
 .layout-2 .sidebar .sidebar-container .sidebar-header,
 .layout-2 .sidebar .sidebar-container .sidebar-content{margin:0;padding:10px 15px;}
+.layout-2 .sidebar .sidebar-container .sidebar-content.image{padding:5px;}
+.layout-2 .sidebar .sidebar-container .sidebar-content.image img{width:270px;}
 .layout-2 .sidebar .sidebar-container .sidebar-header{background: #F8F7F1;border-bottom: 1px solid #E0D5C8;}
 .layout-2 .sidebar .sidebar-container .sidebar-header h3{color:#5C5954;}
 .layout-2 .sidebar-content ul{margin:0;}

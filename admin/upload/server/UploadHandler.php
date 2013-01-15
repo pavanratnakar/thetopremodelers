@@ -40,7 +40,7 @@ class UploadHandler
             // 'upload_dir' => dirname($_SERVER['SCRIPT_FILENAME']).'/files/',
             // 'upload_url' => $this->get_full_url().'/files/',
             'upload_dir' => Config::$site_path.'images/contractors/',
-            'upload_url' => Config::$site_path.'images/contractors/',
+            'upload_url' => Config::$site_url.'images/contractors/',
             'user_dirs' => false,
             'mkdir_mode' => 0755,
             'param_name' => 'files',
