@@ -164,6 +164,13 @@ echo $pageController->printHeader($contractor->getContractorsMeta($contractorDet
     </div>
 </div>
 <div class="sidebar right">
+    <div class="sidebar-container noBorder" id="certified-rating">
+        <div class="sidebar-content image">
+            <img src="<?php echo Config::$site_url.'images/contractor/stamp_final.png' ?>" title="Certified Ratings" alt="Certified Ratings"></a>
+            <h4>Hire with Confidence</h4>
+            <p>This service provider has passed our screening process including checks for criminal background and bankruptcy.</p>
+        </div>
+    </div>
     <div class="sidebar-container">
         <div class="sidebar-header">
             <h3>Today&rsquo;s Best Offers</h3>
