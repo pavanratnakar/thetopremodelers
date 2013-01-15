@@ -24,5 +24,25 @@ if (isset($_REQUEST['submodule'])) {
     } else if ($_REQUEST['purge'] === 'soft') {
         echo $purge->softDelete();
     }
+} else if (isset($_REQUEST['action'])) {
+    if ($_REQUEST['action'] === 'files' && $_REQUEST['type'] === 'images') {
+        $pattern="(\.jpg$)|(\.png$)|(\.jpeg$)|(\.gif$)"; //valid image extensions
+        $files = array();
+        $curimage=0;
+        $response = '';
+        if ($handle = opendir(Config::$site_path.'images/contractors')) {
+            while (false !== ($file = readdir($handle))) { 
+                if (eregi($pattern, $file)) {
+                    //$response[$curimage]=$file;
+                    $fileName = substr($file, 0, (strlen ($file)) - (strlen (strrchr($file,'.'))));
+                    $response .= $fileName.':'.$fileName.';';
+                    $curimage++;
+                }
+            } 
+        }
+        $response = substr_replace($response ,"",-1);
+        echo json_encode($response);
+        closedir($handle);
+    }
 }
 ?>

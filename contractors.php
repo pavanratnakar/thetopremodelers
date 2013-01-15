@@ -96,11 +96,13 @@ echo $pageController->printHeader($contractor->getContractorsMeta($contractorDet
                     <h4 class="entry-title"><a href="<?php echo Config::$site_url.'contractor/'. $value['contractor_name']?>"><?php echo $value['contractor_title'] ?></a></h4>
                     <div class="entry-body">
                         <div class="left first-container">
+                            <?php if ($value['image_id']) { ?>
                             <div class="entry-image">
                                 <a title="<?php echo $value['contractor_title'] ?>" href="<?php echo Config::$site_url.'contractor/'. $value['contractor_name']?>">
-                                    <img alt="<?php echo $value['contractor_title'] ?>" src="/images/contractors/<?php echo $value['contractor_name']?>.jpg">
+                                    <img alt="<?php echo $value['contractor_title'] ?>" src="/images/contractors/<?php echo $value['image_id']?>.jpg">
                                 </a>
                             </div>
+                            <?php } ?>
                             <div class="get-quote left">
                                 <a href="<?php echo Config::$site_url.$placeName.'/'.$categoryName.'/'.$sectionName.'/'.$value['contractor_name'].'/need' ?>" class="small orange button" href="#">Get a Quote</a>
                             </div>

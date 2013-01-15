@@ -388,7 +388,7 @@ body.layout-2 .main-content-container{margin:53px 0 40px;}
 .entry-body {font-family: 'Open Sans',sans-serif;color: #333333;line-height: 1.272em;font-size:12px;}
 .entry-body .entry-image{padding-bottom:5px;}
 .entry-body .entry-image img{border:2px solid #E0D5C8;}
-.entry-body .first-container{padding:0 10px 0 0;}
+.entry-body .first-container{padding:0 10px 0 0;min-width:140px;}
 .entry-body .ratings-reviews{padding-bottom:10px;width:17%;}
 .entry-body .ratings-reviews a{font-weight:normal;}
 .entry-body .contact-details{width:24%;padding:0 10px 0 0;}

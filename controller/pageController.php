@@ -228,11 +228,13 @@ class PageController{
         <h2>'.$contractorDetails['contractor_title'].'</h2>
         <div class="entry-body">
         <div class="clearfix">
-        <div class="left first-container">
-        <div class="entry-image">
-        <img alt="'.$contractorDetails['contractor_title'].'" src="/images/contractors/'.$contractorDetails['contractor_name'].'.jpg">
-        </div>
-        </div>
+        <div class="left first-container">';
+        if ($contractorDetails['image_id']) {
+        $return .= '<div class="entry-image">
+        <img alt="'.$contractorDetails['contractor_title'].'" src="/images/contractors/'.$contractorDetails['image_id'].'.jpg">
+        </div>';
+        }
+        $return .= '</div>
         <div class="left ratings-reviews">';
         if ($contractorDetails['average_score']) {
             $return.= '<p><i class="rating-static rating-'.($contractorDetails['average_score']*10).'"></i></p>';

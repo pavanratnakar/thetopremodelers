@@ -623,22 +623,24 @@ var herve_grid = {
             },
             setup   :   function() {
                 this.contractors=$.ajax({url: $.url+"/admin/controller/contractorController.php?ref=select&type=contractor", dataType: "json", cache: true, async: false, success: function(data, result) {if (!result) alert('Failure to retrieve the Contractors.');}}).responseText;
+                this.images=$.ajax({url: $.url+"/admin/controller/ajaxController.php?action=files&type=images", dataType: "json", cache: true, async: false, success: function(data, result) {if (!result) alert('Failure to retrieve the Images.');}}).responseText;
+
                 $(herve_grid.jqgrid.contractorImage.id).jqGrid({
                     url:$.url+'/admin/controller/contractorImageController.php?ref=details',
                     datatype: "json",
                     height: 'auto',
                     width: herve_grid.theme.width,
-                    colNames:['Id','Contractor Name','Image Id','Type'],
+                    colNames:['Id','Contractor Name','Type','Image Name'],
                     colModel:[
                         {name:'contractorImage_id',index:'contractorImage_id',hidden:true,align:'center',editable:false, sorttype:'int',key:true},
-                        {name:'contractor_title',index:'contractor_title', width:herve_grid.theme.note_width,formoptions:{label: 'Contractor'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"select",editoptions: {value: (this.contractors.replace('"','')).replace('"','') } },
-                        {name:'image_id',index:'image_id', width:herve_grid.theme.note_width,formoptions:{label: 'Image Id'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"select",editoptions: {value: (this.contractors.replace('"','')).replace('"','') } },
-                        {name:'type',index:'type', width:herve_grid.theme.note_width,formoptions:{label: 'Type'},align:"center", sortable:true,editable: true,edittype:"select",editoptions: {value: ('1:Profile;2:Other')} }
+                        {name:'contractor_title',index:'contractor_title', width:herve_grid.theme.note_width,formoptions:{label: 'Contractor Name'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"select",editoptions: {value: (this.contractors.replace('"','')).replace('"','') } },
+                        {name:'type',index:'type', width:herve_grid.theme.note_width,formoptions:{label: 'Type'},align:"center", sortable:true,editable: true,edittype:"select",editoptions: {value: ('1:Profile;2:Other')} },
+                        {name:'image_id',index:'image_id', width:herve_grid.theme.note_width,formoptions:{label: 'Image Name'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"select",editoptions: {value: (this.images.replace('"','')).replace('"','') } }
                     ],
                     rowNum:100,
                     rowList:[100,500,1000,1500,2000,2500,3000],
                     pager: herve_grid.jqgrid.contractorImage.page,
-                    sortname: 'score',
+                    sortname: 'contractor_title',
                     viewrecords: true,
                     sortorder: "asc",
                     multiselect: false,
@@ -651,7 +653,7 @@ var herve_grid = {
                         groupColumnShow : [true],
                         groupText : ['<b>{0} - {1} Item(s)</b>'],
                         groupCollapse : false,
-                        groupOrder: ['desc'],
+                        groupOrder: ['asc'],
                         groupSummary : [true],
                         showSummaryOnHide: true,
                         groupDataSorted : true

@@ -23,7 +23,7 @@ class Contractor{
             $allContractors = $this->getAllContractors($placeName,$categoryName,$sectionName);
             $start = min(Config::$paginationLimit*$page,$allContractors['total_count']);
         }
-        $query="SELECT ROUND(SUM(score)/COUNT(score),1) as average_score,COUNT(review) as review_count,a.contractor_title,a.contractor_description,a.contractor_phone,a.contractor_address,a.contractor_name,c.categorySection_id,f.section_title,g.place_title,h.category_title
+        $query="SELECT ROUND(SUM(score)/COUNT(score),1) as average_score,COUNT(review) as review_count,a.contractor_title,a.contractor_description,a.contractor_phone,a.contractor_address,a.contractor_name,c.categorySection_id,f.section_title,g.place_title,h.category_title,i.image_id
         FROM 
         ".Config::$tables['contractor_table']." a
         LEFT JOIN
@@ -40,6 +40,8 @@ class Contractor{
         ".Config::$tables['place_table']." g ON g.place_id=e.place_id
         LEFT JOIN
         ".Config::$tables['category_table']." h ON h.category_id=e.category_id
+        LEFT JOIN
+        ".Config::$tables['contractorImage_table']." i ON i.contractor_id=a.contractor_id
         WHERE
         a.delete_flag=FALSE
         AND c.delete_flag=FALSE 
@@ -50,7 +52,7 @@ class Contractor{
         AND h.delete_flag=FALSE 
         AND f.section_name='".$sectionName."'
         AND g.place_name='".$placeName."' 
-        AND h.category_name='".$categoryName."'  
+        AND h.category_name='".$categoryName."' 
         GROUP BY a.contractor_id
         ".$orderBy."";
                     //LIMIT ".$start.", ".Config::$paginationLimit."";
@@ -67,6 +69,7 @@ class Contractor{
                 $response[$i]['section_title']=$row->section_title;
                 $response[$i]['average_score']=$row->average_score;
                 $response[$i]['review_count']=$row->review_count;
+                $response[$i]['image_id']=$row->image_id;
                 $i++;
             }
         }
@@ -116,14 +119,16 @@ class Contractor{
     }
     public function getContractor($contractorName){
         $contractorName=$this->mysqli->real_escape_string($contractorName);
-        $query="SELECT ROUND(SUM(score)/COUNT(score),1) as average_score,COUNT(review) as review_count,a.contractor_id,a.contractor_title,a.contractor_description,a.contractor_phone,a.contractor_address,a.contractor_name
+        $query="SELECT ROUND(SUM(score)/COUNT(score),1) as average_score,COUNT(review) as review_count,a.contractor_id,a.contractor_title,a.contractor_description,a.contractor_phone,a.contractor_address,a.contractor_name,c.image_id
         FROM 
         ".Config::$tables['contractor_table']." a
         LEFT JOIN
         ".Config::$tables['contractorRating_table']." b ON a.contractor_id=b.contractor_id
+        LEFT JOIN
+        ".Config::$tables['contractorImage_table']." c ON c.contractor_id=a.contractor_id
         WHERE 
         a.contractor_name='".$contractorName."' 
-        AND a.delete_flag=FALSE
+        AND a.delete_flag=FALSE 
         GROUP BY a.contractor_id";
         if ($result = $this->mysqli->query($query)) {
             $i=0;
@@ -137,6 +142,7 @@ class Contractor{
                 $response[$i]['category_title']=$row->category_title;
                 $response[$i]['average_score']=$row->average_score;
                 $response[$i]['review_count']=$row->review_count;
+                $response[$i]['image_id']=$row->image_id;
                 $i++;
             }
         }
