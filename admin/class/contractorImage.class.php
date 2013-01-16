@@ -41,7 +41,12 @@ class contractorImage extends General{
                     while ($row1 = $result1->fetch_object()) {
                         $responce->rows[$i]['contractorImage_id']=$row1->contractorImage_id;
                         $type = $this->typeMapping[$row1->type];
-                        $responce->rows[$i]['cell'] =array($row1->contractorImage_id,$row1->image_id,$type,$row1->contractor_title);
+                        $responce->rows[$i]['cell'] =array(
+                            $row1->contractorImage_id,
+                            $row1->contractor_title,
+                            $type,
+                            $row1->image_id
+                        );
                         $i++;
                     }
                     return $responce;
