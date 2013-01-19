@@ -259,17 +259,18 @@ class PageController{
             $return.=  '<div class="right options">
         <a href="javascript:void(0);" data-name="'.$contractorDetails['contractor_name'].'" id="contractorSelect-'.$contractorDetails['contractor_name'].'" class="get-quote small orange button">Get a Quote</a>
         </div>';
-        $return.= '</div>
-        <div class="social-sharing">
-        <span class="st_fbrec" displayText="Facebook Recommend"></span>
-        <span class="st_plusone" displayText="Google +1"></span>
-        <span class="st_pinterestfollow" displayText="Pinterest Follow"></span>
-        <span class="st_twitterfollow" displayText="Twitter Follow"></span>
-        <span class="st_sharethis" displayText="ShareThis"></span>
-        <span class="st_email" displayText="Email"></span>
+        $return.= "</div>
+        <div class='social-sharing'>
+            <span class='st_sharethis_large' displayText='ShareThis'></span>
+            <span class='st_facebook_large' displayText='Facebook'></span>
+            <span class='st_twitter_large' displayText='Tweet'></span>
+            <span class='st_googleplus_large' displayText='Google +'></span>
+            <span class='st_linkedin_large' displayText='LinkedIn'></span>
+            <span class='st_pinterest_large' displayText='Pinterest'></span>
+            <span class='st_email_large' displayText='Email'></span>
         </div>
         </div>
-        ';
+        ";
         return $return;
     }
 }

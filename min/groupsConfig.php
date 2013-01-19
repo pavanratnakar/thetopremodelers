@@ -61,6 +61,7 @@ return array(
         '//global/js/config.js',
         '//global/js/sharethis/button.js',
         '//global/js/jquery/jquery.validate.min.js',
+        '//js/social.js',
         '//js/question.js'
     ),
     'herve_contractors_js' => array(
@@ -74,6 +75,7 @@ return array(
         '//global/js/config.js',
         '//global/js/sharethis/button.js',
         '//global/js/plugins/boxy/javascripts/jquery.boxy.js',
+        '//js/social.js',
         '//js/contractor.js'
     )
     ///HERVE ///

@@ -1,7 +1,6 @@
 var herve_contractor = {
     init : function(){
         this.initEvents();
-        this.shareThis();
     },
     initEvents : function(){
         var contrator_name,
@@ -67,6 +66,7 @@ var herve_contractor = {
             }});
         });
         $('form.contractorQuoteSelection .submit').live('click', function(event){
+            event.preventDefault();
             var placeName = $(this).closest('form').find('.place_select').val(),
                 categoryName = $(this).closest('form').find('.category_select').val(),
                 sectionName = $(this).closest('form').find('.section_select').val(),
@@ -75,11 +75,9 @@ var herve_contractor = {
                 window.open($.url+'/'+placeName+'/'+categoryName+'/'+sectionName+'/'+contractorName+'/need','_self');
             }
         });
-    },
-    shareThis : function(){
-        stLight.options({publisher: "c2dd522f-4617-4a40-9dc2-2d3ad357cab1", doNotHash: false, doNotCopy: false, hashAddressBar: true});
     }
 }
 $(document).ready(function(){
     herve_contractor.init();
+    herve_social.sharethis();
 });

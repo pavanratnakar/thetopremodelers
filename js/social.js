@@ -22,5 +22,11 @@ var herve_social = {
             js.src = "//connect.facebook.net/en_US/all" + (debug ? "/debug" : "") + ".js";
             ref.parentNode.insertBefore(js, ref);
         }(document, /*debug*/ false));
+    },
+    sharethis : function() {
+        stLight.options({
+            publisher: "c2dd522f-4617-4a40-9dc2-2d3ad357cab1",
+            tracking:'google',
+        });
     }
 }
