@@ -79,5 +79,4 @@ var herve_contractor = {
 }
 $(document).ready(function(){
     herve_contractor.init();
-    herve_social.sharethis();
 });

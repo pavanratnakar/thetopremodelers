@@ -12,5 +12,4 @@ var herve_question = {
 }
 $(document).ready(function(){
     herve_question.init();
-    herve_social.sharethis();
 });

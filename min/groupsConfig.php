@@ -49,33 +49,27 @@ return array(
         '//js/contact.js'
     ),
     'herve_article_js' => array(
-        '//js/social.js',
         '//js/article.js'
     ),
     'herve_js' => array(
         '//global/js/jquery/jquery-1.7.1.min.js',
         '//global/js/config.js',
+        '//global/js/sharethis/button.js',
+        '//js/social.js',
          '//js/init.js'
     ),
     'herve_need_js' => array(
-        '//global/js/config.js',
-        '//global/js/sharethis/button.js',
         '//global/js/jquery/jquery.validate.min.js',
-        '//js/social.js',
         '//js/question.js'
     ),
     'herve_contractors_js' => array(
-        '//global/js/config.js',
         '//js/contractors.js'
     ),
     'herve_contractor_css' => array(
         '//global/js/plugins/boxy/stylesheets/boxy.css',
     ),
     'herve_contractor_js' => array(
-        '//global/js/config.js',
-        '//global/js/sharethis/button.js',
         '//global/js/plugins/boxy/javascripts/jquery.boxy.js',
-        '//js/social.js',
         '//js/contractor.js'
     )
     ///HERVE ///

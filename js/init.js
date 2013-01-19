@@ -35,4 +35,5 @@ $(document).ready(function(){
     herve.navigation();
     herve.footer();
     herve.button();
+    herve_social.sharethis();
 });

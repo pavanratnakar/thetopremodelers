@@ -35,10 +35,22 @@ class PageController{
         return $this->page->printUserStepsText($index);
     }
     public function printFooterLinks(){
+        $title = 'The Top Remodelers | Dallas Roofing Company | Dallas Roofing contractors';
+        $summary = 'We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company.';
+        $image = Config::$site_url."images/global/logo.png";
         $return='
         <div id="footer">
         <div class="footer-wrapper clearfix">
         <div class="footer-top">
+        <div class="social-sharing">
+            <span class="st_sharethis_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="ShareThis"></span>
+            <span class="st_facebook_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="Facebook"></span>
+            <span class="st_twitter_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="Tweet"></span>
+            <span class="st_linkedin_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="LinkedIn"></span>
+            <span class="st_googleplus_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="Google +"></span>
+            <span class="st_pinterest_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="Pinterest"></span>
+            <span class="st_email_large" st_image="'.$image.'"  st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="Email"></span>
+        </div>
         <div class="column city_selector">
         <h3>Cities we cover | <a href="'.Config::$site_url.'places" title="More Cities">More Cities &#8250;</a></h3>
         '.$this->citySelector().'
@@ -46,7 +58,7 @@ class PageController{
         <div class="column about_us">
         <h3>About Us</h3>
         <div class="footer_about">
-        <p>We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company</p>                         
+        <p>'.$summary.'</p>                         
         <p>&nbsp;</p>
         <p>Address: <b>2003 michigan ave, Dallas tx 75216</b></p>
         <p>Telephone: <b>1(214)303 9771</b></p>
@@ -261,13 +273,12 @@ class PageController{
         </div>';
         $return.= "</div>
         <div class='social-sharing'>
-            <span class='st_sharethis_large' displayText='ShareThis'></span>
-            <span class='st_facebook_large' displayText='Facebook'></span>
-            <span class='st_twitter_large' displayText='Tweet'></span>
-            <span class='st_googleplus_large' displayText='Google +'></span>
-            <span class='st_linkedin_large' displayText='LinkedIn'></span>
-            <span class='st_pinterest_large' displayText='Pinterest'></span>
-            <span class='st_email_large' displayText='Email'></span>
+            <span class='st_pinterest_hcount' displayText='Pinterest'></span>
+            <span class='st_twitter_hcount' displayText='Tweet'></span>
+            <span class='st_linkedin_hcount' displayText='LinkedIn'></span>
+            <span class='st_fbrec_hcount' displayText='Facebook Recommend'></span>
+            <span class='st_email_hcount' displayText='Email'></span>
+            <span class='st_plusone_hcount' displayText='Google +1'></span>
         </div>
         </div>
         ";

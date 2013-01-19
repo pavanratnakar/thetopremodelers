@@ -278,7 +278,7 @@ body.home{background: url("../images/home/home-background.jpg") repeat-x scroll 
 #footer .footer-wrapper {font-size:1em;margin:0 auto;width: 960px;}
 .main-content-container #footer .footer-top,
 .main-content-container #footer .footer-bottom{padding:0 20px 10px;width:auto;}
-#footer .footer-top{padding:0 0 20px;}
+#footer .footer-top{padding:0 0 20px;position:relative;}
 #footer .column{float:left;diplay:inline;margin-left: 20px;}
 #footer .column.city_selector,#footer .footer-bottom .copyrights{margin-left:0;}
 #footer .column.city_selector{width:25%;border-right: 1px solid #3B3B3B;padding-right:10px;}
@@ -297,7 +297,9 @@ body.home{background: url("../images/home/home-background.jpg") repeat-x scroll 
 #footer .footer-bottom a.last{border:none;padding-right:0;}
 #footer .footer-bottom .copyrights p,#footer .footer-bottom .links p{padding-top:17px;}
 #footer .footer-bottom .copyrights,#footer .footer-bottom .links a{font-size:0.8em;color: #9C9C9C;}
+#footer .social-sharing{position:absolute;bottom:30px;left:270px;}
 .main-content-container #footer .footer-wrapper{width:auto}
+.main-content-container #footer .social-sharing{left:280px;bottom:20px;}
 /* end of footer */
 /* sub */
 .sub{font-family: 'Open Sans',sans-serif;font-size:0.86em;background: #F8F7F1;padding:15px 20px;}
@@ -401,7 +403,7 @@ body.layout-2 .main-content-container{margin:53px 0 40px;}
 .entry-body .description{width:38%;}
 .entry-body .telephone{font-weight:bold;font-size:18px;line-height:20px;}
 .entry-body .address{padding-top:6px;}
-.entry-body .social-sharing{margin:5px 0 10px;}
+.entry-body .social-sharing{margin:15px 0 5px;}
 /* end of entry */
 /* start of graph */
 .horizontal-bar{height:16px;background:#F6B32E;}
