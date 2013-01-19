@@ -22,10 +22,10 @@ if ($_GET['contractor']) {
 }
 if ($contractorDetails) {
     $back = Config::$site_url.$placeName.'/'.$categoryName.'/'.$sectionName.'/contractors/';
-    $submit = Config::$site_url.'placeRequest?place='.$placeName.'&category='.$categoryName.'&section='.$sectionName.'&contractor='.$contractorName;
+    $submit = Config::$site_url.'placeRequest?place='.$placeName.'&amp;category='.$categoryName.'&amp;section='.$sectionName.'&amp;contractor='.$contractorName;
 } else {
     $back = Config::$site_url.$placeName.'/category/'.$categoryName;
-    $submit = Config::$site_url.'placeRequest?place='.$placeName.'&category='.$categoryName.'&section='.$sectionName;
+    $submit = Config::$site_url.'placeRequest?place='.$placeName.'&amp;category='.$categoryName.'&amp;section='.$sectionName;
 }
 $formatQuestions = $pageController->formatQuestions($placeName,$categoryName,$sectionName);
 if (!$formatQuestions) {
@@ -60,8 +60,9 @@ echo $pageController->printHeader($section->getMeta($sectionName));
                 <ol>
                     <?php echo $formatQuestions; ?>
                 </ol>
+                <div class="clear"></div>
+                <input class="submit button blue small" type="submit" value="Continue"/>
             </fieldset>
-            <input class="submit button blue small" type="submit" value="Continue"/>
         </form>
     </div>
     <?php echo $pageController->printFooterLinks(); ?>

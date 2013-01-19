@@ -123,7 +123,7 @@ echo $pageController->printHeader($contractor->getMeta($contractorDetails));
         <div class="sidebar right">
             <div class="sidebar-container noBorder" id="certified-rating">
                 <div class="sidebar-content image">
-                    <img src="<?php echo Config::$site_url.'images/contractor/stamp_final.png' ?>" title="Certified Ratings" alt="Certified Ratings"></a>
+                    <img src="<?php echo Config::$site_url.'images/contractor/stamp_final.png' ?>" title="Certified Ratings" alt="Certified Ratings" />
                     <h4>Hire with Confidence</h4>
                     <p>This service provider has passed our screening process including checks for criminal background and bankruptcy.</p>
                 </div>
@@ -133,7 +133,7 @@ echo $pageController->printHeader($contractor->getMeta($contractorDetails));
                     <h3>Today&rsquo;s Best Offers</h3>
                 </div>
                 <div class="sidebar-content image">
-                    <img src="<?php echo Config::$site_url.'images/global/sidebar/solar_system.png' ?>" title="Hire our pros and win 6000 watt solar system" alt="Hire our pros and win 6000 watt solar system"></a>
+                    <img src="<?php echo Config::$site_url.'images/global/sidebar/solar_system.png' ?>" title="Hire our pros and win 6000 watt solar system" alt="Hire our pros and win 6000 watt solar system" />
                 </div>
             </div>
             <?php

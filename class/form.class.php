@@ -36,7 +36,7 @@ Class Form{
                 $response .= '<label for="'.$this->name.'">'.$this->label.'</label><select class="'.$validationClass.' shadow" id="'.$this->name.'" name="'.$this->name.'">';
                     if($this->answers) {
                         foreach($this->answers as $answer){
-                            $response .= '<option value="'.$answer['answer_id'].'" />'.$answer['answer_text'].'</option>';
+                            $response .= '<option value="'.$answer['answer_id'].'">'.$answer['answer_text'].'</option>';
                         }
                     }
                      $response .= '</select>';

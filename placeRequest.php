@@ -32,24 +32,24 @@ $params['contractorName'] = $utils->checkValues($_GET['contractor']);
                     <div id="emailHeader">
                         <span class="strong">To:&nbsp;TheTopRemodelers.com</span><br/>
                         <label for="emailId"><span class="strong">From:</span></label>
-                        <input type="text" name="emailId" id="emailId" class="prepopulate" rel="my email address" >
+                        <input type="text" name="emailId" id="emailId" class="prepopulate" rel="my email address" />
                     </div>
                     <div id="emailBody">
                         <span class="strong">Your Message:</span>
                         <p class="top">
                             Hello. My name is 
-                            <input type="text" class="prepopulate" size="15" rel="first name" name="firstName" id="firstName"/> 
-                            <input class="prepopulate" size="15" rel="last name" type="text" name="lastName" id="lastName"/> 
+                            <input type="text" class="prepopulate" size="15" rel="first name" name="firstName" id="firstName" /> 
+                            <input class="prepopulate" size="15" rel="last name" type="text" name="lastName" id="lastName" /> 
                             I would like to receive Free Estimates for my project.
                             <br/>
                             My address is 
-                            <input class="prepopulate" size="30" rel="my street address" type="text" name="address" id="address"> 
+                            <input class="prepopulate" size="30" rel="my street address" type="text" name="address" id="address" /> 
                             in 
-                            <input class="prepopulate" rel="my city" type="text" name="city" id="city">
-                            <input class="prepopulate" type="text" rel="zip" name="zip" id="zip">.<br/>
+                            <input class="prepopulate" rel="my city" type="text" name="city" id="city" />
+                            <input class="prepopulate" type="text" rel="zip" name="zip" id="zip" />.<br/>
                             I would like to be contacted as soon as possible to receive my free estimates.<br/>
                             Please contact me
-                            <input type="text" size="4" name="phone1" id="phone1"> - <input type="text" size="4" name="phone2" id="phone2"> - <input size="6" type="text" name="phone3" id="phone3">
+                            <input type="text" size="4" name="phone1" id="phone1" /> - <input type="text" size="4" name="phone2" id="phone2" /> - <input size="6" type="text" name="phone3" id="phone3" />
                             in the
                             <select id="contactTime" name="contactTime">
                                 <option value="morning">morning</option>
@@ -71,11 +71,11 @@ $params['contractorName'] = $utils->checkValues($_GET['contractor']);
                             <?php
                             foreach ($params as $key=>$value) {
                                 if ($value) {
-                                    echo '<input id="'.$key.'" type="hidden" value="'.$value.'"/>';
+                                    echo '<input id="'.$key.'" type="hidden" value="'.$value.'" />';
                                 }
                             }
                             ?>
-                            <input class="submit button gray small" type="submit" value="Submit"/>  
+                            <input class="submit button gray small" type="submit" value="Submit" />  
                         </p>
                     </div>
                 </form>

@@ -119,7 +119,6 @@ class PageController{
                 $values = $question['values'] ? $question['values'] : null;
                 $return .= $this->form->createElement($question['category_text'],$question['question_text'],$question['question_id'],$question['question_validation'],$values);
             }
-            $return .= '<div class="clear"></div>';
         }
         return $return;
     }
@@ -231,7 +230,7 @@ class PageController{
         <div class="left first-container">';
         if ($contractorDetails['image_id']) {
         $return .= '<div class="entry-image">
-        <img alt="'.$contractorDetails['contractor_title'].'" src="/images/contractors/'.$contractorDetails['image_id'].'.jpg">
+        <img alt="'.$contractorDetails['contractor_title'].'" src="/images/contractors/'.$contractorDetails['image_id'].'.jpg" />
         </div>';
         }
         $return .= '</div>
@@ -262,7 +261,7 @@ class PageController{
         </div>';
         $return.= '</div>
         <div class="social-sharing">
-        <span class="st_fbrec" displayText="Facebook Recommend"</span>
+        <span class="st_fbrec" displayText="Facebook Recommend"></span>
         <span class="st_plusone" displayText="Google +1"></span>
         <span class="st_pinterestfollow" displayText="Pinterest Follow"></span>
         <span class="st_twitterfollow" displayText="Twitter Follow"></span>

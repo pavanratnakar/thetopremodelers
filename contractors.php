@@ -40,7 +40,7 @@ echo $pageController->printHeader($contractor->getContractorsMeta($contractorDet
             <div class="sub top">
                 <ul>
                     <li class="options clearfix">
-                        <form method="post" class="find-contractors">
+                        <form method="post" class="find-contractors" action="#">
                             <div class="left select-options">
                                 <select class="place_select" name="place_select">
                                     <?php
@@ -76,12 +76,14 @@ echo $pageController->printHeader($contractor->getContractorsMeta($contractorDet
             <?php if($contractorDetails) { ?>
             <li class="options clearfix">
                 <div class="left">
-                    <form method="post" class="contractorsSort" name="contractorsSort" method="get">
-                        <select name="sort">
-                            <option value="default">Default</option>
-                            <option <?php echo ($sort=="average_score") ? 'selected="selected"' : ''?> value="average_score">Ratings : Highest to Lowest</option>
-                            <option <?php echo ($sort=="review_count") ? 'selected="selected"' : ''?> value="review_count">Ratings : Most to Least</option>
-                        </select>
+                    <form class="contractorsSort" method="get" action="#">
+                        <fieldset>
+                            <select name="sort">
+                                <option value="default">Default</option>
+                                <option <?php echo ($sort=="average_score") ? 'selected="selected"' : ''?> value="average_score">Ratings : Highest to Lowest</option>
+                                <option <?php echo ($sort=="review_count") ? 'selected="selected"' : ''?> value="review_count">Ratings : Most to Least</option>
+                            </select>
+                        </fieldset>
                     </form>
                 </div>
                 <div class="right">
@@ -99,12 +101,12 @@ echo $pageController->printHeader($contractor->getContractorsMeta($contractorDet
                             <?php if ($value['image_id']) { ?>
                             <div class="entry-image">
                                 <a title="<?php echo $value['contractor_title'] ?>" href="<?php echo Config::$site_url.'contractor/'. $value['contractor_name']?>">
-                                    <img alt="<?php echo $value['contractor_title'] ?>" src="/images/contractors/<?php echo $value['image_id']?>.jpg">
+                                    <img alt="<?php echo $value['contractor_title'] ?>" src="/images/contractors/<?php echo $value['image_id']?>.jpg" />
                                 </a>
                             </div>
                             <?php } ?>
                             <div class="get-quote left">
-                                <a href="<?php echo Config::$site_url.$placeName.'/'.$categoryName.'/'.$sectionName.'/'.$value['contractor_name'].'/need' ?>" class="small orange button" href="#">Get a Quote</a>
+                                <a href="<?php echo Config::$site_url.$placeName.'/'.$categoryName.'/'.$sectionName.'/'.$value['contractor_name'].'/need' ?>" class="small orange button">Get a Quote</a>
                             </div>
                         </div>
                         <div class="left contact-details">
@@ -143,12 +145,14 @@ echo $pageController->printHeader($contractor->getContractorsMeta($contractorDet
             ?>
             <li class="last-child options clearfix">
                 <div class="left">
-                    <form method="post" class="contractorsSort" name="contractorsSort" method="get">
-                        <select name="sort">
-                            <option value="default">Default</option>
-                            <option <?php echo ($sort=="average_score") ? 'selected="selected"' : ''?> value="average_score">Ratings : Highest to Lowest</option>
-                            <option <?php echo ($sort=="review_count") ? 'selected="selected"' : ''?> value="review_count">Ratings : Most to Least</option>
-                        </select>
+                    <form action="#" class="contractorsSort" method="get">
+                        <fieldset>
+                            <select name="sort">
+                                <option value="default">Default</option>
+                                <option <?php echo ($sort=="average_score") ? 'selected="selected"' : ''?> value="average_score">Ratings : Highest to Lowest</option>
+                                <option <?php echo ($sort=="review_count") ? 'selected="selected"' : ''?> value="review_count">Ratings : Most to Least</option>
+                            </select>
+                        </fieldset>
                     </form>
                 </div>
                 <div class="right">
@@ -166,7 +170,7 @@ echo $pageController->printHeader($contractor->getContractorsMeta($contractorDet
 <div class="sidebar right">
     <div class="sidebar-container noBorder" id="certified-rating">
         <div class="sidebar-content image">
-            <img src="<?php echo Config::$site_url.'images/contractor/stamp_final.png' ?>" title="Certified Ratings" alt="Certified Ratings"></a>
+            <img src="<?php echo Config::$site_url.'images/contractor/stamp_final.png' ?>" title="Certified Ratings" alt="Certified Ratings" />
             <h4>Hire with Confidence</h4>
         </div>
     </div>
@@ -175,7 +179,7 @@ echo $pageController->printHeader($contractor->getContractorsMeta($contractorDet
             <h3>Today&rsquo;s Best Offers</h3>
         </div>
         <div class="sidebar-content image">
-            <img src="<?php echo Config::$site_url.'images/global/sidebar/solar_system.png' ?>" title="Hire our pros and win 6000 watt solar system" alt="Hire our pros and win 6000 watt solar system"></a>
+            <img src="<?php echo Config::$site_url.'images/global/sidebar/solar_system.png' ?>" title="Hire our pros and win 6000 watt solar system" alt="Hire our pros and win 6000 watt solar system" />
         </div>
     </div>
     <div class="sidebar-container">
