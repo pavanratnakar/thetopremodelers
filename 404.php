@@ -1,4 +1,5 @@
 <?php
+    header('HTTP/1.0 404 Not Found');
     include_once($_SERVER['DOCUMENT_ROOT'].'/config.class.php');
     include_once(Config::$site_path.'controller/pageController.php');
     $pageController=new PageController(5);
