@@ -340,8 +340,12 @@ class Contractor{
         return $response;
     }
     public function getContractorsMeta($details){
+        $keywords = false;
+        if ($details[0]['place_title']==='Dallas, TX (Texas)' && $details[0]['category_title']==='Roofing Contractors' && $details[0]['section_title']==='Asphalt Shingle Roofing - Repair') {
+            $keywords = 'Dallas roofing contractors,dallas roofing companies';
+        }
         return array(
-            'keywords'=>false,
+            'keywords'=>$keywords,
             'description'=>'We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company',
             'title'=>$details[0]['place_title'].' | '.$details[0]['category_title'].' | '.$details[0]['section_title'].' | Contractors'
             );
