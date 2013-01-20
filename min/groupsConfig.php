@@ -38,11 +38,16 @@ return array(
     'herve_css' => array(
         '//css/style.css'
     ),
+    'herve_home_css' => array(
+        '//global/js/plugins/slider/css/rcarousel.css'
+    ),
     'herve_home_js' => array(
+        '//global/js/plugins/slider/js/jquery.ui.core.js',
+        '//global/js/plugins/slider/js/jquery.ui.widget.js',
+        '//global/js/plugins/slider/js/jquery.ui.rcarousel.js',
         '//js/home.js'
     ),
     'herve_place-request_js' => array(
-        '//global/js/jquery/jquery.ajax.js',
         '//global/js/jquery/jquery.validate.min.js',
         '//global/js/jquery/jquery.ajax.loader.js',
         '//global/js/global.js',
@@ -52,7 +57,7 @@ return array(
         '//js/article.js'
     ),
     'herve_js' => array(
-        '//global/js/jquery/jquery-1.7.1.min.js',
+        '//global/js/jquery/jquery-1.9.min.js',
         '//global/js/config.js',
         '//global/js/sharethis/button.js',
         '//js/social.js',

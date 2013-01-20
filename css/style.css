@@ -114,6 +114,27 @@ input,select,textarea{color:grey;font-size:11px;padding:2px;font-family:Arial,He
     background-image:url(../images/global/buttons/button_bg.png), url(../images/global/buttons/button_bg.png), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(202,205,208,1)), to(rgba(202,205,208,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#d1d3d6), to(#9fa5a9));
 }
 /* end of button */
+/* start of carousel */
+#ui-carousel-next, #ui-carousel-prev {
+    width: 60px;
+    height: 240px;
+    background: url(../images/global/arrows/arrow-left.png) #E9E9E9 center center no-repeat;
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+}
+#ui-carousel-next {
+    right: 0;
+    background-image: url(../images/global/arrows/arrow-right.png);
+}
+#ui-carousel-prev {
+    left: 0;
+}
+#ui-carousel-next > span, #ui-carousel-prev > span {
+    display: none;
+}
+/* end of carousel */
 /* CLEAR FIX */
 .clearfix:after {
 	content: ".";
@@ -259,15 +280,13 @@ body.home{background: url("../images/home/home-background.jpg") repeat-x scroll 
 .home .main-content-container ul.top{margin:20px 0 0 10px;}
 .home .main-content-container ul.top li{color:#7F5911;font-size:1em;font-weight:bold;}
 /* start of review Container */
-#review-container{margin:20px 0 0 0;color:#7F5911;}
-#review-container .container {background-image: url("../images/home/review-container-image.png");background-repeat: no-repeat;width: 320px;margin:0 8px 0 0;height:320px;}
-#review-container .container.last-child{margin-right:0;}
-#review-container .container .header{background-image: url("../images/home/review-header-background.gif");background-repeat: no-repeat;height: 34px;width: 320px;text-align:center;padding:8px 0 0;margin:30px 0 0 0;}
-#review-container .container .header span{font-style:italic;color:#fff;font-weight:bold;font-size:1.1em;}
-#review-container .container .content-container {padding: 0 20px;}
-#review-container .container .content-container p.title{padding:5px 0 5px 0;font-size:1em;}
-#review-container .container .content-container p.project{padding:10px 0 5px 0;font-size:1em;}
-#review-container .container .content-container p.read{padding:10px 0 5px 0;font-size:1em;text-align:right;}
+#review-container{color:#7F5911;height:240px;overflow:hidden;margin:7px 0 0;position:relative;}
+#review-container .carousel{margin:10px 70px;}
+#review-container h5{font: 400 70px/1.2 'Sansita one', Georgia, serif;color: #616161;font-size: 20px;line-height: 44px;text-align: right;}
+#review-container .rating-details{font-family: 'Imprima', Verdana, Helvetica, sans-serif;margin:10px 0 0 0;text-align:right;}
+#review-container .rating-details i{margin-right:6px;}
+#review-container p.project{font-size:20px;padding:0 0 10px 0;color:#444444;}
+
 /* end of review container
 /* end of home */
 /* start of city selector */
@@ -284,7 +303,9 @@ body.home{background: url("../images/home/home-background.jpg") repeat-x scroll 
 #footer .column.city_selector{width:25%;border-right: 1px solid #3B3B3B;padding-right:10px;}
 #footer .column.about_us{width:71%;}
 #footer .column.links{float:right;}
-#footer .footer_about {color: #9C9C9C;font-size: 0.85em;line-height: 1.7em;padding-bottom: 0;}
+#footer .footer_about .content{color: #9C9C9C;font-size: 0.85em;line-height: 1.7em;padding-bottom: 0;}
+#footer .social-sharing{margin:25px 0 0 0;}
+#footer .content{padding:0;}
 #footer h3 {color: #FEFEFE;font-size: 1.05em;padding-bottom: 20px;}
 #footer h3 a{font-size:0.8em;color:#7F5911;}
 #footer ul{margin:0 0 10px 0;}
@@ -297,9 +318,7 @@ body.home{background: url("../images/home/home-background.jpg") repeat-x scroll 
 #footer .footer-bottom a.last{border:none;padding-right:0;}
 #footer .footer-bottom .copyrights p,#footer .footer-bottom .links p{padding-top:17px;}
 #footer .footer-bottom .copyrights,#footer .footer-bottom .links a{font-size:0.8em;color: #9C9C9C;}
-#footer .social-sharing{position:absolute;bottom:30px;left:270px;}
 .main-content-container #footer .footer-wrapper{width:auto}
-.main-content-container #footer .social-sharing{left:280px;bottom:20px;}
 /* end of footer */
 /* sub */
 .sub{font-family: 'Open Sans',sans-serif;font-size:0.86em;background: #F8F7F1;padding:15px 20px;}

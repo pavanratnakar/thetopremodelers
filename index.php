@@ -2,8 +2,10 @@
     include_once($_SERVER['DOCUMENT_ROOT'].'/config.class.php');
     include_once(Config::$site_path.'controller/pageController.php');
     $pageController=new PageController(0);
-    echo $pageController->printHeader(); 
+    echo $pageController->printHeader();
 ?>
+<link href="http://fonts.googleapis.com/css?family=Sansita+One" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Imprima" rel="stylesheet" type="text/css">
             <?php echo $pageController->printNavigation(); ?>
             <div class="art-person"></div>
             <div class="main-content-container round clearfix">
