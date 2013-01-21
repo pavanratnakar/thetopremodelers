@@ -57,7 +57,7 @@ return array(
         '//js/article.js'
     ),
     'herve_js' => array(
-        '//global/js/jquery/jquery-1.9.min.js',
+        '//global/js/jquery/jquery-1.7.1.min.js',
         '//global/js/config.js',
         '//global/js/sharethis/button.js',
         '//js/social.js',
