@@ -154,7 +154,7 @@ class Page{
                         <div class="rating-details">
                             <p class="project"><span class="strong"><b>Project</b> - '.$review->title.'</span></p>
                             <div class="rating right">
-                                <p class="left"><i class="rating-static rating-'.$review->rating.'"></i></p> - <span class="strong">Customer in '.$review->location.'</span>
+                                <p class="left"><i class="rating-static rating-'.($review->rating*10).'"></i></p> - <span class="strong">Customer in '.$review->location.'</span>
                             </div>
                         </div>
                     </div>
