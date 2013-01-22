@@ -49,7 +49,7 @@ class Place {
     }
     public function getMeta($placeName) {
         $placeDetails = $this->getPlaceDetails($placeName);
-        $keywords = ($placeName==='dallas_texas') ? 'general contractor dallas' : false;
+        $keywords = ($placeName==='dallas_texas') ? 'dallas general contractors' : false;
         $placeTitle = $placeDetails['place_title'];
         $placeTitleSplit = explode(',',$placeTitle);
         return array(

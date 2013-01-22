@@ -61,6 +61,7 @@ class Page{
             $title = $this->currentPage->title;
             $description = $this->currentPage->description;
         }
+        $keywords = trim($keywords);
         $return='
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
         <!-- No Cache -->
@@ -70,8 +71,12 @@ class Page{
         <!-- SEO -->
         <meta http-equiv="Content-Language" content="en" />
         <meta name="title" content="'.$title.'" />
-        <meta name="description" content="'.$description.'" />
-        <meta name="keywords" content="'.$keywords.'" />
+        <meta name="description" content="'.$description.'" />';
+        if ($keywords) {
+        $return.='
+        <meta name="keywords" content="'.$keywords.'" />';
+        }
+        $return.='
         <meta name="author" content="Top Remodelers" />
         <meta name="robots" content="index,follow" />
         <meta name="revisit-after" content="2 days" />
