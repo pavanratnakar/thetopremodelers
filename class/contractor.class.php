@@ -344,10 +344,12 @@ class Contractor{
         if ($details[0]['place_title']==='Dallas, TX (Texas)' && $details[0]['category_title']==='Roofing Contractors' && $details[0]['section_title']==='Asphalt Shingle Roofing - Repair') {
             $keywords = 'Dallas roofing contractors,dallas roofing companies';
         }
+        $placeTitle = $details[0]['place_title'];
+        $placeTitleSplit = explode(',',$placeTitle);
         return array(
             'keywords'=>$keywords,
-            'description'=>'We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company',
-            'title'=>$details[0]['place_title'].' | '.$details[0]['category_title'].' | '.$details[0]['section_title'].' | Contractors'
+            'description'=>'We are the only company providing general contractors in '.$placeTitleSplit[0].', with 5 Stars certified ratings, giving you the confidence in choosing the right company.',
+            'title'=>$placeTitle.' | '.$details[0]['category_title'].' | '.$details[0]['section_title'].' | Contractors'
             );
     }
     public function getMeta($details){

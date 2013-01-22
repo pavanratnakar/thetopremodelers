@@ -50,10 +50,12 @@ class Place {
     public function getMeta($placeName) {
         $placeDetails = $this->getPlaceDetails($placeName);
         $keywords = ($placeName==='dallas_texas') ? 'general contractor dallas' : false;
+        $placeTitle = $placeDetails['place_title'];
+        $placeTitleSplit = explode(',',$placeTitle);
         return array(
             'keywords'=>$keywords,
-            'description'=>'We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company',
-            'title'=>$placeDetails['place_title']
+            'description'=>'We are the only company providing roofing contractors in '.$placeTitleSplit[0].', with 5 Stars certified ratings, giving you the confidence in choosing the right company.',
+            'title'=>$placeTitle
         );
     }
     public function __destruct() {
