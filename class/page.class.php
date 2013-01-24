@@ -134,44 +134,24 @@ class Page{
     }
     public function printReviewContainer(){
         $reviews = new SimpleXMLElement(file_get_contents('xml/review.xml'));
-        $return = '<div id="review-container"><div class="carousel left">';
+        $return = '<div id="review-container" class="left">';
         $i=1;
-        // foreach ($reviews as $review) {
-        //     $return .= '
-        //         <div class="container left" id="reviews-container-'.$i.'">
-        //             <div class="header"><span>Review '.$i.'</span></div>
-        //             <div class="content-container">
-        //                 <p class="title"><span class="strong">Customer in '.$review->location.'</span></p>
-        //                 <img alt="'.$review->rating.' stars" src="./images/global/stars/star_'.$review->rating.'.png" height="17" width="72" />
-        //                 <p class="project"><span class="strong">Project: '.$review->title.'</span></p>
-        //                 <p class="descrption">'.$review->description.'</p>';
-        //     if($review->link==1){
-        //         $return .= '<p class="read"><a title="Read More" href="'.$review->link.'">Read More</a></p>';
-        //     }
-        //     $return .= '</div></div>';
-        //     $i++;
-        // }
         foreach ($reviews as $review) {
             $return .= '
-                <div class="container left">
+                <div class="'.(($i===3) ? "last-child ":"").'container left" id="reviews-container-'.$i.'">
+                    <div class="header"><span>Review '.$i.'</span></div>
                     <div class="content-container">
-                        <h5 class="review-description">'.$review->description.'</h5>
-                        <div class="rating-details">
-                            <p class="project"><span class="strong"><b>Project</b> - '.$review->title.'</span></p>
-                            <div class="rating right">
-                                <p class="left"><i class="rating-static rating-'.($review->rating*10).'"></i></p> - <span class="strong">Customer in '.$review->location.'</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>';
+                        <p class="title"><span class="strong">Customer in '.$review->location.'</span></p>
+                        <img alt="'.$review->rating.' stars" src="./images/global/stars/star_'.$review->rating.'.png" height="17" width="72" />
+                        <p class="project"><span class="strong">Project: '.$review->title.'</span></p>
+                        <p class="descrption">'.$review->description.'</p>';
+            if($review->link==1){
+                $return .= '<p class="read"><a title="Read More" href="'.$review->link.'">Read More</a></p>';
+            }
+            $return .= '</div></div>';
             $i++;
         }
-        $return .= '
-        </div>
-        <a id="ui-carousel-next" href="javascipt:void(0);"><span>next</span></a>
-        <a id="ui-carousel-prev" href="javascipt:void(0);"><span>previous</span></a>
-        </div>
-        ';
+        $return .= '</div>';
         return $return;
     }
     public function printUserStepsText($index){

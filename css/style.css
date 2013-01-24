@@ -280,13 +280,16 @@ body.home{background: url("../images/home/home-background.jpg") repeat-x scroll 
 .home .main-content-container ul.top{margin:20px 0 0 10px;}
 .home .main-content-container ul.top li{color:#7F5911;font-size:1em;font-weight:bold;}
 /* start of review Container */
-#review-container{color:#7F5911;height:240px;overflow:hidden;margin:7px 0 0;position:relative;}
-#review-container .carousel{margin:10px 70px;}
-#review-container h5{font: 400 70px/1.2 'Sansita one', Georgia, serif;color: #616161;font-size: 20px;line-height: 44px;text-align: right;}
-#review-container .rating-details{font-family: 'Imprima', Verdana, Helvetica, sans-serif;margin:10px 0 0 0;text-align:right;}
-#review-container .rating-details i{margin-right:6px;}
-#review-container p.project{font-size:20px;padding:0 0 10px 0;color:#444444;}
-
+#review-container{margin:20px 0 0 0;color:#7F5911;font-size:0.9em;}
+#review-container .container {background-image: url("../images/home/review-container-image.png");background-repeat: no-repeat;width: 320px;margin:0 8px 0 0;height:320px;}
+#review-container .container.last-child{margin-right:0;}
+#review-container .container .header{background-image: url("../images/home/review-header-background.gif");background-repeat: no-repeat;height: 34px;width: 320px;text-align:center;padding:8px 0 0;margin:30px 0 0 0;}
+#review-container .container .header span{font-style:italic;color:#fff;font-weight:bold;font-size:1.1em;}
+#review-container .container .content-container {padding: 0 20px;}
+#review-container .container .content-container p.title{padding:5px 0 5px 0;font-size:1em;}
+#review-container .container .content-container p.project{padding:10px 0 5px 0;font-size:1em;}
+#review-container .container .content-container p.read{padding:10px 0 5px 0;font-size:1em;text-align:right;}
+#review-container .container.last-child{padding-right:0;}
 /* end of review container
 /* end of home */
 /* start of city selector */
