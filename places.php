@@ -16,11 +16,11 @@
                                 <div class="place-container clearfix">
                                     <?php
                                     $places = $place->getPlaces();
-                                    $placesCount = Round(sizeof($places)/4);
+                                    $placesCount = ceil(sizeof($places)/4);
                                     $placesArray[0] = array_slice($places, 0,$placesCount);
-                                    $placesArray[1] = array_slice($places, $placesCount,$placesCount*2);
-                                    $placesArray[2] = array_slice($places, $placesCount*2,$placesCount*3);
-                                    $placesArray[3] = array_slice($places, $placesCount*3,$placesCount*4);
+                                    $placesArray[1] = array_slice($places, $placesCount,$placesCount);
+                                    $placesArray[2] = array_slice($places, $placesCount*2,$placesCount);
+                                    $placesArray[3] = array_slice($places, $placesCount*3,$placesCount);
                                     foreach ($placesArray as $placesArrayKey => $placesArrayValue) {
                                         echo '<ul class="left container">';
                                         foreach ($placesArrayValue as $key => $value) {
