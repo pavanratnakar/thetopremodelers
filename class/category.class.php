@@ -109,7 +109,7 @@ class Category{
         return array(
             'keywords'=>$keywords,
             'description'=>$description,
-            'title'=>$placeName.' | '.$category_title
+            'title'=>'The Top Remodelers | '.$placeName.' | '.$category_title
         );
     }
     public function getDescription($category_title,$place_title) {

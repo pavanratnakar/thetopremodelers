@@ -344,19 +344,18 @@ class Contractor{
         if ($details[0]['place_title']==='Dallas, TX (Texas)' && $details[0]['category_title']==='Roofing Contractors' && $details[0]['section_title']==='Asphalt Shingle Roofing - Repair') {
             $keywords = 'Dallas roofing contractors,dallas roofing companies';
         }
-        $placeTitle = $details[0]['place_title'];
-        $placeTitleSplit = explode(',',$placeTitle);
+        $place_title = explode(' (',$details[0]['place_title']);
         return array(
             'keywords'=>$keywords,
-            'description'=>'We are the only company providing general contractors in '.$placeTitleSplit[0].', with 5 Stars certified ratings, giving you the confidence in choosing the right company.',
-            'title'=>$placeTitle.' | '.$details[0]['category_title'].' | '.$details[0]['section_title'].' | Contractors'
+            'description'=>'We are the only company providing general contractors in '.$name.', with 5 Stars certified ratings, giving you the confidence in choosing the right company.',
+            'title'=>'General Contractors in '.$place_title[0]
             );
     }
     public function getMeta($details){
         return array(
             'keywords'=>'',
             'description'=>'We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company. '.$details['contractor_description'],
-            'title'=>$details['contractor_title']
+            'title'=>'The Top Remodelers | Contractor | '.$details['contractor_title']
             );
     }
     public function getDescription($categoryTitle,$placeName) {

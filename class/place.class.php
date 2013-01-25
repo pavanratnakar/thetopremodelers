@@ -57,7 +57,7 @@ class Place {
         return array(
             'keywords'=>$keywords,
             'description'=>'We are the only company providing roofing contractors in '.$name.', with 5 Stars certified ratings, giving you the confidence in choosing the right company.',
-            'title'=>$placeTitle
+            'title'=>$name.' Roofing Company - '.$name.' Roofing Contractors - TX Roofers'
         );
     }
     public function __destruct() {

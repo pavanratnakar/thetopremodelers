@@ -51,11 +51,11 @@ class Page{
     }
     public function printMeta($meta=null){
         $keywords = $this->currentPage->keywords;
-        if($meta){
-            $title = $this->currentPage->title.' | '.$meta['title'];
+        if ($meta) {
+            $title = $meta['title'] ? $meta['title'] : $this->currentPage->title;
             $description = $meta['description'];
-            if($meta['keywords'] || $meta['keywords']===false){
-                $keywords = ($meta['keywords']===false) ? '' : $meta['keywords'];
+            if ($meta['keywords'] || $meta['keywords'] === false) {
+                $keywords = ($meta['keywords'] === false) ? '' : $meta['keywords'];
             }
         } else {
             $title = $this->currentPage->title;

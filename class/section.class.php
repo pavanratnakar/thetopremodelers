@@ -127,7 +127,7 @@ class Section {
         return array(
             'keywords'=>false,
             'description'=>$description,
-            'title'=>$place_title.' | '.$category_title.' | '.$section_title
+            'title'=>'The Top Remodelers | '.$place_title.' | '.$category_title.' | '.$section_title
         );
     }
     public function getDescription($place_title,$category_title,$section_title) {
