@@ -347,7 +347,7 @@ class Contractor{
         $place_title = explode(' (',$details[0]['place_title']);
         return array(
             'keywords'=>$keywords,
-            'description'=>'We are the only company providing general contractors in '.$name.', with 5 Stars certified ratings, giving you the confidence in choosing the right company.',
+            'description'=>'We are the only company providing general contractors in '.$place_title[0].', with 5 Stars certified ratings, giving you the confidence in choosing the right company.',
             'title'=>'General Contractors in '.$place_title[0]
             );
     }
