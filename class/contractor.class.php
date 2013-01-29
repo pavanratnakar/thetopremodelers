@@ -344,11 +344,15 @@ class Contractor{
         if ($details[0]['place_title']==='Dallas, TX (Texas)' && $details[0]['category_title']==='Roofing Contractors' && $details[0]['section_title']==='Asphalt Shingle Roofing - Repair') {
             $keywords = 'Dallas roofing contractors,dallas roofing companies';
         }
-        $place_title = explode(' (',$details[0]['place_title']);
+        $placeTitle = explode(' (',$details[0]['place_title']);
+        $placeTitle = $placeTitle[0];
+        $suffix = strrchr($placeTitle, ","); 
+        $pos = strpos($placeTitle,$suffix); 
+        $name = substr_replace ($placeTitle,"", $pos);
         return array(
             'keywords'=>$keywords,
-            'description'=>'We are the only company providing general contractors in '.$place_title[0].', with 5 Stars certified ratings, giving you the confidence in choosing the right company.',
-            'title'=>'General Contractors in '.$place_title[0]
+            'description'=>'We are the only company providing general contractors in '.$name.', with 5 Stars certified ratings, giving you the confidence in choosing the right company.',
+            'title'=>'General Contractors in '.$placeTitle
             );
     }
     public function getMeta($details){

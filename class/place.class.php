@@ -51,9 +51,9 @@ class Place {
         $placeDetails = $this->getPlaceDetails($placeName);
         $keywords = ($placeName==='dallas_texas') ? 'dallas general contractors' : false;
         $placeTitle = $placeDetails['place_title'];
-        $suffix = strrchr($placeDetails['place_title'], ","); 
-        $pos = strpos($placeDetails['place_title'],$suffix); 
-        $name = substr_replace ($placeDetails['place_title'],"", $pos);
+        $suffix = strrchr($placeTitle, ","); 
+        $pos = strpos($placeTitle,$suffix); 
+        $name = substr_replace ($placeTitle,"", $pos);
         return array(
             'keywords'=>$keywords,
             'description'=>'We are the only company providing roofing contractors in '.$name.', with 5 Stars certified ratings, giving you the confidence in choosing the right company.',
