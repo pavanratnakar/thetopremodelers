@@ -35,8 +35,8 @@ class PageController{
         return $this->page->printUserStepsText($index);
     }
     public function printFooterLinks(){
-        $title = 'The Top Remodelers | Dallas Roofing Company | Dallas Roofing contractors';
-        $summary = 'We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company.';
+        $title = 'Find a Local Business, great ratings thetopremodelers';
+        $summary = 'Free service that compiles certified ratings from local service companies and contractors in multiple cities';
         $image = Config::$site_url."images/global/logo.png";
         $return='
         <div id="footer">
