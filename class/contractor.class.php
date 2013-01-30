@@ -352,7 +352,7 @@ class Contractor{
         return array(
             'keywords'=>$keywords,
             'description'=>'We are the only company providing general contractors in '.$name.', with 5 Stars certified ratings, giving you the confidence in choosing the right company.',
-            'title'=>'General Contractors in '.$placeTitle
+            'title'=>$name.' Roofing Company - '.$name.' Roofing Contractors - TX Roofers'
             );
     }
     public function getMeta($details){
