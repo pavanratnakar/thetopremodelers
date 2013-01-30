@@ -17,4 +17,6 @@
     <row><cell>111</cell><cell>Contractors Mapping</cell><cell>controller/ajaxController.php?submodule=contractorMapping</cell><cell>1</cell><cell>122</cell><cell>125</cell><cell>true</cell><cell>true</cell></row>
     <row><cell>112</cell><cell>Contractors Rating</cell><cell>controller/ajaxController.php?submodule=contractorRating</cell><cell>1</cell><cell>132</cell><cell>135</cell><cell>true</cell><cell>true</cell></row>
     <row><cell>113</cell><cell>Contractors Image</cell><cell>controller/ajaxController.php?submodule=contractorImage</cell><cell>1</cell><cell>142</cell><cell>145</cell><cell>true</cell><cell>true</cell></row>
+    <row><cell>300</cell><cell>Articles Module</cell><cell></cell><cell>0</cell><cell>301</cell><cell>399</cell><cell>false</cell><cell>false</cell></row>
+    <row><cell>301</cell><cell>Articles Operations</cell><cell>controller/ajaxController.php?submodule=article</cell><cell>1</cell><cell>302</cell><cell>305</cell><cell>true</cell><cell>true</cell></row>
 </rows>

@@ -663,6 +663,56 @@ var herve_grid = {
                 });
             }
         },
+        article: {
+            id      :   "#article",
+            page    :   "#p_article",
+            select  :   "#article_select",
+            init    :   function() {
+                this.setup();
+                herve_grid.jqgrid.crud(herve_grid.jqgrid.article.id,herve_grid.jqgrid.article.page);
+            },
+            setup   :   function() {
+                $(herve_grid.jqgrid.article.id).jqGrid({
+                    url:$.url+'/admin/controller/articleController.php?ref=details',
+                    datatype: "json",
+                    height: 'auto',
+                    width: herve_grid.theme.width,
+                    colNames:['Id','Name','Title','Keywords','Description','Content','Active'],
+                    colModel:[
+                        {name:'id',index:'id',hidden:true,align:'center',editable:false, sorttype:'int',key:true},
+                        {name:'name',index:'name', width:herve_grid.theme.note_width,formoptions:{label: 'Name'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"textarea", editoptions:{rows:"2",cols:"10"}},
+                        {name:'title',index:'title', width:herve_grid.theme.note_width,formoptions:{label: 'Title'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"textarea", editoptions:{rows:"2",cols:"10"}},
+                        {name:'keywords',index:'keywords', width:herve_grid.theme.note_width,formoptions:{label: 'Keywords'},align:"center", sortable:true,editable: true,editrules: { required: false } ,edittype:"textarea", editoptions:{rows:"2",cols:"10"}},
+                        {name:'description',index:'description', width:herve_grid.theme.note_width,formoptions:{label: 'Description'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"textarea", editoptions:{rows:"2",cols:"10"}},
+                        {name:'content',index:'content', width:herve_grid.theme.note_width,formoptions:{label: 'Content'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"textarea", editoptions:{rows:"10",cols:"20"}},
+                        {name:'active',index:'active', width:herve_grid.theme.note_width,formoptions:{label: 'Active'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"select",editoptions:{value:"1:True;0:False"}}
+                    ],
+                    rowNum:30,
+                    rowList:[30,60,90,120,150,180,210,240,270,300],
+                    pager: herve_grid.jqgrid.article.page,
+                    sortname: 'name',
+                    viewrecords: true,
+                    sortorder: "asc",
+                    multiselect: false,
+                    subGrid: false,
+                    caption: "Article",
+                    editurl:$.url+"/admin/controller/articleController.php?ref=operation",
+                    grouping: false,
+                    groupingView : {
+                        groupField : ['question_text'],
+                        groupColumnShow : [true],
+                        groupText : ['<b>{0}</b>'],
+                        groupCollapse : false,
+                        groupOrder: ['desc'],
+                        groupSummary : [true],
+                        showSummaryOnHide: true,
+                        groupDataSorted : true
+                    },
+                    footerrow: true,
+                    userDataOnFooter: true
+                });
+            }
+        },
         crud : function($id,$type){
             $($id).jqGrid('navGrid',$type,
             {add:true, view:true, del:true,edit:true},
