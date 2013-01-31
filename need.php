@@ -19,6 +19,7 @@ if ($_GET['contractor']) {
     $contractorName = $pageController->getUtils()->checkValues($_GET['contractor']);
     $contractor = $pageController->getContractor();
     $contractorDetails = $contractor->getContractor($contractorName);
+    $contractorTitle = $contractorDetails['contractor_title'];
 }
 if ($contractorDetails) {
     $back = Config::$site_url.$placeName.'/'.$categoryName.'/'.$sectionName.'/contractors/';
@@ -32,7 +33,7 @@ if (!$formatQuestions) {
     header( 'Location: '.$submit);
     exit;
 }
-echo $pageController->printHeader($section->getMeta($sectionName));
+echo $pageController->printHeader($section->getMeta($contractorTitle));
 ?>
 <?php echo $pageController->printNavigation(); ?>
 <div class="main-content-container clearfix">

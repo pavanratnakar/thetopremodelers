@@ -92,46 +92,13 @@ class Section {
         }
         return $response[0]['section_title'];
     }
-    public function getMeta($sectionName) {
-        $sectionName=$this->mysqli->real_escape_string($sectionName);
-        $query="SELECT c.section_title , d.category_title , e.place_title
-                    FROM
-                    ".Config::$tables['categorySection_table']." a
-                    LEFT JOIN
-                    ".Config::$tables['placeCategory_table']." b ON b.placeCategory_id=a.placeCategory_id
-                    LEFT JOIN 
-                    ".Config::$tables['section_table']." c ON c.section_id=a.section_id
-                    LEFT JOIN
-                    ".Config::$tables['category_table']." d ON b.category_id=d.category_id                 
-                    LEFT JOIN
-                    ".Config::$tables['place_table']." e ON e.place_id=b.place_id
-                    WHERE 
-                    a.delete_flag=FALSE 
-                    AND b.delete_flag=FALSE 
-                    AND c.delete_flag=FALSE 
-                    AND d.delete_flag=FALSE 
-                    AND e.delete_flag=FALSE 
-                    AND d.category_name='".$this->categoryName."' 
-                    AND c.section_name='".$sectionName."' 
-                    AND e.place_name='".$this->placeName."'";
-        if ($result = $this->mysqli->query($query)) {
-            $i=0;
-            while ($row = $result->fetch_object()) {
-                $place_title=$row->place_title;
-                $category_title=$row->category_title;
-                $section_title=$row->section_title;
-                $description=$this->getDescription($row->place_title,$row->category_title,$row->section_title);
-                $i++;
-            }
-        }
+    public function getMeta($contractorTitle) {
         return array(
             'keywords'=>false,
-            'description'=>$description,
-            'title'=>'The Top Remodelers | '.$place_title.' | '.$category_title.' | '.$section_title
+            'description'=>$contractorTitle.' | The top remodelers prescreened roofing contractors with certified ratings get a quote',
+            'title'=>$contractorTitle.' The top remodelers prescreened roofing quotes'
         );
-    }
-    public function getDescription($place_title,$category_title,$section_title) {
-        return 'We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company';
+        
     }
     public function __destruct() {
         $this->mysqli->close();
