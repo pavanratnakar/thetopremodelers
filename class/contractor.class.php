@@ -351,7 +351,7 @@ class Contractor{
         $name = substr_replace ($placeTitle,"", $pos);
         return array(
             'keywords'=>$keywords,
-            'description'=>'We are the only company providing general contractors in '.$name.', with 5 Stars certified ratings, giving you the confidence in choosing the right company.',
+            'description'=>'We are the only company providing roofing contractors in '.$name.', with 5 Stars certified ratings, giving you the confidence in choosing the right company.',
             'title'=>$name.' Roofing Company - '.$name.' Roofing Contractors - TX Roofers'
             );
     }
