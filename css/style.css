@@ -519,9 +519,9 @@ body.place-request{ background: url("../images/inner/inner-background.jpg") repe
 .customer-advantage .main-content-container ul{margin:0 0 0 10px;list-style-image: url("../images/global/bullets/blockcontentbullets.png");list-style-position: outside;}
 /* end of customer advantage */
 /* articles */
-body.article .content .main p{padding:0 0 1.2em 0;}
-body.article .content .main h2{margin:0 0 15px 0;padding:5px 0 10px;border-bottom:1px solid #E0D5C8;}
-body.article .content .main h3{margin:0;padding:0 0 0.7em 0;border:none;font-weight:bold;font-size:1.2em;color:#7F5911 !important;}
+body.article .content .main p{padding:0 0 1.2em 0;font-size:1.164em;}
+body.article .content .main h2{margin:0 0 15px 0;padding:5px 0 10px;border-bottom:1px solid #E0D5C8;font-size:2.493em;}
+body.article .content .main h3{margin:0;padding:0 0 0.7em 0;border:none;font-weight:bold;font-size:1.745em;color:#7F5911 !important;}
 body.article span.bold{font-weight:bold;}
 body.article span.italics{font-style:italic}
 body.article .sub ol li{list-style-position: outside;list-style-type: decimal;padding-left:0px;}

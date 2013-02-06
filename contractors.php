@@ -79,8 +79,7 @@ echo $pageController->printHeader($contractor->getContractorsMeta($contractorDet
                     <form class="contractorsSort" method="get" action="#">
                         <fieldset>
                             <select name="sort">
-                                <option value="default">Default</option>
-                                <option <?php echo ($sort=="average_score") ? 'selected="selected"' : ''?> value="average_score">Ratings : Highest to Lowest</option>
+                                <option value="average_score">Ratings : Highest to Lowest</option>
                                 <option <?php echo ($sort=="review_count") ? 'selected="selected"' : ''?> value="review_count">Ratings : Most to Least</option>
                             </select>
                         </fieldset>
@@ -148,8 +147,7 @@ echo $pageController->printHeader($contractor->getContractorsMeta($contractorDet
                     <form action="#" class="contractorsSort" method="get">
                         <fieldset>
                             <select name="sort">
-                                <option value="default">Default</option>
-                                <option <?php echo ($sort=="average_score") ? 'selected="selected"' : ''?> value="average_score">Ratings : Highest to Lowest</option>
+                                <option value="average_score">Ratings : Highest to Lowest</option>
                                 <option <?php echo ($sort=="review_count") ? 'selected="selected"' : ''?> value="review_count">Ratings : Most to Least</option>
                             </select>
                         </fieldset>

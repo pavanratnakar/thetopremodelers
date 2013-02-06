@@ -8,6 +8,11 @@
     $pageController=new PageController(6);
     $articleName = $pageController->getUtils()->checkValues($_GET['article']);
     $article = $pageController->getArticle();
+    $articleContent = $article->getArticleDetailsByName($articleName);
+    if (!$articleContent) {
+        header( 'Location: '.Config::$site_url.'404.php');
+        exit;
+    }
     echo $pageController->printHeader($pageController->getMeta('article',$articleName));
 ?>
             <?php echo $pageController->printNavigation(); ?>
@@ -15,7 +20,8 @@
                 <div class="content clearfix">
                     <div class="main left">
                         <div class="sub">
-                            <?php echo $article->getArticleByName($articleName); ?>
+                            <h2><?php echo $articleContent['title']; ?></h2>
+                            <?php echo $articleContent['content']; ?>
                         </div>
                         <div class="comment-box">
                             <h2>Comment</h2>

@@ -14,9 +14,10 @@ class Contractor{
         $sectionName=$this->mysqli->real_escape_string($sectionName);
         $sort=$this->mysqli->real_escape_string($sort);
         $orderBy='';
-        if ($sort && $sort !='default') {
-            $orderBy="ORDER BY ".$sort." DESC";
+        if ($sort === '') {
+            $sort = 'average_score';
         }
+        $orderBy="ORDER BY ".$sort." DESC";
         if ($page == 1) {
             $start = 1;
         } else {

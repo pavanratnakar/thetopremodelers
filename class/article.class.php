@@ -6,7 +6,7 @@ class Article{
         $this->mysqli=new mysqli(Config::$db_server,Config::$db_username,Config::$db_password,Config::$db_database);
         $this->utils=new Utils();
     }
-    public function getArticleByName($articleName){
+    public function getArticleDetailsByName($articleName){
         $articleName=$this->mysqli->real_escape_string($articleName);
         $query="SELECT content, title
                     FROM 
@@ -20,7 +20,7 @@ class Article{
                 $i++;
             }
         }
-        return '<h2>'.$response[0]['title'].'</h2>'.$response[0]['content'];
+        return $response[0];
     }
     public function getMeta($articleName){
         $articleName=$this->mysqli->real_escape_string($articleName);
