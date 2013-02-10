@@ -196,7 +196,7 @@ echo $pageController->printHeader($contractor->getContractorsMeta($contractorDet
                 <li>
                     <h4>Your choices of flat roofs</h4>
                     <ul class="clearfix">
-                        <li><a href="<?php echo Config::$site_url.'article/tpo_and_pvc_roofs' ?>" title="Tpo and pvc roofs">Tpo and pvc roofs</a></li>
+                        <li><a href="<?php echo Config::$site_url.'article/pvc_roofs' ?>" title="Pvc roofs">Pvc roofs</a></li>
                         <li><a href="<?php echo Config::$site_url.'article/rubber_membrane_usage' ?>" title="Rubber membrane">Rubber membrane</a></li>
                         <li><a href="<?php echo Config::$site_url.'article/built_up_flat_roofs' ?>" title="Rubber membrane">Built up Flat Roofs</a></li>
                         <li><a href="<?php echo Config::$site_url.'article/tpo_roofing' ?>" title="Tpo roofing">Tpo roofing</a></li>

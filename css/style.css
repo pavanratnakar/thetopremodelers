@@ -525,10 +525,10 @@ body.article .content .main h3{margin:0;padding:0 0 0.7em 0;border:none;font-wei
 body.article span.bold{font-weight:bold;}
 body.article span.italics{font-style:italic}
 body.article .sub ol li{list-style-position: outside;list-style-type: decimal;padding-left:0px;}
-body.article ul{list-style-position: inside;list-style-type: square;}
+body.article ul{list-style-position: inside;list-style-type: square;font-size:14px;}
 /* list 3 styles */
 body.article ol {color:#333;list-style-position: outside;margin-left:23px;padding:0 0 12px 0;}
-body.article li p  {padding: 0 0 1em 1em;font-size:1.1em;}
+body.article li p  {padding: 0 0 1em 1em;font-size:14px;}
 body.article .comment-box{padding:0 20px;}
 /* articles */
 /* start of comment - facebook */
