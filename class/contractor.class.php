@@ -343,7 +343,7 @@ class Contractor{
     public function getContractorsMeta($details){
         $keywords = false;
         if ($details[0]['place_title']==='Dallas, TX (Texas)' && $details[0]['category_title']==='Roofing Contractors' && $details[0]['section_title']==='Asphalt Shingle Roofing - Repair') {
-            $keywords = 'Dallas roofing contractors,dallas roofing companies';
+            $keywords = 'Dallas roofing company, Dallas roofing contractors, Dallas commercial companies';
         }
         $placeTitle = explode(' (',$details[0]['place_title']);
         $placeTitle = $placeTitle[0];
