@@ -197,12 +197,14 @@ echo $pageController->printHeader($contractor->getMeta($contractorDetails));
                                 <li><a href="<?php echo Config::$site_url.'article/standing_seam_roof' ?>" title="Standing Seam roof">Standing Seam roof</a></li>
                                 <li><a href="<?php echo Config::$site_url.'article/steel_roofing' ?>" title="Steel roofing">Steel roofing</a></li>
                                 <li><a href="<?php echo Config::$site_url.'article/natural_slate_roofing' ?>" title="Natural slate roofing">Natural slate roofing</a></li>
+                                <li><a href="<?php echo Config::$site_url.'article/cooper_roofing' ?>" title="Cooper roofing">Cooper roofing</a></li>
                             </ul>
                         </li>
                         <li>
                             <h4>Your Insurance</h4>
                             <ul class="clearfix">
                                 <li><a href="<?php echo Config::$site_url.'article/dallas_under_dangerous_threat_hailstorm' ?>" title="Dallas under the dangerous threat of Hailstorm in June 2012">Dallas under the dangerous threat of Hailstorm in June 2012</a></li>
+                                <li><a href="<?php echo Config::$site_url.'article/3_ways_your_roof_can_save_you' ?>" title="3 ways your roof can save you">3 ways your roof can save you</a></li>
                             </ul>
                         </li>
                     </ul>
