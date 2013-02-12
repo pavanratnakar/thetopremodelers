@@ -289,5 +289,8 @@ class PageController{
         ";
         return $return;
     }
+    public function getArticles(){
+        return $this->page->getArticles();
+    }
 }
 ?>

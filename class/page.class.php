@@ -19,13 +19,13 @@ class Page{
     public function printHeader($meta=null){
         $return='
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-            "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
         <html dir="ltr" lang="en-US" xml:lang="en"
-            xmlns="http://www.w3.org/1999/xhtml"
-            xmlns:og="http://ogp.me/ns#"
-            xmlns:fb="https://www.facebook.com/2008/fbml"
-            itemscope itemtype="http://schema.org/">
-            <head>';
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:og="http://ogp.me/ns#"
+        xmlns:fb="https://www.facebook.com/2008/fbml"
+        itemscope itemtype="http://schema.org/">
+        <head>';
         $return.=$this->printMeta($meta);
         $return.=$this->printCss('herve_css');
         if($this->currentPage->css == 1){
@@ -33,20 +33,20 @@ class Page{
         }
         $return.='
         </head>
-            <body class="'.$this->currentPage->class.' '.$this->currentPage->template.'">
-            <div id="fb-root"></div>
-            <div id="wrapper">
-                <div class="art-header clearfix">
-                    <div class="art-logo left">
-                        <h1><a href="'.Config::$site_url.'"><img src="'.Config::$site_url.'images/global/logo.png" alt="The Top Remodelers - MATCHING YOU WITH OUR PRESCREENED CONTRACTORS" title="The Top Remodelers - MATCHING YOU WITH OUR PRESCREENED CONTRACTORS" width="200" height="76"/></a></h1>
-                    </div>
-                    <div class="art-contact right">
-                        <span class="orange">Need immediate service</span>
-                        <div class="art-cell">
-                            <h3><span class="orange">Call us:</span> <span class="number brown">1(214)303 9771</span></h3>
-                        </div>
-                    </div>
-                </div>';
+        <body class="'.$this->currentPage->class.' '.$this->currentPage->template.'">
+        <div id="fb-root"></div>
+        <div id="wrapper">
+        <div class="art-header clearfix">
+        <div class="art-logo left">
+        <h1><a href="'.Config::$site_url.'"><img src="'.Config::$site_url.'images/global/logo.png" alt="The Top Remodelers - MATCHING YOU WITH OUR PRESCREENED CONTRACTORS" title="The Top Remodelers - MATCHING YOU WITH OUR PRESCREENED CONTRACTORS" width="200" height="76"/></a></h1>
+        </div>
+        <div class="art-contact right">
+        <span class="orange">Need immediate service</span>
+        <div class="art-cell">
+        <h3><span class="orange">Call us:</span> <span class="number brown">1(214)303 9771</span></h3>
+        </div>
+        </div>
+        </div>';
         return $return;
     }
     public function printMeta($meta=null){
@@ -73,8 +73,8 @@ class Page{
         <meta name="title" content="'.$title.'" />
         <meta name="description" content="'.$description.'" />';
         if ($keywords) {
-        $return.='
-        <meta name="keywords" content="'.$keywords.'" />';
+            $return.='
+            <meta name="keywords" content="'.$keywords.'" />';
         }
         $return.='
         <meta name="author" content="Top Remodelers" />
@@ -121,8 +121,8 @@ class Page{
     }
     public function printNavigation(){
         $return='
-            <div class="art-bar art-nav clearfix">
-                <ul class="art-hmenu">';
+        <div class="art-bar art-nav clearfix">
+        <ul class="art-hmenu">';
         foreach ($this->pages as $page) {
             if($page->navigation==1){
                 $class = ($page->id == $this->currentPage->id) ? 'class="active"' : '';
@@ -138,13 +138,13 @@ class Page{
         $i=1;
         foreach ($reviews as $review) {
             $return .= '
-                <div class="'.(($i===3) ? "last-child ":"").'container left" id="reviews-container-'.$i.'">
-                    <div class="header"><span>Review '.$i.'</span></div>
-                    <div class="content-container">
-                        <p class="title"><span class="strong">Customer in '.$review->location.'</span></p>
-                        <img alt="'.$review->rating.' stars" src="./images/global/stars/star_'.$review->rating.'.png" height="17" width="72" />
-                        <p class="project"><span class="strong">Project: '.$review->title.'</span></p>
-                        <p class="descrption">'.$review->description.'</p>';
+            <div class="'.(($i===3) ? "last-child ":"").'container left" id="reviews-container-'.$i.'">
+            <div class="header"><span>Review '.$i.'</span></div>
+            <div class="content-container">
+            <p class="title"><span class="strong">Customer in '.$review->location.'</span></p>
+            <img alt="'.$review->rating.' stars" src="./images/global/stars/star_'.$review->rating.'.png" height="17" width="72" />
+            <p class="project"><span class="strong">Project: '.$review->title.'</span></p>
+            <p class="descrption">'.$review->description.'</p>';
             if($review->link==1){
                 $return .= '<p class="read"><a title="Read More" href="'.$review->link.'">Read More</a></p>';
             }
@@ -160,7 +160,7 @@ class Page{
             'Click on a category',
             'Describe your need',
             'Get Matched to Pros'
-        );
+            );
         for ($i=1;$i<=sizeof($steps);$i++){
             if($i==$index){
                 $class='orange-background';
@@ -184,19 +184,17 @@ class Page{
     }
     public function printGA(){
         $return="
-            <script type=\"text/javascript\">
+        <script type=\"text/javascript\">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-30287515-1']);
+        _gaq.push(['_trackPageview']);
 
-              var _gaq = _gaq || [];
-              _gaq.push(['_setAccount', 'UA-30287515-1']);
-              _gaq.push(['_trackPageview']);
-
-              (function() {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-              })();
-
-            </script>";
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        </script>";
         return $return;
     }
     public function jumpList($data,$selected){
@@ -204,27 +202,27 @@ class Page{
             return '';
         }
         $return ='
-            <div class="jump-list-container utility-container">
-                <ul>';
+        <div class="jump-list-container utility-container">
+        <ul>';
         foreach ($data as $key=>$value) {
             $return .= '
-                <li class="'.$key.'">
-                    <a title="'.$value['title'].'" class="'.(($selected==$key) ? 'selected' : '').'" href="#'.$key.'">
-                        '.$value['title'].'
-                        '.(($selected==$key) ? '<i></i>' : '').'
-                    </a>
-                </li>
-                ';
+            <li class="'.$key.'">
+            <a title="'.$value['title'].'" class="'.(($selected==$key) ? 'selected' : '').'" href="#'.$key.'">
+            '.$value['title'].'
+            '.(($selected==$key) ? '<i></i>' : '').'
+            </a>
+            </li>
+            ';
         }
         if ($selected=='top') {
             $return .= '
-                <li class="'.$key.' right">
-                    <a class="selected" title="Back to Top" href="#Top">
-                        Back to Top
-                        <i></i>
-                    </a>
-                </li>
-                ';
+            <li class="'.$key.' right">
+            <a class="selected" title="Back to Top" href="#Top">
+            Back to Top
+            <i></i>
+            </a>
+            </li>
+            ';
         }
         $return .='</ul></div>';
         return $return;
@@ -236,12 +234,53 @@ class Page{
         return "<!--Start of Zopim Live Chat Script-->
         <script type=\"text/javascript\">
         window.\$zopim||(function(d,s){var z=\$zopim=function(c){z._.push(c)},$=z.s=
-        d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
-        _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
-        $.src='//cdn.zopim.com/?MddEPZHtRdlfhytSBoJLIVoWotreXFR0';z.t=+new Date;$.
-        type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
-        </script>
-        <!--End of Zopim Live Chat Script-->";
+            d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+                _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
+                $.src='//cdn.zopim.com/?MddEPZHtRdlfhytSBoJLIVoWotreXFR0';z.t=+new Date;$.
+                type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
+    </script>
+    <!--End of Zopim Live Chat Script-->";
+    }
+    /* VERY BASIC FUNCTION */
+    public function getArticles(){
+        return '
+        <ul>
+        <li class="first-child">
+        <h4>A roofing contractor</h4>
+        <ul class="clearfix">
+        <li><a href="'.Config::$site_url.'article/having_right_contract" title="Have the right contract">Have the right contract</a></li>
+        <li><a href="'.Config::$site_url.'article/roofings_warranty" title="Choosing your roofing warranty">Choosing your roofing warranty</a></li>
+        </ul>
+        </li>
+        <li>
+        <h4>Your choices of flat roofs</h4>
+        <ul class="clearfix">
+        <li><a href="'.Config::$site_url.'article/pvc_roofs" title="Pvc roofs">Pvc roofs</a></li>
+        <li><a href="'.Config::$site_url.'article/rubber_membrane_usage" title="Rubber membrane">Rubber membrane</a></li>
+        <li><a href="'.Config::$site_url.'article/built_up_flat_roofs" title="Rubber membrane">Built up Flat Roofs</a></li>
+        <li><a href="'.Config::$site_url.'article/tpo_roofing" title="Tpo roofing">Tpo roofing</a></li>
+        </ul>
+        </li>
+        <li>
+        <h4>Different types of roofs materials</h4>
+        <ul class="clearfix">
+        <li><a href="'.Config::$site_url.'article/metal_roof" title="Metal roof">Metal roof</a></li>
+        <li><a href="'.Config::$site_url.'article/benefits_of_metal_roofing" title="Asphalt singles">Asphalt singles</a></li>
+        <li><a href="'.Config::$site_url.'article/green_roofing" title="Green roofing">Green roofing</a></li>
+        <li><a href="'.Config::$site_url.'article/standing_seam_roof" title="Standing Seam roof">Standing Seam roof</a></li>
+        <li><a href="'.Config::$site_url.'article/steel_roofing" title="Steel roofing">Steel roofing</a></li>
+        <li><a href="'.Config::$site_url.'article/natural_slate_roofing" title="Natural slate roofing">Natural slate roofing</a></li>
+        <li><a href="'.Config::$site_url.'article/cooper_roofing" title="Cooper roofing">Cooper roofing</a></li>
+        </ul>
+        </li>
+        <li>
+        <h4>Your Insurance</h4>
+        <ul class="clearfix">
+        <li><a href="'.Config::$site_url.'article/dallas_under_dangerous_threat_hailstorm" title="Dallas under the dangerous threat of Hailstorm in June 2012">Dallas under the dangerous threat of Hailstorm in June 2012</a></li>
+        <li><a href="'.Config::$site_url.'article/3_ways_your_roof_can_save_you" title="3 ways your roof can save you">3 ways your roof can save you</a></li>
+        </ul>
+        </li>
+        </ul>';
     }
 }
 ?>
