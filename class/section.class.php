@@ -48,6 +48,7 @@ class Section {
                     AND c.delete_flag=FALSE 
                     AND d.delete_flag=FALSE 
                     AND e.delete_flag=FALSE 
+                    AND e.active=TRUE 
                     AND d.category_name='".$this->categoryName."' 
                     AND e.place_name='".$this->placeName."' 
                     ORDER BY a.categorysection_order ASC";

@@ -27,7 +27,13 @@ class Question{
                     ".Config::$tables['question_category']." g ON a.question_type=g.category_id
                     LEFT JOIN 
                     ".Config::$tables['place_table']." h ON h.place_id=e.place_id
-                    WHERE c.section_name='".$sectionName."' AND f.category_name='".$categoryName."' AND h.place_name='".$placeName."' AND a.delete_flag=0
+                    WHERE 
+                    c.section_name='".$sectionName."' 
+                    AND f.category_name='".$categoryName."' 
+                    AND h.place_name='".$placeName."' 
+                    AND a.delete_flag=0
+                    AND h.delete_flag=FALSE
+                    AND h.active=TRUE 
                     ORDER BY b.question_order";
         if ($result = $this->mysqli->query($query)) {
             $i=0;

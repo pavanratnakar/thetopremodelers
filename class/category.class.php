@@ -21,6 +21,7 @@ class Category{
                     a.delete_flag=FALSE
                     AND b.delete_flag=FALSE
                     AND c.delete_flag=FALSE
+                    AND c.active=TRUE
                     AND a.active=1 
                     AND c.place_name='".$place_name."'";
         if ($result = $this->mysqli->query($query)) {

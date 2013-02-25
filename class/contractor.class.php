@@ -50,6 +50,7 @@ class Contractor{
         AND e.delete_flag=FALSE 
         AND f.delete_flag=FALSE 
         AND g.delete_flag=FALSE 
+        AND g.active=TRUE 
         AND h.delete_flag=FALSE 
         AND f.section_name='".$sectionName."'
         AND g.place_name='".$placeName."' 
@@ -104,6 +105,7 @@ class Contractor{
         AND e.delete_flag=FALSE 
         AND f.delete_flag=FALSE 
         AND g.delete_flag=FALSE 
+        AND g.active=TRUE 
         AND h.delete_flag=FALSE 
         AND f.section_name='".$sectionName."'
         AND g.place_name='".$placeName."' 
@@ -221,7 +223,8 @@ class Contractor{
         AND c.delete_flag=FALSE
         AND d.delete_flag=FALSE
         AND e.delete_flag=FALSE
-        AND f.delete_flag=FALSE ";
+        AND f.delete_flag=FALSE
+        AND f.active=TRUE ";
         if ($details['contractor_id']) {
             $contractor_id=$this->mysqli->real_escape_string($details['contractor_id']);
             $query .= "AND a.contractor_id='".$contractor_id."' ";
@@ -265,6 +268,7 @@ class Contractor{
         AND d.delete_flag=FALSE
         AND e.delete_flag=FALSE
         AND f.delete_flag=FALSE
+        AND f.active=TRUE 
         AND g.delete_flag=FALSE ";
         if ($details['contractor_id']) {
             $contractor_id=$this->mysqli->real_escape_string($details['contractor_id']);
@@ -304,6 +308,7 @@ class Contractor{
             a.delete_flag=FALSE
             AND b.delete_flag=FALSE
             AND c.delete_flag=FALSE
+            AND c.active=TRUE 
             AND a.contractor_id='".$contractor_id."'";
             if ($result = $this->mysqli->query($query)) {
                 $i=0;

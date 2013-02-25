@@ -11,7 +11,7 @@ class Place {
                     ".Config::$tables['place_table']." a
                     WHERE 
                     place_name='".$placeName."'
-                    AND a.delete_flag=FALSE";
+                    AND a.delete_flag=FALSE AND a.active=TRUE";
 
         if ($result = $this->mysqli->query($query)) {
             $i=0;
@@ -34,7 +34,7 @@ class Place {
                     FROM 
                     ".Config::$tables['place_table']." a 
                     WHERE 
-                    a.delete_flag=FALSE
+                    a.delete_flag=FALSE AND a.active=TRUE
                     AND under!=0 
                     ORDER BY place_id ASC ".$limit."";
         if ($result = $this->mysqli->query($query)) {
