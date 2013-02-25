@@ -23,7 +23,7 @@ class placeController {
     public function details(){
         if (isset($_REQUEST['_search']) && $this->searchOn!='false') {
             $fld =  $this->utils->checkValues($_REQUEST['searchField']);
-            if ($fld=='place_id' || $fld=='place_name' || $fld=='place_title' || $fld=='under') {
+            if ($fld=='place_id' || $fld=='place_name' || $fld=='place_title' || $fld=='under' || $fld=='place') {
                 $fldata =  $this->utils->checkValues($_REQUEST['searchString']);
                 $foper =  $this->utils->checkValues($_REQUEST['searchOper']);
                 // costruct where
@@ -86,11 +86,11 @@ class placeController {
                 }
             }
         } else {
-            if(!$this->sidx) {
+            if (!$this->sidx) {
                 $this->sidx =1;
             }
             $totalrows = isset($_REQUEST['totalrows']) ? $this->utils->checkValues($_REQUEST['totalrows']): false;
-            if($totalrows) {
+            if ($totalrows) {
                 $this->limit = $totalrows;
             }
             $wh="";
@@ -102,11 +102,12 @@ class placeController {
     public function operation(){
         $oper=$this->utils->checkValues($_REQUEST['oper']);
         /* ADD */
-        if($oper=='add'){
+        if ($oper=='add') {
             $response=$this->place->addDetails(
                 $this->utils->checkValues($_POST['place_name']),
                 $this->utils->checkValues($_POST['place_title']),
-                $this->utils->checkValues($_POST['under'])
+                $this->utils->checkValues($_POST['under']),
+                $this->utils->checkValues($_POST['active'])
             );
             if($response){
                 $status=TRUE;
@@ -123,6 +124,7 @@ class placeController {
                 $this->utils->checkValues($_POST['place_name']),
                 $this->utils->checkValues($_POST['place_title']),
                 $this->utils->checkValues($_POST['under']),
+                $this->utils->checkValues($_POST['active']),
                 $this->utils->checkValues($_POST['id'])
             );
             if($response){
