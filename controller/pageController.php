@@ -41,35 +41,35 @@ class PageController{
         $return='
         <div id="footer">
         <div class="footer-wrapper clearfix">
-        <div class="footer-top">
-        <div class="column city_selector">
-        <h3>Cities we cover | <a href="'.Config::$site_url.'places" title="More Cities">More Cities &#8250;</a></h3>
-        '.$this->citySelector().'
-        </div>
-        <div class="column about_us">
-            <div class="footer_about">
-                <h3>About Us</h3>
-                <div class="content">
-                    <p>'.$summary.'</p>                         
-                    <p>&nbsp;</p>
-                    <p>Address: <b>2003 michigan ave, Dallas tx 75216</b></p>
-                    <p>Telephone: <b>1(214)303 9771</b></p>
+        <div class="footer-top clearfix">';
+        //  $return.='<div class="column city_selector">
+        // <h3>Cities we cover | <a href="'.Config::$site_url.'places" title="More Cities">More Cities &#8250;</a></h3>
+        // '.$this->citySelector().'
+        // </div>';
+        $return.='
+            <div class="column about_us">
+                <div class="footer_about left">
+                    <h3>About Us</h3>
+                    <div class="content">
+                        <p>'.$summary.'</p>                         
+                        <p>&nbsp;</p>
+                        <p>Address: <b>2003 michigan ave, Dallas tx 75216</b></p>
+                        <p>Telephone: <b>1(214)303 9771</b></p>
+                    </div>
+                </div>
+                <div class="social-sharing left">
+                    <h3>Share Us</h3>
+                    <div class="content">
+                        <span class="st_sharethis_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="ShareThis"></span>
+                        <span class="st_facebook_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="Facebook"></span>
+                        <span class="st_twitter_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="Tweet"></span>
+                        <span class="st_linkedin_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="LinkedIn"></span>
+                        <span class="st_googleplus_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="Google +"></span>
+                        <span class="st_pinterest_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="Pinterest"></span>
+                        <span class="st_email_large" st_image="'.$image.'"  st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="Email"></span>
+                    </div>
                 </div>
             </div>
-            <div class="social-sharing">
-                <h3>Share Us</h3>
-                <div class="content">
-                    <span class="st_sharethis_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="ShareThis"></span>
-                    <span class="st_facebook_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="Facebook"></span>
-                    <span class="st_twitter_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="Tweet"></span>
-                    <span class="st_linkedin_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="LinkedIn"></span>
-                    <span class="st_googleplus_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="Google +"></span>
-                    <span class="st_pinterest_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="Pinterest"></span>
-                    <span class="st_email_large" st_image="'.$image.'"  st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="Email"></span>
-                </div>
-            </div>
-        </div>
-        <div class="clear"></div>
         </div>
         </div>
         <div class="footer-bottom">
