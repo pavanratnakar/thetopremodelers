@@ -303,15 +303,14 @@ body.home{background: url("../images/home/home-background.jpg") repeat-x scroll 
 .main-content-container #footer .footer-top{padding-bottom:20px;}
 #footer .footer-top{padding:0 0 20px;position:relative;}
 #footer .column{float:left;diplay:inline;}
-/*
 #footer .column.city_selector,#footer .footer-bottom .copyrights{margin-left:0;}
-#footer .column.city_selector{width:25%;border-right: 1px solid #3B3B3B;padding-right:10px;}
-*/
-#footer .column.about_us{width:100%;}
+#footer .column.city_selector{width:25%;}
+#footer .column.about_us{width:70%;border-left: 1px solid #3B3B3B;padding-left:20px;margin-left:20px;}
 #footer .column.links{float:right;}
-#footer .footer_about{width:64%;border-right: 1px solid #3B3B3B;margin-right:20px;padding-right:20px;}
+#footer .footer_about{width:60%;border-right: 1px solid #3B3B3B;margin-right:20px;padding-right:20px;}
 #footer .footer_about .content{color: #9C9C9C;font-size: 0.85em;line-height: 1.7em;padding-bottom: 0;}
-/*#footer .social-sharing{margin:25px 0 0 0;}*/
+#footer .social-sharing{width:33%;}
+#footer .social-sharing .stButton{margin-bottom:10px;}
 #footer .content{padding:0;}
 #footer h3 {color: #FEFEFE;font-size: 1.05em;padding-bottom: 20px;}
 #footer h3 a{font-size:0.8em;color:#7F5911;}

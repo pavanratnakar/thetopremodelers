@@ -42,10 +42,12 @@ class PageController{
         <div id="footer">
         <div class="footer-wrapper clearfix">
         <div class="footer-top clearfix">';
-        //  $return.='<div class="column city_selector">
-        // <h3>Cities we cover | <a href="'.Config::$site_url.'places" title="More Cities">More Cities &#8250;</a></h3>
-        // '.$this->citySelector().'
-        // </div>';
+        $return.='
+            <div class="column city_selector">
+                <h3>Cities we cover | <a href="'.Config::$site_url.'places" title="More Cities">More Cities &#8250;</a></h3>
+                '.$this->citySelector().'
+            </div>
+        ';
         $return.='
             <div class="column about_us">
                 <div class="footer_about left">
