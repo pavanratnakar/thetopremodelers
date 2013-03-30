@@ -51,11 +51,15 @@ class Page{
     }
     public function printMeta($meta=null){
         $keywords = $this->currentPage->keywords;
+        $geo = '32.723812,-96.816880';
         if ($meta) {
             $title = $meta['title'] ? $meta['title'] : $this->currentPage->title;
             $description = $meta['description'];
             if ($meta['keywords'] || $meta['keywords'] === false) {
                 $keywords = ($meta['keywords'] === false) ? '' : $meta['keywords'];
+            };
+            if ($meta['geo']) {
+                $geo = $meta['geo'];
             }
         } else {
             $title = $this->currentPage->title;
@@ -87,8 +91,8 @@ class Page{
         <!-- GEO -->
         <meta name="geo.region" content="US-TX" />
         <meta name="geo.placename" content="Dallas, Dallas County, Texas, United States" />
-        <meta name="geo.position" content="32.723812;-96.816880" />
-        <meta name="ICBM" content="32.723812, -96.816880" />
+        <meta name="geo.position" content="'.str_replace(",",";",$geo).'" />
+        <meta name="ICBM" content="'.$geo.'" />
         <!-- END OF GEO -->
         <!-- OG META TAGS -->
         <meta property="og:title" content="'.$title.'" />

@@ -180,7 +180,7 @@ echo $pageController->printHeader($contractor->getContractorsMeta($contractorDet
             <img src="<?php echo Config::$site_url.'images/global/sidebar/solar_system.png' ?>" title="Hire our pros and win 6000 watt solar system" alt="Hire our pros and win 6000 watt solar system" />
         </div>
     </div>
-    <?php if ($placeName==='dallas_texas') { ?>
+    <?php if ($placeName==='dallas_texas' || $placeName==='garland_texas') { ?>
     <div class="sidebar-container">
         <div class="sidebar-header">
             <h3>Roofing Library</h3>

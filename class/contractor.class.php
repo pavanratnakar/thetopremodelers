@@ -24,7 +24,7 @@ class Contractor{
             $allContractors = $this->getAllContractors($placeName,$categoryName,$sectionName);
             $start = min(Config::$paginationLimit*$page,$allContractors['total_count']);
         }
-        $query="SELECT ROUND(SUM(score)/COUNT(score),1) as average_score,COUNT(review) as review_count,a.contractor_title,a.contractor_description,a.contractor_phone,a.contractor_address,a.contractor_name,c.categorySection_id,f.section_title,g.place_title,h.category_title,i.image_id
+        $query="SELECT ROUND(SUM(score)/COUNT(score),1) as average_score,COUNT(review) as review_count,a.contractor_title,a.contractor_description,a.contractor_phone,a.contractor_address,a.contractor_name,c.categorySection_id,f.section_title,g.place_title,g.place_geo,h.category_title,i.image_id
         FROM 
         ".Config::$tables['contractor_table']." a
         LEFT JOIN
@@ -68,6 +68,7 @@ class Contractor{
                 $response[$i]['contractor_name']=$row->contractor_name;
                 $response[$i]['category_title']=$row->category_title;
                 $response[$i]['place_title']=$row->place_title;
+                $response[$i]['place_geo']=$row->place_geo;
                 $response[$i]['section_title']=$row->section_title;
                 $response[$i]['average_score']=$row->average_score;
                 $response[$i]['review_count']=$row->review_count;
@@ -348,6 +349,8 @@ class Contractor{
         $keywords = false;
         if ($details[0]['place_title']==='Dallas, TX (Texas)' && $details[0]['category_title']==='Roofing Contractors' && $details[0]['section_title']==='Asphalt Shingle Roofing - Repair') {
             $keywords = 'Dallas roofing company, Dallas roofing contractors, Dallas commercial companies';
+        } else if ($details[0]['place_title']==='Garland, TX (Texas)' && $details[0]['category_title']==='Roofing Contractors' && $details[0]['section_title']==='Asphalt Shingle Roofing - Repair') {
+            $keywords = 'roofers Garland tx, contractors, company, roofing, companies';
         }
         $placeTitle = explode(' (',$details[0]['place_title']);
         $placeTitle = $placeTitle[0];
@@ -355,9 +358,10 @@ class Contractor{
         $pos = strpos($placeTitle,$suffix); 
         $name = substr_replace ($placeTitle,"", $pos);
         return array(
-            'keywords'=>$keywords,
-            'description'=>'We are the only company providing roofing contractors in '.$name.', with 5 Stars certified ratings, giving you the confidence in choosing the right company.',
-            'title'=>$name.' Roofing Company - '.$name.' Roofing Contractors - TX Roofers'
+            'keywords'=> $keywords,
+            'description'=>'We are the only company providing roofing contractors in '.$name.' tx, with 5 Stars certified ratings, giving you the confidence in choosing the right contractor.',
+            'title'=> $name.' Roofing Company - '.$name.' Roofing Contractors - TX Roofers',
+            'geo'=> $details[0]['place_geo']
             );
     }
     public function getMeta($details){

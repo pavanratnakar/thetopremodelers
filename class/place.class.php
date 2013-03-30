@@ -18,6 +18,7 @@ class Place {
             while ($row = $result->fetch_object()) {
                 $response[$i]['place_id']=$row->place_id;
                 $response[$i]['place_title']=$row->place_title;
+                $response[$i]['place_geo']=$row->place_geo;
                 $i++;
             }
         }
@@ -57,7 +58,8 @@ class Place {
         return array(
             'keywords'=>$keywords,
             'description'=>'We are the only company providing general contractors in '.$name.',with 5 Stars certified ratings ,giving you the confidence in choosing the right company',
-            'title'=>'General contractors in '.$name
+            'title'=>'General contractors in '.$name,
+            'geo'=>$placeDetails['place_geo']
         );
     }
     public function __destruct() {
