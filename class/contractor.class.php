@@ -308,7 +308,6 @@ class Contractor{
             a.delete_flag=FALSE
             AND b.delete_flag=FALSE
             AND c.delete_flag=FALSE
-            AND c.active=TRUE 
             AND a.contractor_id='".$contractor_id."'";
             if ($result = $this->mysqli->query($query)) {
                 $i=0;
