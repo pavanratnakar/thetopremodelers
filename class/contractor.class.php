@@ -24,7 +24,7 @@ class Contractor{
             $allContractors = $this->getAllContractors($placeName,$categoryName,$sectionName);
             $start = min(Config::$paginationLimit*$page,$allContractors['total_count']);
         }
-        $query="SELECT ROUND(SUM(score)/COUNT(score),1) as average_score,COUNT(review) as review_count,a.contractor_title,a.contractor_description,a.contractor_phone,a.contractor_address,a.contractor_name,c.categorySection_id,f.section_title,g.place_title,g.place_geo,h.category_title,i.image_id
+        $query="SELECT ROUND(SUM(score)/COUNT(score),1) as average_score,COUNT(review) as review_count,a.contractor_title,a.contractor_description,a.contractor_phone,a.contractor_address,a.contractor_name,c.categorySection_id,f.section_title,g.place_title,g.place_geo,g.place_geo_placename,h.category_title,i.image_id
         FROM 
         ".Config::$tables['contractor_table']." a
         LEFT JOIN
@@ -69,6 +69,7 @@ class Contractor{
                 $response[$i]['category_title']=$row->category_title;
                 $response[$i]['place_title']=$row->place_title;
                 $response[$i]['place_geo']=$row->place_geo;
+                $response[$i]['place_geo_placename']=$row->place_geo_placename;
                 $response[$i]['section_title']=$row->section_title;
                 $response[$i]['average_score']=$row->average_score;
                 $response[$i]['review_count']=$row->review_count;
@@ -361,7 +362,8 @@ class Contractor{
             'keywords'=> $keywords,
             'description'=>'We are the only company providing roofing contractors in '.$name.' tx, with 5 Stars certified ratings, giving you the confidence in choosing the right contractor.',
             'title'=> $name.' Roofing Company - '.$name.' Roofing Contractors - TX Roofers',
-            'geo'=> $details[0]['place_geo']
+            'geo'=> $details[0]['place_geo'],
+            'geo_placename'=> $details[0]['place_geo_placename']
             );
     }
     public function getMeta($details){

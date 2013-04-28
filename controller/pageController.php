@@ -35,7 +35,7 @@ class PageController{
         return $this->page->printUserStepsText($index);
     }
     public function printFooterLinks(){
-        $title = 'Find a Local Business, great ratings thetopremodelers';
+        $title = 'Dallas roofers-Dallas roofing contractors-company Tx';
         $summary = 'Free service that compiles certified ratings from local service companies and contractors in multiple cities';
         $image = Config::$site_url."images/global/logo.png";
         $return='

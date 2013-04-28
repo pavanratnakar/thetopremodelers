@@ -32,6 +32,21 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>http://www.thetopremodelers.com/places</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/dallas_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/garland_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>http://www.thetopremodelers.com/contractor/astrotech_Contractors</loc>
   <changefreq>monthly</changefreq>
   <priority>0.64</priority>
@@ -207,8 +222,68 @@
   <priority>0.64</priority>
 </url>
 <url>
+  <loc>http://www.thetopremodelers.com/garland_texas/roofing_contractors/contractors</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
   <loc>http://www.thetopremodelers.com/dallas_texas/roofing_contractors/asphalt_shingle_roofing_repair/contractors/</loc>
   <changefreq>monthly</changefreq>
   <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/garland_texas/roofing_contractors/asphalt_shingle_roofing_repair/astrotech_Contractors/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/garland_texas/roofing_contractors/asphalt_shingle_roofing_repair/olvera_construction_roofing/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/garland_texas/roofing_contractors/asphalt_shingle_roofing_repair/latham_roofing_inc/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/garland_texas/roofing_contractors/asphalt_shingle_roofing_repair/rooftops/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/garland_texas/roofing_contractors/asphalt_shingle_roofing_repair/atlas_roofing/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/garland_texas/roofing_contractors/asphalt_shingle_roofing_repair/double_e_inc/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/garland_texas/roofing_contractors/asphalt_shingle_roofing_repair/landmark_energy_solutions/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/garland_texas/roofing_contractors/asphalt_shingle_roofing_repair/pacesetter_contracting_llc/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/garland_texas/roofing_contractors/asphalt_shingle_roofing_repair/nielco_roofing_and_sheet_metal/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/garland_texas/roofing_contractors/asphalt_shingle_roofing_repair/c_and_j_roofing_co/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/garland_texas/roofing_contractors/asphalt_shingle_roofing_repair/contractors/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
 </url>
 </urlset>
