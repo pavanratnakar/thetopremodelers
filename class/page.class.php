@@ -279,6 +279,7 @@ class Page{
         <li><a href="'.Config::$site_url.'article/steel_roofing" title="Steel roofing">Steel roofing</a></li>
         <li><a href="'.Config::$site_url.'article/natural_slate_roofing" title="Natural slate roofing">Natural slate roofing</a></li>
         <li><a href="'.Config::$site_url.'article/cooper_roofing" title="Cooper roofing">Cooper roofing</a></li>
+        <li><a href="'.Config::$site_url.'article/clay_roofing" title="Clay roofing">Clay roofing</a></li>
         </ul>
         </li>
         <li>

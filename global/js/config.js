@@ -1,4 +1,4 @@
 // <![CDATA[
-$.url = 'http://thetopremodelers.localhost';
+$.url = 'http://www.thetopremodelers.com';
 var switchTo5x=true;
 // ]]>
