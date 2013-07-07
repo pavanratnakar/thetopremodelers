@@ -20,6 +20,7 @@ class Place {
                 $response[$i]['place_title']=$row->place_title;
                 $response[$i]['place_geo']=$row->place_geo;
                 $response[$i]['place_geo_placename']=$row->place_geo_placename;
+                $response[$i]['meta_id']=$row->meta_id;
                 $i++;
             }
         }
@@ -51,15 +52,31 @@ class Place {
     }
     public function getMeta($placeName) {
         $placeDetails = $this->getPlaceDetails($placeName);
-        $keywords = ($placeName==='dallas_texas') ? 'dallas general contractors' : false;
+        $query="SELECT *
+                    FROM 
+                    ".Config::$tables['meta_table']." a
+                    WHERE 
+                    id='".$placeDetails['meta_id']."'";
+
         $placeTitle = $placeDetails['place_title'];
         $suffix = strrchr($placeTitle, ","); 
         $pos = strpos($placeTitle,$suffix); 
         $name = substr_replace ($placeTitle,"", $pos);
+
+        if ($result = $this->mysqli->query($query)) {
+            while ($row = $result->fetch_object()) {
+                $keywords=$row->keywords;
+                $title=$row->title;
+            }
+        } else {
+            $keywords = ($placeName==='dallas_texas') ? 'dallas general contractors' : false;
+            $title = 'General contractors in '.$name;
+        }
+        $desciprtion = 'We are the only company providing general contractors in '.$name.',with 5 Stars certified ratings ,giving you the confidence in choosing the right company';
         return array(
             'keywords'=>$keywords,
-            'description'=>'We are the only company providing general contractors in '.$name.',with 5 Stars certified ratings ,giving you the confidence in choosing the right company',
-            'title'=>'General contractors in '.$name,
+            'description'=>$desciprtion,
+            'title'=>$title,
             'geo'=>$placeDetails['place_geo'],
             'geo_placename'=>$placeDetails['place_geo_placename']
         );
