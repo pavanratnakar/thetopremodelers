@@ -24,7 +24,7 @@ class Contractor{
             $allContractors = $this->getAllContractors($placeName,$categoryName,$sectionName);
             $start = min(Config::$paginationLimit*$page,$allContractors['total_count']);
         }
-        $query="SELECT ROUND(SUM(score)/COUNT(score),1) as average_score,COUNT(review) as review_count,a.contractor_title,a.contractor_description,a.contractor_phone,a.contractor_address,a.contractor_name,c.categorySection_id,f.section_title,g.place_title,g.place_geo,g.place_geo_placename,h.category_title,i.image_id
+        $query="SELECT ROUND(SUM(score)/COUNT(score),1) as average_score,COUNT(review) as review_count,a.contractor_title,a.contractor_description,a.contractor_phone,a.contractor_address,a.contractor_name,c.categorySection_id,f.section_title,g.place_title,g.place_geo,g.place_geo_placename,h.category_title,i.image_id,d.meta_id
         FROM 
         ".Config::$tables['contractor_table']." a
         LEFT JOIN
@@ -74,6 +74,7 @@ class Contractor{
                 $response[$i]['average_score']=$row->average_score;
                 $response[$i]['review_count']=$row->review_count;
                 $response[$i]['image_id']=$row->image_id;
+                $response[$i]['meta_id']=$row->meta_id;
                 $i++;
             }
         }
@@ -348,23 +349,37 @@ class Contractor{
     }
     public function getContractorsMeta($details){
         $keywords = false;
-        if ($details[0]['place_title']==='Dallas, TX (Texas)' && $details[0]['category_title']==='Roofing Contractors' && $details[0]['section_title']==='Asphalt Shingle Roofing - Repair') {
-            $keywords = 'Dallas roofing company, Dallas roofing contractors, Dallas commercial companies';
-        } else if ($details[0]['place_title']==='Garland, TX (Texas)' && $details[0]['category_title']==='Roofing Contractors' && $details[0]['section_title']==='Asphalt Shingle Roofing - Repair') {
-            $keywords = 'roofers Garland tx, contractors, company, roofing, companies';
-        }
+        $query="SELECT *
+                    FROM 
+                    ".Config::$tables['meta_table']." a
+                    WHERE 
+                    id='".$details[0]['meta_id']."'";
+
         $placeTitle = explode(' (',$details[0]['place_title']);
         $placeTitle = $placeTitle[0];
         $suffix = strrchr($placeTitle, ","); 
         $pos = strpos($placeTitle,$suffix); 
         $name = substr_replace ($placeTitle,"", $pos);
+        $result = $this->mysqli->query($query);
+        $totalRowcount = $result->num_rows;
+        if ($totalRowcount > 0) {
+            while ($row = $result->fetch_object()) {
+                $keywords=$row->keywords;
+                $title=$row->title;
+            }
+        } else {
+            $keywords = ($placeName==='dallas_texas') ? 'dallas general contractors' : false;
+            $title = $name.' Roofing Company - '.$name.' Roofing Contractors - TX Roofers';
+        }
+
+        $desciprtion = 'We are the only company providing roofing contractors in '.$name.' tx, with 5 Stars certified ratings, giving you the confidence in choosing the right contractor.';
         return array(
-            'keywords'=> $keywords,
-            'description'=>'We are the only company providing roofing contractors in '.$name.' tx, with 5 Stars certified ratings, giving you the confidence in choosing the right contractor.',
-            'title'=> $name.' Roofing Company - '.$name.' Roofing Contractors - TX Roofers',
+            'keywords'=>$keywords,
+            'description'=>$desciprtion,
+            'title'=>$title,
             'geo'=> $details[0]['place_geo'],
             'geo_placename'=> $details[0]['place_geo_placename']
-            );
+        );
     }
     public function getMeta($details){
         return array(

@@ -62,8 +62,9 @@ class Place {
         $suffix = strrchr($placeTitle, ","); 
         $pos = strpos($placeTitle,$suffix); 
         $name = substr_replace ($placeTitle,"", $pos);
-
-        if ($result = $this->mysqli->query($query)) {
+        $result = $this->mysqli->query($query);
+        $totalRowcount = $result->num_rows;
+        if ($totalRowcount > 0) {
             while ($row = $result->fetch_object()) {
                 $keywords=$row->keywords;
                 $title=$row->title;

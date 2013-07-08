@@ -394,13 +394,14 @@ var herve_grid = {
                     datatype: "json",
                     height: 'auto',
                     width: herve_grid.theme.width,
-                    colNames:['Id', 'Place Name','Category Name', 'Section Name', 'Order', 'Active'],
+                    colNames:['Id', 'Place Name','Category Name', 'Section Name', 'Order', 'Meta Id', 'Active'],
                     colModel:[
                         {name:'categorySection_id',index:'categorySection_id',hidden:true,align:'center',editable:false, sorttype:'int',key:true},
                         {name:'place_title',index:'place_title', width:herve_grid.theme.note_width,formoptions:{label: 'Place'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"select",editoptions: { value: (this.places.replace('"','')).replace('"','') } },
                         {name:'category_title',index:'category_title', width:herve_grid.theme.note_width,formoptions:{label: 'Category'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"select", editoptions: { value: (this.categories.replace('"','')).replace('"','') } },
                         {name:'section_title',index:'section_title', width:herve_grid.theme.note_width,formoptions:{label: 'Section'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"select",editoptions: { value: ('All:All;'+this.sections.replace('"','')).replace('"','') } },
                         {name:'categorysection_order',index:'categorysection_order', width:herve_grid.theme.note_width,formoptions:{label: 'Order'},align:"center", sortable:true,editable: true,editrules: { required: false } ,edittype:"textarea", editoptions:{rows:"2",cols:"20"}},
+                        {name:'meta_id',index:'meta_id', width:herve_grid.theme.note_width,formoptions:{label: 'Meta Id'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"textarea", editoptions:{rows:"2",cols:"20"}},
                         {name:'active',index:'active', width:herve_grid.theme.note_width,formoptions:{label: 'Active'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"select",editoptions:{value:"1:True;0:False"}}
                     ],
                     rowNum:100,
