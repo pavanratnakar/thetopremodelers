@@ -168,7 +168,7 @@ class CategorySection extends General{
                     while ($row = $result->fetch_object()) {
                         $count = $row->count;
                         if ($count == 0) {
-                            $query1 = "INSERT INTO ".$this->table."(placeCategory_id,section_id,categorysection_order,meta_id,active) VALUES('$placeCategoryIdValue','$sectionKeyValue','$i','$meta_id',$active')";
+                            $query1 = "INSERT INTO ".$this->table."(placeCategory_id,section_id,categorysection_order,meta_id,active) VALUES('$placeCategoryIdValue','$sectionKeyValue','$i','$meta_id','$active')";
                             $result1 = $this->mysqli->query($query1);
                         }
                     }

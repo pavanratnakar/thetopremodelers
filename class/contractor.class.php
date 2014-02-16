@@ -371,8 +371,7 @@ class Contractor{
             $keywords = ($placeName==='dallas_texas') ? 'dallas general contractors' : false;
             $title = $name.' Roofing Company - '.$name.' Roofing Contractors - TX Roofers';
         }
-
-        $desciprtion = 'We are the only company providing roofing contractors in '.$name.' tx, with 5 Stars certified ratings, giving you the confidence in choosing the right contractor.';
+        $desciprtion = 'We are the only company providing roofing contractors in '.$name.', with 5 Stars certified ratings, giving you the confidence in choosing the right company.';
         return array(
             'keywords'=>$keywords,
             'description'=>$desciprtion,

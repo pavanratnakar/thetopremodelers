@@ -95,6 +95,7 @@ RewriteRule ^category/roofing_contractors$ dallas/category/roofing_contractors [
 RewriteRule ^category/dallas_roofing_company$ dallas/category/roofing_contractors [R=301,L]
 RewriteRule ^category/dallas_roofing_contractors$ dallas/category/roofing_contractors [R=301,L]
 RewriteRule ^(.*)/category/(.*)$ category.php?category=$2&place=$1
+RewriteRule ^article/benefits_of_metal_roofing$ http://www.thetopremodelers.com/article/benefits_of_asphalt_tiles [R=301,L]
 RewriteRule ^article/(.*)$ article.php?article=$1
 RewriteRule ^need/roofing_contractors/asphalt_shingle_roofing_install_replace$ http://www.thetopremodelers.com/dallas_texas/roofing_contractors/need/asphalt_shingle_roofing_install_replace [R=301,L]
 RewriteRule ^need/dallas_roofing_contractors/asphalt_shingle_roofing_install_replace$ http://www.thetopremodelers.com/dallas_texas/roofing_contractors/need/asphalt_shingle_roofing_install_replace [R=301,L]

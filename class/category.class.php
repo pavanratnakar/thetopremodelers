@@ -114,7 +114,7 @@ class Category{
         );
     }
     public function getDescription($category_title,$place_title) {
-        return 'We are the only company providing roofing contractors in Dallas ,with 5 Stars certified ratings ,giving you the confidence in choosing the right company';
+        return ' We are only certified roofing company and providing dallas based roofers. We are 5 star rating company and giving you the confidence to hiring the right contractor in your area.';
     }
     public function __destruct() {
         $this->mysqli->close();

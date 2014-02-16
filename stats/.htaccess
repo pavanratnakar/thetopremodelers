@@ -1,0 +1,5 @@
+AuthType Basic
+AuthName "thetopremodelers.com Statistics"
+AuthUserFile /var/chroot/home/content/02/7362402/html/stats/.statspwd
+Require valid-user
+DirectoryIndex index.html

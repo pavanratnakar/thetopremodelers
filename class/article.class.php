@@ -40,7 +40,7 @@ class Article{
         return array(
             'keywords'=>$keywords,
             'description'=>$description,
-            'title'=>'Dallas Roofing Company - '.$title.' - TX Roofers'
+            'title'=>'Thetopremodelers: articles on '.$title
         );
     }
     public function __destruct(){

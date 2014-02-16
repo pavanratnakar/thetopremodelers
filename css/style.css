@@ -252,7 +252,7 @@ div.rounded-corners {background-color:#74ABD8;width:25px;text-align:center;color
 /* begin Header */
 .art-logo{margin:10px 0 0 20px;}
 .art-header{height:107px;text-align:right;}
-.art-contact{margin:30px 120px 0 0;font-size:1.2em;}
+.art-contact{margin:30px 120px 0 0;font-size:1.2em;text-align:left;}
 .art-contact h3{font-size:1.3em;font-weight:normal;padding:0 0 5px;}
 /* end Header */
 /* begin Menu */
@@ -274,11 +274,11 @@ body.home{background: url("../images/home/home-background.jpg") repeat-x scroll 
 .home .main-content-container .content{padding:5px 10px;}
 .home .main-content-container .content .first{width:245px;}
 .home .main-content-container h2{text-decoration:none;margin:0;}
-.home .main-content-container #satis-image {background-image: url("../images/home/satisfaction_guaranteed.png");height: 135px;left: 435px;position: absolute;top: 135px; width: 140px;}
-.home .main-content-container ul.list{margin:0 0 0 20px;}
+.home .main-content-container #satis-image {background-image: url("../images/home/stamp_final.png");height: 138px;left: 435px;position: absolute;top: 135px; width: 139px;}
+.home .main-content-container ul.list{margin:0 0 0 10px;}
 .home .main-content-container ul.list li{padding: 0 0 5px;font-size:0.9em;}
 .home .main-content-container ul.top{margin:20px 0 0 10px;}
-.home .main-content-container ul.top li{color:#7F5911;font-size:1em;font-weight:bold;}
+.home .main-content-container ul.top li{color:#7F5911;font-size:0.9em;font-weight:bold;}
 /* start of review Container */
 #review-container{margin:20px 0 0 0;color:#7F5911;font-size:0.9em;}
 #review-container .container {background-image: url("../images/home/review-container-image.png");background-repeat: no-repeat;width: 320px;margin:0 8px 0 0;height:320px;}

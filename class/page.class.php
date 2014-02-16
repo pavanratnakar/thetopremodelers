@@ -43,7 +43,7 @@ class Page{
         <div class="art-contact right">
         <span class="orange">Need immediate service</span>
         <div class="art-cell">
-        <h3><span class="orange">Call us:</span> <span class="number brown">1(214)303 9771</span></h3>
+        <h3><span class="orange">Call us : </span><span class="number brown">1(214)303 9771</span></h3>
         </div>
         </div>
         </div>';
@@ -273,7 +273,7 @@ class Page{
         <h4>Different types of roofs materials</h4>
         <ul class="clearfix">
         <li><a href="'.Config::$site_url.'article/metal_roof" title="Metal roof">Metal roof</a></li>
-        <li><a href="'.Config::$site_url.'article/benefits_of_metal_roofing" title="Asphalt singles">Asphalt singles</a></li>
+        <li><a href="'.Config::$site_url.'article/benefits_of_asphalt_tiles" title="Asphalt singles">Asphalt singles</a></li>
         <li><a href="'.Config::$site_url.'article/green_roofing" title="Green roofing">Green roofing</a></li>
         <li><a href="'.Config::$site_url.'article/standing_seam_roof" title="Standing Seam roof">Standing Seam roof</a></li>
         <li><a href="'.Config::$site_url.'article/steel_roofing" title="Steel roofing">Steel roofing</a></li>
