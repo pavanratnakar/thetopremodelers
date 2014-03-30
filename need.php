@@ -33,7 +33,10 @@ if (!$formatQuestions) {
     header( 'Location: '.$submit);
     exit;
 }
-echo $pageController->printHeader($section->getMeta($contractorTitle));
+$metaDetails = $section->getMeta($contractorTitle);
+$metaDetails['geo'] = $placeDetails['place_geo'];
+$metaDetails['geo_placename'] = $placeDetails['place_geo_placename'];
+echo $pageController->printHeader($metaDetails);
 ?>
 <?php echo $pageController->printNavigation(); ?>
 <div class="main-content-container clearfix">

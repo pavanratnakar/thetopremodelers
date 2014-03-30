@@ -39,6 +39,7 @@ return array(
         '//css/style.css'
     ),
     'herve_place-request_js' => array(
+        '//global/js/jquery/jquery.ajax.js',
         '//global/js/jquery/jquery.validate.min.js',
         '//global/js/jquery/jquery.ajax.loader.js',
         '//global/js/global.js',

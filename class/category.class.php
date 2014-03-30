@@ -64,7 +64,7 @@ class Category{
         $this->getCategories($position);
         $response = '';
         for($i=0;$i<sizeof($this->categories);$i++){
-            $href= ($this->categories[$i]['active']) ? Config::$site_url.$placeName.'/'.$this->categories[$i]['category_name'].'/contractors' : Config::$site_url.'contact-us';
+            $href= ($this->categories[$i]['active']) ? Config::$site_url.$placeName.'/category/'.$this->categories[$i]['category_name'].'' : Config::$site_url.'contact-us';
             $class= ($this->categories[$i]['active']) ? 'active' : 'inactive';
             $value = htmlspecialchars($this->categories[$i]['category_value']);
             $response .= '<li><a class="'.$class.'" title="'.$value.'" href="'.$href.'">'.$value.'</a></li>';

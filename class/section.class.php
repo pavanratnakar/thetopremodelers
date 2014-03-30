@@ -97,7 +97,7 @@ class Section {
         return array(
             'keywords'=>false,
             'description'=>$contractorTitle.' | The top remodelers prescreened roofing contractors with certified ratings get a quote',
-            'title'=>$contractorTitle.' The top remodelers prescreened roofing quotes'
+            'title'=>$contractorTitle.' | The top remodelers prescreened roofing quotes'
         );
         
     }

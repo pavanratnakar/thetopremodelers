@@ -4,7 +4,6 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 <url>
   <loc>http://www.thetopremodelers.com/</loc>
@@ -42,7 +41,37 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>http://www.thetopremodelers.com/place/arlington_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/irving_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/frisco_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/carrollton_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>http://www.thetopremodelers.com/place/garland_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/grand%20prairie_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/richardson_texas</loc>
   <changefreq>monthly</changefreq>
   <priority>0.80</priority>
 </url>
@@ -67,12 +96,7 @@
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/contractor/mitch%20Word&#60;br%20/&#62;</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://www.thetopremodelers.com/placeRequest?place=dallas_texas/roofing_contractors&amp;category=asphalt_shingle_roofing_repair&amp;section=mitch%20Word</loc>
+  <loc>http://www.thetopremodelers.com/dallas_texas/roofing_contractors/asphalt_shingle_roofing_repair/J-Back%20Roofing%20&amp;%20Construction%20%20&#60;br&#62;/need</loc>
   <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
@@ -182,7 +206,7 @@
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/article/benefits_of_metal_roofing</loc>
+  <loc>http://www.thetopremodelers.com/article/benefits_of_asphalt_tiles</loc>
   <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
@@ -212,6 +236,11 @@
   <priority>0.64</priority>
 </url>
 <url>
+  <loc>http://www.thetopremodelers.com/article/clay_roofing</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
   <loc>http://www.thetopremodelers.com/article/dallas_under_dangerous_threat_hailstorm</loc>
   <changefreq>monthly</changefreq>
   <priority>0.64</priority>
@@ -222,12 +251,292 @@
   <priority>0.64</priority>
 </url>
 <url>
+  <loc>http://www.thetopremodelers.com/place/mesquite_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/plano_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/mckinney_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/denton_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/place/keller_texas</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/arlington_texas/roofing_contractors/contractors</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/irving_texas/roofing_contractors/contractors</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/frisco_texas/roofing_contractors/contractors</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/carrollton_texas/roofing_contractors/contractors</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
   <loc>http://www.thetopremodelers.com/garland_texas/roofing_contractors/contractors</loc>
   <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
+  <loc>http://www.thetopremodelers.com/grand%20prairie_texas/roofing_contractors/contractors</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/richardson_texas/roofing_contractors/contractors</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
   <loc>http://www.thetopremodelers.com/dallas_texas/roofing_contractors/asphalt_shingle_roofing_repair/contractors/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/mesquite_texas/roofing_contractors/contractors</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/plano_texas/roofing_contractors/contractors</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/mckinney_texas/roofing_contractors/contractors</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/denton_texas/roofing_contractors/contractors</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/keller_texas/roofing_contractors/contractors</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/arlington_texas/roofing_contractors/asphalt_shingle_roofing_repair/astrotech_Contractors/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/arlington_texas/roofing_contractors/asphalt_shingle_roofing_repair/olvera_construction_roofing/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/arlington_texas/roofing_contractors/asphalt_shingle_roofing_repair/J-Back%20Roofing%20&amp;%20Construction%20%20&#60;br&#62;/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/arlington_texas/roofing_contractors/asphalt_shingle_roofing_repair/rooftops/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/arlington_texas/roofing_contractors/asphalt_shingle_roofing_repair/atlas_roofing/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/arlington_texas/roofing_contractors/asphalt_shingle_roofing_repair/double_e_inc/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/arlington_texas/roofing_contractors/asphalt_shingle_roofing_repair/landmark_energy_solutions/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/arlington_texas/roofing_contractors/asphalt_shingle_roofing_repair/pacesetter_contracting_llc/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/arlington_texas/roofing_contractors/asphalt_shingle_roofing_repair/nielco_roofing_and_sheet_metal/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/arlington_texas/roofing_contractors/asphalt_shingle_roofing_repair/c_and_j_roofing_co/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/irving_texas/roofing_contractors/asphalt_shingle_roofing_repair/astrotech_Contractors/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/irving_texas/roofing_contractors/asphalt_shingle_roofing_repair/olvera_construction_roofing/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/irving_texas/roofing_contractors/asphalt_shingle_roofing_repair/J-Back%20Roofing%20&amp;%20Construction%20%20&#60;br&#62;/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/irving_texas/roofing_contractors/asphalt_shingle_roofing_repair/rooftops/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/irving_texas/roofing_contractors/asphalt_shingle_roofing_repair/atlas_roofing/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/irving_texas/roofing_contractors/asphalt_shingle_roofing_repair/double_e_inc/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/irving_texas/roofing_contractors/asphalt_shingle_roofing_repair/landmark_energy_solutions/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/irving_texas/roofing_contractors/asphalt_shingle_roofing_repair/pacesetter_contracting_llc/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/irving_texas/roofing_contractors/asphalt_shingle_roofing_repair/nielco_roofing_and_sheet_metal/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/irving_texas/roofing_contractors/asphalt_shingle_roofing_repair/c_and_j_roofing_co/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/frisco_texas/roofing_contractors/asphalt_shingle_roofing_repair/astrotech_Contractors/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/frisco_texas/roofing_contractors/asphalt_shingle_roofing_repair/olvera_construction_roofing/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/frisco_texas/roofing_contractors/asphalt_shingle_roofing_repair/J-Back%20Roofing%20&amp;%20Construction%20%20&#60;br&#62;/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/frisco_texas/roofing_contractors/asphalt_shingle_roofing_repair/rooftops/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/frisco_texas/roofing_contractors/asphalt_shingle_roofing_repair/atlas_roofing/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/frisco_texas/roofing_contractors/asphalt_shingle_roofing_repair/double_e_inc/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/frisco_texas/roofing_contractors/asphalt_shingle_roofing_repair/landmark_energy_solutions/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/frisco_texas/roofing_contractors/asphalt_shingle_roofing_repair/pacesetter_contracting_llc/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/frisco_texas/roofing_contractors/asphalt_shingle_roofing_repair/nielco_roofing_and_sheet_metal/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/frisco_texas/roofing_contractors/asphalt_shingle_roofing_repair/c_and_j_roofing_co/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/carrollton_texas/roofing_contractors/asphalt_shingle_roofing_repair/astrotech_Contractors/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/carrollton_texas/roofing_contractors/asphalt_shingle_roofing_repair/olvera_construction_roofing/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/carrollton_texas/roofing_contractors/asphalt_shingle_roofing_repair/J-Back%20Roofing%20&amp;%20Construction%20%20&#60;br&#62;/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/carrollton_texas/roofing_contractors/asphalt_shingle_roofing_repair/rooftops/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/carrollton_texas/roofing_contractors/asphalt_shingle_roofing_repair/atlas_roofing/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/carrollton_texas/roofing_contractors/asphalt_shingle_roofing_repair/double_e_inc/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/carrollton_texas/roofing_contractors/asphalt_shingle_roofing_repair/landmark_energy_solutions/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/carrollton_texas/roofing_contractors/asphalt_shingle_roofing_repair/pacesetter_contracting_llc/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/carrollton_texas/roofing_contractors/asphalt_shingle_roofing_repair/nielco_roofing_and_sheet_metal/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/carrollton_texas/roofing_contractors/asphalt_shingle_roofing_repair/c_and_j_roofing_co/need</loc>
   <changefreq>monthly</changefreq>
   <priority>0.51</priority>
 </url>
@@ -242,7 +551,7 @@
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/placeRequest?place=garland_texas/roofing_contractors&amp;category=asphalt_shingle_roofing_repair&amp;section=mitch%20Word</loc>
+  <loc>http://www.thetopremodelers.com/garland_texas/roofing_contractors/asphalt_shingle_roofing_repair/J-Back%20Roofing%20&amp;%20Construction%20%20&#60;br&#62;/need</loc>
   <changefreq>monthly</changefreq>
   <priority>0.51</priority>
 </url>
@@ -282,8 +591,533 @@
   <priority>0.51</priority>
 </url>
 <url>
+  <loc>http://www.thetopremodelers.com/grand%20prairie_texas/roofing_contractors/asphalt_shingle_roofing_repair/astrotech_Contractors/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/grand%20prairie_texas/roofing_contractors/asphalt_shingle_roofing_repair/olvera_construction_roofing/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/grand%20prairie_texas/roofing_contractors/asphalt_shingle_roofing_repair/J-Back%20Roofing%20&amp;%20Construction%20%20&#60;br&#62;/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/grand%20prairie_texas/roofing_contractors/asphalt_shingle_roofing_repair/rooftops/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/grand%20prairie_texas/roofing_contractors/asphalt_shingle_roofing_repair/atlas_roofing/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/grand%20prairie_texas/roofing_contractors/asphalt_shingle_roofing_repair/double_e_inc/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/grand%20prairie_texas/roofing_contractors/asphalt_shingle_roofing_repair/landmark_energy_solutions/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/grand%20prairie_texas/roofing_contractors/asphalt_shingle_roofing_repair/pacesetter_contracting_llc/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/grand%20prairie_texas/roofing_contractors/asphalt_shingle_roofing_repair/nielco_roofing_and_sheet_metal/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/grand%20prairie_texas/roofing_contractors/asphalt_shingle_roofing_repair/c_and_j_roofing_co/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/richardson_texas/roofing_contractors/asphalt_shingle_roofing_repair/astrotech_Contractors/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/richardson_texas/roofing_contractors/asphalt_shingle_roofing_repair/olvera_construction_roofing/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/richardson_texas/roofing_contractors/asphalt_shingle_roofing_repair/J-Back%20Roofing%20&amp;%20Construction%20%20&#60;br&#62;/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/richardson_texas/roofing_contractors/asphalt_shingle_roofing_repair/rooftops/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/richardson_texas/roofing_contractors/asphalt_shingle_roofing_repair/atlas_roofing/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/richardson_texas/roofing_contractors/asphalt_shingle_roofing_repair/double_e_inc/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/richardson_texas/roofing_contractors/asphalt_shingle_roofing_repair/landmark_energy_solutions/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/richardson_texas/roofing_contractors/asphalt_shingle_roofing_repair/pacesetter_contracting_llc/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/richardson_texas/roofing_contractors/asphalt_shingle_roofing_repair/nielco_roofing_and_sheet_metal/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/richardson_texas/roofing_contractors/asphalt_shingle_roofing_repair/c_and_j_roofing_co/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/mesquite_texas/roofing_contractors/asphalt_shingle_roofing_repair/astrotech_Contractors/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/mesquite_texas/roofing_contractors/asphalt_shingle_roofing_repair/olvera_construction_roofing/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/mesquite_texas/roofing_contractors/asphalt_shingle_roofing_repair/J-Back%20Roofing%20&amp;%20Construction%20%20&#60;br&#62;/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/mesquite_texas/roofing_contractors/asphalt_shingle_roofing_repair/rooftops/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/mesquite_texas/roofing_contractors/asphalt_shingle_roofing_repair/atlas_roofing/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/mesquite_texas/roofing_contractors/asphalt_shingle_roofing_repair/double_e_inc/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/mesquite_texas/roofing_contractors/asphalt_shingle_roofing_repair/landmark_energy_solutions/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/mesquite_texas/roofing_contractors/asphalt_shingle_roofing_repair/pacesetter_contracting_llc/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/mesquite_texas/roofing_contractors/asphalt_shingle_roofing_repair/nielco_roofing_and_sheet_metal/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/mesquite_texas/roofing_contractors/asphalt_shingle_roofing_repair/c_and_j_roofing_co/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/plano_texas/roofing_contractors/asphalt_shingle_roofing_repair/astrotech_Contractors/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/plano_texas/roofing_contractors/asphalt_shingle_roofing_repair/olvera_construction_roofing/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/plano_texas/roofing_contractors/asphalt_shingle_roofing_repair/J-Back%20Roofing%20&amp;%20Construction%20%20&#60;br&#62;/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/plano_texas/roofing_contractors/asphalt_shingle_roofing_repair/rooftops/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/plano_texas/roofing_contractors/asphalt_shingle_roofing_repair/atlas_roofing/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/plano_texas/roofing_contractors/asphalt_shingle_roofing_repair/double_e_inc/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/plano_texas/roofing_contractors/asphalt_shingle_roofing_repair/landmark_energy_solutions/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/plano_texas/roofing_contractors/asphalt_shingle_roofing_repair/pacesetter_contracting_llc/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/plano_texas/roofing_contractors/asphalt_shingle_roofing_repair/nielco_roofing_and_sheet_metal/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/plano_texas/roofing_contractors/asphalt_shingle_roofing_repair/c_and_j_roofing_co/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/mckinney_texas/roofing_contractors/asphalt_shingle_roofing_repair/astrotech_Contractors/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/mckinney_texas/roofing_contractors/asphalt_shingle_roofing_repair/olvera_construction_roofing/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/mckinney_texas/roofing_contractors/asphalt_shingle_roofing_repair/J-Back%20Roofing%20&amp;%20Construction%20%20&#60;br&#62;/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/mckinney_texas/roofing_contractors/asphalt_shingle_roofing_repair/rooftops/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/mckinney_texas/roofing_contractors/asphalt_shingle_roofing_repair/atlas_roofing/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/mckinney_texas/roofing_contractors/asphalt_shingle_roofing_repair/double_e_inc/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/mckinney_texas/roofing_contractors/asphalt_shingle_roofing_repair/landmark_energy_solutions/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/mckinney_texas/roofing_contractors/asphalt_shingle_roofing_repair/pacesetter_contracting_llc/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/mckinney_texas/roofing_contractors/asphalt_shingle_roofing_repair/nielco_roofing_and_sheet_metal/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/mckinney_texas/roofing_contractors/asphalt_shingle_roofing_repair/c_and_j_roofing_co/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/denton_texas/roofing_contractors/asphalt_shingle_roofing_repair/astrotech_Contractors/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/denton_texas/roofing_contractors/asphalt_shingle_roofing_repair/olvera_construction_roofing/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/denton_texas/roofing_contractors/asphalt_shingle_roofing_repair/J-Back%20Roofing%20&amp;%20Construction%20%20&#60;br&#62;/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/denton_texas/roofing_contractors/asphalt_shingle_roofing_repair/rooftops/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/denton_texas/roofing_contractors/asphalt_shingle_roofing_repair/atlas_roofing/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/denton_texas/roofing_contractors/asphalt_shingle_roofing_repair/double_e_inc/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/denton_texas/roofing_contractors/asphalt_shingle_roofing_repair/landmark_energy_solutions/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/denton_texas/roofing_contractors/asphalt_shingle_roofing_repair/pacesetter_contracting_llc/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/denton_texas/roofing_contractors/asphalt_shingle_roofing_repair/nielco_roofing_and_sheet_metal/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/denton_texas/roofing_contractors/asphalt_shingle_roofing_repair/c_and_j_roofing_co/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/keller_texas/roofing_contractors/asphalt_shingle_roofing_repair/astrotech_Contractors/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/keller_texas/roofing_contractors/asphalt_shingle_roofing_repair/olvera_construction_roofing/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/keller_texas/roofing_contractors/asphalt_shingle_roofing_repair/J-Back%20Roofing%20&amp;%20Construction%20%20&#60;br&#62;/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/keller_texas/roofing_contractors/asphalt_shingle_roofing_repair/rooftops/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/keller_texas/roofing_contractors/asphalt_shingle_roofing_repair/atlas_roofing/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/keller_texas/roofing_contractors/asphalt_shingle_roofing_repair/double_e_inc/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/keller_texas/roofing_contractors/asphalt_shingle_roofing_repair/landmark_energy_solutions/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/keller_texas/roofing_contractors/asphalt_shingle_roofing_repair/pacesetter_contracting_llc/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/keller_texas/roofing_contractors/asphalt_shingle_roofing_repair/nielco_roofing_and_sheet_metal/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/keller_texas/roofing_contractors/asphalt_shingle_roofing_repair/c_and_j_roofing_co/need</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/arlington_texas/roofing_contractors/asphalt_shingle_roofing_repair/contractors/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/arlington_texas/category/roofing_contractors</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/irving_texas/roofing_contractors/asphalt_shingle_roofing_repair/contractors/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/irving_texas/category/roofing_contractors</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/frisco_texas/roofing_contractors/asphalt_shingle_roofing_repair/contractors/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/frisco_texas/category/roofing_contractors</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/carrollton_texas/roofing_contractors/asphalt_shingle_roofing_repair/contractors/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/carrollton_texas/category/roofing_contractors</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
   <loc>http://www.thetopremodelers.com/garland_texas/roofing_contractors/asphalt_shingle_roofing_repair/contractors/</loc>
   <changefreq>monthly</changefreq>
   <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/garland_texas/category/roofing_contractors</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/grand%20prairie_texas/roofing_contractors/asphalt_shingle_roofing_repair/contractors/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/grand%20prairie_texas/category/roofing_contractors</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/richardson_texas/roofing_contractors/asphalt_shingle_roofing_repair/contractors/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/richardson_texas/category/roofing_contractors</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/mesquite_texas/roofing_contractors/asphalt_shingle_roofing_repair/contractors/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/mesquite_texas/category/roofing_contractors</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/plano_texas/roofing_contractors/asphalt_shingle_roofing_repair/contractors/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/plano_texas/category/roofing_contractors</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/mckinney_texas/roofing_contractors/asphalt_shingle_roofing_repair/contractors/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/mckinney_texas/category/roofing_contractors</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/denton_texas/roofing_contractors/asphalt_shingle_roofing_repair/contractors/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/denton_texas/category/roofing_contractors</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/keller_texas/roofing_contractors/asphalt_shingle_roofing_repair/contractors/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/keller_texas/category/roofing_contractors</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/arlington_texas/roofing_contractors/need/asphalt_shingle_roofing_repair</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/irving_texas/roofing_contractors/need/asphalt_shingle_roofing_repair</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/frisco_texas/roofing_contractors/need/asphalt_shingle_roofing_repair</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/carrollton_texas/roofing_contractors/need/asphalt_shingle_roofing_repair</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/garland_texas/roofing_contractors/need/asphalt_shingle_roofing_repair</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/grand%20prairie_texas/roofing_contractors/need/asphalt_shingle_roofing_repair</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/richardson_texas/roofing_contractors/need/asphalt_shingle_roofing_repair</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/mesquite_texas/roofing_contractors/need/asphalt_shingle_roofing_repair</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.26</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/plano_texas/roofing_contractors/need/asphalt_shingle_roofing_repair</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.26</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/mckinney_texas/roofing_contractors/need/asphalt_shingle_roofing_repair</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.26</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/denton_texas/roofing_contractors/need/asphalt_shingle_roofing_repair</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.26</priority>
+</url>
+<url>
+  <loc>http://www.thetopremodelers.com/keller_texas/roofing_contractors/need/asphalt_shingle_roofing_repair</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.26</priority>
 </url>
 </urlset>

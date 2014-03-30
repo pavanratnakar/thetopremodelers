@@ -364,14 +364,17 @@ class Contractor{
         $totalRowcount = $result->num_rows;
         if ($totalRowcount > 0) {
             while ($row = $result->fetch_object()) {
-                $keywords=$row->keywords;
-                $title=$row->title;
+                $keywords = $row->keywords;
+                $title = $row->title;
+                $desciprtion = $row->description;
             }
         } else {
             $keywords = ($placeName==='dallas_texas') ? 'dallas general contractors' : false;
             $title = $name.' Roofing Company - '.$name.' Roofing Contractors - TX Roofers';
         }
-        $desciprtion = 'We are the only company providing roofing contractors in '.$name.', with 5 Stars certified ratings, giving you the confidence in choosing the right company.';
+        if (!trim($desciprtion)) {
+            $desciprtion = 'We are the only company providing roofing contractors in '.$name.', with 5 Stars certified ratings, giving you the confidence in choosing the right company.';
+        }
         return array(
             'keywords'=>$keywords,
             'description'=>$desciprtion,
