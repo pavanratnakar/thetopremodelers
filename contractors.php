@@ -30,7 +30,11 @@ if (sizeof($contractorDetails) == 0) {
     header( 'Location: '.Config::$site_url.'404.php');
     exit;
 }
-echo $pageController->printHeader($contractor->getContractorsMeta($contractorDetails));
+$avoidCrawl = false;
+if ($placeDetails['place_id'] == 2) {
+    $avoidCrawl = true;
+}
+echo $pageController->printHeader($contractor->getContractorsMeta($contractorDetails),$avoidCrawl);
 ?>
 <?php echo $pageController->printNavigation(); ?>
 <div class="main-content-container clearfix">
@@ -180,7 +184,7 @@ echo $pageController->printHeader($contractor->getContractorsMeta($contractorDet
             <img src="<?php echo Config::$site_url.'images/global/sidebar/solar_system.png' ?>" title="Hire our pros and win 6000 watt solar system" alt="Hire our pros and win 6000 watt solar system" />
         </div>
     </div>
-    <?php if ($placeName==='dallas_texas' || $placeName==='garland_texas') { ?>
+    <?php if ($placeName==='dallas_texas' || $placeName==='garland_texas' || $placeName==='carrollton_texas') { ?>
     <div class="sidebar-container">
         <div class="sidebar-header">
             <h3>Roofing Library</h3>

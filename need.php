@@ -36,7 +36,7 @@ if (!$formatQuestions) {
 $metaDetails = $section->getMeta($contractorTitle);
 $metaDetails['geo'] = $placeDetails['place_geo'];
 $metaDetails['geo_placename'] = $placeDetails['place_geo_placename'];
-echo $pageController->printHeader($metaDetails);
+echo $pageController->printHeader($metaDetails,true);
 ?>
 <?php echo $pageController->printNavigation(); ?>
 <div class="main-content-container clearfix">

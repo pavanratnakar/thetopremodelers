@@ -16,7 +16,7 @@ class Page{
     public function getPages(){
         return $this->pages;
     }
-    public function printHeader($meta=null){
+    public function printHeader($meta=null,$avoidCrawl=false){
         $return='
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -26,7 +26,7 @@ class Page{
         xmlns:fb="https://www.facebook.com/2008/fbml"
         itemscope itemtype="http://schema.org/">
         <head>';
-        $return.=$this->printMeta($meta);
+        $return.=$this->printMeta($meta,$avoidCrawl);
         $return.=$this->printCss('herve_css');
         if($this->currentPage->css == 1){
             $return.=$this->printCss('herve_'.$this->currentPage->class.'_css');
@@ -49,7 +49,7 @@ class Page{
         </div>';
         return $return;
     }
-    public function printMeta($meta=null){
+    public function printMeta($meta=null,$avoidCrawl=false){
         $keywords = $this->currentPage->keywords;
         $geo = '32.723812,-96.816880';
         $geo_placename = 'Dallas, Dallas County, Texas, United States';
@@ -85,12 +85,19 @@ class Page{
             <meta name="keywords" content="'.$keywords.'" />';
         }
         $return.='
-        <meta name="author" content="Top Remodelers" />
-        <meta name="robots" content="index,follow" />
-        <meta name="revisit-after" content="2 days" />
-        <meta name="googlebot" content="index, follow, archive" />
-        <meta name="msnbot" content="index, follow" />
-        <meta name="YahooSeeker" content="index, follow" />
+        <meta name="author" content="Top Remodelers" />';
+        if ($avoidCrawl) {
+            $return.='
+            <meta name="robots" content="noindex, nofollow" />';
+        } else {
+            $return.='
+            <meta name="robots" content="index,follow" />
+            <meta name="revisit-after" content="2 days" />
+            <meta name="googlebot" content="index, follow, archive" />
+            <meta name="msnbot" content="index, follow" />
+            <meta name="YahooSeeker" content="index, follow" />';
+        }
+        $return.='
         <!-- SEO -->
         <!-- GEO -->
         <meta name="geo.region" content="US-TX" />
