@@ -49,6 +49,28 @@ class Page{
         </div>';
         return $return;
     }
+    public function printHomeHeader($meta=null,$avoidCrawl=false){
+        $return='
+        <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+        <html dir="ltr" lang="en-US" xml:lang="en"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:og="http://ogp.me/ns#"
+        xmlns:fb="https://www.facebook.com/2008/fbml"
+        itemscope itemtype="http://schema.org/">
+        <head>';
+        $return.=$this->printMeta($meta,$avoidCrawl);
+        $return.=$this->printCss('herve_home_css');
+        if($this->currentPage->css == 1){
+            $return.=$this->printCss('herve_'.$this->currentPage->class.'_css');
+        }
+        $return.='
+        </head>
+        <body class="'.$this->currentPage->class.' '.$this->currentPage->template.'">
+        <div id="fb-root"></div>
+        ';
+        return $return;
+    }
     public function printMeta($meta=null,$avoidCrawl=false){
         $keywords = $this->currentPage->keywords;
         $geo = '32.723812,-96.816880';
@@ -147,6 +169,17 @@ class Page{
         $return.='</ul></div>';
         return $return;
     }
+    public function printHomeNavigation(){
+        $return='
+        <ul class="nav navbar-nav navbar-right">';
+        foreach ($this->pages as $page) {
+            if($page->navigation==1){
+                $return.='<li><a href="'.Config::$site_url.$page->link.'" title="'.$page->name.'">'.$page->name.'</a></li>';
+            }
+        }
+        $return.='</ul>';
+        return $return;
+    }
     public function printReviewContainer(){
         $reviews = new SimpleXMLElement(file_get_contents('xml/review.xml'));
         $return = '<div id="review-container" class="left">';
@@ -167,6 +200,23 @@ class Page{
             $i++;
         }
         $return .= '</div>';
+        return $return;
+    }
+    public function printHomeReviewContainer(){
+        $reviews = new SimpleXMLElement(file_get_contents('xml/review.xml'));
+        $return = '';
+        $i=1;
+        foreach ($reviews as $review) {
+            $return .= '
+            <div class="review">
+            <i class="quote_start"></i>
+            <h4>Project : '.$review->title.'</h4>
+            <h5 class="blue">Customer in '.$review->location.'</h5>
+            <p>'.$review->description.'</p>
+            <i class="quote_end"></i>';
+            $return .= '</div>';
+            $i++;
+        }
         return $return;
     }
     public function printUserStepsText($index){
@@ -192,6 +242,13 @@ class Page{
         if($this->currentPage->js == 1){
             $return.=$this->printJS('herve_'.$this->currentPage->class.'_js');
         }
+        $return.=$this->printGA();
+        $return.=$this->zopimChat();
+        $return.='</body></html>';
+        return $return;
+    }
+    public function printHomeFooter(){
+        $return.=$this->printJS('herve_home_js');
         $return.=$this->printGA();
         $return.=$this->zopimChat();
         $return.='</body></html>';

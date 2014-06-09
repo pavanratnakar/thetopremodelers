@@ -31,7 +31,7 @@ if (sizeof($contractorDetails) == 0) {
     exit;
 }
 $avoidCrawl = false;
-if ($placeDetails['place_id'] == 2) {
+if ($placeDetails['place_id'] != 2 && $placeDetails['place_id'] != 1 && $placeDetails['place_id'] != 5 && $placeDetails['place_id'] != 36 && $placeDetails['place_id'] != 38 && $placeDetails['place_id'] != 45) {
     $avoidCrawl = true;
 }
 echo $pageController->printHeader($contractor->getContractorsMeta($contractorDetails),$avoidCrawl);

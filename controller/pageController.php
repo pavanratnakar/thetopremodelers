@@ -19,17 +19,26 @@ class PageController{
     public function printHeader($meta=null,$avoidCrawl=false){
         return $this->page->printHeader($meta,$avoidCrawl);
     }
+    public function printHomeHeader($meta=null,$avoidCrawl=false){
+        return $this->page->printHomeHeader($meta,$avoidCrawl);
+    }
     public function printCss($name){
         return $this->page->printCss($name);
     }
     public function printNavigation(){
         return $this->page->printNavigation();
     }
+    public function printHomeNavigation(){
+        return $this->page->printHomeNavigation();
+    }
     public function printJS($name){
         return $this->page->printJS($name);
     }
     public function printReviewContainer(){
         return $this->page->printReviewContainer();
+    }
+    public function printHomeReviewContainer(){
+        return $this->page->printHomeReviewContainer();
     }
     public function printUserStepsText($index=null){
         return $this->page->printUserStepsText($index);
@@ -95,8 +104,58 @@ class PageController{
         </div>';
         return $return;
     }
+    public function printHomeFooterLinks(){
+        $title = 'Dallas roofers-Dallas roofing contractors-company Tx';
+        $summary = 'Free service that compiles certified ratings from local service companies and contractors in multiple cities';
+        $image = Config::$site_url."images/global/logo.png";
+        $return='
+        <div class="row">
+            <footer>
+                <div class="footer-top-container">
+                    <div class="container row">
+                        <div class="col-lg-4">
+                        ';
+                        $return.='
+                            <h3>Cities we cover | <a href="'.Config::$site_url.'places" title="More Cities" class="gold">More Cities &#8250;</a></h3>
+                            '.$this->citySelector().'
+                        </div>
+                        ';
+                        $return.='
+                        <div class="col-lg-4">
+                            <h3>About Us</h3>
+                            <p>'.$summary.'</p>                         
+                            <p>&nbsp;</p>
+                            <p>Address: <b>2003 michigan ave, Dallas tx 75216</b></p>
+                            <p>Telephone: <b>1(214)303 9771</b></p>
+                        </div>
+                        <div class="col-lg-4">
+                            <h3>Share Us</h3>
+                            <div class="content">
+                                <span class="st_sharethis_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="ShareThis"></span>
+                                <span class="st_facebook_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="Facebook"></span>
+                                <span class="st_twitter_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="Tweet"></span>
+                                <span class="st_linkedin_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="LinkedIn"></span>
+                                <span class="st_googleplus_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="Google +"></span>
+                                <span class="st_pinterest_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="Pinterest"></span>
+                                <span class="st_email_large" st_image="'.$image.'"  st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="Email"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom-container">
+                    <div class="container row">
+                        <p>Copyright &copy; '.date("Y").'. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </footer>            
+        </div>';
+        return $return;
+    }
     public function printFooter(){
         return $this->page->printFooter();
+    }
+    public function printHomeFooter(){
+        return $this->page->printHomeFooter();
     }
     public function getPlace(){
         include_once(Config::$site_path.'class/place.class.php');
@@ -145,6 +204,11 @@ class PageController{
         include_once(Config::$site_path.'class/category.class.php');
         $this->category = new Category();
         return $this->category->getFormatedCategories($position,$placeName);
+    }
+    public function getHomeFormatedCategories($position,$placeName='dallas_texas'){
+        include_once(Config::$site_path.'class/category.class.php');
+        $this->category = new Category();
+        return $this->category->getHomeFormatedCategories($position,$placeName);
     }
     public function getFormatedSections($categoryName,$placeName){
         include_once(Config::$site_path.'class/section.class.php');

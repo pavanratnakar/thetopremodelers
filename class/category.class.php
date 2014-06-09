@@ -71,6 +71,27 @@ class Category{
         }
         return $response;
     }
+    public function getHomeFormatedCategories($position,$placeName){
+        $this->getCategories($position);
+        $response = '';
+        for($i=0;$i<sizeof($this->categories);$i++){
+            $href= ($this->categories[$i]['active']) ? Config::$site_url.$placeName.'/'.$this->categories[$i]['category_name'].'/contractors' : Config::$site_url.'contact-us';
+            $class= ($this->categories[$i]['active']) ? 'active' : 'inactive';
+            $value = htmlspecialchars($this->categories[$i]['category_value']);
+            $response .= '
+                <li class="dropdown">
+                    <a href="'.$href.'" class="dropdown-toggle" data-toggle="dropdown">'.$value.' <b class="glyphicon glyphicon-chevron-right"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>';
+        }
+        return $response;
+    }
     public function getCategoryValueByName($categoryName){
         $categoryName=$this->mysqli->real_escape_string($categoryName);
         $query="SELECT category_value
