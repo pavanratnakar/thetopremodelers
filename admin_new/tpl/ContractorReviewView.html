@@ -1,0 +1,72 @@
+<div class="row">
+    <form class="form-horizontal col-xs-9 col-sm-9 col-md-9" role="form">
+        <fieldset>
+            <legend>Contractor Review Details</legend>
+            <br/>
+            <div class="row">
+                <div class="col-xs-9 col-sm-9 col-md-9">
+                    <div class="form-group">
+                        <label for="contractorRating_id" class="control-label col-xs-3 col-sm-3 col-md-3">Id:</label>
+                        <div class="controls col-xs-9 col-sm-9 col-md-9">
+                            <input class="form-control" id="contractorRating_id" name="contractorRating_id" type="text" value="<%= contractorRating_id === null ? '' : contractorRating_id %>" disabled/>
+                        </div>
+                    </div>
+                   <div class="form-group">
+                        <label for="contractor_id" class="control-label col-xs-3 col-sm-3 col-md-3">Contractor Id:</label>
+                        <div class="controls col-xs-9 col-sm-9 col-md-9">
+                            <input class="form-control" type="text" id="contractor_id" name="contractor_id" value="<%= contractor_id %>" disabled/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="score" class="control-label col-xs-3 col-sm-3 col-md-3">Score:</label>
+                        <div class="controls col-xs-9 col-sm-9 col-md-9">
+                            <input class="form-control" type="text" id="score" name="score" value="<%= score %>"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="review" class="control-label col-xs-3 col-sm-3 col-md-3">Review:</label>
+                        <div class="controls col-xs-9 col-sm-9 col-md-9">
+                            <textarea class="form-control" id="review" name="review" rows="6"><%= review
+                                %></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="timestamp" class="control-label col-xs-3 col-sm-3 col-md-3">Date:</label>
+                        <div class="controls col-xs-9 col-sm-9 col-md-9">
+                            <input class="form-control" type="text" id="timestamp" name="timestamp" value="<%= timestamp %>"/>
+                        </div>
+                    </div>
+                   <div class="form-group">
+                        <label for="person" class="control-label col-xs-3 col-sm-3 col-md-3">Person:</label>
+                        <div class="controls col-xs-9 col-sm-9 col-md-9">
+                            <input class="form-control" type="text" id="person" name="person" value="<%= person %>"/>
+                        </div>
+                    </div>
+                   <div class="form-group">
+                        <label for="place_id" class="control-label col-xs-3 col-sm-3 col-md-3">Place:</label>
+                        <div class="controls col-xs-9 col-sm-9 col-md-9">
+                            <input class="form-control" type="text" id="place_id" name="place_id" value="<%= place_id %>"/>
+                        </div>
+                    </div>
+                   <div class="form-group">
+                        <label for="project" class="control-label col-xs-3 col-sm-3 col-md-3">Project:</label>
+                        <div class="controls col-xs-9 col-sm-9 col-md-9">
+                            <input class="form-control" type="text" id="project" name="project" value="<%= project %>"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <div class="form-actions">
+            <a href="#" class="btn btn-primary save">Save</a>
+            <a href="#" class="btn btn-danger delete">Delete</a>
+        </div>
+    </form>
+</div>
+<div class="row status-bar">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="alert alert-success" style="display: none">
+            <b>Success!</b> Review saved successfully
+        </div>
+    </div>
+</div>

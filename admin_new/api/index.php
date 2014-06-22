@@ -11,13 +11,18 @@ $app->post('/reviews', 'addReview');
 $app->put('/reviews/:id', 'updateReview');
 $app->delete('/reviews/:id', 'deleteReview');
 
-
 $app->get('/contractors', 'getContractors');
 $app->get('/contractors/:id', 'getContractor');
 $app->get('/contractors/search/:query', 'findContractorByTitle');
 $app->post('/contractors', 'addContractor');
 $app->put('/contractors/:id', 'updateContractor');
 $app->delete('/contractors/:id', 'deleteContractor');
+
+$app->get('/contractorReviews/:id', 'getContractorReviews');
+$app->get('/contractorReview/:id', 'getContractorReview');
+$app->post('/contractorReview', 'addContractorReview');
+$app->put('/contractorReview/:id', 'updateContractorReview');
+$app->delete('/contractorReview/:id', 'deleteContractorReview');
 
 $app->run();
 
@@ -146,6 +151,7 @@ function getContractor($id) {
         $stmt->bindParam("id", $id);
         $stmt->execute();
         $contractor = $stmt->fetchObject();
+        $contractor->reviews = getReviewsForContractor($id);
         $db = null;
         echo json_encode($contractor);
     } catch(PDOException $e) {
@@ -180,7 +186,7 @@ function updateContractor($id) {
     $request = Slim::getInstance()->request();
     $body = $request->getBody();
     $contractor = json_decode($body);
-    $sql = "UPDATE rene_contractor SET contractor_title=:contractor_title, contractor_description=:contractor_description, contractor_phone=:contractor_phone, contractor_address=:contractor_address, contractor_name=:contractor_name WHERE contractor_id=:id";
+    $sql = "UPDATE rene_contractor SET contractor_title=:contractor_title, contractor_description=:contractor_description, contractor_phone=:contractor_phone, contractor_address=:contractor_address, contractor_name=:contractor_name WHERE contractor_id=:contractor_id";
     try {
         $db = getConnection();
         $stmt = $db->prepare($sql);
@@ -199,7 +205,7 @@ function updateContractor($id) {
 }
 
 function deleteContractor($id) {
-    $sql = "UPDATE rene_contractor SET delete_flag=1 WHERE id=:id";
+    $sql = "UPDATE rene_contractor SET delete_flag=1 WHERE contractor_id=:id";
     try {
         $db = getConnection();
         $stmt = $db->prepare($sql);
@@ -222,6 +228,118 @@ function findContractorByTitle($query) {
         $contractors = $stmt->fetchAll(PDO::FETCH_OBJ);
         $db = null;
         echo json_encode($contractors);
+    } catch(PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+}
+
+function getReviewsForContractor($id) {
+    $sql = "SELECT a.contractorRating_id, a.score, a.timestamp, a.person, a.place_id, a.project, a.review
+            FROM
+            rene_contractor_rating a
+            LEFT JOIN
+            rene_contractor b ON b.contractor_id=a.contractor_id
+            WHERE
+            a.delete_flag=FALSE
+            AND b.delete_flag=FALSE
+            AND b.contractor_id=:id";
+    try {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam("id", $id);
+        $stmt->execute();
+        $reviews = $stmt->fetchAll(PDO::FETCH_OBJ);
+        $db = null;
+        // echo '{"reviews": ' . json_encode($reviews) . '}';
+        return $reviews;
+    } catch(PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+}
+
+function getContractorReviews($id) {
+    $sql = "SELECT a.contractorRating_id, a.score, a.timestamp, a.person, a.place_id, a.project, a.review
+            FROM
+            rene_contractor_rating a
+            LEFT JOIN
+            rene_contractor b ON b.contractor_id=a.contractor_id
+            WHERE
+            a.delete_flag=FALSE
+            AND b.delete_flag=FALSE
+            AND b.contractor_id=:id";
+    try {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam("id", $id);
+        $stmt->execute();
+        $reviews = $stmt->fetchAll(PDO::FETCH_OBJ);
+        $db = null;
+        // echo '{"reviews": ' . json_encode($reviews) . '}';
+        echo json_encode($reviews);
+    } catch(PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+}
+
+function getContractorReview($id) {
+    $sql = "SELECT * FROM rene_contractor_rating WHERE contractorRating_id=:id";
+    try {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam("id", $id);
+        $stmt->execute();
+        $review = $stmt->fetchObject();
+        $db = null;
+        echo json_encode($review);
+    } catch(PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+}
+
+function addContractorReview() {
+    error_log('addContractorReview\n', 3, '/var/tmp/php.log');
+    $request = Slim::getInstance()->request();
+    $review = json_decode($request->getBody());
+    $sql = "INSERT INTO rene_contractor_rating (score, review, contractor_id, timestamp, person, place_id, project) VALUES (:score, :review, :contractor_id, :timestamp, :person, :place_id, :project)";
+    try {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam("score", $review->score);
+        $stmt->bindParam("review", $review->review);
+        $stmt->bindParam("contractor_id", $review->contractor_id);
+        $stmt->bindParam("timestamp", $review->timestamp);
+        $stmt->bindParam("person", $review->person);
+        $stmt->bindParam("place_id", $review->place_id);
+        $stmt->bindParam("project", $review->project);
+        $stmt->execute();
+        $review->id = $db->lastInsertId();
+        $db = null;
+        echo json_encode($review);
+    } catch(PDOException $e) {
+        error_log($e->getMessage(), 3, '/var/tmp/php.log');
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+}
+
+function updateContractorReview($id) {
+    $request = Slim::getInstance()->request();
+    $body = $request->getBody();
+    $review = json_decode($body);
+    $sql = "UPDATE rene_contractor_rating SET score=:score, review=:review, contractor_id=:contractor_id, timestamp=:timestamp, person=:person, place_id=:place_id, project=:project  WHERE contractorRating_id=:id";
+    try {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam("score", $review->score);
+        $stmt->bindParam("review", $review->review);
+        $stmt->bindParam("contractor_id", $review->contractor_id);
+        $stmt->bindParam("timestamp", $review->timestamp);
+        $stmt->bindParam("person", $review->person);
+        $stmt->bindParam("place_id", $review->place_id);
+        $stmt->bindParam("project", $review->project);
+        $stmt->bindParam("id", $id);
+        $stmt->execute();
+        $db = null;
+        echo json_encode($review);
     } catch(PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';
     }

@@ -45,6 +45,10 @@ a.plain:hover {
   color: grey;
 }
 
+.status-bar {
+  margin-top: 20px;
+}
+
 
 /* Space out sub-sections more
 -------------------------------------------------- */
