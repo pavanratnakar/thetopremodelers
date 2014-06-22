@@ -47,7 +47,7 @@ class Config{
         'contractorRating_table' => 'rene_contractor_rating',
         'contractorImage_table' => 'rene_contractor_image',
         'meta_table' => 'rene_meta',
-        'review' => 'rene_review'
+        'review_table' => 'rene_review'
     );
     /* TABLES */
 }

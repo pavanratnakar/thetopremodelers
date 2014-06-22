@@ -13,7 +13,6 @@ class Review{
                     WHERE
                     1=1
                     ORDER BY a.rating ASC";
-
         if ($result = $this->mysqli->query($query)) {
             $i=0;
             while ($row = $result->fetch_object()) {

@@ -7,9 +7,9 @@ class Place {
     public function getPlaceDetails($placeName){
         $placeName=$this->mysqli->real_escape_string($placeName);
         $query="SELECT *
-                    FROM 
+                    FROM
                     ".Config::$tables['place_table']." a
-                    WHERE 
+                    WHERE
                     place_name='".$placeName."'
                     AND a.delete_flag=FALSE AND a.active=TRUE";
 
@@ -34,11 +34,11 @@ class Place {
             $limit = "";
         }
         $query="SELECT *
-                    FROM 
-                    ".Config::$tables['place_table']." a 
-                    WHERE 
+                    FROM
+                    ".Config::$tables['place_table']." a
+                    WHERE
                     a.delete_flag=FALSE AND a.active=TRUE
-                    AND under!=0 
+                    AND under!=0
                     ORDER BY place_id ASC ".$limit."";
         if ($result = $this->mysqli->query($query)) {
             $i=0;
@@ -53,14 +53,14 @@ class Place {
     public function getMeta($placeName) {
         $placeDetails = $this->getPlaceDetails($placeName);
         $query="SELECT *
-                    FROM 
+                    FROM
                     ".Config::$tables['meta_table']." a
-                    WHERE 
+                    WHERE
                     id='".$placeDetails['meta_id']."'";
 
         $placeTitle = $placeDetails['place_title'];
-        $suffix = strrchr($placeTitle, ","); 
-        $pos = strpos($placeTitle,$suffix); 
+        $suffix = strrchr($placeTitle, ",");
+        $pos = strpos($placeTitle,$suffix);
         $name = substr_replace ($placeTitle,"", $pos);
         $result = $this->mysqli->query($query);
         $totalRowcount = $result->num_rows;

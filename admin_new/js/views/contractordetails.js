@@ -1,4 +1,4 @@
-window.ReviewView = Backbone.View.extend({
+window.ContractorView = Backbone.View.extend({
     initialize: function () {
         this.render();
     },
@@ -9,7 +9,7 @@ window.ReviewView = Backbone.View.extend({
     events: {
         "change": "change",
         "click .save" : "beforeSave",
-        "click .delete" : "deleteReview"
+        "click .delete" : "deleteContractor"
     },
     change: function (event) {
         // Remove any existing alert message
@@ -36,26 +36,26 @@ window.ReviewView = Backbone.View.extend({
             utils.displayValidationErrors(check.messages);
             return false;
         }
-        this.saveReview();
+        this.saveContractor();
         return false;
     },
-    saveReview: function () {
+    saveContractor: function () {
         var self = this;
         this.model.save(null, {
             success: function (model) {
                 self.render();
-                app.navigate('reviews/' + model.id, false);
-                utils.showAlert('Success!', 'Review saved successfully', 'alert-success');
+                app.navigate('contractors/' + model.id, false);
+                utils.showAlert('Success!', 'Contractor saved successfully', 'alert-success');
             },
             error: function () {
                 utils.showAlert('Error', 'An error occurred while trying to delete this item', 'alert-error');
             }
         });
     },
-    deleteReview: function () {
+    deleteContractor: function () {
         this.model.destroy({
             success: function () {
-                alert('Review deleted successfully');
+                alert('Contractor deleted successfully');
                 window.history.back();
             }
         });

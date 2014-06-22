@@ -1,45 +1,46 @@
 <div class="row">
     <form class="form-horizontal col-xs-9 col-sm-9 col-md-9" role="form">
         <fieldset>
-            <legend>Review Details</legend>
+            <legend>Contractor Details</legend>
             <br/>
             <div class="row">
                 <div class="col-xs-9 col-sm-9 col-md-9">
                     <div class="form-group">
-                        <label for="reviewId" class="control-label col-xs-3 col-sm-3 col-md-3">Id:</label>
+                        <label for="contractorId" class="control-label col-xs-3 col-sm-3 col-md-3">Id:</label>
                         <div class="controls col-xs-9 col-sm-9 col-md-9">
-                            <input class="form-control" id="reviewId" name="id" type="text" value="<%= id === null ? '' : id %>" disabled/>
+                            <input class="form-control" id="contractorId" name="id" type="text" value="<%= id === null ? '' : id %>" disabled/>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="project" class="control-label col-xs-3 col-sm-3 col-md-3">Project:</label>
+                        <label for="contractor_title" class="control-label col-xs-3 col-sm-3 col-md-3">Title:</label>
                         <div class="controls col-xs-9 col-sm-9 col-md-9">
-                            <input class="form-control" type="text" id="project" name="project" value="<%= project %>"/>
+                            <input class="form-control" type="text" id="contractor_title" name="contractor_title" value="<%= contractor_title %>"/>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="date" class="control-label col-xs-3 col-sm-3 col-md-3">Date:</label>
+                        <label for="contractor_description" class="control-label col-xs-3 col-sm-3 col-md-3">Description:</label>
                         <div class="controls col-xs-9 col-sm-9 col-md-9">
-                            <input class="form-control" type="text" id="date" name="date" value="<%= date %>"/>
+                            <textarea class="form-control" id="contractor_description" name="contractor_description" rows="6"><%= contractor_description
+                                %></textarea>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="region" class="control-label col-xs-3 col-sm-3 col-md-3">Region:</label>
+                        <label for="contractor_phone" class="control-label col-xs-3 col-sm-3 col-md-3">Phone:</label>
                         <div class="controls col-xs-9 col-sm-9 col-md-9">
-                            <input class="form-control" type="text" id="region" name="region" value="<%= region %>"/>
+                            <input class="form-control" type="text" id="contractor_phone" name="contractor_phone" value="<%= contractor_phone %>"/>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="description" class="control-label col-xs-3 col-sm-3 col-md-3">Description:</label>
+                        <label for="contractor_address" class="control-label col-xs-3 col-sm-3 col-md-3">Address:</label>
                         <div class="controls col-xs-9 col-sm-9 col-md-9">
-                            <textarea class="form-control" id="description" name="description" class="span6" rows="6"><%= description
+                            <textarea class="form-control" id="contractor_address" name="contractor_address" rows="6"><%= contractor_address
                                 %></textarea>
                         </div>
                     </div>
                    <div class="form-group">
-                        <label for="rating" class="control-label col-xs-3 col-sm-3 col-md-3">Rating:</label>
+                        <label for="contractor_name" class="control-label col-xs-3 col-sm-3 col-md-3">Name:</label>
                         <div class="controls col-xs-9 col-sm-9 col-md-9">
-                            <input class="form-control" type="text" id="rating" name="rating" value="<%= rating %>"/>
+                            <input class="form-control" type="text" id="contractor_name" name="contractor_name" value="<%= contractor_name %>"/>
                         </div>
                     </div>
                 </div>
@@ -54,7 +55,7 @@
 <div class="row status-bar">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="alert alert-success" style="display: none">
-            <b>Success!</b> Review saved successfully
+            <b>Success!</b> Contractor saved successfully
         </div>
     </div>
 </div>

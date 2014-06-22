@@ -204,16 +204,17 @@ class Page{
         return $return;
     }
     public function printHomeReviewContainer(){
-        $reviews = new SimpleXMLElement(file_get_contents('xml/review.xml'));
+        $review = new Review();
+        $reviews = $review->getReviews();
         $return = '';
         $i=1;
-        foreach ($reviews as $review) {
+        foreach ($reviews as $r) {
             $return .= '
             <div class="review">
             <i class="quote_start"></i>
-            <h4>Project : '.$review->title.'</h4>
-            <h5 class="blue">Customer in '.$review->location.'</h5>
-            <p>'.$review->description.'</p>
+            <h4>Project : '.$r['project'].'</h4>
+            <h5 class="blue">Customer in '.$r['region'].'</h5>
+            <p>'.$r['description'].'</p>
             <i class="quote_end"></i>';
             $return .= '</div>';
             $i++;

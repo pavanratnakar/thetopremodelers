@@ -38,6 +38,7 @@ class PageController{
         return $this->page->printReviewContainer();
     }
     public function printHomeReviewContainer(){
+        include_once(Config::$site_path.'/class/review.class.php');
         return $this->page->printHomeReviewContainer();
     }
     public function printUserStepsText($index=null){
