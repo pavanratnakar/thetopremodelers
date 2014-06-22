@@ -7,13 +7,17 @@
        <div class="navbar navbar-default" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-collapse collapse">
+                    <div class="nav-contact">
+                        <h4 class="gold">Need immediate service</h4>
+                        <h5>CALL US : 1(214)303 9771</h5>
+                    </div>
                     <?php echo $pageController->printHomeNavigation(); ?>
                 </div>
             </div>
         </div>
         <div class="container-fluid">
             <div class="row main-container">
-                <div class="col-md-3 sidebar">
+                <div class="col-md-3 col-xs-3 col-sm-3 sidebar">
                     <div class="nav-logo-container">
                         <div class="logo-container">
                             <a href="http://www.thetopremodelers.com">
@@ -22,7 +26,7 @@
                         </div>
                     </div>
                     <ul class="nav nav-sidebar">
-                        <?php echo $pageController->getHomeFormatedCategories(null); ?>
+                        <?php echo $pageController->getHomeFormatedCategories(1); ?>
                     </ul>
                     <div class="sidebar-container certifed-container">
                         <img src="images/home/stamp_final.png" alt=""/>
@@ -33,26 +37,31 @@
                         <h5>CALL US : 1(214)303 9771</h5>
                     </div>
                 </div>
-                <div class="col-md-9 main">
+                <div class="sidebar sub-sidebar">
+                    <ul class="nav nav-sidebar">
+                        <?php echo $pageController->getHomeFormatedCategories(2); ?>
+                    </ul>
+                </div>
+                <div class="col-md-9 col-xs-9 col-sm-9 main bottom">
                     <h2>Matching you with our <span class="blue">Prescreened contractors</span></h2>
                     <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
                     <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
                     <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
                     <div class="match-options-container">
                         <div class="row">
-                            <div class="col-md-4 first">
+                            <div class="col-md-4 col-xs-4 col-sm-4 first">
                                 <div class="match-option-container">
                                     <span class="label number">1</span>
                                     <span class="label">Select a Category</span>
                                 </div>
                             </div>
-                            <div class="col-md-4 second">
+                            <div class="col-md-4 col-xs-4 col-sm-4 second">
                                 <div class="match-option-container">
                                     <span class="label number">2</span>
                                     <span class="label">Describe your need</span>
                                 </div>
                             </div>
-                            <div class="col-md-4 third">
+                            <div class="col-md-4 col-xs-4 col-sm-4 third">
                                 <div class="match-option-container">
                                     <span class="label number">3</span>
                                     <span class="label">Get Matched to Pros</span>
@@ -61,11 +70,11 @@
                         </div>
                     </div>
                     <div class="process-container">
-                        <div class="col-md-7 process-sub-container">
+                        <div class="col-md-7 col-xs-7 col-sm-7 process-sub-container">
                             <h3>What <span class="blue">Client</span> Says</h3>
                             <?php echo $pageController->printHomeReviewContainer(); ?>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-5 col-xs-5 col-sm-5">
                             <i class="person"></i>
                         </div>
                     </div>

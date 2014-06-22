@@ -174,7 +174,8 @@ class Page{
         <ul class="nav navbar-nav navbar-right">';
         foreach ($this->pages as $page) {
             if($page->navigation==1){
-                $return.='<li><a href="'.Config::$site_url.$page->link.'" title="'.$page->name.'">'.$page->name.'</a></li>';
+                $class = ($page->id == $this->currentPage->id) ? 'class="active"' : '';
+                $return.='<li '.$class.'><a href="'.Config::$site_url.$page->link.'" title="'.$page->name.'">'.$page->name.'</a></li>';
             }
         }
         $return.='</ul>';
@@ -249,6 +250,9 @@ class Page{
     }
     public function printHomeFooter(){
         $return.=$this->printJS('herve_home_js');
+        if($this->currentPage->js == 1){
+            $return.=$this->printJS('herve_'.$this->currentPage->class.'_js');
+        }
         $return.=$this->printGA();
         $return.=$this->zopimChat();
         $return.='</body></html>';

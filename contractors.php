@@ -31,9 +31,9 @@ if (sizeof($contractorDetails) == 0) {
     exit;
 }
 $avoidCrawl = false;
-if ($placeDetails['place_id'] != 2 && $placeDetails['place_id'] != 1 && $placeDetails['place_id'] != 5 && $placeDetails['place_id'] != 36 && $placeDetails['place_id'] != 38 && $placeDetails['place_id'] != 45) {
-    $avoidCrawl = true;
-}
+// if ($placeDetails['place_id'] != 2 && $placeDetails['place_id'] != 1 && $placeDetails['place_id'] != 5 && $placeDetails['place_id'] != 36 && $placeDetails['place_id'] != 38 && $placeDetails['place_id'] != 45) {
+//     $avoidCrawl = true;
+// }
 echo $pageController->printHeader($contractor->getContractorsMeta($contractorDetails),$avoidCrawl);
 ?>
 <?php echo $pageController->printNavigation(); ?>
@@ -184,7 +184,7 @@ echo $pageController->printHeader($contractor->getContractorsMeta($contractorDet
             <img src="<?php echo Config::$site_url.'images/global/sidebar/solar_system.png' ?>" title="Hire our pros and win 6000 watt solar system" alt="Hire our pros and win 6000 watt solar system" />
         </div>
     </div>
-    <?php if ($placeName==='dallas_texas' || $placeName==='garland_texas' || $placeName==='carrollton_texas') { ?>
+    <?php //if ($placeName==='dallas_texas' || $placeName==='garland_texas' || $placeName==='carrollton_texas') { ?>
     <div class="sidebar-container">
         <div class="sidebar-header">
             <h3>Roofing Library</h3>
@@ -193,7 +193,7 @@ echo $pageController->printHeader($contractor->getContractorsMeta($contractorDet
             <?php echo $pageController->getArticles(); ?>
         </div>
     </div>
-    <?php } ?>
+    <?php //} ?>
 </div>
 </div>
 <?php echo $pageController->printFooterLinks(); ?>

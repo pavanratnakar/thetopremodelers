@@ -65,7 +65,7 @@ return array(
         '//global/js/config.js',
         '//global/js/sharethis/button.js',
         '//js/social.js',
-         '//js/init.js'
+         '//js/home.js'
     ),
     'herve_need_js' => array(
         '//global/js/jquery/jquery.validate.min.js',

@@ -17,7 +17,7 @@
         header( 'Location: '.Config::$site_url.'404.php');
         exit;
     }
-    echo $pageController->printHeader($category->getMeta($categoryName,$placeDetails['place_title'])); 
+    echo $pageController->printHeader($category->getMeta($categoryName,$placeDetails['place_title']), true);
 ?>
             <?php echo $pageController->printNavigation(); ?>
             <div class="main-content-container clearfix">

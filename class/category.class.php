@@ -74,24 +74,66 @@ class Category{
     public function getHomeFormatedCategories($position,$placeName){
         $this->getCategories($position);
         $response = '';
-        for($i=0;$i<sizeof($this->categories);$i++){
+        for ($i=0;$i<sizeof($this->categories);$i++) {
             $href= ($this->categories[$i]['active']) ? Config::$site_url.$placeName.'/'.$this->categories[$i]['category_name'].'/contractors' : Config::$site_url.'contact-us';
             $class= ($this->categories[$i]['active']) ? 'active' : 'inactive';
             $value = htmlspecialchars($this->categories[$i]['category_value']);
+            $sections = null;
             $response .= '
                 <li class="dropdown">
-                    <a href="'.$href.'" class="dropdown-toggle" data-toggle="dropdown">'.$value.' <b class="glyphicon glyphicon-chevron-right"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
-                </li>';
+                    <a href="'.$href.'">'.$value;
+                    if (sizeof($sections) > 0) {
+                        $response .= '<b class="glyphicon glyphicon-chevron-right"></b>';
+                    }
+                    $response .= '</a>';
+            if (sizeof($sections) > 0) {
+                $response .= '<ul class="dropdown-menu">';
+                foreach ($sections as $section) {
+                    $href = Config::$site_url.$placeName.'/'.$this->categories[$i]['category_name'].'/need/'.$section['section_name'];
+
+                    $response .= '<li><a href="'.$href.'">'.$section['section_title'].'</a></li>';
+                }
+                $response .= '</ul>';
+            }
+            $response .= '</li>';
         }
         return $response;
     }
+    // public function getSectionsForCategory($category_name,$place_name) {
+    //     $query="SELECT c.section_id, c.section_name, c.section_title , a.active
+    //                 FROM
+    //                 ".Config::$tables['categorySection_table']." a
+    //                 LEFT JOIN
+    //                 ".Config::$tables['placeCategory_table']." b ON b.placeCategory_id=a.placeCategory_id
+    //                 LEFT JOIN 
+    //                 ".Config::$tables['section_table']." c ON c.section_id=a.section_id
+    //                 LEFT JOIN
+    //                 ".Config::$tables['category_table']." d ON b.category_id=d.category_id                 
+    //                 LEFT JOIN
+    //                 ".Config::$tables['place_table']." e ON e.place_id=b.place_id
+    //                 WHERE 
+    //                 a.delete_flag=FALSE 
+    //                 AND b.delete_flag=FALSE 
+    //                 AND c.delete_flag=FALSE 
+    //                 AND d.delete_flag=FALSE 
+    //                 AND e.delete_flag=FALSE 
+    //                 AND e.active=TRUE 
+    //                 AND d.category_name='".$category_name."' 
+    //                 AND e.place_name='".$place_name."' 
+    //                 ORDER BY a.categorysection_order ASC";
+    //     if ($result = $this->mysqli->query($query)) {
+    //         $i=0;
+    //         while ($row = $result->fetch_object()) {
+    //             $response[$i]['section_id']=$row->section_id;
+    //             $response[$i]['section_name']=$row->section_name;
+    //             $response[$i]['section_title']=$row->section_title;
+    //             $response[$i]['active']=$row->active;
+    //             $i++;
+    //         }
+    //     }
+    //     $this->sections = $response;
+    //     return $response;
+    // }
     public function getCategoryValueByName($categoryName){
         $categoryName=$this->mysqli->real_escape_string($categoryName);
         $query="SELECT category_value

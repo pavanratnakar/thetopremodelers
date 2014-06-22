@@ -2,10 +2,9 @@
  * Base structure
  */
 body {
-    background:url(../images/home/home_bg.jpg) no-repeat fixed center top;
-/*    background:url(../images/1.jpg) no-repeat fixed center center;
-    opacity: 0.8;*/
+    background:url(../images/home/home_bg.jpg) no-repeat no-repeat center top;
     color: #505050;
+    min-width: 1010px;
 }
 
 /*
@@ -27,8 +26,8 @@ body {
     border-bottom: 1px solid #eee;
 }
 .main-container {
-    width: 1010px;
     margin: 0 auto;
+    min-width: 997px;
 }
 
 /*
@@ -38,8 +37,8 @@ body {
 .navbar {
     width: 100%;
     position: absolute;
-    top: 44px;
-    padding: 20px 0;
+    top: 45px;
+    padding: 0 0 20px 0;
     margin: 0;
     background: rgb(255, 255, 255) transparent;
     /* nice browsers */
@@ -49,11 +48,46 @@ body {
     /* IE8 */
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF, endColorstr=#CCFFFFFF)";
 }
+.navbar-nav > li {
+    width: 181px;
+    text-align: center;
+    padding-top: 20px;
+    margin-top: -1px;
+}
+.navbar-nav > li.active {
+    background-repeat: no-repeat;
+    background-image: url("../images/global/nav/link_hover.png");
+}
 .navbar-nav > li > a {
-    font-size: 17px;
+    font-size: 14px;
     color: #333638;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(150, 150, 150, 1);
+}
+.navbar-nav > li > a:hover {
+    text-decoration: underline;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    background-color: transparent;
+    color: #333638;
+}
+.navbar-nav > li.active > a:hover {
+    text-decoration: none;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #333638;
+}
+.nav-contact {
+    position: absolute;
+    top: 10px;
+    left: 284px;
+}
+.nav-contact h4 {
+    margin-bottom: 4px;
+}
+.nav-contact h5 {
+    font-weight: bold;
+    margin-top: 4px;
 }
 
 /*
@@ -62,7 +96,9 @@ body {
 
 .sidebar {
     padding: 0;
-    width: 22%;
+    width: 252px;
+    max-width: 252px;
+    min-width: 252px;
 }
 .sidebar .sidebar-container {
     background-color: #333638;
@@ -78,18 +114,23 @@ body {
 }
 .service-container h4 {
     margin-bottom: 4px;
-    text-align: left;
 }
 .service-container h5 {
     font-weight: bold;
     margin-top: 4px;
-    text-align: left;
 }
 .share-container h4 {
     font-weight: bold;
     color: #ffc24a;
     padding-bottom: 4px;
     border-bottom: 1px dotted #ffc24a;
+}
+.sub-sidebar {
+    position: absolute;
+    left: 270px;
+    top: 136px;
+    z-index: 1;
+    display: none;
 }
 
 /* Sidebar navigation */
@@ -160,7 +201,8 @@ body {
 }
 .logo-container {
     background-color: #FFF;
-    padding: 20px 10px;
+    padding: 20px 0px;
+    text-align: center;
 }
 
 /*
@@ -211,10 +253,26 @@ body {
  */
 
 .main {
-    margin-top: 470px;
     padding: 20px;
     background: #FFF;
-    width: 78%;
+    width: 745px;
+}
+.main.top {
+    margin-top: 140px;
+    min-height: 500px;
+}
+.main.bottom {
+    margin-top: 638px;
+}
+@media (min-width: 1200px) {
+    .main {
+        width: 75%;
+    }
+}
+.full-main {
+    margin-top: 140px;
+    padding: 20px;
+    background: #FFF;
 }
 .main h2 {
     font-weight: bold;
@@ -232,6 +290,26 @@ body {
     height: 483px;
     width: 320px;
     display: block;
+}
+
+/*
+ * Full Main content
+ */
+
+.full-main {
+    margin-top: 140px;
+    padding: 20px;
+    background: #FFF;
+}
+.full-main h2 {
+    font-weight: bold;
+    border-bottom: 1px solid #000;
+    font-size: 26px;
+    line-height: 40px;
+    margin-top: 0;
+}
+.full-main .page-header {
+     margin-top: 0;
 }
 
 /*
@@ -273,17 +351,15 @@ body {
  footer .container {
     margin: 0 auto;
     color: #FFF;
-    width: 1010px;
  }
 .footer-top-container {
-    width: 100%;
     background-color: #333638;
     font-size: 13px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 .footer-top-container h3 {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
     padding-bottom: 6px;
     border-bottom: 1px dotted #FFF;
 }
@@ -294,14 +370,20 @@ body {
     color: #69a3d5;
     text-decoration: none;
 }
+.footer-top-container ul{
+    padding-left: 5px;
+}
+.footer-top-container li {
+    padding-bottom: 5px;
+}
+.footer-top-container li i{
+    padding-right: 5px;
+}
 .footer-top-container li a {
     color: #FFF;
 }
-.footer-top-container ul {
-    padding-left: 16px;
-}
 .footer-bottom-container {
-    width: 100%;
-    padding: 10px 0;
+    font-size: 13px;
+    padding: 10px 0 0;
     background-color: #000;
 }
