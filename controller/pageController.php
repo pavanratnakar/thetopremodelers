@@ -62,7 +62,7 @@ class PageController{
                 <div class="footer_about left">
                     <h3>About Us</h3>
                     <div class="content">
-                        <p>'.$summary.'</p>                         
+                        <p>'.$summary.'</p>
                         <p>&nbsp;</p>
                         <p>Address: <b>2003 michigan ave, Dallas tx 75216</b></p>
                         <p>Telephone: <b>1(214)303 9771</b></p>
@@ -100,7 +100,7 @@ class PageController{
         $return .= '</p>
         </div>
         </div>
-        </div>            
+        </div>
         </div>';
         return $return;
     }
@@ -123,7 +123,7 @@ class PageController{
                         $return.='
                         <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4">
                             <h3>About Us</h3>
-                            <p>'.$summary.'</p>                         
+                            <p>'.$summary.'</p>
                             <p>&nbsp;</p>
                             <p>Address: <b>2003 michigan ave, Dallas tx 75216</b></p>
                             <p>Telephone: <b>1(214)303 9771</b></p>
@@ -147,7 +147,7 @@ class PageController{
                         <p>Copyright &copy; '.date("Y").'. All Rights Reserved.</p>
                     </div>
                 </div>
-            </footer>            
+            </footer>
         </div>';
         return $return;
     }
@@ -232,32 +232,32 @@ class PageController{
     }
     public function FormatUSStateSelectList(){
         $state_list = array(
-            'AL'=>"Alabama",  
-            'AK'=>"Alaska",  
-            'AZ'=>"Arizona",  
-            'AR'=>"Arkansas",  
-            'CA'=>"California",  
-            'CO'=>"Colorado",  
-            'CT'=>"Connecticut",  
-            'DE'=>"Delaware",  
-            'DC'=>"District Of Columbia",  
-            'FL'=>"Florida",  
-            'GA'=>"Georgia",  
-            'HI'=>"Hawaii",  
-            'ID'=>"Idaho",  
-            'IL'=>"Illinois",  
-            'IN'=>"Indiana",  
-            'IA'=>"Iowa",  
-            'KS'=>"Kansas",  
-            'KY'=>"Kentucky",  
-            'LA'=>"Louisiana",  
-            'ME'=>"Maine",  
-            'MD'=>"Maryland",  
-            'MA'=>"Massachusetts",  
-            'MI'=>"Michigan",  
-            'MN'=>"Minnesota",  
-            'MS'=>"Mississippi",  
-            'MO'=>"Missouri",  
+            'AL'=>"Alabama",
+            'AK'=>"Alaska",
+            'AZ'=>"Arizona",
+            'AR'=>"Arkansas",
+            'CA'=>"California",
+            'CO'=>"Colorado",
+            'CT'=>"Connecticut",
+            'DE'=>"Delaware",
+            'DC'=>"District Of Columbia",
+            'FL'=>"Florida",
+            'GA'=>"Georgia",
+            'HI'=>"Hawaii",
+            'ID'=>"Idaho",
+            'IL'=>"Illinois",
+            'IN'=>"Indiana",
+            'IA'=>"Iowa",
+            'KS'=>"Kansas",
+            'KY'=>"Kentucky",
+            'LA'=>"Louisiana",
+            'ME'=>"Maine",
+            'MD'=>"Maryland",
+            'MA'=>"Massachusetts",
+            'MI'=>"Michigan",
+            'MN'=>"Minnesota",
+            'MS'=>"Mississippi",
+            'MO'=>"Missouri",
             'MT'=>"Montana",
             'NE'=>"Nebraska",
             'NV'=>"Nevada",
@@ -267,21 +267,21 @@ class PageController{
             'NY'=>"New York",
             'NC'=>"North Carolina",
             'ND'=>"North Dakota",
-            'OH'=>"Ohio",  
-            'OK'=>"Oklahoma",  
-            'OR'=>"Oregon",  
-            'PA'=>"Pennsylvania",  
-            'RI'=>"Rhode Island",  
-            'SC'=>"South Carolina",  
+            'OH'=>"Ohio",
+            'OK'=>"Oklahoma",
+            'OR'=>"Oregon",
+            'PA'=>"Pennsylvania",
+            'RI'=>"Rhode Island",
+            'SC'=>"South Carolina",
             'SD'=>"South Dakota",
-            'TN'=>"Tennessee",  
-            'TX'=>"Texas",  
-            'UT'=>"Utah",  
-            'VT'=>"Vermont",  
-            'VA'=>"Virginia",  
-            'WA'=>"Washington",  
-            'WV'=>"West Virginia",  
-            'WI'=>"Wisconsin",  
+            'TN'=>"Tennessee",
+            'TX'=>"Texas",
+            'UT'=>"Utah",
+            'VT'=>"Vermont",
+            'VA'=>"Virginia",
+            'WA'=>"Washington",
+            'WV'=>"West Virginia",
+            'WI'=>"Wisconsin",
             'WY'=>"Wyoming"
             );
         foreach($state_list as $key => $value){

@@ -27,7 +27,7 @@ class Config{
     static $db_database='newtopremodelers';
     static $paginationLimit=30;
     /* DB CONFIG */
-    
+
     /* TABLES */
     static $tables = array(
         'place_table'=>'rene_place',
@@ -46,7 +46,8 @@ class Config{
         'contractorMapping_table' => 'rene_contractor_mapping',
         'contractorRating_table' => 'rene_contractor_rating',
         'contractorImage_table' => 'rene_contractor_image',
-        'meta_table' => 'rene_meta'
+        'meta_table' => 'rene_meta',
+        'review' => 'rene_review'
     );
     /* TABLES */
 }

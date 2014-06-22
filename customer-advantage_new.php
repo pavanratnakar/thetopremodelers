@@ -2,7 +2,7 @@
     include_once($_SERVER['DOCUMENT_ROOT'].'/config.class.php');
     include_once(Config::$site_path.'controller/pageController.php');
     $pageController=new PageController(1);
-    echo $pageController->printHomeHeader(); 
+    echo $pageController->printHomeHeader();
 ?>
        <div class="navbar navbar-default" role="navigation">
             <div class="container-fluid">
