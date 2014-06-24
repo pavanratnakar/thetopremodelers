@@ -45,7 +45,11 @@
                    <div class="form-group">
                         <label for="place_id" class="control-label col-xs-3 col-sm-3 col-md-3">Place:</label>
                         <div class="controls col-xs-9 col-sm-9 col-md-9">
-                            <input class="form-control" type="text" id="place_id" name="place_id" value="<%= place_id %>"/>
+                            <select class="form-control" id="place_id" name="place_id">
+                                <% _.each(placeModel, function(place) { %>
+                                    <option selected="<%= (place_id === place.place_id) ? 'selected' : ''%>" value="<%= place.attributes.place_id %>"><%= place.attributes.place_title %></option>
+                                <% }); %>
+                            </select>
                         </div>
                     </div>
                    <div class="form-group">

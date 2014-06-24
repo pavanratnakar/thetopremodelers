@@ -24,6 +24,9 @@ $app->post('/contractorReview', 'addContractorReview');
 $app->put('/contractorReview/:id', 'updateContractorReview');
 $app->delete('/contractorReview/:id', 'deleteContractorReview');
 
+$app->get('/places', 'getPlaces');
+$app->get('/places/:id', 'getPlace');
+
 $app->run();
 
 function getReviews() {
@@ -353,6 +356,35 @@ function getConnection() {
     $dbh = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     return $dbh;
+}
+
+function getPlaces() {
+    $sql = "select * FROM rene_place WHERE active=1 AND under<>0 ORDER BY place_title";
+    try {
+        $db = getConnection();
+        $stmt = $db->query($sql);
+        $places = $stmt->fetchAll(PDO::FETCH_OBJ);
+        $db = null;
+        // echo '{"place": ' . json_encode($places) . '}';
+        echo json_encode($places);
+    } catch(PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+}
+
+function getPlace($id) {
+    $sql = "SELECT * FROM rene_place WHERE id=:id AND active=1";
+    try {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam("id", $id);
+        $stmt->execute();
+        $place = $stmt->fetchObject();
+        $db = null;
+        echo json_encode($place);
+    } catch(PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
 }
 
 ?>

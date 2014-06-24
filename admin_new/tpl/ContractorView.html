@@ -51,10 +51,12 @@
             <a href="#" class="btn btn-danger delete">Delete</a>
         </div>
     </form>
+    <% if (contractor_id) { %>
     <div class="col-xs-3 col-sm-3 col-md-3">
         <h4>Contractor Actions</h4>
         <a href="#contractorReviews/add/<%= contractor_id %>" class="btn btn-info">Add Review</a>
     </div>
+    <% } %>
 </div>
 <div class="row status-bar">
     <div class="col-xs-12 col-sm-12 col-md-12">

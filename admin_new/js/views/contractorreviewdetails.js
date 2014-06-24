@@ -1,28 +1,32 @@
 window.ContractorReviewView = Backbone.View.extend({
-    initialize: function () {
-        this.render();
+    initialize: function (e) {
+        this.placeModel = e.placeModel;
     },
     render: function () {
-        $(this.el).html(this.template(this.model.toJSON()));
+        $(this.el).html(this.template(_.extend(this.model.toJSON(), {
+            placeModel: this.placeModel.models
+        })));
         return this;
     },
     events: {
         "change": "change",
-        "click .save" : "beforeSave",
-        "click .delete" : "deleteReview"
+        "click .save": "beforeSave",
+        "click .delete": "deleteReview"
     },
     change: function (event) {
         // Remove any existing alert message
         utils.hideAlert();
 
         // Apply the change to the model
-        var target = event.target;
-        var change = {};
+        var target = event.target,
+            change = {},
+            check;
+
         change[target.name] = target.value;
         this.model.set(change);
 
         // Run validation rule (if any) on changed item
-        var check = this.model.validateItem(target.id);
+        check = this.model.validateItem(target.id);
         if (check.isValid === false) {
             utils.addValidationError(target.id, check.message);
         } else {
@@ -30,8 +34,9 @@ window.ContractorReviewView = Backbone.View.extend({
         }
     },
     beforeSave: function () {
-        var self = this;
-        var check = this.model.validateAll();
+        var self = this,
+            check = this.model.validateAll();
+
         if (check.isValid === false) {
             utils.displayValidationErrors(check.messages);
             return false;
@@ -41,6 +46,7 @@ window.ContractorReviewView = Backbone.View.extend({
     },
     saveReview: function () {
         var self = this;
+
         this.model.save(null, {
             success: function (model) {
                 self.render();

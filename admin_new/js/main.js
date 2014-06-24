@@ -29,7 +29,7 @@ var AppRouter = Backbone.Router.extend({
         reviewList.fetch({success: function(){
             $("#content").html(new ReviewListView({model: reviewList, page: p}).el);
         }});
-        this.headerView.selectMenuItem('home-menu');
+        this.headerView.selectMenuItem('list-reviews');
     },
 
     reviewDetails: function (id) {
@@ -43,7 +43,7 @@ var AppRouter = Backbone.Router.extend({
     addReview: function() {
         var review = new Review();
         $('#content').html(new ReviewView({model: review}).el);
-        this.headerView.selectMenuItem('add-menu');
+        this.headerView.selectMenuItem('add-review');
     },
 
     contractorsList: function(page) {
@@ -53,7 +53,7 @@ var AppRouter = Backbone.Router.extend({
         contractorList.fetch({success: function(){
             $("#content").html(new ContractorListView({model: contractorList, page: p}).el);
         }});
-        this.headerView.selectMenuItem('home-menu');
+        this.headerView.selectMenuItem('list-contractors');
     },
 
     contractorDetails: function (id) {
@@ -67,7 +67,7 @@ var AppRouter = Backbone.Router.extend({
     addContractor: function() {
         var contractor = new Contractor();
         $('#content').html(new ContractorView({model: contractor}).el);
-        this.headerView.selectMenuItem('add-menu');
+        this.headerView.selectMenuItem('add-contractor');
     },
 
     contractorsReviewsList: function(id) {
@@ -76,13 +76,24 @@ var AppRouter = Backbone.Router.extend({
         contractorReviewList.fetch({success: function(){
             $("#content").html(new ContractorReviewListView({model: contractorReviewList}).el);
         }});
+        this.headerView.selectMenuItem();
     },
 
     contractorReviewDetails: function (id) {
-        var contractorReview = new ContractorReview({id: id});
-        contractorReview.fetch({success: function(){
-            $("#content").html(new ContractorReviewView({model: contractorReview}).el);
+        var placeList = new PlaceCollection(),
+            contractorReview = new ContractorReview({id: id}),
+            placeList = new PlaceCollection();
+
+        placeList.fetch({success: function(){
+            contractorReview.fetch({success: function(){
+                var contractorReviewView = new ContractorReviewView({
+                    model: contractorReview,
+                    placeModel: placeList
+                });
+                $("#content").html(contractorReviewView.render().el);
+            }});
         }});
+        this.headerView.selectMenuItem();
     },
 
     addContractorReview: function(id) {
@@ -90,6 +101,7 @@ var AppRouter = Backbone.Router.extend({
             contractor_id: id
         });
         $('#content').html(new ContractorReviewView({model: contractorReview}).el);
+        this.headerView.selectMenuItem();
     }
 
 });
