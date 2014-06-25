@@ -4,7 +4,7 @@
  * @package Minify
  */
 
-/** 
+/**
  * You may wish to use the Minify URI Builder app to suggest
  * changes. http://yourdomain/min/builder/
  *
@@ -39,7 +39,7 @@ return array(
         '//css/style.css'
     ),
     'herve_home_css' => array(
-        '//css/bootstrap.min.css',
+        '//global/css/bootstrap/bootstrap.min.css',
         '//css/home.css'
     ),
     'herve_place-request_js' => array(
@@ -80,6 +80,32 @@ return array(
     'herve_contractor_js' => array(
         '//global/js/plugins/boxy/javascripts/jquery.boxy.js',
         '//js/contractor.js'
+    ),
+    /// HERVE ///
+    /// NEW ADMIN ///
+    'herve_new_admin_js' => array(
+        '//global/js/jquery/jquery-1.7.1.min.js',
+        '//global/js/underscore.min.js',
+        '//global/js/backbone.min.js',
+        '//global/js/bootstrap.min.js',
+        '//admin_new/js/utils.js',
+        '//admin_new/js/models/placeModels.js',
+        '//admin_new/js/models/reviewModels.js',
+        '//admin_new/js/models/contractorModels.js',
+        '//admin_new/js/models/contractorReviewModels.js',
+        '//admin_new/js/views/paginator.js',
+        '//admin_new/js/views/header.js',
+        '//admin_new/js/views/reviewlist.js',
+        '//admin_new/js/views/reviewdetails.js',
+        '//admin_new/js/views/contractorlist.js',
+        '//admin_new/js/views/contractordetails.js',
+        '//admin_new/js/views/contractorreviewlist.js',
+        '//admin_new/js/views/contractorreviewdetails.js',
+        '//admin_new/js/main.js'
+    ),
+    'herve_new_admin_css' => array(
+        '//global/css/bootstrap/bootstrap.min.css',
+        '//admin_new/css/styles.css'
     )
-    ///HERVE ///
+    /// NEW ADMIN ///
 );
