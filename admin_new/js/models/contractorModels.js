@@ -45,7 +45,8 @@ window.Contractor = Backbone.Model.extend({
         contractor_phone: "",
         contractor_address: "",
         contractor_name: "",
-        reviews: []
+        reviews: [],
+        mappings: []
     }
 });
 

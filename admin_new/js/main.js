@@ -59,7 +59,9 @@ var AppRouter = Backbone.Router.extend({
     contractorDetails: function (id) {
         var contractor = new Contractor({id: id});
         contractor.fetch({success: function(){
-            $("#content").html(new ContractorView({model: contractor}).el);
+            $("#content").html(new ContractorView({
+                model: contractor
+            }).el);
         }});
         this.headerView.selectMenuItem();
     },

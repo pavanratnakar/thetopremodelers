@@ -53,8 +53,22 @@
     </form>
     <% if (contractor_id) { %>
     <div class="col-xs-3 col-sm-3 col-md-3">
-        <h4>Contractor Actions</h4>
-        <a href="#contractorReviews/add/<%= contractor_id %>" class="btn btn-info">Add Review</a>
+        <div class="row">
+            <h4>Contractor Mapping</h4>
+            <ul class="list-group thumbnails">
+                <% _.each(mappings, function(mapping) { %>
+                <li class="list-group-item">
+                    <b>Category</b> : <%= mapping.category_title %><br/>
+                    <b>Place</b> : <%= mapping.place_title %><br/>
+                    <b>Section</b> : <%= mapping.section_title %>
+                </li>
+                <% }); %>
+            </ul>
+        </div>
+        <div class="row">
+            <h4>Contractor Actions</h4>
+            <a href="#contractorReviews/add/<%= contractor_id %>" class="btn btn-info">Add Review</a>
+        </div>
     </div>
     <% } %>
 </div>

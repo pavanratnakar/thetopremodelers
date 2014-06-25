@@ -155,6 +155,7 @@ function getContractor($id) {
         $stmt->execute();
         $contractor = $stmt->fetchObject();
         $contractor->reviews = getReviewsForContractor($id);
+        $contractor->mappings = getMappingForContractor($id);
         $db = null;
         echo json_encode($contractor);
     } catch(PDOException $e) {
@@ -255,6 +256,44 @@ function getReviewsForContractor($id) {
         $db = null;
         // echo '{"reviews": ' . json_encode($reviews) . '}';
         return $reviews;
+    } catch(PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+}
+
+function getMappingForContractor($id) {
+    $sql = "SELECT a.contractorMapping_id,g.contractor_title as contractor_title,d.category_title as category_title,f.section_title as section_title,e.place_title as place_title,a.active
+            FROM
+            rene_contractor_mapping a
+            LEFT JOIN
+            rene_categorysection_mapping b ON a.categorySection_id=b.categorySection_id
+            LEFT JOIN
+            rene_placecategory_mapping c ON b.placeCategory_id=c.placeCategory_id
+            LEFT JOIN
+            rene_category d ON c.category_id=d.category_id
+            LEFT JOIN
+            rene_place e ON e.place_id=c.place_id
+            LEFT JOIN
+            rene_section f ON f.section_id=b.section_id
+            LEFT JOIN
+            rene_contractor g ON g.contractor_id=a.contractor_id
+            WHERE
+            a.contractor_id=:id
+            AND a.delete_flag=FALSE
+            AND b.delete_flag=FALSE
+            AND c.delete_flag=FALSE
+            AND d.delete_flag=FALSE
+            AND e.delete_flag=FALSE
+            AND f.delete_flag=FALSE
+            AND g.delete_flag=FALSE";
+    try {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam("id", $id);
+        $stmt->execute();
+        $mappings = $stmt->fetchAll(PDO::FETCH_OBJ);
+        $db = null;
+        return $mappings;
     } catch(PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';
     }
