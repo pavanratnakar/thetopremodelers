@@ -38,6 +38,26 @@ window.Contractor = Backbone.Model.extend({
 
         return _.size(messages) > 0 ? {isValid: false, messages: messages} : {isValid: true};
     },
+    mappingGroupedByPlace: function(){
+        var o = [],
+            i = -1,
+            prevPlace;
+
+        _.each(this.get('mappings'), function(mapping){
+            if (mapping.place_title !== prevPlace) {
+                i++;
+                o[i] = {};
+                o[i].place = mapping.place_title;
+                o[i].sections = [];
+                prevPlace = mapping.place_title;
+            }
+            o[i].sections.push({
+                sectionTitle: mapping.section_title,
+                contractorMapping_id: mapping.contractorMapping_id
+            });
+        });
+        return o;
+    },
     defaults: {
         contractor_id: null,
         contractor_title: "",

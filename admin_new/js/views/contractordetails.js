@@ -3,21 +3,25 @@ window.ContractorView = Backbone.View.extend({
         this.render();
     },
     render: function () {
-        $(this.el).html(this.template(this.model.toJSON()));
+        $(this.el).html(this.template({
+            contractor: this.model.toJSON(),
+            mapping: this.model.mappingGroupedByPlace()
+        }));
         return this;
     },
     events: {
         "change": "change",
-        "click .save" : "beforeSave",
-        "click .delete" : "deleteContractor"
+        "click .save": "beforeSave",
+        "click .delete": "deleteContractor"
     },
     change: function (event) {
         // Remove any existing alert message
         utils.hideAlert();
 
         // Apply the change to the model
-        var target = event.target;
-        var change = {};
+        var target = event.target,
+            change = {};
+
         change[target.name] = target.value;
         this.model.set(change);
 
@@ -30,8 +34,9 @@ window.ContractorView = Backbone.View.extend({
         }
     },
     beforeSave: function () {
-        var self = this;
-        var check = this.model.validateAll();
+        var self = this,
+            check = this.model.validateAll();
+
         if (check.isValid === false) {
             utils.displayValidationErrors(check.messages);
             return false;

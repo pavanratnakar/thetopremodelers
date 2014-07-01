@@ -27,6 +27,12 @@ $app->delete('/contractorReview/:id', 'deleteContractorReview');
 $app->get('/places', 'getPlaces');
 $app->get('/places/:id', 'getPlace');
 
+$app->get('/placeCategories/:id', 'getPlaceCategories');
+
+$app->get('/categorySections/:id', 'getCategorySections');
+
+$app->post('/contractorMapping', 'addContractorMapping');
+
 $app->run();
 
 function getReviews() {
@@ -424,6 +430,92 @@ function getPlace($id) {
     } catch(PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';
     }
+}
+
+function getPlaceCategories($id) {
+    $sql = "SELECT a.placeCategory_id,c.category_title as category_title,a.active
+            FROM
+            rene_placecategory_mapping a
+            LEFT JOIN
+            rene_place b ON b.place_id=a.place_id
+            LEFT JOIN
+            rene_category c ON a.category_id=c.category_id
+            WHERE
+            a.delete_flag=FALSE
+            AND b.delete_flag=FALSE
+            AND c.delete_flag=FALSE
+            AND b.place_id=:id
+            ORDER BY category_title";
+    try {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam("id", $id);
+        $stmt->execute();
+        $categories = $stmt->fetchAll(PDO::FETCH_OBJ);
+        $db = null;
+        // echo '{"categories": ' . json_encode($categories) . '}';
+        echo json_encode($categories);
+    } catch(PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+}
+
+function getCategorySections($id) {
+    $sql = "SELECT a.categorySection_id,e.place_title as place_title,d.category_title as category_title,c.section_title as section_title,a.categorysection_order,a.active,a.meta_id
+            FROM
+            rene_categorysection_mapping a
+            LEFT JOIN
+            rene_placecategory_mapping b ON b.placeCategory_id=a.placeCategory_id
+            LEFT JOIN
+            rene_section c ON c.section_id=a.section_id
+            LEFT JOIN
+            rene_category d ON b.category_id=d.category_id
+            LEFT JOIN
+            rene_place e ON e.place_id=b.place_id
+            WHERE
+            a.delete_flag=FALSE
+            ANd b.delete_flag=FALSE
+            AND c.delete_flag=FALSE
+            AND d.delete_flag=FALSE
+            AND e.delete_flag=FALSE
+            AND b.placeCategory_id=:id
+            ORDER BY section_title";
+    try {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam("id", $id);
+        $stmt->execute();
+        $sections = $stmt->fetchAll(PDO::FETCH_OBJ);
+        $db = null;
+        // echo '{"categories": ' . json_encode($categories) . '}';
+        echo json_encode($sections);
+    } catch(PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+}
+
+function addContractorMapping(){
+    error_log('addContractorMapping\n', 3, '/var/tmp/php.log');
+    $request = Slim::getInstance()->request();
+    $contractorMapping = json_decode($request->getBody());
+    $sql = "INSERT INTO rene_contractor_mapping (contractor_id, categorySection_id, active, delete_flag) VALUES (:contractor_id, :categorySection_id, :active, :delete_flag)";
+    echo $sql;
+    // try {
+    //     $db = getConnection();
+    //     $stmt = $db->prepare($sql);
+    //     $stmt->bindParam("contractor_title", $contractor->contractor_title);
+    //     $stmt->bindParam("contractor_description", $review->contractor_description);
+    //     $stmt->bindParam("contractor_phone", $review->contractor_phone);
+    //     $stmt->bindParam("contractor_address", $review->contractor_address);
+    //     $stmt->bindParam("contractor_name", $review->contractor_name);
+    //     $stmt->execute();
+    //     $contractor->id = $db->lastInsertId();
+    //     $db = null;
+    //     echo json_encode($contractor);
+    // } catch(PDOException $e) {
+    //     error_log($e->getMessage(), 3, '/var/tmp/php.log');
+    //     echo '{"error":{"text":'. $e->getMessage() .'}}';
+    // }
 }
 
 ?>

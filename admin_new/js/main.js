@@ -14,7 +14,9 @@ var AppRouter = Backbone.Router.extend({
 
         "contractorReviews/:id": "contractorsReviewsList",
         "contractorReview/:id": "contractorReviewDetails",
-        "contractorReviews/add/:id": "addContractorReview"
+        "contractorReviews/add/:id": "addContractorReview",
+
+        "contractorMapping/add/:id": "addContractorMapping"
     },
 
     initialize: function () {
@@ -83,8 +85,7 @@ var AppRouter = Backbone.Router.extend({
 
     contractorReviewDetails: function (id) {
         var placeList = new PlaceCollection(),
-            contractorReview = new ContractorReview({id: id}),
-            placeList = new PlaceCollection();
+            contractorReview = new ContractorReview({id: id});
 
         placeList.fetch({success: function(){
             contractorReview.fetch({success: function(){
@@ -102,7 +103,42 @@ var AppRouter = Backbone.Router.extend({
         var contractorReview = new ContractorReview({
             contractor_id: id
         });
+
         $('#content').html(new ContractorReviewView({model: contractorReview}).el);
+        this.headerView.selectMenuItem();
+    },
+
+    addContractorMapping: function(id) {
+        var placeList = new PlaceCollection(),
+            contractorMapping = new ContractorMapping({
+                contractor_id: id
+            });
+
+        // TODO MAKE THIS PARALLEL USING ASYNC
+        placeList.fetch({
+            success: function(){
+                var placeCategoryList = new PlaceCategoryCollection([], {
+                    id: placeList.models[0].get('place_id')
+                });
+                placeCategoryList.fetch({
+                    success: function(){
+                        var categorySectionList = new CategorySectionCollection([], {
+                            id: placeCategoryList.models[0].get('placeCategory_id')
+                        });
+                        categorySectionList.fetch({
+                            success: function(){
+                                $('#content').html(new ContractorMappingView({
+                                    model: contractorMapping,
+                                    placeModel: placeList,
+                                    placeCategoryModel: placeCategoryList,
+                                    categorySectionModel: categorySectionList
+                                }).render().el);
+                            }
+                        });
+                    }
+                });
+            }
+        });
         this.headerView.selectMenuItem();
     }
 
@@ -115,7 +151,8 @@ utils.loadTemplate([
         'ContractorView',
         'ContractorListItemView',
         'ContractorReviewView',
-        'ContractorReviewListItemView'
+        'ContractorReviewListItemView',
+        'ContractorMappingView'
     ], function() {
     app = new AppRouter();
     Backbone.history.start();

@@ -1,6 +1,6 @@
-<h3>Contractor Details</h3>
-<div class="row">
-    <form id="contactor-form" class="form-horizontal col-xs-9 col-sm-9 col-md-9" role="form">
+<div class="col-xs-9 col-sm-9 col-md-9">
+    <form id="contactor-form" class="form-horizontal" role="form">
+        <h3>Contractor Details</h3>
         <fieldset>
             <br/>
             <div class="row">
@@ -8,39 +8,39 @@
                     <div class="form-group">
                         <label for="contractorId" class="control-label col-xs-3 col-sm-3 col-md-3">Id:</label>
                         <div class="controls col-xs-9 col-sm-9 col-md-9">
-                            <input class="form-control" id="contractorId" name="id" type="text" value="<%= contractor_id === null ? '' : contractor_id %>" disabled/>
+                            <input class="form-control" id="contractorId" name="id" type="text" value="<%= contractor.contractor_id === null ? '' : contractor.contractor_id %>" disabled/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="contractor_title" class="control-label col-xs-3 col-sm-3 col-md-3">Title:</label>
                         <div class="controls col-xs-9 col-sm-9 col-md-9">
-                            <input class="form-control" type="text" id="contractor_title" name="contractor_title" value="<%= contractor_title %>"/>
+                            <input class="form-control" type="text" id="contractor_title" name="contractor_title" value="<%= contractor.contractor_title %>"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="contractor_description" class="control-label col-xs-3 col-sm-3 col-md-3">Description:</label>
                         <div class="controls col-xs-9 col-sm-9 col-md-9">
-                            <textarea class="form-control" id="contractor_description" name="contractor_description" rows="6"><%= contractor_description
+                            <textarea class="form-control" id="contractor_description" name="contractor_description" rows="6"><%= contractor.contractor_description
                                 %></textarea>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="contractor_phone" class="control-label col-xs-3 col-sm-3 col-md-3">Phone:</label>
                         <div class="controls col-xs-9 col-sm-9 col-md-9">
-                            <input class="form-control" type="text" id="contractor_phone" name="contractor_phone" value="<%= contractor_phone %>"/>
+                            <input class="form-control" type="text" id="contractor_phone" name="contractor_phone" value="<%= contractor.contractor_phone %>"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="contractor_address" class="control-label col-xs-3 col-sm-3 col-md-3">Address:</label>
                         <div class="controls col-xs-9 col-sm-9 col-md-9">
-                            <textarea class="form-control" id="contractor_address" name="contractor_address" rows="6"><%= contractor_address
+                            <textarea class="form-control" id="contractor_address" name="contractor_address" rows="6"><%= contractor.contractor_address
                                 %></textarea>
                         </div>
                     </div>
                    <div class="form-group">
                         <label for="contractor_name" class="control-label col-xs-3 col-sm-3 col-md-3">Name:</label>
                         <div class="controls col-xs-9 col-sm-9 col-md-9">
-                            <input class="form-control" type="text" id="contractor_name" name="contractor_name" value="<%= contractor_name %>"/>
+                            <input class="form-control" type="text" id="contractor_name" name="contractor_name" value="<%= contractor.contractor_name %>"/>
                         </div>
                     </div>
                 </div>
@@ -51,49 +51,52 @@
             <a href="#" class="btn btn-danger delete">Delete</a>
         </div>
     </form>
-    <% if (contractor_id) { %>
-    <div class="col-xs-3 col-sm-3 col-md-3">
-        <div class="row">
-            <h4>Contractor Mapping</h4>
-            <ul class="list-group thumbnails">
-                <% _.each(mappings, function(mapping) { %>
-                <li class="list-group-item">
-                    <b>Category</b> : <%= mapping.category_title %><br/>
-                    <b>Place</b> : <%= mapping.place_title %><br/>
-                    <b>Section</b> : <%= mapping.section_title %>
-                </li>
-                <% }); %>
-            </ul>
-        </div>
-        <div class="row">
-            <h4>Contractor Actions</h4>
-            <a href="#contractorReviews/add/<%= contractor_id %>" class="btn btn-info">Add Review</a>
-        </div>
-    </div>
-    <% } %>
-</div>
-<div class="row status-bar">
-    <div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="status-bar">
         <div class="alert alert-success" style="display: none">
             <b>Success!</b> Contractor saved successfully
         </div>
     </div>
-</div>
-<% if (reviews.length > 0) { %>
-<hr/>
-<h3>Contractor Reviews</h3>
-<div class="row">
-    <ul class="list-group thumbnails">
-        <% _.each(reviews, function(review) { %>
-        <li class="list-group-item">
-            <a href="#contractorReview/<%= review.contractorRating_id %>" class="plain">
-                <b><%= review.project %></b><br/>
-                <b>Score</b> : <%= review.score %><br/>
-                <b>Date</b> : <%= review.timestamp %>
-                <p><%= review.review %><p>
-            </a>
-        </li>
-        <% }); %>
-    </ul>
+    <% if (contractor.reviews.length > 0) { %>
+    <div class="reviews">
+        <h3>Contractor Reviews</h3>
+        <ul class="list-group thumbnails">
+            <% _.each(contractor.reviews, function(review) { %>
+            <li class="list-group-item">
+                <a href="#contractorReview/<%= review.contractorRating_id %>" class="plain">
+                    <b><%= review.project %></b><br/>
+                    <b>Score</b> : <%= review.score %><br/>
+                    <b>Date</b> : <%= review.timestamp %>
+                    <p><%= review.review %><p>
+                </a>
+            </li>
+            <% }); %>
+        </ul>
+    </div>
+    <% } %>
+    </div>
+<% if (contractor.contractor_id) { %>
+<div class="col-xs-3 col-sm-3 col-md-3 sidebar">
+    <div class="sidebar-module">
+        <h4>Contractor Mapping</h4>
+        <ul class="nav nav-sidebar">
+            <% _.each(mapping, function(m) { %>
+            <li class="dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle"><%= m.place %><b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                <% _.each(m.sections, function(s) { %>
+                    <li>
+                        <a href="#contractorMapping/<%= s.contractorMapping_id %>" title="<%= s.sectionTitle %>"><%= s.sectionTitle %></a>
+                    </li>
+                <% }); %>
+                </ul>
+            </li>
+            <% }); %>
+        </ul>
+    </div>
+    <div class="sidebar-module">
+        <h4>Contractor Actions</h4>
+        <a href="#contractorReviews/add/<%= contractor.contractor_id %>" class="btn btn-info">Add Review</a>
+        <a href="#contractorMapping/add/<%= contractor.contractor_id %>" class="btn btn-info">Add Mapping</a>
+    </div>
 </div>
 <% } %>

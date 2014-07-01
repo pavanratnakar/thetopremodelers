@@ -93,6 +93,10 @@ return array(
         '//admin_new/js/models/reviewModels.js',
         '//admin_new/js/models/contractorModels.js',
         '//admin_new/js/models/contractorReviewModels.js',
+        '//admin_new/js/models/contractorMappingModels.js',
+        '//admin_new/js/models/sectionModels.js',
+        '//admin_new/js/models/placeCategoryModels.js',
+        '//admin_new/js/models/categorySectionModels.js',
         '//admin_new/js/views/paginator.js',
         '//admin_new/js/views/header.js',
         '//admin_new/js/views/reviewlist.js',
@@ -101,6 +105,7 @@ return array(
         '//admin_new/js/views/contractordetails.js',
         '//admin_new/js/views/contractorreviewlist.js',
         '//admin_new/js/views/contractorreviewdetails.js',
+        '//admin_new/js/views/contractormappingdetails.js',
         '//admin_new/js/main.js'
     ),
     'herve_new_admin_css' => array(

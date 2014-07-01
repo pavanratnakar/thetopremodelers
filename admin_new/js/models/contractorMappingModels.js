@@ -7,12 +7,8 @@ window.ContractorMapping = Backbone.Model.extend({
             return value.length > 0 ? {isValid: true} : {isValid: false, message: "You must enter a Contractor"};
         };
 
-        this.validators.contractorSection_id = function (value) {
-            return value.length > 0 ? {isValid: true} : {isValid: false, message: "You must enter a Contractor Section Mapping"};
-        };
-
-        this.validators.active = function (value) {
-            return value.length > 0 ? {isValid: true} : {isValid: false, message: "You must check if its active"};
+        this.validators.categorySection_id = function (value) {
+            return value.length > 0 ? {isValid: true} : {isValid: false, message: "You must enter a Category Section Mapping"};
         };
 
     },
