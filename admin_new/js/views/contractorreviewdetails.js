@@ -50,7 +50,7 @@ window.ContractorReviewView = Backbone.View.extend({
         this.model.save(null, {
             success: function (model) {
                 self.render();
-                app.navigate('contractorReview/' + model.contractorRating_id, false);
+                app.navigate('contractorReview/' + model.get('contractorRating_id'), false);
                 utils.showAlert('Success!', 'Review saved successfully', 'alert-success');
             },
             error: function () {

@@ -7,10 +7,6 @@ window.Contractor = Backbone.Model.extend({
             return value.length > 0 ? {isValid: true} : {isValid: false, message: "You must enter a title"};
         };
 
-        this.validators.contractor_description = function (value) {
-            return value.length > 0 ? {isValid: true} : {isValid: false, message: "You must enter a descrption"};
-        };
-
         this.validators.contractor_address = function (value) {
             return value.length > 0 ? {isValid: true} : {isValid: false, message: "You must enter a address"};
         };
