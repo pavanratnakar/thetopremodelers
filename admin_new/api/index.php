@@ -24,13 +24,16 @@ $app->post('/contractorReview', 'addContractorReview');
 $app->put('/contractorReview/:id', 'updateContractorReview');
 $app->delete('/contractorReview/:id', 'deleteContractorReview');
 
+$app->get('/place/:id', 'getPlace');
 $app->get('/places', 'getPlaces');
-$app->get('/places/:id', 'getPlace');
 
+$app->get('/placeCategory/:id', 'getPlaceCategory');
 $app->get('/placeCategories/:id', 'getPlaceCategories');
 
+$app->get('/categorySection/:id', 'getCategorySection');
 $app->get('/categorySections/:id', 'getCategorySections');
 
+$app->get('/contractorMapping/:id', 'getContractorMapping');
 $app->post('/contractorMapping', 'addContractorMapping');
 
 $app->run();
@@ -42,7 +45,6 @@ function getReviews() {
         $stmt = $db->query($sql);
         $reviews = $stmt->fetchAll(PDO::FETCH_OBJ);
         $db = null;
-        // echo '{"review": ' . json_encode($reviews) . '}';
         echo json_encode($reviews);
     } catch(PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';
@@ -145,7 +147,6 @@ function getContractors() {
         $stmt = $db->query($sql);
         $contractors = $stmt->fetchAll(PDO::FETCH_OBJ);
         $db = null;
-        // echo '{"contractor": ' . json_encode($contractors) . '}';
         echo json_encode($contractors);
     } catch(PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';
@@ -260,7 +261,6 @@ function getReviewsForContractor($id) {
         $stmt->execute();
         $reviews = $stmt->fetchAll(PDO::FETCH_OBJ);
         $db = null;
-        // echo '{"reviews": ' . json_encode($reviews) . '}';
         return $reviews;
     } catch(PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';
@@ -320,10 +320,9 @@ function getContractorReviews($id) {
         $stmt = $db->prepare($sql);
         $stmt->bindParam("id", $id);
         $stmt->execute();
-        $reviews = $stmt->fetchAll(PDO::FETCH_OBJ);
+        $contractorReviews = $stmt->fetchAll(PDO::FETCH_OBJ);
         $db = null;
-        // echo '{"reviews": ' . json_encode($reviews) . '}';
-        echo json_encode($reviews);
+        echo json_encode($contractorReviews);
     } catch(PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';
     }
@@ -336,9 +335,9 @@ function getContractorReview($id) {
         $stmt = $db->prepare($sql);
         $stmt->bindParam("id", $id);
         $stmt->execute();
-        $review = $stmt->fetchObject();
+        $contractorReview = $stmt->fetchObject();
         $db = null;
-        echo json_encode($review);
+        echo json_encode($contractorReview);
     } catch(PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';
     }
@@ -393,14 +392,19 @@ function updateContractorReview($id) {
     }
 }
 
-function getConnection() {
-    $dbhost="184.168.154.89";
-    $dbuser="newtopremodelers";
-    $dbpass="Herve28031986";
-    $dbname="newtopremodelers";
-    $dbh = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    return $dbh;
+function getPlace($id) {
+    $sql = "SELECT * FROM rene_place WHERE place_id=:id AND delete_flag=0";
+    try {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam("id", $id);
+        $stmt->execute();
+        $place = $stmt->fetchObject();
+        $db = null;
+        echo json_encode($place);
+    } catch(PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
 }
 
 function getPlaces() {
@@ -410,23 +414,27 @@ function getPlaces() {
         $stmt = $db->query($sql);
         $places = $stmt->fetchAll(PDO::FETCH_OBJ);
         $db = null;
-        // echo '{"place": ' . json_encode($places) . '}';
         echo json_encode($places);
     } catch(PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';
     }
 }
 
-function getPlace($id) {
-    $sql = "SELECT * FROM rene_place WHERE id=:id AND active=1";
+function getPlaceCategory($id){
+    $sql = "SELECT a.placeCategory_id, a.active, a.category_id, a.place_id, a.delete_flag
+            FROM
+            rene_placecategory_mapping a
+            WHERE
+            a.delete_flag=FALSE
+            AND a.placeCategory_id=:id";
     try {
         $db = getConnection();
         $stmt = $db->prepare($sql);
         $stmt->bindParam("id", $id);
         $stmt->execute();
-        $place = $stmt->fetchObject();
+        $placeCategory = $stmt->fetchObject();
         $db = null;
-        echo json_encode($place);
+        echo json_encode($placeCategory);
     } catch(PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';
     }
@@ -451,17 +459,36 @@ function getPlaceCategories($id) {
         $stmt = $db->prepare($sql);
         $stmt->bindParam("id", $id);
         $stmt->execute();
-        $categories = $stmt->fetchAll(PDO::FETCH_OBJ);
+        $placeCategories = $stmt->fetchAll(PDO::FETCH_OBJ);
         $db = null;
-        // echo '{"categories": ' . json_encode($categories) . '}';
-        echo json_encode($categories);
+        echo json_encode($placeCategories);
+    } catch(PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+}
+
+function getCategorySection($id) {
+    $sql = "SELECT a.categorySection_id, a.placeCategory_id, a.section_id, a.categorysection_order, a.active,a.meta_id
+            FROM
+            rene_categorysection_mapping a
+            WHERE
+            a.delete_flag=FALSE
+            AND a.categorySection_id=:id";
+    try {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam("id", $id);
+        $stmt->execute();
+        $categorySection = $stmt->fetchObject();
+        $db = null;
+        echo json_encode($categorySection);
     } catch(PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';
     }
 }
 
 function getCategorySections($id) {
-    $sql = "SELECT a.categorySection_id,e.place_title as place_title,d.category_title as category_title,c.section_title as section_title,a.categorysection_order,a.active,a.meta_id
+    $sql = "SELECT a.categorySection_id, a.placeCategory_id, a.section_id, e.place_title as place_title, d.category_title as category_title, c.section_title as section_title, a.categorysection_order, a.active,a.meta_id
             FROM
             rene_categorysection_mapping a
             LEFT JOIN
@@ -485,10 +512,47 @@ function getCategorySections($id) {
         $stmt = $db->prepare($sql);
         $stmt->bindParam("id", $id);
         $stmt->execute();
-        $sections = $stmt->fetchAll(PDO::FETCH_OBJ);
+        $categorySections = $stmt->fetchAll(PDO::FETCH_OBJ);
         $db = null;
-        // echo '{"categories": ' . json_encode($categories) . '}';
-        echo json_encode($sections);
+        echo json_encode($categorySections);
+    } catch(PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+}
+
+function getContractorMapping($id) {
+    $sql = "SELECT a.contractorMapping_id, a.contractor_id, a.categorySection_id, a.active, a.delete_flag, g.contractor_title as contractor_title, d.category_title as category_title, f.section_title as section_title,e.place_title as place_title, a.active
+            FROM
+            rene_contractor_mapping a
+            LEFT JOIN
+            rene_categorysection_mapping b ON a.categorySection_id=b.categorySection_id
+            LEFT JOIN
+            rene_placecategory_mapping c ON b.placeCategory_id=c.placeCategory_id
+            LEFT JOIN
+            rene_category d ON c.category_id=d.category_id
+            LEFT JOIN
+            rene_place e ON e.place_id=c.place_id
+            LEFT JOIN
+            rene_section f ON f.section_id=b.section_id
+            LEFT JOIN
+            rene_contractor g ON g.contractor_id=a.contractor_id
+            WHERE
+            a.delete_flag=FALSE
+            AND b.delete_flag=FALSE
+            AND c.delete_flag=FALSE
+            AND d.delete_flag=FALSE
+            AND e.delete_flag=FALSE
+            AND f.delete_flag=FALSE
+            AND g.delete_flag=FALSE
+            AND a.contractorMapping_id = :id";
+    try {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam("id", $id);
+        $stmt->execute();
+        $contractorMapping = $stmt->fetchObject();
+        $db = null;
+        echo json_encode($contractorMapping);
     } catch(PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';
     }
@@ -516,6 +580,16 @@ function addContractorMapping(){
     //     error_log($e->getMessage(), 3, '/var/tmp/php.log');
     //     echo '{"error":{"text":'. $e->getMessage() .'}}';
     // }
+}
+
+function getConnection() {
+    $dbhost="184.168.154.89";
+    $dbuser="newtopremodelers";
+    $dbpass="Herve28031986";
+    $dbname="newtopremodelers";
+    $dbh = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    return $dbh;
 }
 
 ?>

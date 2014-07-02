@@ -20,38 +20,58 @@
                    <div class="form-group">
                         <label for="place_id" class="control-label col-xs-3 col-sm-3 col-md-3">Place:</label>
                         <div class="controls col-xs-9 col-sm-9 col-md-9">
+                            <% if (placeModels) { %>
                             <select class="form-control" id="place_id" name="place_id">
-                                <% _.each(placeModel, function(place) { %>
-                                    <option value="<%= place.attributes.place_id %>"><%= place.attributes.place_title %></option>
-                                <% }); %>
+                            <% _.each(placeModels, function(place) { %>
+                                <option value="<%= place.attributes.place_id %>"><%= place.attributes.place_title %></option>
+                            <% }); %>
                             </select>
+                            <% } %>
+                            <% if (placeModel) { %>
+                                <input class="form-control" id="place_id" name="place_id" type="text" value="<%= placeModel.get('place_id') %>" disabled/>
+                            <% } %>
                         </div>
                     </div>
                    <div class="form-group">
                         <label for="placeCategory_id" class="control-label col-xs-3 col-sm-3 col-md-3">Category:</label>
                         <div class="controls col-xs-9 col-sm-9 col-md-9">
+                            <% if (placeCategoryModels) { %>
                             <select class="form-control" id="placeCategory_id" name="placeCategory_id">
-                                <% _.each(placeCategoryModel, function(placeCategory) { %>
-                                    <option value="<%= placeCategory.attributes.placeCategory_id %>"><%= placeCategory.attributes.category_title %></option>
-                                <% }); %>
+                            <% _.each(placeCategoryModels, function(placeCategory) { %>
+                                <option value="<%= placeCategory.attributes.placeCategory_id %>"><%= placeCategory.attributes.category_title %></option>
+                            <% }); %>
                             </select>
+                            <% } %>
+                            <% if (placeCategoryModel) { %>
+                                <input class="form-control" id="placeCategory_id" name="placeCategory_id" type="text" value="<%= placeCategoryModel.get('placeCategory_id') %>" disabled/>
+                            <% } %>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="categorySection_id" class="control-label col-xs-3 col-sm-3 col-md-3">Section:</label>
                         <div class="controls col-xs-9 col-sm-9 col-md-9">
+                            <% if (placeModels && placeCategoryModels) { %>
                             <select class="form-control" id="categorySection_id" name="categorySection_id">
-                                <% _.each(categorySectionModel, function(categorySection) { %>
-                                    <option value="<%= categorySection.attributes.categorySection_id %>"><%= categorySection.attributes.section_title %></option>
-                                <% }); %>
+                            <% _.each(categorySectionModels, function(categorySection) { %>
+                                <option value="<%= categorySection.attributes.categorySection_id %>"><%= categorySection.attributes.section_title %></option>
+                            <% }); %>
                             </select>
+                            <% } %>
+                            <% if (categorySectionModel) { %>
+                                <input class="form-control" id="categorySection_id" name="categorySection_id" type="text" value="<%= categorySectionModel.get('categorySection_id') %>" disabled/>
+                            <% } %>
                         </div>
                     </div>
                 </div>
             </div>
         </fieldset>
         <div class="form-actions">
+            <% if (placeModels) { %>
             <a href="#" class="btn btn-primary save">Save</a>
+            <% } %>
+            <% if (placeModel) { %>
+                <a href="#" class="btn btn-danger delete">Delete</a>
+            <% } %>
         </div>
     </form>
 </div>

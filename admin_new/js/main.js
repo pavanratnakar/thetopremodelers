@@ -16,7 +16,8 @@ var AppRouter = Backbone.Router.extend({
         "contractorReview/:id": "contractorReviewDetails",
         "contractorReviews/add/:id": "addContractorReview",
 
-        "contractorMapping/add/:id": "addContractorMapping"
+        "contractorMapping/add/:id": "addContractorMapping",
+        "contractorMapping/:id": "contractorMappingDetails"
     },
 
     initialize: function () {
@@ -101,10 +102,18 @@ var AppRouter = Backbone.Router.extend({
 
     addContractorReview: function(id) {
         var contractorReview = new ContractorReview({
-            contractor_id: id
-        });
+                contractor_id: id
+            }),
+            placeList = new PlaceCollection();
 
-        $('#content').html(new ContractorReviewView({model: contractorReview}).el);
+        placeList.fetch({
+            success: function(){
+                $('#content').html(new ContractorReviewView({
+                    model: contractorReview,
+                    placeModel: placeList
+                }).render().el);
+            }
+        });
         this.headerView.selectMenuItem();
     },
 
@@ -129,10 +138,47 @@ var AppRouter = Backbone.Router.extend({
                             success: function(){
                                 $('#content').html(new ContractorMappingView({
                                     model: contractorMapping,
-                                    placeModel: placeList,
-                                    placeCategoryModel: placeCategoryList,
-                                    categorySectionModel: categorySectionList
+                                    placeModels: placeList,
+                                    placeCategoryModels: placeCategoryList,
+                                    categorySectionModels: categorySectionList
                                 }).render().el);
+                            }
+                        });
+                    }
+                });
+            }
+        });
+        this.headerView.selectMenuItem();
+    },
+
+    contractorMappingDetails: function(id) {
+        var contractorMapping = new ContractorMapping({id: id});
+
+        contractorMapping.fetch({
+            success: function(){
+                var categorySection = new CategorySection({
+                    id: contractorMapping.get('categorySection_id')
+                });
+                categorySection.fetch({
+                    success: function(){
+                        var placeCategory = new PlaceCategory({
+                            id: categorySection.get('placeCategory_id')
+                        });
+                        placeCategory.fetch({
+                            success: function(){
+                                var place = new Place({
+                                    id: placeCategory.get('place_id')
+                                });
+                                place.fetch({
+                                    success: function(){
+                                        $('#content').html(new ContractorMappingView({
+                                            model: contractorMapping,
+                                            placeModel: place,
+                                            placeCategoryModel: placeCategory,
+                                            categorySectionModel: categorySection
+                                        }).render().el);
+                                    }
+                                });
                             }
                         });
                     }

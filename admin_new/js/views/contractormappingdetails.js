@@ -1,17 +1,28 @@
 window.ContractorMappingView = Backbone.View.extend({
     initialize: function (e) {
-        this.placeModel = e.placeModel;
-        this.placeCategoryModel = e.placeCategoryModel;
-        this.categorySectionModel = e.categorySectionModel;
+        e = e || {};
+        this.placeModel = e.placeModel || null;
+        this.placeCategoryModel = e.placeCategoryModel || null;
+        this.categorySectionModel = e.categorySectionModel || null;
+
+        this.placeModels = e.placeModels || null;
+        this.placeCategoryModels = e.placeCategoryModels || null;
+        this.categorySectionModels = e.categorySectionModels || null;
     },
     render: function () {
         $(this.el).html(this.template(_.extend(
-            this.model.toJSON(), {
-                placeModel: this.placeModel.models
+            this.model.toJSON(),{
+                placeModels: this.placeModels && this.placeModels.models
             },{
-                placeCategoryModel: this.placeCategoryModel.models
+                placeCategoryModels: this.placeCategoryModels && this.placeCategoryModels.models
             },{
-                categorySectionModel: this.categorySectionModel.models
+                categorySectionModels: this.categorySectionModels && this.categorySectionModels.models
+            },{
+                placeModel: this.placeModel
+            },{
+                placeCategoryModel: this.placeCategoryModel
+            },{
+                categorySectionModel: this.categorySectionModel
             }
         )));
         return this;
@@ -79,7 +90,7 @@ window.ContractorMappingView = Backbone.View.extend({
     },
     placeChange: function(){
         var n = $(this.el).find('#placeCategory_id'),
-            m = this.placeCategoryModel;
+            m = this.placeCategoryModels;
 
         m.id = $(this.el).find('#place_id').val();
         m.fetch({
@@ -93,7 +104,7 @@ window.ContractorMappingView = Backbone.View.extend({
     },
     placeCategoryChange: function(){
         var n = $(this.el).find('#categorySection_id'),
-            m = this.categorySectionModel;
+            m = this.categorySectionModels;
 
         m.id = $(this.el).find('#placeCategory_id').val();
         m.fetch({

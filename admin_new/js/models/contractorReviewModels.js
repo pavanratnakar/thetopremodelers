@@ -52,9 +52,9 @@ window.ContractorReview = Backbone.Model.extend({
         review: "",
         contractor_id: "",
         timestamp: "",
-        person: 0,
-        place_id: 0,
-        project: 0
+        person: "",
+        place_id: "",
+        project: ""
     }
 });
 
