@@ -71,7 +71,7 @@ window.ContractorMappingView = Backbone.View.extend({
         this.model.save(null, {
             success: function (model) {
                 self.render();
-                app.navigate('contractorMapping', false);
+                app.navigate('contractors/' + model.get('contractor_id'), true);
                 utils.showAlert('Success!', 'Mapping saved successfully', 'alert-success');
             },
             error: function () {

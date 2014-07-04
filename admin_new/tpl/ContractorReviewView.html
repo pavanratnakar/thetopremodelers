@@ -47,7 +47,7 @@
                         <div class="controls col-xs-9 col-sm-9 col-md-9">
                             <select class="form-control" id="place_id" name="place_id">
                                 <% _.each(placeModel, function(place) { %>
-                                    <option selected="<%= (place_id === place.place_id) ? 'selected' : ''%>" value="<%= place.attributes.place_id %>"><%= place.attributes.place_title %></option>
+                                    <option selected="<%= (place_id === place.get('place_id')) ? 'selected' : ''%>" value="<%= place.get('place_id') %>"><%= place.get('place_title') %></option>
                                 <% }); %>
                             </select>
                         </div>

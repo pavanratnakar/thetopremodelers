@@ -35,6 +35,7 @@ $app->get('/categorySections/:id', 'getCategorySections');
 
 $app->get('/contractorMapping/:id', 'getContractorMapping');
 $app->post('/contractorMapping', 'addContractorMapping');
+$app->delete('/contractorMapping/:id', 'deleteContractorMapping');
 
 $app->run();
 
@@ -174,15 +175,16 @@ function addContractor() {
     error_log('addContractor\n', 3, '/var/tmp/php.log');
     $request = Slim::getInstance()->request();
     $contractor = json_decode($request->getBody());
-    $sql = "INSERT INTO rene_contractor (contractor_title, contractor_description, contractor_phone, contractor_address, contractor_name) VALUES (:contractor_title, :contractor_description, :contractor_phone, :contractor_address, :contractor_name)";
+    $sql = "INSERT INTO rene_contractor (contractor_title, contractor_description, contractor_phone, contractor_address, contractor_name, delete_flag) VALUES (:contractor_title, :contractor_description, :contractor_phone, :contractor_address, :contractor_name, :delete_flag)";
     try {
         $db = getConnection();
         $stmt = $db->prepare($sql);
         $stmt->bindParam("contractor_title", $contractor->contractor_title);
-        $stmt->bindParam("contractor_description", $review->contractor_description);
-        $stmt->bindParam("contractor_phone", $review->contractor_phone);
-        $stmt->bindParam("contractor_address", $review->contractor_address);
-        $stmt->bindParam("contractor_name", $review->contractor_name);
+        $stmt->bindParam("contractor_description", $contractor->contractor_description);
+        $stmt->bindParam("contractor_phone", $contractor->contractor_phone);
+        $stmt->bindParam("contractor_address", $contractor->contractor_address);
+        $stmt->bindParam("contractor_name", $contractor->contractor_name);
+        $stmt->bindParam("delete_flag", $contractor->delete_flag);
         $stmt->execute();
         $contractor->id = $db->lastInsertId();
         $db = null;
@@ -197,7 +199,7 @@ function updateContractor($id) {
     $request = Slim::getInstance()->request();
     $body = $request->getBody();
     $contractor = json_decode($body);
-    $sql = "UPDATE rene_contractor SET contractor_title=:contractor_title, contractor_description=:contractor_description, contractor_phone=:contractor_phone, contractor_address=:contractor_address, contractor_name=:contractor_name WHERE contractor_id=:contractor_id";
+    $sql = "UPDATE rene_contractor SET contractor_title=:contractor_title, contractor_description=:contractor_description, contractor_phone=:contractor_phone, contractor_address=:contractor_address, contractor_name=:contractor_name, delete_flag=:delete_flag WHERE contractor_id=:contractor_id";
     try {
         $db = getConnection();
         $stmt = $db->prepare($sql);
@@ -206,6 +208,7 @@ function updateContractor($id) {
         $stmt->bindParam("contractor_phone", $contractor->contractor_phone);
         $stmt->bindParam("contractor_address", $contractor->contractor_address);
         $stmt->bindParam("contractor_name", $contractor->contractor_name);
+        $stmt->bindParam("delete_flag", $contractor->delete_flag);
         $stmt->bindParam("contractor_id", $id);
         $stmt->execute();
         $db = null;
@@ -216,16 +219,16 @@ function updateContractor($id) {
 }
 
 function deleteContractor($id) {
-    $sql = "UPDATE rene_contractor SET delete_flag=1 WHERE contractor_id=:id";
-    try {
-        $db = getConnection();
-        $stmt = $db->prepare($sql);
-        $stmt->bindParam("id", $id);
-        $stmt->execute();
-        $db = null;
-    } catch(PDOException $e) {
-        echo '{"error":{"text":'. $e->getMessage() .'}}';
-    }
+    // $sql = "DELETE FROM rene_contractor WHERE contractor_id=:id";
+    // try {
+    //     $db = getConnection();
+    //     $stmt = $db->prepare($sql);
+    //     $stmt->bindParam("id", $id);
+    //     $stmt->execute();
+    //     $db = null;
+    // } catch(PDOException $e) {
+    //     echo '{"error":{"text":'. $e->getMessage() .'}}';
+    // }
 }
 
 function findContractorByTitle($query) {
@@ -387,6 +390,19 @@ function updateContractorReview($id) {
         $stmt->execute();
         $db = null;
         echo json_encode($review);
+    } catch(PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+}
+
+function deleteContractorReview($id) {
+    $sql = "DELETE FROM rene_contractor_rating WHERE contractorRating_id=:id";
+    try {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam("id", $id);
+        $stmt->execute();
+        $db = null;
     } catch(PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';
     }
@@ -563,23 +579,34 @@ function addContractorMapping(){
     $request = Slim::getInstance()->request();
     $contractorMapping = json_decode($request->getBody());
     $sql = "INSERT INTO rene_contractor_mapping (contractor_id, categorySection_id, active, delete_flag) VALUES (:contractor_id, :categorySection_id, :active, :delete_flag)";
-    echo $sql;
-    // try {
-    //     $db = getConnection();
-    //     $stmt = $db->prepare($sql);
-    //     $stmt->bindParam("contractor_title", $contractor->contractor_title);
-    //     $stmt->bindParam("contractor_description", $review->contractor_description);
-    //     $stmt->bindParam("contractor_phone", $review->contractor_phone);
-    //     $stmt->bindParam("contractor_address", $review->contractor_address);
-    //     $stmt->bindParam("contractor_name", $review->contractor_name);
-    //     $stmt->execute();
-    //     $contractor->id = $db->lastInsertId();
-    //     $db = null;
-    //     echo json_encode($contractor);
-    // } catch(PDOException $e) {
-    //     error_log($e->getMessage(), 3, '/var/tmp/php.log');
-    //     echo '{"error":{"text":'. $e->getMessage() .'}}';
-    // }
+    try {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam("contractor_id", $contractorMapping->contractor_id);
+        $stmt->bindParam("categorySection_id", $contractorMapping->categorySection_id);
+        $stmt->bindParam("active", $contractorMapping->active);
+        $stmt->bindParam("delete_flag", $contractorMapping->delete_flag);
+        $stmt->execute();
+        $contractorMapping->id = $db->lastInsertId();
+        $db = null;
+        echo json_encode($contractorMapping);
+    } catch(PDOException $e) {
+        error_log($e->getMessage(), 3, '/var/tmp/php.log');
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+}
+
+function deleteContractorMapping($id) {
+    $sql = "DELETE FROM rene_contractor_mapping WHERE contractorMapping_id=:id";
+    try {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam("id", $id);
+        $stmt->execute();
+        $db = null;
+    } catch(PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
 }
 
 function getConnection() {

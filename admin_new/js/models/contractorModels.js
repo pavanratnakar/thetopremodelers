@@ -14,6 +14,13 @@ window.Contractor = Backbone.Model.extend({
         this.validators.contractor_name = function (value) {
             return value.length > 0 ? {isValid: true} : {isValid: false, message: "You must enter a name"};
         };
+
+        this.validators.delete_flag = function (value) {
+            if (typeof(value) !== 'string'){
+                value = value + "";
+            }
+            return value;
+        };
     },
     validateItem: function (key) {
         return (this.validators[key]) ? this.validators[key](this.get(key)) : {isValid: true};
@@ -61,6 +68,7 @@ window.Contractor = Backbone.Model.extend({
         contractor_phone: "",
         contractor_address: "",
         contractor_name: "",
+        delete_flag: "0",
         reviews: [],
         mappings: []
     }

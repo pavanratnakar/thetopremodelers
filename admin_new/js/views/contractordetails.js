@@ -49,7 +49,7 @@ window.ContractorView = Backbone.View.extend({
         this.model.save(null, {
             success: function (model) {
                 self.render();
-                app.navigate('contractors/' + model.id, false);
+                app.navigate('contractors/' + model.id, true);
                 utils.showAlert('Success!', 'Contractor saved successfully', 'alert-success');
             },
             error: function () {
