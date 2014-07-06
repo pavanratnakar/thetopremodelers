@@ -31,6 +31,12 @@ class PageController{
     public function printHomeNavigation(){
         return $this->page->printHomeNavigation();
     }
+    public function printHeaderMenu(){
+        return $this->page->printHeaderMenu();
+    }
+    public function printLogoContainer(){
+        return $this->page->printLogoContainer();
+    }
     public function printJS($name){
         return $this->page->printJS($name);
     }

@@ -13,18 +13,22 @@
         header( 'Location: '.Config::$site_url.'404.php');
         exit;
     }
-    echo $pageController->printHeader($pageController->getMeta('article',$articleName));
+    echo $pageController->printHomeHeader($pageController->getMeta('article',$articleName));
 ?>
-            <?php echo $pageController->printNavigation(); ?>
-            <div class="main-content-container clearfix">
-                <div class="content clearfix">
-                    <div class="main left">
-                        <div class="sub">
-                            <h2><?php echo $articleContent['title']; ?></h2>
-                            <?php echo $articleContent['content']; ?>
-                        </div>
-                        <div class="comment-box">
-                            <h2>Comment</h2>
+        <?php echo $pageController->printHeaderMenu(); ?>
+        <div class="container-fluid">
+            <div class="row main-container">
+                <div class="col-md-3 col-xs-3 col-sm-3 sidebar">
+                    <?php echo $pageController->printLogoContainer(); ?>
+                </div>
+                <div class="container full-main">
+                    <div class="sub">
+                        <h1><?php echo $articleContent['title']; ?></h1>
+                        <?php echo $articleContent['content']; ?>
+                    </div>
+                    <div class="comment-box">
+                        <h1>Comment</h1>
+                        <div class="comment-section">
                             <?php echo $pageController->facebookComment(array(
                                 'href' => Config::$site_url.'article/'. $articleName,
                                 'width' => '900',
@@ -33,8 +37,8 @@
                         </div>
                     </div>
                 </div>
-                <?php echo $pageController->printFooterLinks(); ?>
             </div>
-            <div class="clear"></div>
+            <!-- FOOTER -->
+            <?php echo $pageController->printHomeFooterLinks(); ?>
         </div>
-<?php echo $pageController->printFooter(); ?>
+        <?php echo $pageController->printHomeFooter(); ?>

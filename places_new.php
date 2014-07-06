@@ -3,34 +3,21 @@
     include_once(Config::$site_path.'controller/pageController.php');
     $pageController=new PageController(9);
     $place = $pageController->getPlace();
-    echo $pageController->printHomeHeader(); 
+    echo $pageController->printHomeHeader();
 ?>
-       <div class="navbar navbar-default" role="navigation">
-            <div class="container-fluid">
-                <div class="navbar-collapse collapse">
-                    <div class="nav-contact">
-                        <h4 class="gold">Need immediate service</h4>
-                        <h5>CALL US : 1(214)303 9771</h5>
-                    </div>
-                    <?php echo $pageController->printHomeNavigation(); ?>
-                </div>
-            </div>
-        </div>
+        <?php echo $pageController->printHeaderMenu(); ?>
         <div class="container-fluid">
             <div class="row main-container">
                 <div class="col-md-3 col-xs-3 col-sm-3 sidebar">
-                    <div class="nav-logo-container">
-                        <div class="logo-container">
-                            <a href="http://www.thetopremodelers.com">
-                                <img src="images/global/logo.png" alt="The Top Remodelers"/>
-                            </a>
-                        </div>
-                    </div>
+                    <?php echo $pageController->printLogoContainer(); ?>
+                    <ul class="nav nav-sidebar">
+                        <?php echo $pageController->getHomeFormatedCategories(1); ?>
+                    </ul>
                 </div>
-                <div class="container full-main">
-                    <h2>Matching you with our prescreened Contractors by Place</h2>
+                <div class="col-md-9 col-xs-9 col-sm-9 container main top">
+                    <h1>Matching you with our prescreened Contractors by Place</h1>
                     <div class="sub">
-                        <h3>Find Contractors for cities within Dallas County</h3>
+                        <h2>Find Contractors for cities within Dallas County</h2>
                         <div class="content-container">
                             <div class="place-container">
                                 <?php

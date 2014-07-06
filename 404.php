@@ -3,7 +3,7 @@
     include_once($_SERVER['DOCUMENT_ROOT'].'/config.class.php');
     include_once(Config::$site_path.'controller/pageController.php');
     $pageController=new PageController(5);
-    echo $pageController->printHeader(); 
+    echo $pageController->printHeader();
 ?>
             <?php echo $pageController->printNavigation(); ?>
             <div class="main-content-container clearfix">

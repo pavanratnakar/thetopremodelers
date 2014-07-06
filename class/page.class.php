@@ -157,7 +157,7 @@ class Page{
         return $return;
     }
     public function printNavigation(){
-        $return='
+        $return = '
         <div class="art-bar art-nav clearfix">
         <ul class="art-hmenu">';
         foreach ($this->pages as $page) {
@@ -170,7 +170,7 @@ class Page{
         return $return;
     }
     public function printHomeNavigation(){
-        $return='
+        $return = '
         <ul class="nav navbar-nav navbar-right">';
         foreach ($this->pages as $page) {
             if($page->navigation==1){
@@ -179,6 +179,32 @@ class Page{
             }
         }
         $return.='</ul>';
+        return $return;
+    }
+    public function printHeaderMenu(){
+       $return = '
+            <div class="navbar navbar-default" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-collapse collapse">
+                        <div class="nav-contact">
+                            <h4 class="gold">Need immediate service</h4>
+                            <h5>CALL US : 1(214)303 9771</h5>
+                        </div>';
+        $return .= $this->printHomeNavigation();
+        $return .=  '</div>
+                </div>
+            </div>';
+        return $return;
+    }
+    public function printLogoContainer(){
+        $return = '
+            <div class="nav-logo-container">
+                <div class="logo-container">
+                    <a href="http://www.thetopremodelers.com">
+                        <img src="'.Config::$site_url.'/images/global/logo.png" alt="The Top Remodelers"/>
+                    </a>
+                </div>
+            </div>';
         return $return;
     }
     public function printReviewContainer(){

@@ -212,15 +212,16 @@ body {
 .process-sub-container {
     padding: 0;
 }
-.process-sub-container h3 {
+.process-container .process-sub-container h2 {
     font-size: 26px;
     font-weight: bold;
+    margin-top: 20px;
 }
-.process-sub-container h4 {
+.process-sub-container h3 {
     margin-bottom: 5px;
     margin-top: 0;
 }
-.process-sub-container h5 {
+.process-sub-container h4 {
     margin-top: 0;
 }
 .process-sub-container .review {
@@ -274,11 +275,17 @@ body {
     padding: 20px;
     background: #FFF;
 }
-.main h2 {
+.main h1 {
     font-weight: bold;
     border-bottom: 1px solid #000;
     font-size: 26px;
     line-height: 40px;
+    margin-top: 0;
+}
+.main h2 {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 30px;
     margin-top: 0;
 }
 .main .page-header {
@@ -301,11 +308,17 @@ body {
     padding: 20px;
     background: #FFF;
 }
-.full-main h2 {
+.full-main h1 {
     font-weight: bold;
     border-bottom: 1px solid #000;
     font-size: 26px;
     line-height: 40px;
+    margin-top: 0;
+}
+.full-main h2 {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 30px;
     margin-top: 0;
 }
 .full-main .page-header {
@@ -342,6 +355,21 @@ body {
 .match-option-container span.number {
     color: #f5ad20;
     font-size: 20px;
+}
+
+/*
+ * Comment section
+ */
+.comment-section {
+    text-align: center;
+}
+
+/*
+ * Graph
+ */
+.horizontal-bar {
+    height: 16px;
+    background: #F6B32E;
 }
 
 /*
