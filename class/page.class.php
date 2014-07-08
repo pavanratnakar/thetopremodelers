@@ -276,7 +276,7 @@ class Page{
         return $return;
     }
     public function printHomeFooter(){
-        $return.=$this->printJS('herve_home_js');
+        $return.=$this->printJS('herve_global_js');
         if($this->currentPage->js == 1){
             $return.=$this->printJS('herve_'.$this->currentPage->class.'_js');
         }

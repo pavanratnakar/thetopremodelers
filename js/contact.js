@@ -9,7 +9,7 @@ var herveContact = {
           if( $(this).val() == $(this).attr('rel') ){
             $(this).val('').addClass('not-empty'); 
           }
-        });   
+        });
         //restore default value & remove '.not-empty' class if left blank after click
         $('.prepopulate').blur(function(){
           if( $(this).val() =='' ){

@@ -59,13 +59,13 @@ return array(
         '//js/social.js',
          '//js/init.js'
     ),
-    'herve_home_js' => array(
+    'herve_global_js' => array(
         '//global/js/jquery/jquery-1.7.1.min.js',
         '//global/js/bootstrap.min.js',
         '//global/js/config.js',
         '//global/js/sharethis/button.js',
         '//js/social.js',
-         '//js/home.js'
+        '//js/global.js'
     ),
     'herve_need_js' => array(
         '//global/js/jquery/jquery.validate.min.js',
