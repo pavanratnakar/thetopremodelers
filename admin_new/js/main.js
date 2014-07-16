@@ -17,7 +17,8 @@ var AppRouter = Backbone.Router.extend({
         "contractorReviews/add/:id": "addContractorReview",
 
         "contractorMapping/add/:id": "addContractorMapping",
-        "contractorMapping/:id": "contractorMappingDetails"
+        "contractorMappings/add/:id": "addContractorMappings",
+        "contractorMapping/:id": "contractorMappingDetails",
     },
 
     initialize: function () {
@@ -151,6 +152,26 @@ var AppRouter = Backbone.Router.extend({
         this.headerView.selectMenuItem();
     },
 
+    addContractorMappings: function(id) {
+        var contractor = new Contractor({id: id});
+
+        contractor.fetch({
+            success: function(){
+                var categorySectionList = new CategorySectionCollection();
+
+                categorySectionList.fetch({
+                    success: function(){
+                        $('#content').html(new ContractorMappingsView({
+                            model: categorySectionList,
+                            contractorModel: contractor
+                        }).render().el);
+                    }
+                });
+            }
+        });
+        this.headerView.selectMenuItem();
+    },
+
     contractorMappingDetails: function(id) {
         var contractorMapping = new ContractorMapping({id: id});
 
@@ -198,7 +219,8 @@ utils.loadTemplate([
         'ContractorListItemView',
         'ContractorReviewView',
         'ContractorReviewListItemView',
-        'ContractorMappingView'
+        'ContractorMappingView',
+        'ContractorMappingsView'
     ], function() {
     app = new AppRouter();
     Backbone.history.start();

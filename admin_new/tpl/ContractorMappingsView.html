@@ -1,0 +1,41 @@
+<div class="row">
+    <form class="form-horizontal col-xs-12 col-sm-12 col-md-12" role="form">
+        <fieldset>
+            <legend>Contractor Mapping Details</legend>
+            <br/>
+            <div class="row">
+                <%
+                var i = 0,
+                    c = this.model,
+                    j = 0,
+                    cm = this.contractorModel;
+                _.each(c.models, function(m) {
+                    %>
+                    <% if (i === 0 || (m.get('place_title') !== c.at(i-1).get('place_title'))) { %>
+                    <div class="col-xs-4 col-sm-4 col-md-4 form-module">
+                        <h4><%= m.get('place_title') %></h4>
+                    <% j = 0;} else {j = 1;}
+                    %>
+                        <% if (j === 0 || (m.get('category_title') !== c.at(i-1).get('category_title'))) { %>
+                        <h5><%= m.get('category_title') %></h5>
+                        <% } %>
+                        <label>
+                            <input class="mapping-check" data-catsecid="<%= m.get('categorySection_id') %>" <%= cm.isMappedToCategorySectionId(m.get('categorySection_id')) ? 'checked=checked' : ''%> type="checkbox"> <%= m.get('section_title') %>
+                        </label>
+                    <% if (i !== c.length-1 && (m.get('place_title') !== c.at(i+1).get('place_title'))) { %>
+                    </div>
+                    <% }
+                    i++;
+                    %>
+                <% }); %>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<div class="row status-bar">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="alert alert-success" style="display: none">
+            <b>Success!</b> Mapping saved successfully
+        </div>
+    </div>
+</div>

@@ -31,7 +31,8 @@ $app->get('/placeCategory/:id', 'getPlaceCategory');
 $app->get('/placeCategories/:id', 'getPlaceCategories');
 
 $app->get('/categorySection/:id', 'getCategorySection');
-$app->get('/categorySections/:id', 'getCategorySections');
+$app->get('/categorySections/:id', 'getCategorySectionsById');
+$app->get('/categorySections', 'getCategorySections');
 
 $app->get('/contractorMapping/:id', 'getContractorMapping');
 $app->post('/contractorMapping', 'addContractorMapping');
@@ -271,7 +272,7 @@ function getReviewsForContractor($id) {
 }
 
 function getMappingForContractor($id) {
-    $sql = "SELECT a.contractorMapping_id,g.contractor_title as contractor_title,d.category_title as category_title,f.section_title as section_title,e.place_title as place_title,a.active
+    $sql = "SELECT a.contractorMapping_id,g.contractor_title as contractor_title,d.category_title as category_title,f.section_title as section_title,e.place_title as place_title,a.active, b.categorySection_id
             FROM
             rene_contractor_mapping a
             LEFT JOIN
@@ -503,7 +504,7 @@ function getCategorySection($id) {
     }
 }
 
-function getCategorySections($id) {
+function getCategorySectionsById($id) {
     $sql = "SELECT a.categorySection_id, a.placeCategory_id, a.section_id, e.place_title as place_title, d.category_title as category_title, c.section_title as section_title, a.categorysection_order, a.active,a.meta_id
             FROM
             rene_categorysection_mapping a
@@ -527,6 +528,37 @@ function getCategorySections($id) {
         $db = getConnection();
         $stmt = $db->prepare($sql);
         $stmt->bindParam("id", $id);
+        $stmt->execute();
+        $categorySections = $stmt->fetchAll(PDO::FETCH_OBJ);
+        $db = null;
+        echo json_encode($categorySections);
+    } catch(PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+}
+
+function getCategorySections() {
+    $sql = "SELECT a.categorySection_id, a.placeCategory_id, a.section_id, e.place_title as place_title, d.category_title as category_title, c.section_title as section_title, a.categorysection_order, a.active,a.meta_id
+            FROM
+            rene_categorysection_mapping a
+            LEFT JOIN
+            rene_placecategory_mapping b ON b.placeCategory_id=a.placeCategory_id
+            LEFT JOIN
+            rene_section c ON c.section_id=a.section_id
+            LEFT JOIN
+            rene_category d ON b.category_id=d.category_id
+            LEFT JOIN
+            rene_place e ON e.place_id=b.place_id
+            WHERE
+            a.delete_flag=FALSE
+            ANd b.delete_flag=FALSE
+            AND c.delete_flag=FALSE
+            AND d.delete_flag=FALSE
+            AND e.delete_flag=FALSE
+            ORDER BY place_title";
+    try {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
         $stmt->execute();
         $categorySections = $stmt->fetchAll(PDO::FETCH_OBJ);
         $db = null;

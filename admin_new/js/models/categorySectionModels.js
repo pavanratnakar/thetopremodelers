@@ -60,9 +60,14 @@ window.CategorySectionCollection = Backbone.Collection.extend({
     id: null,
     model: CategorySection,
     url: function() {
-        return "api/categorySections/" + this.id;
+        if (this.id) {
+            return "api/categorySections/" + this.id;
+        }
+        return "api/categorySections";
     },
     initialize: function(models, options) {
-        this.id = options.id;
+        if (options) {
+            this.id = options.id;
+        }
     }
 });

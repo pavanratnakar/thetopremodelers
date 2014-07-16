@@ -84,6 +84,19 @@ hr.soften {
   text-align: center;
 }
 
+/* form-sub
+-------------------------------------------------- */
+.form-module {
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.form-module label {
+  font-size: 14px;
+  font-weight: 200;
+}
+
 /* Sidebar
 -------------------------------------------------- */
 .sidebar-module {

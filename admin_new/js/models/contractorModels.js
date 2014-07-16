@@ -61,6 +61,18 @@ window.Contractor = Backbone.Model.extend({
         });
         return o;
     },
+    isMappedToCategorySectionId: function(id){
+        var o = [],
+            i = -1,
+            prevPlace;
+
+        return _.some(this.get('mappings'), function(mapping){
+            if (mapping.categorySection_id === id) {
+                return true;
+            }
+            return;
+        });
+    },
     defaults: {
         contractor_id: null,
         contractor_title: "",

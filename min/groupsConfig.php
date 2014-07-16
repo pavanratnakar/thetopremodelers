@@ -106,6 +106,7 @@ return array(
         '//admin_new/js/views/contractorreviewlist.js',
         '//admin_new/js/views/contractorreviewdetails.js',
         '//admin_new/js/views/contractormappingdetails.js',
+        '//admin_new/js/views/contractormappingsdetails.js',
         '//admin_new/js/main.js'
     ),
     'herve_new_admin_css' => array(
