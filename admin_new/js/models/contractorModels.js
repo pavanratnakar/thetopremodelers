@@ -47,6 +47,7 @@ window.Contractor = Backbone.Model.extend({
             prevPlace;
 
         _.each(this.get('mappings'), function(mapping){
+            console.log(mapping);
             if (mapping.place_title !== prevPlace) {
                 i++;
                 o[i] = {};
@@ -61,11 +62,18 @@ window.Contractor = Backbone.Model.extend({
         });
         return o;
     },
-    isMappedToCategorySectionId: function(id){
-        var o = [],
-            i = -1,
-            prevPlace;
+    getMappingIdForCategorySectionId: function(id){
+        var c = false;
 
+        _.some(this.get('mappings'), function(mapping){
+            if (mapping.categorySection_id === id) {
+                c = mapping.contractorMapping_id;
+                return true;
+            }
+        });
+        return c;
+    },
+    isMappedToCategorySectionId: function(id){
         return _.some(this.get('mappings'), function(mapping){
             if (mapping.categorySection_id === id) {
                 return true;

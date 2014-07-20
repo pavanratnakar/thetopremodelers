@@ -95,6 +95,7 @@ hr.soften {
 .form-module label {
   font-size: 14px;
   font-weight: 200;
+  width: 80%;
 }
 
 /* Sidebar

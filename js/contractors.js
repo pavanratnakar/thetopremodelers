@@ -15,7 +15,7 @@ var herve_contractors = {
                         category_name = category_name || value['category_name'];
                     });
                     $.ajax({url: "/controller/ajaxController.php?ref=sectionSelect&place_name="+$('.place_select').val()+"&category_name="+category_name, dataType: "json", cache: true, async: false, success: function(data1, result1) {
-                        if (!result) {
+                        if (!result1) {
                             alert('Failure to retrieve the Categories.');
                         } else {
                             $('.section_select').empty();
@@ -39,7 +39,7 @@ var herve_contractors = {
         });
         $('.category_select').live('change', function(event){
             $.ajax({url: "/controller/ajaxController.php?ref=sectionSelect&place_name="+$('.place_select').val()+"&category_name="+$('.category_select').val(), dataType: "json", cache: true, async: false, success: function(data1, result1) {
-                if (!result) {
+                if (!result1) {
                     alert('Failure to retrieve the Categories.');
                 } else {
                     $('.section_select').empty();

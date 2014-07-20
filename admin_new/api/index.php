@@ -34,6 +34,7 @@ $app->get('/categorySection/:id', 'getCategorySection');
 $app->get('/categorySections/:id', 'getCategorySectionsById');
 $app->get('/categorySections', 'getCategorySections');
 
+$app->get('/contractorMapping', 'getContractorMapping');
 $app->get('/contractorMapping/:id', 'getContractorMapping');
 $app->post('/contractorMapping', 'addContractorMapping');
 $app->delete('/contractorMapping/:id', 'deleteContractorMapping');
@@ -295,7 +296,9 @@ function getMappingForContractor($id) {
             AND d.delete_flag=FALSE
             AND e.delete_flag=FALSE
             AND f.delete_flag=FALSE
-            AND g.delete_flag=FALSE";
+            AND g.delete_flag=FALSE
+            AND e.active=TRUE
+            ORDER BY place_title";
     try {
         $db = getConnection();
         $stmt = $db->prepare($sql);
@@ -470,6 +473,7 @@ function getPlaceCategories($id) {
             AND b.delete_flag=FALSE
             AND c.delete_flag=FALSE
             AND b.place_id=:id
+            AND b.active=TRUE
             ORDER BY category_title";
     try {
         $db = getConnection();
@@ -523,6 +527,7 @@ function getCategorySectionsById($id) {
             AND d.delete_flag=FALSE
             AND e.delete_flag=FALSE
             AND b.placeCategory_id=:id
+            AND e.active=TRUE
             ORDER BY section_title";
     try {
         $db = getConnection();
@@ -555,6 +560,7 @@ function getCategorySections() {
             AND c.delete_flag=FALSE
             AND d.delete_flag=FALSE
             AND e.delete_flag=FALSE
+            AND e.active=TRUE
             ORDER BY place_title";
     try {
         $db = getConnection();
@@ -592,6 +598,7 @@ function getContractorMapping($id) {
             AND e.delete_flag=FALSE
             AND f.delete_flag=FALSE
             AND g.delete_flag=FALSE
+            AND e.active=TRUE
             AND a.contractorMapping_id = :id";
     try {
         $db = getConnection();

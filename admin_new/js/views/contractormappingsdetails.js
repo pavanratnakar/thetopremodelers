@@ -55,27 +55,55 @@ window.ContractorMappingsView = Backbone.View.extend({
                 utils.showAlert('Success!', 'Mapping saved successfully', 'alert-success');
             },
             error: function () {
-                utils.showAlert('Error', 'An error occurred while trying to delete this item', 'alert-error');
+                utils.showAlert('Error', 'An error occurred while trying to save this item', 'alert-error');
             }
         });
     },
     deleteMapping: function () {
         this.model.destroy({
             success: function () {
-                alert('Mapping deleted successfully');
+                utils.showAlert('Success!', 'Mapping deleted successfully', 'alert-success');
                 window.history.back();
             }
         });
         return false;
     },
     mappingCheckChange: function(e) {
-        var categorySection_id = $(e.target).data('catsecid'),
-            contractor_id = this.contractorModel.get('contractor_id');
+        var target = $(e.target),
+            categorySection_id = target.data('catsecid'),
+            contractor_id = this.contractorModel.get('contractor_id'),
+            contractorMapping_id = target.data('mapid');
+
+        var cm = new ContractorMapping({
+            categorySection_id: categorySection_id,
+            contractor_id: contractor_id,
+            active: 1,
+            delete_flag: 0
+        });
+        if (contractorMapping_id) {
+            cm.set('id', contractorMapping_id);
+            cm.set('contractorMapping_id', contractorMapping_id);
+        }
 
         if ($(e.target).is(':checked')) {
             // add
+            cm.save(null, {
+                success: function(model){
+                    target.data('mapid', model.get('id'));
+                    utils.showAlert('Success!', 'Mapping saved successfully', 'alert-success');
+                },
+                error: function(){
+                    utils.showAlert('Error', 'An error occurred while trying to save this item', 'alert-error');
+                }
+            });
         } else {
             // delete
+            cm.destroy({
+                success: function () {
+                    target.data('mapid', '');
+                    utils.showAlert('Success!', 'Mapping deleted successfully', 'alert-success');
+                }
+            });
         }
     }
 });

@@ -1,3 +1,10 @@
+<div class="row status-bar">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="alert alert-success" style="display: none">
+            <b>Success!</b> Mapping saved successfully
+        </div>
+    </div>
+</div>
 <div class="row">
     <form class="form-horizontal col-xs-12 col-sm-12 col-md-12" role="form">
         <fieldset>
@@ -20,7 +27,7 @@
                         <h5><%= m.get('category_title') %></h5>
                         <% } %>
                         <label>
-                            <input class="mapping-check" data-catsecid="<%= m.get('categorySection_id') %>" <%= cm.isMappedToCategorySectionId(m.get('categorySection_id')) ? 'checked=checked' : ''%> type="checkbox"> <%= m.get('section_title') %>
+                            <input class="mapping-check" data-mapid="<%= cm.getMappingIdForCategorySectionId(m.get('categorySection_id')) %>" data-catsecid="<%= m.get('categorySection_id') %>" <%= cm.isMappedToCategorySectionId(m.get('categorySection_id')) ? 'checked=checked' : ''%> type="checkbox"> <%= m.get('section_title') %>
                         </label>
                     <% if (i !== c.length-1 && (m.get('place_title') !== c.at(i+1).get('place_title'))) { %>
                     </div>
@@ -31,11 +38,4 @@
             </div>
         </fieldset>
     </form>
-</div>
-<div class="row status-bar">
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="alert alert-success" style="display: none">
-            <b>Success!</b> Mapping saved successfully
-        </div>
-    </div>
 </div>
