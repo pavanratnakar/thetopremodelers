@@ -22,24 +22,23 @@ if ($contractorRatingDetails) {
 echo $pageController->printHomeHeader($contractor->getMeta($contractorDetails));
 ?>
 <?php echo $pageController->printHeaderMenu(); ?>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row main-container">
                 <div class="col-md-3 col-xs-3 col-sm-3 sidebar">
                     <?php echo $pageController->printLogoContainer(); ?>
                 </div>
                 <div class="container full-main">
                     <div class="col-md-9 col-xs-9 col-sm-9">
-                        <div id="top" class="sub top clearfix">
-                            <?php echo $pageController->getContractorDetails($contractorDetails,true); ?>
+                        <div id="top" class="sub top">
+                            <?php echo $pageController->getnewContractorDetails($contractorDetails,true); ?>
                         </div>
-                        <?php echo $pageController->jumpList($jumpListData,'profile'); ?>
                         <div id="profile" class="sub">
                             <h2>Profile</h2>
                             <h3><?php echo $contractorDetails['contractor_title']?></h3>
                             <?php if ($contractorDetails['contractor_description']) { ?>
                             <p><?php echo $contractorDetails['contractor_description'] ?></p>
                             <?php } ?>
-                            <div id="service-container" class="sub">
+                            <div id="service-container">
                                 <h4>Services Offered</h4>
                                 <?php
                                 $contractorCategoryDetails = $contractor->getSectionsForContractor(array('contractor_id'=>$contractorDetails['contractor_id']));
@@ -66,34 +65,26 @@ echo $pageController->printHomeHeader($contractor->getMeta($contractorDetails));
                                 </ul>
                             </div>
                         </div>
-                        <?php
-                        if ($contractorRatingDetails) {
-                            echo $pageController->jumpList($jumpListData,'ratings-reviews');
-                            ?>
+                        <?php if ($contractorRatingDetails) {?>
                             <div id="ratings-reviews" class="sub">
                                 <h2>Ratings &amp; Reviews</h2>
                                 <h3><?php echo $contractorDetails['contractor_title']?></h3>
-                                <ul>
+                                <ul class="nobullet">
                                     <li>
                                         <div class="showing-details">Showing 1 - <?php echo sizeof($contractorRatingDetails)?></div>
                                     </li>
                                     <?php
                                     foreach($contractorRatingDetails as $key=>$value) { ?>
-                                    <li>
-                                        <div class="rating">
+                                    <li class="review">
+                                        <div>
                                             <?php
                                             if ($value['score']) {
                                                 echo '
-                                                <div class="clearfix">
-                                                <div class="rating-image left">
-                                                <i class="rating-static rating-'.($value['score']*10).'"></i>
+                                                <div class="rating-image">
+                                                    <i class="rating-static rating-'.($value['score']*10).'"></i>
                                                 </div>
-                                                <div class="rating-text left">
-                                                <span class="rating-score">'.$value['score'].'</span>
-                                                </div>
-                                                <div class="rating-date">
-                                                | <span>'.$value['timestamp'].'</span>
-                                                </div>
+                                                <div class="rating-time">
+                                                    <span>'.$value['timestamp'].'</span>
                                                 </div>
                                                 ';
                                             }
@@ -103,15 +94,15 @@ echo $pageController->printHomeHeader($contractor->getMeta($contractorDetails));
                                             ?>
                                         </div>
                                         <div class="details">
-                                            <div class="rating-person">
+                                            <div class="rating-person bold">
                                                 <?php echo 'Review by '.$value['person'].' in '.$value['place_title'].'' ?>
                                             </div>
-                                            <div class="project-details">
+                                            <div class="project-details bold">
                                                 <?php echo 'Project :  '.$value['project'].'' ?>
                                             </div>
                                         </div>
                                         <?php if ($value['review']) {?>
-                                        <div class="review">
+                                        <div>
                                             <?php echo $value['review'] ?>
                                         </div>
                                         <?php
@@ -122,32 +113,32 @@ echo $pageController->printHomeHeader($contractor->getMeta($contractorDetails));
                             </ul>
                         </div>
                         <?php } ?>
-                        <?php echo $pageController->jumpList($jumpListData,'top'); ?>
+                        <?php echo $pageController->newjumpList($jumpListData,'top'); ?>
                     </div>
                     <div class="col-md-3 col-xs-3 col-sm-3">
-                        <div class="sidebar-container" id="certified-rating">
-                            <div class="sidebar-content">
+                        <div class="sb-container sb-center" id="certified-rating">
+                            <div class="sb-content">
                                 <img src="<?php echo Config::$site_url.'images/contractor/stamp_final.png' ?>" title="Certified Ratings" alt="Certified Ratings" />
                                 <h4>Hire with Confidence</h4>
                                 <p>This service provider has passed our screening process including checks for criminal background and bankruptcy.</p>
                             </div>
                         </div>
-                        <div class="sidebar-container">
-                            <div class="sidebar-header">
+                        <div class="sb-container">
+                            <div class="sb-header">
                                 <h3>Today&rsquo;s Best Offers</h3>
                             </div>
-                            <div class="sidebar-content">
+                            <div class="sb-content">
                                 <img src="<?php echo Config::$site_url.'images/global/sidebar/solar_system.png' ?>" title="Hire our pros and win 6000 watt solar system" alt="Hire our pros and win 6000 watt solar system" />
                             </div>
                         </div>
                         <?php
                         $contractorRatingDistribution = $contractor->getRatingDistributionForContractor(array('contractor_id'=>$contractorDetails['contractor_id']));
                         if ($contractorRatingDistribution) {?>
-                        <div class="sidebar-container" id="rating-distribution">
-                            <div class="sidebar-header">
+                        <div class="sb-container" id="rating-distribution">
+                            <div class="sb-header">
                                 <h3>Rating Distribution</h3>
                             </div>
-                            <div class="sidebar-content">
+                            <div class="sb-content">
                                 <?php
                                 for ($i=5;$i>0;$i--) {
                                     if ($contractorRatingDistribution[$i]) {
@@ -170,11 +161,11 @@ echo $pageController->printHomeHeader($contractor->getMeta($contractorDetails));
                             </div>
                         </div>
                         <?php } ?>
-                        <div class="sidebar-container">
-                            <div class="sidebar-header">
+                        <div class="sb-container">
+                            <div class="sb-header">
                                 <h3>Roofing Library</h3>
                             </div>
-                            <div class="sidebar-content">
+                            <div class="sb-content">
                                 <?php echo $pageController->getArticles(); ?>
                             </div>
                         </div>

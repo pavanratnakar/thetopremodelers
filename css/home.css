@@ -16,6 +16,13 @@ body {
 .gold {
     color: #ffc24a;
 }
+.bold {
+    font-weight: 800;
+}
+.nobullet {
+    list-style-type: none;
+    padding-left: 0;
+}
 
 /*
  * Global add-ons
@@ -104,33 +111,6 @@ body {
     background-color: #333638;
     color: #FFF;
     padding: 20px 10px;
-}
-.certifed-container {
-    text-align: center;
-    border-bottom: 1px dotted #ffc24a;
-}
-.service-container {
-    text-align: center;
-}
-.service-container h4 {
-    margin-bottom: 4px;
-}
-.service-container h5 {
-    font-weight: bold;
-    margin-top: 4px;
-}
-.share-container h4 {
-    font-weight: bold;
-    color: #ffc24a;
-    padding-bottom: 4px;
-    border-bottom: 1px dotted #ffc24a;
-}
-.sub-sidebar {
-    position: absolute;
-    left: 270px;
-    top: 136px;
-    z-index: 1;
-    display: none;
 }
 
 /* Sidebar navigation */
@@ -224,7 +204,14 @@ body {
 .process-sub-container h4 {
     margin-top: 0;
 }
-.process-sub-container .review {
+
+/*
+ * Review
+ */
+.ratings-reviews p {
+    margin-bottom: 0px;
+}
+.review {
     padding: 20px 30px 20px;
     border-bottom: 1px dotted #000;
     position: relative;
@@ -300,6 +287,61 @@ body {
 }
 
 /*
+ * sb
+ */
+
+.sb-container{
+    margin-bottom: 15px;
+}
+.sb-center{
+    text-align: center;
+}
+.sb-container ul{
+    margin: 0;
+    padding: 0;
+}
+.sb-container ul ul{
+    padding-left: 20px;
+}
+.sb-container ul li{
+    list-style-type: none;
+}
+.sb-container ul li li{
+    list-style-type: circle;
+}
+.sb-container h3{
+    padding-bottom: 2px;
+    border-bottom: 1px solid #000;
+}
+.certifed-container {
+    text-align: center;
+    border-bottom: 1px dotted #ffc24a;
+}
+.service-container {
+    text-align: center;
+}
+.service-container h4 {
+    margin-bottom: 4px;
+}
+.service-container h5 {
+    font-weight: bold;
+    margin-top: 4px;
+}
+.share-container h4 {
+    font-weight: bold;
+    color: #ffc24a;
+    padding-bottom: 4px;
+    border-bottom: 1px dotted #ffc24a;
+}
+.sub-sidebar {
+    position: absolute;
+    left: 270px;
+    top: 136px;
+    z-index: 1;
+    display: none;
+}
+
+/*
  * Full Main content
  */
 
@@ -323,6 +365,15 @@ body {
 }
 .full-main .page-header {
      margin-top: 0;
+}
+
+/*
+ * Sub
+ */
+.sub{
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0d5c8;
 }
 
 /*
@@ -370,6 +421,62 @@ body {
 .horizontal-bar {
     height: 16px;
     background: #F6B32E;
+}
+
+/*
+ * Rating
+ */
+.rating-static {
+    width: 60px;
+    height: 16px;
+    display: block;
+    background: url('/images/global/stars/star-rating.png') 0 0 no-repeat;
+}
+.rating-50 {
+    background-position: 0 0;
+}
+.rating-40 {
+    background-position: -12px 0;
+}
+.rating-30 {
+    background-position: -24px 0;
+}
+.rating-20 {
+    background-position: -36px 0;
+}
+.rating-10 {
+    background-position: -48px 0;
+}
+.rating-0 {
+    background-position: -60px 0;
+}
+.rating-5  {
+    background-position: -48px -16px;
+}
+.rating-15 {
+    background-position: -36px -16px;
+}
+.rating-25 {
+    background-position: -24px -16px;
+}
+.rating-35 {
+    background-position: -12px -16px;
+}
+.rating-45 {
+    background-position: 0 -16px;
+}
+.rating-score{
+    color: #279FD3;
+    font-size: 1em;
+    font-weight:bold;
+}
+
+/*
+ * Contractor
+ */
+
+.entry-body .social-sharing{
+    margin: 10px 0;
 }
 
 /*

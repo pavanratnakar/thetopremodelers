@@ -300,6 +300,35 @@ class Page{
         </script>";
         return $return;
     }
+    public function newJumpList($data, $selected) {
+        if (sizeof($data) <= 1 && $selected!='top') {
+            return '';
+        }
+        $return ='
+        <ul class="nav nav-pills">';
+        foreach ($data as $key=>$value) {
+            $return .= '
+            <li class="'.(($selected==$key) ? 'active' : '').'">
+            <a title="'.$value['title'].'" class="'.(($selected==$key) ? 'selected' : '').'" href="#'.$key.'">
+            '.$value['title'].'
+            '.(($selected==$key) ? '<i></i>' : '').'
+            </a>
+            </li>
+            ';
+        }
+        if ($selected=='top') {
+            $return .= '
+            <li class="'.$key.' right selected">
+            <a class="active" title="Back to Top" href="#Top">
+            Back to Top
+            <i></i>
+            </a>
+            </li>
+            ';
+        }
+        $return .='</ul>';
+        return $return;
+    }
     public function jumpList($data,$selected){
         if (sizeof($data) <= 1 && $selected!='top') {
             return '';
