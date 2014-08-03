@@ -265,6 +265,30 @@ class Page{
         $return .= '</ol>';
         return $return;
     }
+    public function printNewUserStepsText($index){
+        $return = '<div class="match-options-container"><div class="row">';
+        $steps = array(
+            'Select a Category',
+            'Describe your need',
+            'Get Matched to Pros'
+            );
+        $positionClasses = array(
+            'first',
+            'second',
+            'third'
+        );
+        for ($i=1;$i<=sizeof($steps);$i++){
+            $positionClass = '';
+            $return .= '<div class="col-md-4 col-xs-4 col-sm-4 '.$positionClasses[$i-1].'">
+                            <div class="match-option-container">
+                                <span class="label number">'.$i.'</span>
+                                <span class="label">'.$steps[$i-1].'</span>
+                            </div>
+                        </div>';
+        }
+        $return .= '</div></div>';
+        return $return;
+    }
     public function printFooter(){
         $return.=$this->printJS('herve_js');
         if($this->currentPage->js == 1){

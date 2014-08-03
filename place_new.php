@@ -22,10 +22,12 @@
                     <?php echo $pageController->printLogoContainer(); ?>
                 </div>
                 <div class="container full-main">
-                    <div>
-                        <?php echo $pageController->printUserStepsText(1); ?>
-                        <div class="back-button clearfix">
-                            <a class="button orange small rounded" title="Back" href="<?php echo Config::$site_url ?>places">
+                    <div class="row options-container">
+                        <div class="col-md-9 col-xs-9 col-sm-9">
+                            <?php echo $pageController->printNewUserStepsText(1); ?>
+                        </div>
+                        <div class="col-md-3 col-xs-3 col-sm-3 secondary-options-container">
+                            <a class="btn btn-info" title="Back" href="<?php echo Config::$site_url ?>places">
                                 Back
                             </a>
                         </div>

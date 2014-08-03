@@ -50,6 +50,9 @@ class PageController{
     public function printUserStepsText($index=null){
         return $this->page->printUserStepsText($index);
     }
+    public function printNewUserStepsText($index=null){
+        return $this->page->printNewUserStepsText($index);
+    }
     public function printFooterLinks(){
         $title = 'Dallas roofers-Dallas roofing contractors-company Tx';
         $summary = 'Free service that compiles certified ratings from local service companies and contractors in multiple cities';

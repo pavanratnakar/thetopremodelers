@@ -31,28 +31,7 @@
 <!--                     <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
                     <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
                     <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p> -->
-                    <div class="match-options-container">
-                        <div class="row">
-                            <div class="col-md-4 col-xs-4 col-sm-4 first">
-                                <div class="match-option-container">
-                                    <span class="label number">1</span>
-                                    <span class="label">Select a Category</span>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-xs-4 col-sm-4 second">
-                                <div class="match-option-container">
-                                    <span class="label number">2</span>
-                                    <span class="label">Describe your need</span>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-xs-4 col-sm-4 third">
-                                <div class="match-option-container">
-                                    <span class="label number">3</span>
-                                    <span class="label">Get Matched to Pros</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php echo $pageController->printNewUserStepsText(); ?>
                     <div class="process-container">
                         <div class="col-md-7 col-xs-7 col-sm-7 process-sub-container">
                             <h2>What <span class="blue">Client</span> Says</h2>

@@ -384,12 +384,14 @@ body {
  */
 
 .match-options-container {
-    margin-top: 30px;
     background-repeat: no-repeat;
     background-image: url("../images/home/match_options_bg.jpg");
     height: 36px;
     width: 704px;
     display: inline-block;
+}
+.home .match-options-container {
+    margin-top: 30px;
 }
 .match-options-container .second{
     margin-left: -25px;
@@ -503,6 +505,18 @@ body {
     margin-bottom: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid #e0d5c8;
+}
+
+/*
+ * Place
+ */
+
+.place .options-container {
+    margin-bottom: 20px;
+}
+.place .secondary-options-container {
+    text-align: right;
+    margin-top: 6px;
 }
 
 /*
