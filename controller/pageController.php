@@ -370,14 +370,14 @@ class PageController{
         <h2>'.$contractorDetails['contractor_title'].'</h2>
         <div class="entry-body">
         <div class="row">
-        <div class="col-md-4 col-xs-4 col-sm-4">';
+        <div class="col-md-5 col-xs-5 col-sm-5">';
         if ($contractorDetails['image_id']) {
         $return .= '<div class="entry-image">
         <img alt="'.$contractorDetails['contractor_title'].'" src="/images/contractors/'.$contractorDetails['image_id'].'.jpg" />
         </div>';
         }
         $return .= '</div>
-        <div class="reviews col-md-2 col-xs-2 col-sm-2">';
+        <div class="reviews col-md-3 col-xs-3 col-sm-3">';
         if ($contractorDetails['average_score']) {
             $return.= '<p><i class="rating-static rating-'.($contractorDetails['average_score']*10).'"></i></p>';
         }
@@ -396,18 +396,17 @@ class PageController{
         if ($contractorDetails['contractor_address']) {
             $return.= '<div class="address">'.$contractorDetails['contractor_address'].'</div>';
         }
-        $return.=  '</div>';
+        $return.= "</div></div>";
         if ($quote)
-            $return.=  '<div class="right col-md-2 col-xs-2 col-sm-2">
+            $return.=  '<div class="row options-container">
+        <div class="col-md-3 col-xs-3 col-sm-3">
         <a href="javascript:void(0);" data-name="'.$contractorDetails['contractor_name'].'" id="contractorSelect-'.$contractorDetails['contractor_name'].'" class="get-quote btn btn-info">Get a Quote</a>';
-        $return.= "</div></div>
-        <div class='social-sharing'>
-            <span class='st_pinterest_hcount' displayText='Pinterest'></span>
+        $return.= "</div><div class='social-sharing col-md-8 col-xs-8 col-sm-8'>
             <span class='st_twitter_hcount' displayText='Tweet'></span>
-            <span class='st_linkedin_hcount' displayText='LinkedIn'></span>
             <span class='st_fbrec_hcount' displayText='Facebook Recommend'></span>
             <span class='st_email_hcount' displayText='Email'></span>
             <span class='st_plusone_hcount' displayText='Google +1'></span>
+        </div>
         </div>
         </div>
         ";

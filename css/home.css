@@ -212,9 +212,12 @@ body {
     margin-bottom: 0px;
 }
 .review {
-    padding: 20px 30px 20px;
+    padding: 20px 30px;
     border-bottom: 1px dotted #000;
     position: relative;
+}
+.review:last-child {
+    border-bottom: 0;
 }
 .review .quote_start {
     background-repeat: no-repeat;
@@ -256,6 +259,12 @@ body {
     .main {
         width: 75%;
     }
+}
+.regular-main {
+    margin: 140px auto 0;
+    width: 960px;
+    padding: 15px;
+    background: #FFF;
 }
 .full-main {
     margin-top: 140px;
@@ -313,6 +322,9 @@ body {
     padding-bottom: 2px;
     border-bottom: 1px solid #000;
 }
+.sb-container img{
+    max-width: 100%;
+}
 .certifed-container {
     text-align: center;
     border-bottom: 1px dotted #ffc24a;
@@ -365,15 +377,6 @@ body {
 }
 .full-main .page-header {
      margin-top: 0;
-}
-
-/*
- * Sub
- */
-.sub{
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #e0d5c8;
 }
 
 /*
@@ -465,18 +468,41 @@ body {
 .rating-45 {
     background-position: 0 -16px;
 }
-.rating-score{
+.rating-score {
     color: #279FD3;
     font-size: 1em;
     font-weight:bold;
 }
 
 /*
+ * Social Sharing
+ */
+
+.social-sharing {
+    margin: 10px 0;
+    box-sizing: content-box;
+}
+.social-sharing * {
+    box-sizing: content-box;
+}
+
+/*
  * Contractor
  */
 
-.entry-body .social-sharing{
-    margin: 10px 0;
+.contractor .options-container {
+    margin-top: 15px;
+}
+.contractor .reviews p {
+    margin-bottom: 0;
+}
+.contractor .review {
+    padding: 20px 20px;
+}
+.contractor .sub {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0d5c8;
 }
 
 /*
