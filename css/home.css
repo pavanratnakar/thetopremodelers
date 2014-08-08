@@ -2,7 +2,7 @@
  * Base structure
  */
 body {
-    background:url(../images/home/home_bg.jpg) no-repeat no-repeat center top;
+    background:url(../images/home/home_bg.jpg) no-repeat no-repeat center -150px;
     color: #505050;
     min-width: 1010px;
 }
@@ -505,6 +505,36 @@ body {
     margin-bottom: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid #e0d5c8;
+}
+
+/*
+ * Contractors
+ */
+
+.contractors .option{
+/*    background: #F8F7F1;*/
+    border-bottom: 1px solid #E0D5C8;
+    padding: 15px 0;
+}
+.contractors li.last-child{
+    border-bottom: 0px;
+}
+.contractors li.even{
+    background: #F8F7F1;
+}
+.contractors li.odd{
+    background: #FFFFFF;
+}
+.contractors .paginate{
+    font-size: 0.8em;
+}
+.contractors .not-found{
+    color: #333333;
+    font-size: 0.916em;
+}
+.contractors a.morelink {
+    margin: 5px 0 0 0;
+    font-weight:normal;
 }
 
 /*

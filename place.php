@@ -13,41 +13,49 @@
         header( 'Location: '.Config::$site_url.'404.php');
         exit;
     }
-    echo $pageController->printHeader($pageController->getMeta('place',$placeName)); 
+    echo $pageController->printHomeHeader($pageController->getMeta('place',$placeName)); 
 ?>
-            <?php echo $pageController->printNavigation(); ?>
-            <div class="main-content-container clearfix">
-                <div class="header">
-                    <?php echo $pageController->printUserStepsText(1); ?>
-                    <div class="back-button clearfix">
-                        <a class="button orange small rounded" title="Back" href="<?php echo Config::$site_url ?>places">
-                            Back
-                        </a>
-                    </div>
+<?php echo $pageController->printHeaderMenu(); ?>
+        <div class="container-fluid">
+            <div class="row main-container">
+                <div class="col-md-3 col-xs-3 col-sm-3 sidebar">
+                    <?php echo $pageController->printLogoContainer(); ?>
                 </div>
-                <div class="content clearfix">
-                    <div class="main left">
-                        <h2>Matching you with our prescreened Contractors for <?php echo $placeDetails['place_title'] ?></h2>
-                        <div class="left clearfix first">
-                            <ul class="top">
-                                <li><h3>Additions &amp; Remodels</h3></li>
-                            </ul>
-                            <ul class="list clearfix">
-                                <?php echo $pageController->getFormatedCategories(1,$placeName); ?>
-                            </ul>
+                <div class="container full-main">
+                    <div class="row options-container">
+                        <div class="col-md-9 col-xs-9 col-sm-9">
+                            <?php echo $pageController->printNewUserStepsText(1); ?>
                         </div>
-                        <div class="left clearfix">
-                            <ul class="top">
-                                <li><h3>Handyman Services</h3></li>
-                            </ul>
-                            <ul class="list clearfix">
-                                <?php echo $pageController->getFormatedCategories(2,$placeName); ?>
-                            </ul>
+                        <div class="col-md-3 col-xs-3 col-sm-3 secondary-options-container">
+                            <a class="btn btn-info" title="Back" href="<?php echo Config::$site_url ?>places">
+                                Back
+                            </a>
                         </div>
                     </div>
+                    <h1>Matching you with our prescreened Contractors for <?php echo $placeDetails['place_title'] ?></h1>
+                        <div class="row">
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <ul class="nobullet">
+                                    <li><h2>Additions &amp; Remodels</h2></li>
+                                </ul>
+                                <ul class="list">
+                                    <?php echo $pageController->getFormatedCategories(1,$placeName); ?>
+                                </ul>
+                            </div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <ul class="nobullet">
+                                    <li><h2>Handyman Services</h2></li>
+                                </ul>
+                                <ul class="list">
+                                    <?php echo $pageController->getFormatedCategories(2,$placeName); ?>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <?php echo $pageController->printFooterLinks(); ?>
             </div>
-            <div class="clear"></div>
         </div>
-<?php echo $pageController->printFooter(); ?>
+        <!-- FOOTER -->
+    <?php echo $pageController->printHomeFooterLinks(); ?>
+    </div>
+<?php echo $pageController->printHomeFooter(); ?>
