@@ -511,19 +511,36 @@ body {
  * Contractors
  */
 
+.contractors select{
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.contractors .find-contractors select{
+    margin-right: 5px;
+}
+.contractors .find-contractors .place_select{
+    width: 28%;
+}
+.contractors .find-contractors .category_select{
+    width: 34%;
+}
+.contractors .find-contractors .section_select{
+    width: 35%;
+}
 .contractors .option{
-/*    background: #F8F7F1;*/
-    border-bottom: 1px solid #E0D5C8;
     padding: 15px 0;
 }
-.contractors li.last-child{
+.contractors .reviews p {
+    margin-bottom: 0;
+}
+.contractors .contractors-list li{
+    border-bottom: 1px solid #E0D5C8;
+}
+.contractors .contractors-list li.last-child{
     border-bottom: 0px;
 }
-.contractors li.even{
-    background: #F8F7F1;
-}
-.contractors li.odd{
-    background: #FFFFFF;
+.contractors .more-details{
+    margin-top: 10px;
 }
 .contractors .paginate{
     font-size: 0.8em;
@@ -538,13 +555,63 @@ body {
 }
 
 /*
+ * Promotion
+ */
+
+body.promotion{
+    background: url(../images/global/bg/bg-2.jpg) no-repeat no-repeat center top;
+}
+.promotion .main{
+    margin-top: 140px;
+    min-height: 600px;
+    text-align: center;
+    background: transparent;
+}
+.promotion .main h1{
+    border: none;
+}
+.promotion .main h1,
+.promotion .main h2{
+    margin-top: 100px;
+    color: #FFF;
+    text-transform: uppercase;
+    margin-bottom: 100px;
+}
+.promotion .main button{
+    text-transform: uppercase;
+    padding: 10px 20px;
+}
+.promotion .curl{
+    background: url('/images/promotion/curl.png') 0 0 no-repeat;
+    position: absolute;
+    right: 0;
+    top: 136px;
+    width: 613px;
+    height: 637px;
+    text-align: center;
+}
+.promotion .curl-content{
+    position: absolute;
+    left: 250px;
+    width: 310px;
+}
+.promotion .curl h3{
+    color: #fe0000;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+.promotion .curl p{
+    color: #404040;
+}
+
+/*
  * Place
  */
 
-.place .options-container {
+.place .options-container{
     margin-bottom: 20px;
 }
-.place .secondary-options-container {
+.place .secondary-options-container{
     text-align: right;
     margin-top: 6px;
 }

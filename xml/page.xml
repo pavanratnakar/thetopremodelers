@@ -154,4 +154,18 @@
         <css>1</css>
         <js>1</js>
     </page>
+    <page>
+        <id>10</id>
+        <class>promotion</class>
+        <name>Promotion</name>
+        <link>promotion</link>
+        <template>layout-1</template>
+        <navigation>0</navigation>
+        <title>The Top Remodelers | Promotion</title>
+        <description></description>
+        <keywords></keywords>
+        <breadcrum>0</breadcrum>
+        <css>0</css>
+        <js>0</js>
+    </page>
 </pages>

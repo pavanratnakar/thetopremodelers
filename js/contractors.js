@@ -1,7 +1,6 @@
 var herve_contractors = {
     init : function(){
         this.initsEvents();
-        this.viewMore();
     },
     initsEvents : function(){
         var t = this;
@@ -81,33 +80,6 @@ var herve_contractors = {
             url = $.url+'/'+place_name+'/'+category_name+'/'+section_name+'/contractors/';
 
         window.open(herve.getNth(url,'/','7')+'/'+sortType+'/'+pageNumber,'_self');
-    },
-    viewMore : function(){
-        var showChar = 296;
-        var ellipsestext = "...";
-        var moretext = "View more";
-        var lesstext = "View less";
-        $('.description').each(function() {
-            var content = $(this).html();
-            if (content.length > showChar) {
-                var c = content.substr(0, showChar);
-                var h = content.substr(showChar-1, content.length - showChar);
-                var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="javascript:void(0);" class="morelink">' + moretext + '</a></span>';
-                $(this).html(html);
-            }
-        });
-        $(".morelink").click(function(){
-            if ($(this).hasClass("less")) {
-                $(this).removeClass("less");
-                $(this).html(moretext);
-            } else {
-                $(this).addClass("less");
-                $(this).html(lesstext);
-            }
-            $(this).prev().children('.moreellipses').toggle();
-            $(this).prev().children('.morecontent').children('span').toggle();
-            return false;
-        });
     }
 };
 $(document).ready(function(){
