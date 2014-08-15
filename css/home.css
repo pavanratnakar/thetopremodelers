@@ -527,11 +527,17 @@ body {
 .contractors .find-contractors .section_select{
     width: 35%;
 }
+.contractors .entry-image img{
+    max-width: 100%;
+}
 .contractors .option{
     padding: 15px 0;
 }
 .contractors .reviews p {
     margin-bottom: 0;
+}
+.contractors .get-quote{
+    margin-top: 10px;
 }
 .contractors .contractors-list li{
     border-bottom: 1px solid #E0D5C8;
@@ -570,6 +576,10 @@ body.promotion{
 .promotion .main h1{
     border: none;
 }
+.promotion .main h2{
+    font-size: 26px;
+    font-weight: 700;
+}
 .promotion .main h1,
 .promotion .main h2{
     margin-top: 100px;
@@ -577,7 +587,7 @@ body.promotion{
     text-transform: uppercase;
     margin-bottom: 100px;
 }
-.promotion .main button{
+.promotion .main .btn{
     text-transform: uppercase;
     padding: 10px 20px;
 }

@@ -41,8 +41,20 @@ echo $pageController->printHomeHeader($contractor->getContractorsMeta($contracto
             <div class="row main-container">
                 <div class="col-md-3 col-xs-3 col-sm-3 sidebar">
                     <?php echo $pageController->printLogoContainer(); ?>
+                    <div class="sidebar-container certifed-container">
+                        <img src="images/home/stamp_final.png" alt=""/>
+                    </div>
+                    <ul class="nav nav-sidebar">
+                        <?php echo $pageController->getHomeFormatedCategories(1); ?>
+                        <?php echo $pageController->getHomeFormatedCategories(2); ?>
+                    </ul>
+                    <div class="sidebar-container service-container">
+                        <img src="images/home/service.jpg" alt=""/>
+                        <h4 class="gold">Need immediate service</h4>
+                        <h5>CALL US : 1(214)303 9771</h5>
+                    </div>
                 </div>
-                <div class="regular-main">
+                <div class="col-md-9 col-xs-9 col-sm-9 main top">
                     <h2><?php echo $categoryDetails[0]['category_title'].' in '.$placeDetails['place_title'].' with '.$sectionDetails['section_title'].' speciality'?></h2>
                     <div class="row">
                         <div class="col-md-8 col-xs-8 col-sm-8">
@@ -81,7 +93,7 @@ echo $pageController->printHomeHeader($contractor->getContractorsMeta($contracto
                                         </div>
                                     </form>
                                 </li> -->
-                                <?php if($contractorDetails) { ?>
+                                <?php if ($contractorDetails) { ?>
                                 <li class="option row">
                                     <div class="col-md-8 col-xs-8 col-sm-8">
                                         <form class="contractorsSort" method="get" action="#">
@@ -107,7 +119,7 @@ echo $pageController->printHomeHeader($contractor->getContractorsMeta($contracto
                                     <h3><a href="<?php echo Config::$site_url.'contractor/'. $value['contractor_name']?>"><?php echo $value['contractor_title'] ?></a></h3>
                                     <div class="entry-body">
                                         <div class="row">
-                                            <div class="col-md-5 col-xs-5 col-sm-5">
+                                            <div class="col-md-4 col-xs-4 col-sm-4">
                                                 <?php if ($value['image_id']) { ?>
                                                 <div class="entry-image">
                                                     <a title="<?php echo $value['contractor_title'] ?>" href="<?php echo Config::$site_url.'contractor/'. $value['contractor_name']?>">
@@ -133,7 +145,7 @@ echo $pageController->printHomeHeader($contractor->getContractorsMeta($contracto
                                                     ?>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4 col-xs-4 col-sm-4">
+                                            <div class="col-md-5 col-xs-5 col-sm-5">
                                                 <div class="contact-details">
                                                 <?php
                                                 if ($value['contractor_phone']) {
@@ -144,13 +156,11 @@ echo $pageController->printHomeHeader($contractor->getContractorsMeta($contracto
                                                 }
                                                 ?>
                                                 </div>
+                                                <a href="<?php echo Config::$site_url.$placeName.'/'.$categoryName.'/'.$sectionName.'/'.$value['contractor_name'].'/need' ?>" class="get-quote btn btn-info">Get a Quote</a>
                                             </div>
                                         </div>
                                         <div class="row more-details">
-                                            <div class="col-md-2 col-xs-2 col-sm-2">
-                                                <a href="<?php echo Config::$site_url.$placeName.'/'.$categoryName.'/'.$sectionName.'/'.$value['contractor_name'].'/need' ?>" class="get-quote btn btn-info">Get a Quote</a>
-                                            </div>
-                                            <div class="col-md-10 col-xs-10 col-sm-10">
+                                            <div class="col-md-12 col-xs-12 col-sm-12">
                                                 <div class="description">
                                                     <p><?php echo $value['contractor_description'] ?></p>
                                                 </div>
@@ -187,12 +197,6 @@ echo $pageController->printHomeHeader($contractor->getContractorsMeta($contracto
                             </ul>
                         </div>
                         <div class="col-md-4 col-xs-4 col-sm-4">
-                            <div class="sb-container sb-center" id="certified-rating">
-                                <div class="sb-content">
-                                    <img src="<?php echo Config::$site_url.'images/contractor/stamp_final.png' ?>" title="Certified Ratings" alt="Certified Ratings" />
-                                    <h4>Hire with Confidence</h4>
-                                </div>
-                            </div>
                             <div class="sb-container">
                                 <div class="sb-header">
                                     <h3>Today&rsquo;s Best Offers</h3>

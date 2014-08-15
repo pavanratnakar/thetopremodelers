@@ -108,6 +108,7 @@ RewriteRule ^contractor/(.*)$ contractor.php?name=$1
 RewriteRule ^places$ places.php
 RewriteRule ^contact-us$ placeRequest.php
 RewriteRule ^placeRequest$ placeRequest.php
+RewriteRule ^promotion$ promotion.php
 RewriteRule ^404 404.php [NC]
 
 ErrorDocument 404 /404.php
