@@ -27,7 +27,7 @@
                             <?php echo $pageController->printNewUserStepsText(1); ?>
                         </div>
                         <div class="col-md-3 col-xs-3 col-sm-3 secondary-options-container">
-                            <a class="btn btn-info" title="Back" href="<?php echo Config::$site_url ?>places">
+                            <a class="btn btn-warning" title="Back" href="<?php echo Config::$site_url ?>places">
                                 Back
                             </a>
                         </div>

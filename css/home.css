@@ -23,6 +23,9 @@ body {
     list-style-type: none;
     padding-left: 0;
 }
+.error{
+    color: red;
+}
 
 /*
  * Global add-ons
@@ -637,10 +640,16 @@ body.promotion{
     text-align: right;
     margin-top: 6px;
 }
-.need .sub {
+.need .sub{
     border-bottom: 1px solid #e0d5c8;
     margin-bottom: 10px;
     padding-bottom: 10px;
+}
+.need .form-container h3{
+    margin-bottom: 30px;
+}
+.need .form-container .btn-success{
+    margin-top: 30px;
 }
 
 /*

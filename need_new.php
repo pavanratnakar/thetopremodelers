@@ -28,7 +28,7 @@ if ($contractorDetails) {
     $back = Config::$site_url.$placeName.'/category/'.$categoryName;
     $submit = Config::$site_url.'placeRequest?place='.$placeName.'&amp;category='.$categoryName.'&amp;section='.$sectionName;
 }
-$formatQuestions = $pageController->formatQuestions($placeName,$categoryName,$sectionName);
+$formatQuestions = $pageController->formatNewQuestions($placeName,$categoryName,$sectionName);
 if (!$formatQuestions) {
     header( 'Location: '.$submit);
     exit;
@@ -50,7 +50,7 @@ echo $pageController->printHomeHeader($metaDetails,true);
                             <?php echo $pageController->printNewUserStepsText(2); ?>
                         </div>
                         <div class="col-md-3 col-xs-3 col-sm-3 secondary-options-container">
-                            <a class="btn btn-info" title="Back" href="<?php echo Config::$site_url ?>places">
+                            <a class="btn btn-warning" title="Back" href="<?php echo Config::$site_url ?>places">
                                 Back
                             </a>
                         </div>
@@ -64,19 +64,16 @@ echo $pageController->printHomeHeader($metaDetails,true);
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row form-container">
                         <div class="col-md-12 col-xs-12 col-sm-12">
                             <h3>Request a Quote: <?php echo $sectionDetails['section_title']?> for <?php echo $placeDetails['place_title']; ?></h3>
                             <?php } else { ?>
                             <h3>Submit and Get Matched to Prescreened <?php echo $sectionDetails['section_title']?> for <?php echo $placeDetails['place_title']; ?></h3>
                             <?php } ?>
-                            <form id="questionForm" action="<?php echo $submit ?>" method="post">
+                            <form id="questionForm" action="<?php echo $submit ?>" method="post" role="form">
                                 <fieldset>
-                                    <ol>
-                                        <?php echo $formatQuestions; ?>
-                                    </ol>
-                                    <div class="clear"></div>
-                                    <input class="submit button blue small" type="submit" value="Continue"/>
+                                    <?php echo $formatQuestions; ?>
+                                    <input class="submit btn btn-success" type="submit" value="Continue"/>
                                 </fieldset>
                             </form>
                         </div>

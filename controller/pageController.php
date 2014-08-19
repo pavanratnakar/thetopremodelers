@@ -210,6 +210,19 @@ class PageController{
         }
         return $return;
     }
+    public function formatNewQuestions($placeName,$categoryName,$sectionName){
+        include_once(Config::$site_path.'class/form.class.php');
+        $this->form=new Form();
+        $questions = $this->getQuestions($placeName,$categoryName,$sectionName);
+        $return = '';
+        if ($questions) {
+            foreach($questions as $question){
+                $values = $question['values'] ? $question['values'] : null;
+                $return .= $this->form->createNewElement($question['category_text'],$question['question_text'],$question['question_id'],$question['question_validation'],$values);
+            }
+        }
+        return $return;
+    }
     public function getFormatedCategories($position,$placeName='dallas_texas'){
         include_once(Config::$site_path.'class/category.class.php');
         $this->category = new Category();
