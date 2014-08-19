@@ -29,35 +29,35 @@ var herveContact = {
                         notEqual:true
                     },
                     firstName: {
-                        required: true,
+                        required: false,
                         minlength: 2,
-                        notEqual:true
+                        notEqual:false
                     },
                     lastName: {
-                        required: true,
+                        required: false,
                         minlength: 2,
-                        notEqual:true
+                        notEqual:false
                     },
                     address: {
-                        required: true,
-                        notEqual:true
+                        required: false,
+                        notEqual:false
                     },
                     city: {
-                        required: true,
-                        notEqual:true
+                        required: false,
+                        notEqual:false
                     },
                     zip: {
-                        required: true,
-                        notEqual:true
+                        required: false,
+                        notEqual:false
                     },
                     phone1: {
-                        required: true
+                        required: false
                     },
                     phone2: {
-                        required: true
+                        required: false
                     },
                     phone3: {
-                        required: true
+                        required: false
                     }
                 },
                 messages: {

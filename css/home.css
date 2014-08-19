@@ -627,6 +627,23 @@ body.promotion{
 }
 
 /*
+ * Place
+ */
+
+.need .entry-body .options-container{
+    margin-top: 15px;
+}
+.need .secondary-options-container{
+    text-align: right;
+    margin-top: 6px;
+}
+.need .sub {
+    border-bottom: 1px solid #e0d5c8;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+/*
  * Footer
  */
 
