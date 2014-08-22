@@ -599,22 +599,25 @@ body.promotion{
     position: absolute;
     right: 0;
     top: 136px;
-    width: 613px;
-    height: 637px;
+    width: 414px;
+    height: 388px;
     text-align: center;
 }
 .promotion .curl-content{
     position: absolute;
-    left: 250px;
+    left: 108px;
     width: 310px;
 }
 .promotion .curl h3{
     color: #fe0000;
-    font-size: 30px;
+    font-size: 28px;
     text-transform: uppercase;
+    margin-top: 4px;
+    margin-bottom: 0;
 }
 .promotion .curl p{
     color: #404040;
+    font-size: 12px;
 }
 
 /*

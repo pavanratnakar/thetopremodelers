@@ -8,8 +8,8 @@ class Category{
         $this->mysqli=new mysqli(Config::$db_server,Config::$db_username,Config::$db_password,Config::$db_database);
         $this->utils=new Utils();
     }
-    public function getCategory($place_name){
-        $place_name=$this->mysqli->real_escape_string($place_name);
+    public function getCategory($categoryName){
+        $categoryName=$this->mysqli->real_escape_string($categoryName);
         $query="SELECT a.category_title,a.category_name,a.active
                     FROM 
                     ".Config::$tables['category_table']." a
@@ -23,7 +23,7 @@ class Category{
                     AND c.delete_flag=FALSE
                     AND c.active=TRUE
                     AND a.active=1 
-                    AND c.place_name='".$place_name."'";
+                    AND a.category_name='".$categoryName."'";
         if ($result = $this->mysqli->query($query)) {
             $i=0;
             while ($row = $result->fetch_object()) {

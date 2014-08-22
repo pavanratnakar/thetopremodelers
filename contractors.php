@@ -12,7 +12,7 @@ $place = $pageController->getPlace();
 $placeDetails = $place->getPlaceDetails($placeName);
 $categoryName = $pageController->getUtils()->checkValues($_GET['category']);
 $category = $pageController->getCategory();
-$categoryDetails = $category->getCategory($placeName);
+$categoryDetails = $category->getCategory($categoryName);
 $section = $pageController->getSection($categoryName,$placeName);
 if (!$_GET['section']) {
     $getAllSections =  $section->getSections();
