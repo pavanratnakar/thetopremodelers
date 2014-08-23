@@ -654,6 +654,9 @@ body.promotion{
 .need .form-container .btn-success{
     margin-top: 30px;
 }
+.need .form-container .form-control{
+    width: auto;
+}
 
 /*
  * Footer

@@ -413,11 +413,14 @@ class PageController{
             $return.= '<div class="address">'.$contractorDetails['contractor_address'].'</div>';
         }
         $return.= "</div></div>";
-        if ($quote)
-            $return.=  '<div class="row options-container">
-        <div class="col-md-3 col-xs-3 col-sm-3">
-        <a href="javascript:void(0);" data-name="'.$contractorDetails['contractor_name'].'" id="contractorSelect-'.$contractorDetails['contractor_name'].'" class="get-quote btn btn-info">Get a Quote</a>';
-        $return.= "</div><div class='social-sharing col-md-8 col-xs-8 col-sm-8'>
+        $return.=  '<div class="row options-container">';
+        if ($quote) {
+            $return.=  '
+            <div class="col-md-3 col-xs-3 col-sm-3">
+                <a href="javascript:void(0);" data-name="'.$contractorDetails['contractor_name'].'" id="contractorSelect-'.$contractorDetails['contractor_name'].'" class="get-quote btn btn-info">Get a Quote</a>
+            </div>';
+        }
+        $return.= "<div class='social-sharing col-md-8 col-xs-8 col-sm-8'>
             <span class='st_twitter_hcount' displayText='Tweet'></span>
             <span class='st_fbrec_hcount' displayText='Facebook Recommend'></span>
             <span class='st_email_hcount' displayText='Email'></span>
