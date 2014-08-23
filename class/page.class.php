@@ -247,24 +247,6 @@ class Page{
         }
         return $return;
     }
-    public function printUserStepsText($index){
-        $return = '<ol class="userStepsText clearfix">';
-        $steps=array(
-            'Click on a category',
-            'Describe your need',
-            'Get Matched to Pros'
-            );
-        for ($i=1;$i<=sizeof($steps);$i++){
-            if($i==$index){
-                $class='orange-background';
-            } else {
-                $class='blue-background';
-            }
-            $return .= '<li class="left"><div class="'.$class.' rounded-corners left">'.$i.'</div><h4>'.$steps[$i-1].'</h4></li>';
-        }
-        $return .= '</ol>';
-        return $return;
-    }
     public function printNewUserStepsText($index){
         $return = '<div class="match-options-container"><div class="row">';
         $steps = array(
@@ -351,36 +333,6 @@ class Page{
             ';
         }
         $return .='</ul>';
-        return $return;
-    }
-    public function jumpList($data,$selected){
-        if (sizeof($data) <= 1 && $selected!='top') {
-            return '';
-        }
-        $return ='
-        <div class="jump-list-container utility-container">
-        <ul>';
-        foreach ($data as $key=>$value) {
-            $return .= '
-            <li class="'.$key.'">
-            <a title="'.$value['title'].'" class="'.(($selected==$key) ? 'selected' : '').'" href="#'.$key.'">
-            '.$value['title'].'
-            '.(($selected==$key) ? '<i></i>' : '').'
-            </a>
-            </li>
-            ';
-        }
-        if ($selected=='top') {
-            $return .= '
-            <li class="'.$key.' right">
-            <a class="selected" title="Back to Top" href="#Top">
-            Back to Top
-            <i></i>
-            </a>
-            </li>
-            ';
-        }
-        $return .='</ul></div>';
         return $return;
     }
     public function facebookComment($data) {
