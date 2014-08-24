@@ -92,6 +92,11 @@ hr.soften {
   margin-bottom: 30px;
 }
 
+.form-module h5{
+  font-weight: bold;
+  font-size: 15px;
+}
+
 .form-module label {
   font-size: 14px;
   font-weight: 200;
