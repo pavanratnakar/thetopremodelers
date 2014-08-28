@@ -17,8 +17,8 @@
                 </div>
                 <div class="curl">
                     <div class="curl-content">
-                        <h3>Limited time offer</h3>
-                        <p>Get estimate from our contractors<br/> And enter to win our 20k solar systems</p>
+                        <h3>Unlimited time offer</h3>
+                        <p>Get estimate from our contractors<br/> And enter to win our <b>10k</b> solar systems</p>
                     </div>
                 </div>
             </div>

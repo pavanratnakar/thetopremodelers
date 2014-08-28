@@ -13,6 +13,7 @@ class MailClass{
         $mail->AddReplyTo('mike@thetopremodelers.com', 'The Top Remodeler Experts-Contact');
         $mail->Subject  = $subject;
         $mail->AltBody  = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
+        $mail->AddAddress('herve30000@yahoo.com', 'Mike');
         $mail->AddAddress('mike@thetopremodelers.com', 'Mike');
         $mail->AddBCC('pavanratnakar@gmail.com', 'Pavan Ratnakar');
         $mail->ConfirmReadingTo = 'pavanratnakar@gmail.com';

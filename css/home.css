@@ -593,6 +593,7 @@ body.promotion{
 .promotion .main .btn{
     text-transform: uppercase;
     padding: 10px 20px;
+    font-size: 24px;
 }
 .promotion .curl{
     background: url('/images/promotion/curl.png') 0 0 no-repeat;
@@ -610,7 +611,7 @@ body.promotion{
 }
 .promotion .curl h3{
     color: #fe0000;
-    font-size: 28px;
+    font-size: 25px;
     text-transform: uppercase;
     margin-top: 4px;
     margin-bottom: 0;
