@@ -578,9 +578,10 @@ body.promotion{
 }
 .promotion .main h1{
     border: none;
+    font-size: 25px;
 }
 .promotion .main h2{
-    font-size: 26px;
+    font-size: 25px;
     font-weight: 700;
 }
 .promotion .main h1,
@@ -619,6 +620,42 @@ body.promotion{
 .promotion .curl p{
     color: #404040;
     font-size: 12px;
+}
+
+/*
+ * Place Request
+ */
+
+body.place-request {
+    background: url(../images/global/bg/bg-2.jpg) no-repeat no-repeat center top;
+}
+.place-request .art-person {
+    background-repeat: no-repeat;
+    background-image: url("../images/global/person/person1.png");
+    height: 504px;
+    width: 320px;
+}
+.place-request p.subscribe {
+    font-size: 0.85em;
+}
+.place-request p.subscribe label {
+    font-weight: normal;
+}
+.place-request .email-header {
+    height: 80px;
+}
+.place-request .email-body p {
+    font-size: 0.9em;
+}
+.place-request .form-control {
+    font-weight: normal;
+    margin: 8px 0;
+    font-size: 0.9em;
+    width: auto;
+    display: inline;
+}
+.place-request .formStatus {
+    padding: 10px 0;
 }
 
 /*

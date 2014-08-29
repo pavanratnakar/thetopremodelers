@@ -13,7 +13,7 @@
         header( 'Location: '.Config::$site_url.'404.php');
         exit;
     }
-    echo $pageController->printHomeHeader($pageController->getMeta('place',$placeName)); 
+    echo $pageController->printHomeHeader($pageController->getMeta('place',$placeName));
 ?>
 <?php echo $pageController->printHeaderMenu(); ?>
         <div class="container-fluid">
