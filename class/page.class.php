@@ -35,39 +35,6 @@ class Page{
         </head>
         <body class="'.$this->currentPage->class.' '.$this->currentPage->template.'">
         <div id="fb-root"></div>
-        <div id="wrapper">
-        <div class="art-header clearfix">
-        <div class="art-logo left">
-        <h1><a href="'.Config::$site_url.'"><img src="'.Config::$site_url.'images/global/logo.png" alt="The Top Remodelers - MATCHING YOU WITH OUR PRESCREENED CONTRACTORS" title="The Top Remodelers - MATCHING YOU WITH OUR PRESCREENED CONTRACTORS" width="200" height="76"/></a></h1>
-        </div>
-        <div class="art-contact right">
-        <span class="orange">Need immediate service</span>
-        <div class="art-cell">
-        <h3><span class="orange">Call us : </span><span class="number brown">1(214)303 9771</span></h3>
-        </div>
-        </div>
-        </div>';
-        return $return;
-    }
-    public function printHomeHeader($meta=null,$avoidCrawl=false){
-        $return='
-        <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-        <html dir="ltr" lang="en-US" xml:lang="en"
-        xmlns="http://www.w3.org/1999/xhtml"
-        xmlns:og="http://ogp.me/ns#"
-        xmlns:fb="https://www.facebook.com/2008/fbml"
-        itemscope itemtype="http://schema.org/">
-        <head>';
-        $return.=$this->printMeta($meta,$avoidCrawl);
-        $return.=$this->printCss('herve_home_css');
-        if($this->currentPage->css == 1){
-            $return.=$this->printCss('herve_'.$this->currentPage->class.'_css');
-        }
-        $return.='
-        </head>
-        <body class="'.$this->currentPage->class.' '.$this->currentPage->template.'">
-        <div id="fb-root"></div>
         ';
         return $return;
     }
@@ -158,19 +125,6 @@ class Page{
     }
     public function printNavigation(){
         $return = '
-        <div class="art-bar art-nav clearfix">
-        <ul class="art-hmenu">';
-        foreach ($this->pages as $page) {
-            if($page->navigation==1){
-                $class = ($page->id == $this->currentPage->id) ? 'class="active"' : '';
-                $return.='<li '.$class.'><a href="'.Config::$site_url.$page->link.'" title="'.$page->name.'">'.$page->name.'</a></li>';
-            }
-        }
-        $return.='</ul></div>';
-        return $return;
-    }
-    public function printHomeNavigation(){
-        $return = '
         <ul class="nav navbar-nav navbar-right">';
         foreach ($this->pages as $page) {
             if($page->navigation==1){
@@ -190,7 +144,7 @@ class Page{
                             <h4 class="gold">Need immediate service</h4>
                             <h5>CALL US : 1(214)303 9771</h5>
                         </div>';
-        $return .= $this->printHomeNavigation();
+        $return .= $this->printNavigation();
         $return .=  '</div>
                 </div>
             </div>';
@@ -208,28 +162,6 @@ class Page{
         return $return;
     }
     public function printReviewContainer(){
-        $reviews = new SimpleXMLElement(file_get_contents('xml/review.xml'));
-        $return = '<div id="review-container" class="left">';
-        $i=1;
-        foreach ($reviews as $review) {
-            $return .= '
-            <div class="'.(($i===3) ? "last-child ":"").'container left" id="reviews-container-'.$i.'">
-            <div class="header"><span>Review '.$i.'</span></div>
-            <div class="content-container">
-            <p class="title"><span class="strong">Customer in '.$review->location.'</span></p>
-            <img alt="'.$review->rating.' stars" src="./images/global/stars/star_'.$review->rating.'.png" height="17" width="72" />
-            <p class="project"><span class="strong">Project: '.$review->title.'</span></p>
-            <p class="descrption">'.$review->description.'</p>';
-            if($review->link==1){
-                $return .= '<p class="read"><a title="Read More" href="'.$review->link.'">Read More</a></p>';
-            }
-            $return .= '</div></div>';
-            $i++;
-        }
-        $return .= '</div>';
-        return $return;
-    }
-    public function printHomeReviewContainer(){
         $review = new Review();
         $reviews = $review->getReviews();
         $return = '';
@@ -247,7 +179,7 @@ class Page{
         }
         return $return;
     }
-    public function printNewUserStepsText($index){
+    public function printUserStepsText($index){
         $return = '<div class="match-options-container"><div class="row">';
         $steps = array(
             'Select a Category',
@@ -272,16 +204,6 @@ class Page{
         return $return;
     }
     public function printFooter(){
-        $return.=$this->printJS('herve_js');
-        if($this->currentPage->js == 1){
-            $return.=$this->printJS('herve_'.$this->currentPage->class.'_js');
-        }
-        $return.=$this->printGA();
-        $return.=$this->zopimChat();
-        $return.='</body></html>';
-        return $return;
-    }
-    public function printHomeFooter(){
         $return.=$this->printJS('herve_global_js');
         if($this->currentPage->js == 1){
             $return.=$this->printJS('herve_'.$this->currentPage->class.'_js');
@@ -306,7 +228,7 @@ class Page{
         </script>";
         return $return;
     }
-    public function newJumpList($data, $selected) {
+    public function jumpList($data, $selected) {
         if (sizeof($data) <= 1 && $selected!='top') {
             return '';
         }

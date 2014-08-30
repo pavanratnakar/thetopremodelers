@@ -36,7 +36,7 @@ if (!$formatQuestions) {
 $metaDetails = $section->getMeta($contractorTitle);
 $metaDetails['geo'] = $placeDetails['place_geo'];
 $metaDetails['geo_placename'] = $placeDetails['place_geo_placename'];
-echo $pageController->printHomeHeader($metaDetails,true);
+echo $pageController->printHeader($metaDetails,true);
 ?>
 <?php echo $pageController->printHeaderMenu(); ?>
         <div class="container-fluid">
@@ -47,7 +47,7 @@ echo $pageController->printHomeHeader($metaDetails,true);
                 <div class="regular-main">
                     <div class="row options-container">
                         <div class="col-md-9 col-xs-9 col-sm-9">
-                            <?php echo $pageController->printNewUserStepsText(2); ?>
+                            <?php echo $pageController->printUserStepsText(2); ?>
                         </div>
                         <div class="col-md-3 col-xs-3 col-sm-3 secondary-options-container">
                             <a class="btn btn-warning" title="Back" href="<?php echo Config::$site_url ?>places">
@@ -60,7 +60,7 @@ echo $pageController->printHomeHeader($metaDetails,true);
                             <?php
                             if ($contractorDetails) { ?>
                             <div id="top" class="top">
-                                <?php echo $pageController->getnewContractorDetails($contractorDetails,false); ?>
+                                <?php echo $pageController->getContractorDetails($contractorDetails,false); ?>
                             </div>
                         </div>
                     </div>
@@ -82,6 +82,6 @@ echo $pageController->printHomeHeader($metaDetails,true);
             </div>
         </div>
         <!-- FOOTER -->
-    <?php echo $pageController->printHomeFooterLinks(); ?>
+    <?php echo $pageController->printFooterLinks(); ?>
     </div>
-<?php echo $pageController->printHomeFooter(); ?>
+<?php echo $pageController->printFooter(); ?>

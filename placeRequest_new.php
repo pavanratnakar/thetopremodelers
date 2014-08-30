@@ -2,7 +2,7 @@
 include_once($_SERVER['DOCUMENT_ROOT'].'/config.class.php');
 include_once(Config::$site_path.'controller/pageController.php');
 $pageController=new PageController(4);
-echo $pageController->printHomeHeader();
+echo $pageController->printHeader();
 $utils = $pageController->getUtils();
 if (sizeof($_POST) > 0) {
     foreach ($_POST as $key => $value) {
@@ -100,6 +100,6 @@ $params['contractorName'] = $utils->checkValues($_GET['contractor']);
             </div>
         </div>
         <!-- FOOTER -->
-    <?php echo $pageController->printHomeFooterLinks(); ?>
+    <?php echo $pageController->printFooterLinks(); ?>
     </div>
-<?php echo $pageController->printHomeFooter(); ?>
+<?php echo $pageController->printFooter(); ?>

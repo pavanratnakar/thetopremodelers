@@ -3,7 +3,7 @@
     include_once(Config::$site_path.'controller/pageController.php');
     $pageController=new PageController(9);
     $place = $pageController->getPlace();
-    echo $pageController->printHomeHeader();
+    echo $pageController->printHeader();
 ?>
         <?php echo $pageController->printHeaderMenu(); ?>
         <div class="container-fluid">
@@ -11,12 +11,12 @@
                 <div class="col-md-3 col-xs-3 col-sm-3 sidebar">
                     <?php echo $pageController->printLogoContainer(); ?>
                     <ul class="nav nav-sidebar">
-                        <?php echo $pageController->getHomeFormatedCategories(1); ?>
+                        <?php echo $pageController->getFormatedCategories(1); ?>
                     </ul>
                 </div>
                 <div class="sidebar sub-sidebar">
                     <ul class="nav nav-sidebar">
-                        <?php echo $pageController->getHomeFormatedCategories(2); ?>
+                        <?php echo $pageController->getFormatedCategories(2); ?>
                     </ul>
                 </div>
                 <div class="col-md-9 col-xs-9 col-sm-9 container main top">
@@ -46,6 +46,6 @@
                 </div>
             </div>
             <!-- FOOTER -->
-            <?php echo $pageController->printHomeFooterLinks(); ?>
+            <?php echo $pageController->printFooterLinks(); ?>
         </div>
-        <?php echo $pageController->printHomeFooter(); ?>
+        <?php echo $pageController->printFooter(); ?>

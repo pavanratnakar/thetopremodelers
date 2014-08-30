@@ -19,7 +19,7 @@ $jumpListData['profile'] = array('title'=>'Profile');
 if ($contractorRatingDetails) {
     $jumpListData['ratings-reviews'] = array('title'=>'Ratings & Reviews');
 }
-echo $pageController->printHomeHeader($contractor->getMeta($contractorDetails));
+echo $pageController->printHeader($contractor->getMeta($contractorDetails));
 ?>
 <?php echo $pageController->printHeaderMenu(); ?>
         <div class="container-fluid">
@@ -31,7 +31,7 @@ echo $pageController->printHomeHeader($contractor->getMeta($contractorDetails));
                     <div class="row">
                         <div class="col-md-8 col-xs-8 col-sm-8">
                             <div id="top" class="sub top">
-                                <?php echo $pageController->getnewContractorDetails($contractorDetails,true); ?>
+                                <?php echo $pageController->getContractorDetails($contractorDetails,true); ?>
                             </div>
                             <div id="profile" class="sub">
                                 <h3>Profile</h3>
@@ -116,7 +116,7 @@ echo $pageController->printHomeHeader($contractor->getMeta($contractorDetails));
                                 </ul>
                             </div>
                             <?php } ?>
-                            <?php echo $pageController->newjumpList($jumpListData,'top'); ?>
+                            <?php echo $pageController->jumpList($jumpListData,'top'); ?>
                         </div>
                         <div class="col-md-4 col-xs-4 col-sm-4">
                             <div class="sb-container sb-center" id="certified-rating">
@@ -178,6 +178,6 @@ echo $pageController->printHomeHeader($contractor->getMeta($contractorDetails));
             </div>
         </div>
         <!-- FOOTER -->
-    <?php echo $pageController->printHomeFooterLinks(); ?>
+    <?php echo $pageController->printFooterLinks(); ?>
     </div>
-<?php echo $pageController->printHomeFooter(); ?>
+<?php echo $pageController->printFooter(); ?>

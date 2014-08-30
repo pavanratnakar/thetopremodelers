@@ -36,11 +36,8 @@ return array(
         '//css/style.css'
     ),
     'herve_css' => array(
-        '//css/style.css'
-    ),
-    'herve_home_css' => array(
         '//global/css/bootstrap/bootstrap.min.css',
-        '//css/home.css'
+        '//css/style.css'
     ),
     'herve_place-request_js' => array(
         '//global/js/jquery/jquery.ajax.js',

@@ -13,7 +13,7 @@
         header( 'Location: '.Config::$site_url.'404.php');
         exit;
     }
-    echo $pageController->printHomeHeader($pageController->getMeta('article',$articleName));
+    echo $pageController->printHeader($pageController->getMeta('article',$articleName));
 ?>
         <?php echo $pageController->printHeaderMenu(); ?>
         <div class="container-fluid">
@@ -39,6 +39,6 @@
                 </div>
             </div>
             <!-- FOOTER -->
-            <?php echo $pageController->printHomeFooterLinks(); ?>
+            <?php echo $pageController->printFooterLinks(); ?>
         </div>
-        <?php echo $pageController->printHomeFooter(); ?>
+        <?php echo $pageController->printFooter(); ?>

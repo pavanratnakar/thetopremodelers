@@ -3,7 +3,7 @@ Class Form{
     private $type;
     private $value;
 
-    public function createNewElement($type,$label,$name,$validationClass,$answers=null){
+    public function createElement($type,$label,$name,$validationClass,$answers=null){
         $this->type = $type;
         $this->label = $label;
         $this->name = $name;

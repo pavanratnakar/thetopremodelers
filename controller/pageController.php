@@ -19,17 +19,11 @@ class PageController{
     public function printHeader($meta=null,$avoidCrawl=false){
         return $this->page->printHeader($meta,$avoidCrawl);
     }
-    public function printHomeHeader($meta=null,$avoidCrawl=false){
-        return $this->page->printHomeHeader($meta,$avoidCrawl);
-    }
     public function printCss($name){
         return $this->page->printCss($name);
     }
     public function printNavigation(){
         return $this->page->printNavigation();
-    }
-    public function printHomeNavigation(){
-        return $this->page->printHomeNavigation();
     }
     public function printHeaderMenu(){
         return $this->page->printHeaderMenu();
@@ -41,77 +35,13 @@ class PageController{
         return $this->page->printJS($name);
     }
     public function printReviewContainer(){
+        include_once(Config::$site_path.'/class/review.class.php');
         return $this->page->printReviewContainer();
     }
-    public function printHomeReviewContainer(){
-        include_once(Config::$site_path.'/class/review.class.php');
-        return $this->page->printHomeReviewContainer();
-    }
-    public function printNewUserStepsText($index=null){
-        return $this->page->printNewUserStepsText($index);
+    public function printUserStepsText($index=null){
+        return $this->page->printUserStepsText($index);
     }
     public function printFooterLinks(){
-        $title = 'Dallas roofers-Dallas roofing contractors-company Tx';
-        $summary = 'Free service that compiles certified ratings from local service companies and contractors in multiple cities';
-        $image = Config::$site_url."images/global/logo.png";
-        $return='
-        <div id="footer">
-        <div class="footer-wrapper clearfix">
-        <div class="footer-top clearfix">';
-        $return.='
-            <div class="column city_selector">
-                <h3>Cities we cover | <a href="'.Config::$site_url.'places" title="More Cities">More Cities &#8250;</a></h3>
-                '.$this->citySelector().'
-            </div>
-        ';
-        $return.='
-            <div class="column about_us">
-                <div class="footer_about left">
-                    <h3>About Us</h3>
-                    <div class="content">
-                        <p>'.$summary.'</p>
-                        <p>&nbsp;</p>
-                        <p>Address: <b>2003 michigan ave, Dallas tx 75216</b></p>
-                        <p>Telephone: <b>1(214)303 9771</b></p>
-                    </div>
-                </div>
-                <div class="social-sharing left">
-                    <h3>Share Us</h3>
-                    <div class="content">
-                        <span class="st_sharethis_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="ShareThis"></span>
-                        <span class="st_facebook_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="Facebook"></span>
-                        <span class="st_twitter_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="Tweet"></span>
-                        <span class="st_linkedin_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="LinkedIn"></span>
-                        <span class="st_googleplus_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="Google +"></span>
-                        <span class="st_pinterest_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="Pinterest"></span>
-                        <span class="st_email_large" st_image="'.$image.'"  st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="Email"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-        <div class="footer-bottom">
-        <div class="footer-wrapper clearfix">
-        <div class="column copyrights">
-        <p>Copyright &copy; '.date("Y").'. All Rights Reserved.</p>
-        </div>
-        <div class="column links">
-        <p>';
-        $i=0;
-        foreach ($this->page->getPages() as $page) {
-            if($page->navigation==1){
-                $return.='<a href="'.Config::$site_url.$page->link.'" title="'.$page->name.'">'.$page->name.'</a>';
-                $i++;
-            }
-        }
-        $return .= '</p>
-        </div>
-        </div>
-        </div>
-        </div>';
-        return $return;
-    }
-    public function printHomeFooterLinks(){
         $title = 'Dallas roofers-Dallas roofing contractors-company Tx';
         $summary = 'Free service that compiles certified ratings from local service companies and contractors in multiple cities';
         $image = Config::$site_url."images/global/logo.png";
@@ -161,9 +91,6 @@ class PageController{
     public function printFooter(){
         return $this->page->printFooter();
     }
-    public function printHomeFooter(){
-        return $this->page->printHomeFooter();
-    }
     public function getPlace(){
         include_once(Config::$site_path.'class/place.class.php');
         $this->place = new Place();
@@ -202,7 +129,7 @@ class PageController{
         if ($questions) {
             foreach($questions as $question){
                 $values = $question['values'] ? $question['values'] : null;
-                $return .= $this->form->createNewElement($question['category_text'],$question['question_text'],$question['question_id'],$question['question_validation'],$values);
+                $return .= $this->form->createElement($question['category_text'],$question['question_text'],$question['question_id'],$question['question_validation'],$values);
             }
         }
         return $return;
@@ -211,11 +138,6 @@ class PageController{
         include_once(Config::$site_path.'class/category.class.php');
         $this->category = new Category();
         return $this->category->getFormatedCategories($position,$placeName);
-    }
-    public function getHomeFormatedCategories($position,$placeName='dallas_texas'){
-        include_once(Config::$site_path.'class/category.class.php');
-        $this->category = new Category();
-        return $this->category->getHomeFormatedCategories($position,$placeName);
     }
     public function getFormatedSections($categoryName,$placeName){
         include_once(Config::$site_path.'class/section.class.php');
@@ -306,13 +228,13 @@ class PageController{
             return $this->contractor->getMeta($this->utils->checkValues($name));
         }
     }
-    public function newjumpList($data,$selected){
-        return $this->page->newjumpList($data,$selected);
+    public function jumpList($data,$selected){
+        return $this->page->jumpList($data,$selected);
     }
     public function facebookComment($data){
         return $this->page->facebookComment($data);
     }
-    public function getnewContractorDetails($contractorDetails,$quote=null){
+    public function getContractorDetails($contractorDetails,$quote=null){
         $return = '
         <h2>'.$contractorDetails['contractor_title'].'</h2>
         <div class="entry-body">

@@ -34,7 +34,7 @@ $avoidCrawl = false;
 // if ($placeDetails['place_id'] != 2 && $placeDetails['place_id'] != 1 && $placeDetails['place_id'] != 5 && $placeDetails['place_id'] != 36 && $placeDetails['place_id'] != 38 && $placeDetails['place_id'] != 45) {
 //     $avoidCrawl = true;
 // }
-echo $pageController->printHomeHeader($contractor->getContractorsMeta($contractorDetails),$avoidCrawl);
+echo $pageController->printHeader($contractor->getContractorsMeta($contractorDetails),$avoidCrawl);
 ?>
 <?php echo $pageController->printHeaderMenu(); ?>
         <div class="container-fluid">
@@ -45,8 +45,8 @@ echo $pageController->printHomeHeader($contractor->getContractorsMeta($contracto
                         <img src="<?php echo Config::$site_url ?>images/home/stamp_final.png" alt=""/>
                     </div>
                     <ul class="nav nav-sidebar">
-                        <?php echo $pageController->getHomeFormatedCategories(1); ?>
-                        <?php echo $pageController->getHomeFormatedCategories(2); ?>
+                        <?php echo $pageController->getFormatedCategories(1); ?>
+                        <?php echo $pageController->getFormatedCategories(2); ?>
                     </ul>
                     <div class="sidebar-container service-container">
                         <img src="<?php echo Config::$site_url ?>images/home/service.jpg" alt=""/>
@@ -219,6 +219,6 @@ echo $pageController->printHomeHeader($contractor->getContractorsMeta($contracto
             </div>
         </div>
         <!-- FOOTER -->
-    <?php echo $pageController->printHomeFooterLinks(); ?>
+    <?php echo $pageController->printFooterLinks(); ?>
     </div>
-<?php echo $pageController->printHomeFooter(); ?>
+<?php echo $pageController->printFooter(); ?>

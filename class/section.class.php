@@ -39,7 +39,7 @@ class Section {
                     LEFT JOIN 
                     ".Config::$tables['section_table']." c ON c.section_id=a.section_id
                     LEFT JOIN
-                    ".Config::$tables['category_table']." d ON b.category_id=d.category_id                 
+                    ".Config::$tables['category_table']." d ON b.category_id=d.category_id
                     LEFT JOIN
                     ".Config::$tables['place_table']." e ON e.place_id=b.place_id
                     WHERE 
@@ -99,7 +99,6 @@ class Section {
             'description'=>$contractorTitle.' | The top remodelers prescreened roofing contractors with certified ratings get a quote',
             'title'=>$contractorTitle.' | The top remodelers prescreened roofing quotes'
         );
-        
     }
     public function __destruct() {
         $this->mysqli->close();

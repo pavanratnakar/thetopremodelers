@@ -2,7 +2,7 @@
     include_once($_SERVER['DOCUMENT_ROOT'].'/config.class.php');
     include_once(Config::$site_path.'controller/pageController.php');
     $pageController=new PageController(11);
-    echo $pageController->printHomeHeader();
+    echo $pageController->printHeader();
 ?>
         <?php echo $pageController->printHeaderMenu(); ?>
         <div class="container-fluid">
@@ -23,6 +23,6 @@
                 </div>
             </div>
             <!-- FOOTER -->
-            <?php echo $pageController->printHomeFooterLinks(); ?>
+            <?php echo $pageController->printFooterLinks(); ?>
         </div>
-        <?php echo $pageController->printHomeFooter(); ?>
+        <?php echo $pageController->printFooter(); ?>

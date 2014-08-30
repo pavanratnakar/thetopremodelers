@@ -13,7 +13,7 @@
         header( 'Location: '.Config::$site_url.'404.php');
         exit;
     }
-    echo $pageController->printHomeHeader($pageController->getMeta('place',$placeName));
+    echo $pageController->printHeader($pageController->getMeta('place',$placeName));
 ?>
 <?php echo $pageController->printHeaderMenu(); ?>
         <div class="container-fluid">
@@ -24,7 +24,7 @@
                 <div class="container full-main">
                     <div class="row options-container">
                         <div class="col-md-9 col-xs-9 col-sm-9">
-                            <?php echo $pageController->printNewUserStepsText(1); ?>
+                            <?php echo $pageController->printUserStepsText(1); ?>
                         </div>
                         <div class="col-md-3 col-xs-3 col-sm-3 secondary-options-container">
                             <a class="btn btn-warning" title="Back" href="<?php echo Config::$site_url ?>places">
@@ -56,6 +56,6 @@
             </div>
         </div>
         <!-- FOOTER -->
-    <?php echo $pageController->printHomeFooterLinks(); ?>
+    <?php echo $pageController->printFooterLinks(); ?>
     </div>
-<?php echo $pageController->printHomeFooter(); ?>
+<?php echo $pageController->printFooter(); ?>
