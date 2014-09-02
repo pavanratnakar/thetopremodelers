@@ -258,11 +258,6 @@ body {
 .main.bottom {
     margin-top: 638px;
 }
-@media (min-width: 1200px) {
-    .main {
-        width: 75%;
-    }
-}
 .regular-main {
     margin: 140px auto 0;
     width: 960px;
@@ -578,10 +573,13 @@ body.promotion{
 }
 .promotion .main h1{
     border: none;
-    font-size: 25px;
+    font-size: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 360px;
 }
 .promotion .main h2{
-    font-size: 25px;
+    font-size: 24px;
     font-weight: 700;
 }
 .promotion .main h1,
@@ -738,4 +736,10 @@ body.place-request {
     font-size: 13px;
     padding: 10px 0 0;
     background-color: #000;
+}
+
+@media (min-width: 1200px) {
+    .main {
+        width: 75%;
+    }
 }
