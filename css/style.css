@@ -39,6 +39,9 @@ body {
     margin: 0 auto;
     min-width: 997px;
 }
+.container-fluid {
+    position: relative;
+}
 
 /*
  * Navbar
@@ -46,6 +49,7 @@ body {
 
 .navbar {
     width: 100%;
+    min-width: 997px;
     position: absolute;
     top: 45px;
     padding: 0 0 20px 0;
