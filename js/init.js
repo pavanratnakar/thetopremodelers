@@ -3,7 +3,7 @@ var herve = {
         $('.art-hmenu li').last().addClass('last');
     },
     footer : function(){
-        $('#footer p a').last().addClass('last');   
+        $('#footer p a').last().addClass('last');
     },
     button : function(){
         $("body").delegate(".back-button",{
@@ -30,7 +30,7 @@ var herve = {
         } while (++i < n && (newS += c))
             return newS;
     }
-}
+};
 $(document).ready(function(){
     herve.navigation();
     herve.footer();

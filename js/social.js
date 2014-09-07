@@ -15,7 +15,10 @@ var herve_social = {
     sharethis : function() {
         stLight.options({
             publisher: "c2dd522f-4617-4a40-9dc2-2d3ad357cab1",
-            tracking:'google',
+            doNotHash: false,
+            doNotCopy: false,
+            hashAddressBar: false,
+            tracking: 'google'
         });
     }
-}
+};

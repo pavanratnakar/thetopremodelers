@@ -6,13 +6,13 @@ var herveContact = {
         });
         //clear default value and add '.not-empty' class on click
         $('.prepopulate').focus( function(){
-          if( $(this).val() == $(this).attr('rel') ){
-            $(this).val('').addClass('not-empty'); 
+          if ($(this).val() == $(this).attr('rel')) {
+            $(this).val('').addClass('not-empty');
           }
         });
         //restore default value & remove '.not-empty' class if left blank after click
         $('.prepopulate').blur(function(){
-          if( $(this).val() =='' ){
+          if ($(this).val() === '') {
             $(this).val( $(this).attr('rel') ).removeClass('not-empty');
           }
         });
@@ -115,7 +115,7 @@ var herveContact = {
 
                     emailTemplate.add(
                     {
-                        success: function(html) 
+                        success: function(html)
                         {
                             $.ajax(
                             {
@@ -146,7 +146,7 @@ var herveContact = {
         this.prepopulate();
         this.form.validate();
     }
-}
+};
 $(document).ready(function(){
     herveContact.init();
 });

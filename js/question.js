@@ -9,7 +9,7 @@ var herve_question = {
             $("form#"+this.id).validate();
         }
     }
-}
+};
 $(document).ready(function(){
     herve_question.init();
 });
