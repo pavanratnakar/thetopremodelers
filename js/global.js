@@ -1,12 +1,12 @@
 var herve = {
-    navigation : function(){
+    navigation : function () {
         var hover = false;
         $("body").delegate(".nav-sidebar li",{
-            "mouseenter":function(){
+            mouseenter: function(){
                 hover = true;
                 $('.sub-sidebar').fadeIn("slow");
             },
-            "mouseleave":function(){
+            mouseleave: function(){
                 setTimeout(function() {
                     if (!hover) {
                         $('.sub-sidebar').fadeOut("slow");
@@ -16,7 +16,7 @@ var herve = {
             }
         });
     },
-    getNth : function(s, c, n) {
+    getNth : function (s, c, n) {
         var idx;
         var i = 0;
         var newS = '';
@@ -27,8 +27,8 @@ var herve = {
         } while (++i < n && (newS += c))
             return newS;
     }
-}
-$(document).ready(function(){
+};
+$(document).ready(function () {
     herve.navigation();
     herve_social.sharethis();
 });

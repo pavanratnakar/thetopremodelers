@@ -16,7 +16,7 @@ class Page{
     public function getPages(){
         return $this->pages;
     }
-    public function printHeader($meta=null,$avoidCrawl=false){
+    public function printHeader($meta=null, $avoidCrawl=false, $theme=0){
         $return='
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -28,12 +28,16 @@ class Page{
         <head>';
         $return.=$this->printMeta($meta,$avoidCrawl);
         $return.=$this->printCss('herve_css');
-        if($this->currentPage->css == 1){
+        if ($this->currentPage->css == 1) {
             $return.=$this->printCss('herve_'.$this->currentPage->class.'_css');
+        }
+        $backgroundClass = '';
+        if ($theme == 1) {
+            $backgroundClass = 'background2';
         }
         $return.='
         </head>
-        <body class="'.$this->currentPage->class.' '.$this->currentPage->template.'">
+        <body class="'.$this->currentPage->class.' '.$this->currentPage->template.' '.$backgroundClass.'">
         <div id="fb-root"></div>
         ';
         return $return;
@@ -107,6 +111,8 @@ class Page{
         <meta itemprop="description" content="'.$description.'" />
         <meta itemprop="image" content="http://www.thetopremodelers.com/images/global/logo.png" />
         <!-- END OF GOOGLE PLUS TAGS -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
+        <meta name="HandheldFriendly" content="true" />
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
         ';

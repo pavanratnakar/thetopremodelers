@@ -1,5 +1,5 @@
 var herve_social = {
-    facebookLoad : function(){
+    facebookLoad: function(){
         // Load the SDK's source Asynchronously
         // Note that the debug version is being actively developed and might
         // contain some type checks that are overly strict.
@@ -12,7 +12,7 @@ var herve_social = {
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     },
-    sharethis : function() {
+    sharethis: function() {
         stLight.options({
             publisher: "c2dd522f-4617-4a40-9dc2-2d3ad357cab1",
             doNotHash: false,

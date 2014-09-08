@@ -3,20 +3,25 @@
     include_once(Config::$site_path.'controller/pageController.php');
     $pageController=new PageController(11);
     $promotionType = $pageController->getUtils()->checkValues($_GET['type']);
-    echo $pageController->printHeader();
+    $theme = 1;
     if ($promotionType) {
         $promotions = array(
             "roof-repairs-dallas" => "Get top rated roofers for roof repairs in dallas",
             "dallas-roof-repair" => "Best quotes for roof repair in Dallas",
             "garland-roofing" => "GARLAND ROOFING TOP RATED CONTRACTORS",
-            "garland-roofing-contractors" => "GET TOP RATED GARLAND ROOFING CONTRACTORS"
+            "garland-roofing-contractors" => "GET TOP RATED GARLAND ROOFING CONTRACTORS",
+            "demo" => "DEMO"
         );
         if ($promotions[$promotionType]) {
             $promotion = $promotions[$promotionType];
         } else {
             $promotion = 'Get top rated roofers';
         }
+        if ($promotionType == 'demo') {
+            $theme = 0;
+        }
     }
+    echo $pageController->printHeader(null, false, $theme);
 ?>
         <?php echo $pageController->printHeaderMenu(); ?>
         <div class="container-fluid">
