@@ -50,7 +50,7 @@ class PageController{
             <footer>
                 <div class="footer-top-container">
                     <div class="container row">
-                        <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                         ';
                         $return.='
                             <h3>Cities we cover | <a href="'.Config::$site_url.'places" title="More Cities" class="gold">More Cities &#8250;</a></h3>
@@ -58,14 +58,14 @@ class PageController{
                         </div>
                         ';
                         $return.='
-                        <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                             <h3>About Us</h3>
                             <p>'.$summary.'</p>
                             <p>&nbsp;</p>
                             <p>Address: <b>2003 michigan ave, Dallas tx 75216</b></p>
                             <p>Telephone: <b>1(214)303 9771</b></p>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                             <h3>Share Us</h3>
                             <div class="content">
                                 <span class="st_sharethis_large" st_image="'.$image.'" st_title="'.$title.'" st_summary="'.$summary.'" st_url="'.Config::$site_url.'" displayText="ShareThis"></span>

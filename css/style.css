@@ -4,7 +4,6 @@
 body {
     background:url(../images/home/home_bg.jpg) no-repeat no-repeat center -150px;
     color: #505050;
-    min-width: 1010px;
 }
 
 /*
@@ -37,7 +36,6 @@ body {
 }
 .main-container {
     margin: 0 auto;
-    min-width: 997px;
 }
 .container-fluid {
     position: relative;
@@ -49,7 +47,6 @@ body {
 
 .navbar {
     width: 100%;
-    min-width: 997px;
     position: absolute;
     top: 45px;
     padding: 0 0 20px 0;
@@ -255,7 +252,6 @@ body {
 .main {
     padding: 20px;
     background: #FFF;
-    width: 745px;
 }
 .main.top {
     margin-top: 140px;
@@ -571,6 +567,10 @@ body {
 body.promotion.background2{
     background: url(../images/global/bg/bg-2.jpg) no-repeat no-repeat center top;
 }
+.promotion .curl{
+    text-align: center;
+    background-color: rgba(255, 255, 255, .5)
+}
 .promotion .main{
     margin-top: 140px;
     min-height: 600px;
@@ -582,7 +582,6 @@ body.promotion.background2{
     font-size: 24px;
     margin-left: auto;
     margin-right: auto;
-    width: 360px;
 }
 .promotion .main h2{
     font-size: 24px;
@@ -599,20 +598,6 @@ body.promotion.background2{
     text-transform: uppercase;
     padding: 10px 20px;
     font-size: 24px;
-}
-.promotion .curl{
-    background: url('/images/promotion/curl.png') 0 0 no-repeat;
-    position: absolute;
-    right: 0;
-    top: 136px;
-    width: 414px;
-    height: 388px;
-    text-align: center;
-}
-.promotion .curl-content{
-    position: absolute;
-    left: 108px;
-    width: 310px;
 }
 .promotion .curl h3{
     color: #fe0000;
@@ -742,6 +727,47 @@ body.place-request {
     font-size: 13px;
     padding: 10px 0 0;
     background-color: #000;
+}
+
+@media (min-width: 768px) {
+    body {
+        min-width: 1010px;
+    }
+    .main {
+        width: 745px;
+    }
+    .main-container {
+        min-width: 997px;
+    }
+
+    /*
+     * navbar
+     */
+
+    .navbar {
+        min-width: 997px;
+    }
+
+    /*
+     * Promotion
+     */
+
+    .promotion .curl{
+        position: absolute;
+        right: 0;
+        top: 136px;
+        background: url('/images/promotion/curl.png') 0 0 no-repeat;
+        width: 414px;
+        height: 388px;
+    }
+    .promotion .curl-content{
+        position: absolute;
+        left: 108px;
+        width: 310px;
+    }
+    .promotion .main h1{
+        width: 360px;
+    }
 }
 
 @media (min-width: 1200px) {

@@ -111,7 +111,7 @@ class Page{
         <meta itemprop="description" content="'.$description.'" />
         <meta itemprop="image" content="http://www.thetopremodelers.com/images/global/logo.png" />
         <!-- END OF GOOGLE PLUS TAGS -->
-        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="HandheldFriendly" content="true" />
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />

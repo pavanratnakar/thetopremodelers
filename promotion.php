@@ -4,6 +4,7 @@
     $pageController=new PageController(11);
     $promotionType = $pageController->getUtils()->checkValues($_GET['type']);
     $theme = 1;
+    $promotion = '';
     if ($promotionType) {
         $promotions = array(
             "roof-repairs-dallas" => "Get top rated roofers for roof repairs in dallas",
@@ -14,12 +15,13 @@
         );
         if ($promotions[$promotionType]) {
             $promotion = $promotions[$promotionType];
-        } else {
-            $promotion = 'Get top rated roofers';
         }
-        if ($promotionType == 'demo') {
-            $theme = 0;
-        }
+    }
+    if (!$promotion) {
+        $promotion = 'Get top rated roofers';
+    }
+    if ($promotionType == 'demo') {
+        $theme = 0;
     }
     echo $pageController->printHeader(null, false, $theme);
 ?>
@@ -30,15 +32,15 @@
                     <?php echo $pageController->printLogoContainer(); ?>
                 </div>
                 <div class="container main">
-                    <h1><?php echo $promotion; ?></h1>
-                    <h2>Immediate service 24/7<br/>call 1(214)303 9771</h2>
-                    <a class="btn btn-primary" href="<?php echo Config::$site_url ?>contact-us">Get Quotes</a>
-                </div>
-                <div class="curl">
-                    <div class="curl-content">
-                        <h3>Unlimited time offer</h3>
-                        <p>Get estimate from our contractors<br/> And enter to win our <b>10k</b> solar systems</p>
+                    <div class="curl">
+                        <div class="curl-content">
+                            <h3>Unlimited time offer</h3>
+                            <p>Get estimate from our contractors<br/> And enter to win our <b>10k</b> solar systems</p>
+                        </div>
                     </div>
+                    <h1><?php echo $promotion; ?></h1>
+                    <a class="btn btn-primary" href="<?php echo Config::$site_url ?>contact-us">Get Quotes</a>
+                    <h2>Immediate service 24/7<br/>call 1(214)303 9771</h2>
                 </div>
             </div>
             <!-- FOOTER -->
