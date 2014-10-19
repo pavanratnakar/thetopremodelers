@@ -567,13 +567,19 @@ body {
 body.promotion.background2{
     background: url(../images/global/bg/bg-2.jpg) no-repeat no-repeat center top;
 }
+body.promotion.video{
+    background: none;
+}
+body.promotion.video .vjs-control-bar{
+    display: none;
+}
 .promotion .curl{
     text-align: center;
     background-color: rgba(255, 255, 255, .5)
 }
 .promotion .main{
     margin-top: 140px;
-    min-height: 600px;
+    min-height: 400px;
     text-align: center;
     background: transparent;
 }
@@ -594,6 +600,22 @@ body.promotion.background2{
     text-transform: uppercase;
     margin-bottom: 100px;
 }
+.promotion .main .header-content{
+    text-align: left;
+}
+.promotion .main .header-content h1{
+    margin: 50px 0 10px 0;
+    width: auto;
+    font-size: 36px;
+}
+.promotion .main .header-content h2{
+    margin: 0 0 40px;
+    font-size: 28px;
+    font-weight: 400;
+}
+.promotion .main .header-content .btn{
+    font-size: 14px;
+}
 .promotion .main .btn{
     text-transform: uppercase;
     padding: 10px 20px;
@@ -609,6 +631,70 @@ body.promotion.background2{
 .promotion .curl p{
     color: #404040;
     font-size: 12px;
+}
+.promotion .contractor-details{
+    position: relative;
+    background-color: #FFF;
+    text-align: left;
+}
+.promotion .contractor-details h4{
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+.promotion .contractor-details h5{
+    font-size: 16px;
+    font-weight: 400;
+}
+.promotion .contractor-details h5,
+.promotion .contractor-details h6{
+    text-transform: uppercase;
+}
+.promotion .contractor-details h6{
+    font-size: 16px;
+    font-weight: bold;
+}
+.promotion .contractor-details .main{
+    margin-top: 0;
+}
+.promotion .contractor-details .btn{
+    font-size: 12px;
+}
+.promotion .contractor-details .contractor-detail{
+    margin-bottom: 10px;
+    text-align: left;
+}
+.promotion .contractor-details .contractor-detail img{
+    width: 100%;
+    max-width: 172px;
+}
+.promotion .contractor-details .contractor-detail img.border{
+    border: 8px solid #69a3d5;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    border-radius: 100px; /* future proofing */
+    -khtml-border-radius: 100px; /* for old Konqueror browsers */
+}
+.promotion .contractor-detail-footer{
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #69a3d5;
+}
+.promotion .contractor-detail-footer .left{
+    text-align: left;
+}
+.promotion .contractor-detail-footer .right{
+    text-align: right;
+    margin-top: 62px;
+}
+.promotion .contractor-callout-content{
+    margin-top: 10px;
+    text-align: left;
+    font-size: 16px;
+}
+.promotion .contractor-callout-content p{
+    margin-top: 20px;
 }
 
 /*

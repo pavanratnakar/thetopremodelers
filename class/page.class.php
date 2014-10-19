@@ -35,6 +35,9 @@ class Page{
         if ($theme == 1) {
             $backgroundClass = 'background2';
         }
+        if ($theme == 99) {
+            $backgroundClass = 'video';
+        }
         $return.='
         </head>
         <body class="'.$this->currentPage->class.' '.$this->currentPage->template.' '.$backgroundClass.'">

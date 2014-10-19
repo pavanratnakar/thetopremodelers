@@ -35,6 +35,9 @@ return array(
         '//global/css/style.css',
         '//css/style.css'
     ),
+    'herve_promotion_css' => array(
+        '//global/js/plugins/bigvideo/css/bigvideo.css'
+    ),
     'herve_css' => array(
         '//global/css/bootstrap/bootstrap.min.css',
         '//css/style.css'
@@ -77,6 +80,12 @@ return array(
     'herve_contractor_js' => array(
         '//global/js/plugins/boxy/javascripts/jquery.boxy.js',
         '//js/contractor.js'
+    ),
+    'herve_promotion_js' => array(
+        '//global/js/plugins/bigvideo/lib/video.js',
+        '//global/js/plugins/bigvideo/lib/jquery-ui.js',
+        '//global/js/plugins/bigvideo/lib/bigvideo.js',
+        '//js/promotion.js'
     ),
     /// HERVE ///
     /// NEW ADMIN ///
