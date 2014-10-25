@@ -27,6 +27,21 @@ body {
 }
 
 /*
+ * Buttons
+ */
+.btn-orange{
+    background-color: #e98e1e;
+    color: #FFF;
+}
+.btn-orange:hover,
+.btn-orange:focus,
+.btn-orange:visited {
+    background-color: #f67402;
+    color: #FFF;
+}
+
+
+/*
  * Global add-ons
  */
 
@@ -579,7 +594,7 @@ body.promotion.video .vjs-control-bar{
 }
 .promotion .main{
     margin-top: 140px;
-    min-height: 400px;
+    min-height: 470px;
     text-align: center;
     background: transparent;
 }
@@ -615,6 +630,9 @@ body.promotion.video .vjs-control-bar{
 }
 .promotion .main .header-content .btn{
     font-size: 14px;
+    font-weight: bold;
+    width: 250px;
+    height: 40px;
 }
 .promotion .main .btn{
     text-transform: uppercase;
@@ -695,6 +713,18 @@ body.promotion.video .vjs-control-bar{
 }
 .promotion .contractor-callout-content p{
     margin-top: 20px;
+}
+.promotion .contractor-callout-content .holder{
+    background-repeat: no-repeat;
+    background-image: url("../images/promotion/holder.png");
+    height: 156px;
+    width: 493px;
+    position: relative;
+}
+.promotion .contractor-callout-content .holder .leaf{
+    position: absolute;
+    top: -28px;
+    left: -118px;
 }
 
 /*

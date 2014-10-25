@@ -53,7 +53,7 @@
                     <div class="header-content">
                         <h1><?php echo $promotion; ?></h1>
                         <h2>Immediate service 24/7 call 1(214)303 9771</h2>
-                        <a class="btn btn-warning" href="<?php echo Config::$site_url ?>contact-us">Get Quotes</a>
+                        <a class="btn btn-orange" href="<?php echo Config::$site_url ?>contact-us">Get Quotes</a>
                     </div>
                     <?php } else { ?>
                     <h1><?php echo $promotion; ?></h1>
@@ -67,7 +67,7 @@
                 <div class="container main">
                     <div class="row">
                         <div class="col-md-7 col-xs-7 col-sm-7">
-                            <h4>Our Green Commitment</h4>
+                            <h4>Get estimates today</h4>
                             <div class="row contractor-detail">
                                 <div class="col-md-4 col-xs-4 col-sm-4">
                                     <img alt="" class="border" src="<?php echo Config::$site_url.'images/promotion/person_1.png' ?>" />
@@ -75,7 +75,7 @@
                                 <div class="col-md-6 col-xs-6 col-sm-6">
                                     <h5>Joe</h5>
                                     <h6>45$ to 50$ per 100 square feet install</h6>
-                                    <a class="btn btn-warning" href="<?php echo Config::$site_url ?>contact-us">Get Quotes</a>
+                                    <a class="btn btn-orange" href="<?php echo Config::$site_url ?>contact-us">Get Quotes</a>
                                 </div>
                             </div>
                             <div class="row contractor-detail">
@@ -85,7 +85,7 @@
                                 <div class="col-md-6 col-xs-6 col-sm-6">
                                     <h5>Oscar</h5>
                                     <h6>42$ to 60$ per 100 square feet install</h6>
-                                    <a class="btn btn-warning" href="<?php echo Config::$site_url ?>contact-us">Get Quotes</a>
+                                    <a class="btn btn-orange" href="<?php echo Config::$site_url ?>contact-us">Get Quotes</a>
                                 </div>
                             </div>
                             <div class="row contractor-detail">
@@ -95,14 +95,18 @@
                                 <div class="col-md-6 col-xs-6 col-sm-6">
                                     <h5>Raphale</h5>
                                     <h6>45$ to 70$ per 100 square feet install</h6>
-                                    <a class="btn btn-warning" href="<?php echo Config::$site_url ?>contact-us">Get Quotes</a>
+                                    <a class="btn btn-orange" href="<?php echo Config::$site_url ?>contact-us">Get Quotes</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-5 col-xs-5 col-sm-5">
                             <h4>Our Green Commitment</h4>
                             <div class="contractor-callout-content">
-                                <img src="<?php echo Config::$site_url.'images/promotion/leaf.jpg' ?>" alt="" />
+                                <div class="holder">
+                                    <div class="leaf">
+                                        <img src="<?php echo Config::$site_url.'images/promotion/leaf.png' ?>" alt="" />
+                                    </div>
+                                </div>
                                 <p>Our green commitment With the Threat of global warming on the rise, one of our goal in the next 12 month is to become a carbon neutral company, and in the next 2 years to become A carbon negative company, meaning we will be removing more carbon co 2 that we are responsible for creating. We believe companies should play a large role in fighting global warming, and consumers should start buying from carbon negative companies. We hope to set a new trend, and that over will follow us.</p>
                             </div>
                         </div>
