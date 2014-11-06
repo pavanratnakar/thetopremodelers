@@ -75,13 +75,16 @@ body {
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF, endColorstr=#CCFFFFFF)";
 }
 .navbar-nav {
-    margin-top: 0;
+    margin: 0 0 0;
 }
 .navbar-nav > li {
     text-align: center;
     width: 100%;
+    margin-bottom: 16px;
+    margin-top: 16px;
 }
 .navbar-nav > li > a {
+    padding: 0;
     font-size: 14px;
     color: #333638;
     font-weight: bold;
@@ -585,10 +588,6 @@ body.promotion.video{
 body.promotion.video .vjs-control-bar{
     display: none;
 }
-.promotion .curl{
-    text-align: center;
-    background-color: rgba(255, 255, 255, .5)
-}
 .promotion .main{
     margin-top: 300px;
     min-height: 470px;
@@ -613,7 +612,7 @@ body.promotion.video .vjs-control-bar{
     margin-bottom: 100px;
 }
 .promotion .main .header-content{
-    text-align: left;
+    text-align: center;
 }
 .promotion .main .header-content h1{
     margin: 50px 0 10px 0;
@@ -638,14 +637,29 @@ body.promotion.video .vjs-control-bar{
 }
 .promotion .curl h3{
     color: #fe0000;
-    font-size: 25px;
+    font-size: 22px;
     text-transform: uppercase;
     margin-top: 4px;
     margin-bottom: 0;
 }
+.promotion .curl{
+    text-align: center;
+    background-color: #fff;
+    width: 280px;
+    margin: 0 auto;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+.promotion .curl .curl-content{
+    background: url('/images/promotion/holder.png') 50% 70px no-repeat;
+    padding-bottom: 128px;
+    margin: 0 10px;
+}
 .promotion .curl p{
     color: #404040;
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: bold;
 }
 .promotion .contractor-details{
     position: relative;
@@ -827,7 +841,7 @@ body.place-request {
     padding-left: 5px;
 }
 .footer-top-container li {
-    padding-bottom: 5px;
+    margin-bottom: 5px;
 }
 .footer-top-container li i{
     padding-right: 5px;
@@ -917,21 +931,34 @@ body.place-request {
     .promotion .curl{
         position: absolute;
         right: 0;
-        top: 136px;
+        top: 122px;
         background: url('/images/promotion/curl.png') 0 0 no-repeat;
         width: 414px;
         height: 388px;
     }
-    .promotion .curl-content{
+    .promotion .curl .curl-content{
+        background: none;
         position: absolute;
         left: 108px;
         width: 310px;
+        padding: 0;
+        margin: 0;
+    }
+    .promotion .curl h3{
+        font-size: 25px;
     }
     .promotion .main-container .main{
         max-width: 58%;
     }
+    .promotion .main .header-content{
+        text-align: left;
+    }
     .promotion .main{
         margin-top: 200px;
+    }
+    .promotion .curl p{
+        font-size: 12px;
+        font-weight: normal;
     }
     .promotion .main h1{
         width: 360px;

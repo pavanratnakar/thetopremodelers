@@ -66,10 +66,10 @@
             <div class="contractor-details">
                 <div class="container main">
                     <div class="row">
-                        <div class="col-md-7 col-xs-7 col-sm-7">
+                        <div class="col-md-7 col-xs-12 col-sm-7">
                             <h4>Get estimates today</h4>
                             <div class="row contractor-detail">
-                                <div class="col-md-4 col-xs-4 col-sm-4">
+                                <div class="col-md-4 col-xs-6 col-sm-4">
                                     <img alt="" class="border" src="<?php echo Config::$site_url.'images/promotion/person_1.png' ?>" />
                                 </div>
                                 <div class="col-md-6 col-xs-6 col-sm-6">
@@ -79,7 +79,7 @@
                                 </div>
                             </div>
                             <div class="row contractor-detail">
-                                <div class="col-md-4 col-xs-4 col-sm-4">
+                                <div class="col-md-4 col-xs-6 col-sm-4">
                                     <img alt="" class="border" src="<?php echo Config::$site_url.'images/promotion/person_2.png' ?>" />
                                 </div>
                                 <div class="col-md-6 col-xs-6 col-sm-6">
@@ -89,7 +89,7 @@
                                 </div>
                             </div>
                             <div class="row contractor-detail">
-                                <div class="col-md-4 col-xs-4 col-sm-4">
+                                <div class="col-md-4 col-xs-6 col-sm-4">
                                     <img alt="" class="border" src="<?php echo Config::$site_url.'images/promotion/person_3.png' ?>" />
                                 </div>
                                 <div class="col-md-6 col-xs-6 col-sm-6">
@@ -99,7 +99,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-5 col-xs-5 col-sm-5">
+                        <div class="col-md-5 hidden-xs col-sm-5">
                             <h4>Our Green Commitment</h4>
                             <div class="contractor-callout-content">
                                 <div class="holder">
@@ -112,10 +112,10 @@
                         </div>
                     </div>
                     <div class="row contractor-detail-footer">
-                        <div class="col-md-6 col-xs-6 col-sm-6 left">
+                        <div class="col-md-6 col-xs-12 col-sm-6 left">
                             <img alt="" src="<?php echo Config::$site_url.'images/home/stamp_final.png' ?>" />
                         </div>
-                        <div class="col-md-6 col-xs-6 col-sm-6 right">
+                        <div class="col-md-6 hidden-xs col-sm-6 right">
                             <img alt="" src="<?php echo Config::$site_url.'images/global/logo.png' ?>" />
                         </div>
                     </div>
