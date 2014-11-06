@@ -41,22 +41,22 @@ echo $pageController->printHeader($metaDetails,true);
 <?php echo $pageController->printHeaderMenu(); ?>
     <div class="container-fluid">
         <div class="row main-container">
-            <div class="col-md-3 col-xs-3 col-sm-3 sidebar">
+            <div class="col-md-3 col-xs-12 col-sm-3 sidebar">
                 <?php echo $pageController->printLogoContainer(); ?>
             </div>
             <div class="regular-main">
                 <div class="row options-container">
-                    <div class="col-md-9 col-xs-9 col-sm-9">
+                    <div class="col-md-9 col-sm-9 hidden-xs">
                         <?php echo $pageController->printUserStepsText(2); ?>
                     </div>
-                    <div class="col-md-3 col-xs-3 col-sm-3 secondary-options-container">
+                    <div class="col-md-3 col-xs-12 col-sm-3 secondary-options-container">
                         <a class="btn btn-warning" title="Back" href="<?php echo Config::$site_url ?>places">
                             Back
                         </a>
                     </div>
                 </div>
                 <div class="row sub">
-                    <div class="col-md-8 col-xs-8 col-sm-8">
+                    <div class="col-md-8 col-xs-12 col-sm-8">
                         <?php
                         if ($contractorDetails) { ?>
                         <div id="top" class="top">

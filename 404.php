@@ -8,7 +8,7 @@
         <?php echo $pageController->printHeaderMenu(); ?>
         <div class="container-fluid">
             <div class="row main-container">
-                <div class="col-md-3 col-xs-3 col-sm-3 sidebar">
+                <div class="col-md-3 col-xs-12 col-sm-3 sidebar">
                     <?php echo $pageController->printLogoContainer(); ?>
                 </div>
                 <div class="container full-main">

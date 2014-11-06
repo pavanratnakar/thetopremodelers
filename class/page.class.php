@@ -148,10 +148,10 @@ class Page{
        $return = '
             <div class="navbar navbar-default" role="navigation">
                 <div class="container-fluid">
-                    <div class="navbar-collapse collapse">
+                    <div class="navbar-collapse">
                         <div class="nav-contact">
                             <h4 class="gold">Need immediate service</h4>
-                            <h5>CALL US : 1(214)303 9771</h5>
+                            <h5>CALL US : <a href="tel:1-214-303-9771">1(214)303 9771</a></h5>
                         </div>';
         $return .= $this->printNavigation();
         $return .=  '</div>

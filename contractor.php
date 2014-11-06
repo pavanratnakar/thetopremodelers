@@ -24,12 +24,12 @@ echo $pageController->printHeader($contractor->getMeta($contractorDetails));
 <?php echo $pageController->printHeaderMenu(); ?>
     <div class="container-fluid">
         <div class="row main-container">
-            <div class="col-md-3 col-xs-3 col-sm-3 sidebar">
+            <div class="col-md-3 col-xs-12 col-sm-3 sidebar">
                 <?php echo $pageController->printLogoContainer(); ?>
             </div>
             <div class="regular-main">
                 <div class="row">
-                    <div class="col-md-8 col-xs-8 col-sm-8">
+                    <div class="col-md-8 col-xs-12 col-sm-8">
                         <div id="top" class="sub top">
                             <?php echo $pageController->getContractorDetails($contractorDetails,true); ?>
                         </div>
@@ -118,7 +118,7 @@ echo $pageController->printHeader($contractor->getMeta($contractorDetails));
                         <?php } ?>
                         <?php echo $pageController->jumpList($jumpListData,'top'); ?>
                     </div>
-                    <div class="col-md-4 col-xs-4 col-sm-4">
+                    <div class="col-md-4 hidden-xs col-sm-4">
                         <div class="sb-container sb-center" id="certified-rating">
                             <div class="sb-content">
                                 <img src="<?php echo Config::$site_url.'images/contractor/stamp_final.png' ?>" title="Certified Ratings" alt="Certified Ratings" />

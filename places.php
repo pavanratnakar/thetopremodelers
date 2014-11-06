@@ -8,18 +8,18 @@
         <?php echo $pageController->printHeaderMenu(); ?>
         <div class="container-fluid">
             <div class="row main-container">
-                <div class="col-md-3 col-xs-3 col-sm-3 sidebar">
+                <div class="col-md-3 col-xs-12 col-sm-3 sidebar">
                     <?php echo $pageController->printLogoContainer(); ?>
-                    <ul class="nav nav-sidebar">
+                    <ul class="nav nav-sidebar hidden-xs">
                         <?php echo $pageController->getFormatedCategories(1); ?>
                     </ul>
                 </div>
-                <div class="sidebar sub-sidebar">
+                <div class="sidebar sub-sidebar hidden-xs">
                     <ul class="nav nav-sidebar">
                         <?php echo $pageController->getFormatedCategories(2); ?>
                     </ul>
                 </div>
-                <div class="col-md-9 col-xs-9 col-sm-9 container main top">
+                <div class="col-md-9 col-xs-12 col-sm-9 container main top">
                     <h1>Matching you with our prescreened Contractors by Place</h1>
                     <div class="sub">
                         <h2>Find Contractors for cities within Dallas County</h2>
@@ -33,7 +33,7 @@
                                 $placesArray[2] = array_slice($places, $placesCount*2,$placesCount);
                                 $placesArray[3] = array_slice($places, $placesCount*3,$placesCount);
                                 foreach ($placesArray as $placesArrayKey => $placesArrayValue) {
-                                    echo '<ul class="col-xs-3 col-sm-3 col-md-3 col-lg-3">';
+                                    echo '<ul class="col-xs-12 col-sm-3 col-md-3 col-lg-3">';
                                     foreach ($placesArrayValue as $key => $value) {
                                         echo '<li><a href="'.Config::$site_url.'place/'.$value['place_name'].'" title="'.$value['place_title'].'">'.$value['place_title'].'</a></li>';
                                     }

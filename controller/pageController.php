@@ -273,7 +273,7 @@ class PageController{
                 <a href="javascript:void(0);" data-name="'.$contractorDetails['contractor_name'].'" id="contractorSelect-'.$contractorDetails['contractor_name'].'" class="get-quote btn btn-info">Get a Quote</a>
             </div>';
         }
-        $return.= "<div class='social-sharing col-md-8 col-xs-8 col-sm-8'>
+        $return.= "<div class='social-sharing col-md-8 col-xs-12 col-sm-8'>
             <span class='st_twitter_hcount' displayText='Tweet'></span>
             <span class='st_fbrec_hcount' displayText='Facebook Recommend'></span>
             <span class='st_email_hcount' displayText='Email'></span>

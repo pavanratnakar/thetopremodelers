@@ -39,25 +39,25 @@ echo $pageController->printHeader($contractor->getContractorsMeta($contractorDet
 <?php echo $pageController->printHeaderMenu(); ?>
     <div class="container-fluid">
         <div class="row main-container">
-            <div class="col-md-3 col-xs-3 col-sm-3 sidebar">
+            <div class="col-md-3 col-xs-12 col-sm-3 sidebar">
                 <?php echo $pageController->printLogoContainer(); ?>
-                <div class="sidebar-container certifed-container">
+                <div class="sidebar-container certifed-container hidden-xs">
                     <img src="<?php echo Config::$site_url ?>images/home/stamp_final.png" alt=""/>
                 </div>
-                <ul class="nav nav-sidebar">
+                <ul class="nav nav-sidebar hidden-xs">
                     <?php echo $pageController->getFormatedCategories(1); ?>
                     <?php echo $pageController->getFormatedCategories(2); ?>
                 </ul>
-                <div class="sidebar-container service-container">
+                <div class="sidebar-container service-container hidden-xs">
                     <img src="<?php echo Config::$site_url ?>images/home/service.jpg" alt=""/>
                     <h4 class="gold">Need immediate service</h4>
                     <h5>CALL US : 1(214)303 9771</h5>
                 </div>
             </div>
-            <div class="col-md-9 col-xs-9 col-sm-9 main top">
+            <div class="col-md-9 col-xs-12 col-sm-9 main top">
                 <h2><?php echo $categoryDetails[0]['category_title'].' in '.$placeDetails['place_title'].' with '.$sectionDetails['section_title'].' speciality'?></h2>
                 <div class="row">
-                    <div class="col-md-8 col-xs-8 col-sm-8">
+                    <div class="col-md-8 col-xs-12 col-sm-8">
                         <ul class="nobullet contractors-list input-group">
 <!--                                 <li class="option row">
                                 <form method="post" class="find-contractors" action="#">
@@ -196,7 +196,7 @@ echo $pageController->printHeader($contractor->getContractorsMeta($contractorDet
                             <?php } ?>
                         </ul>
                     </div>
-                    <div class="col-md-4 col-xs-4 col-sm-4">
+                    <div class="col-md-4 hidden-xs col-sm-4">
                         <div class="sb-container">
                             <div class="sb-header">
                                 <h3>Today&rsquo;s Best Offers</h3>

@@ -18,7 +18,7 @@
         <?php echo $pageController->printHeaderMenu(); ?>
         <div class="container-fluid">
             <div class="row main-container">
-                <div class="col-md-3 col-xs-3 col-sm-3 sidebar">
+                <div class="col-md-3 col-xs-12 col-sm-3 sidebar">
                     <?php echo $pageController->printLogoContainer(); ?>
                 </div>
                 <div class="container full-main">
@@ -26,7 +26,7 @@
                         <h1><?php echo $articleContent['title']; ?></h1>
                         <?php echo $articleContent['content']; ?>
                     </div>
-                    <div class="comment-box">
+                    <div class="comment-box hidden-xs">
                         <h1>Comment</h1>
                         <div class="comment-section">
                             <?php echo $pageController->facebookComment(array(

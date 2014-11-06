@@ -22,13 +22,13 @@ $params['contractorName'] = $utils->checkValues($_GET['contractor']);
 <?php echo $pageController->printHeaderMenu(); ?>
     <div class="container-fluid">
         <div class="row main-container">
-            <div class="col-md-3 col-xs-3 col-sm-3 sidebar">
+            <div class="col-md-3 col-xs-12 col-sm-3 sidebar">
                 <?php echo $pageController->printLogoContainer(); ?>
             </div>
             <div class="regular-main main">
                 <h1>I'am Interested! Please contact Me with Free Estimates!</h1>
                 <div class="row">
-                    <div class="col-md-8 col-xs-8 col-sm-8">
+                    <div class="col-md-8 col-xs-12 col-sm-8">
                         <form id="contactForm">
                             <ul style="display:none;" class="formStatus alert-warning nobullet"></ul>
                             <div class="email-header">
@@ -61,7 +61,7 @@ $params['contractorName'] = $utils->checkValues($_GET['contractor']);
                                 </p>
                                 <p>
                                     <span class="bold">Give more details about your project:</span>
-                                    <textarea rows="3" cols="94" class="prepopulate form-control" id="message" rel="Please use this box to provide contractors with additional details about your project."></textarea>
+                                    <textarea rows="3" class="prepopulate form-control" id="message" rel="Please use this box to provide contractors with additional details about your project."></textarea>
                                 </p>
                                 <p>
                                     <span class="bold">Thank You</span>
@@ -84,7 +84,7 @@ $params['contractorName'] = $utils->checkValues($_GET['contractor']);
                             </div>
                         </form>
                     </div>
-                    <div class="col-md-4 col-xs-4 col-sm-4">
+                    <div class="col-md-4 hidden-xs col-sm-4">
                         <div class="sb-container">
                             <div class="sb-header">
                                 <h3>No Fees. No Obligations.</h3>
