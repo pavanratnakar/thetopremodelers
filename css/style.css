@@ -683,6 +683,7 @@ body.promotion.video .vjs-control-bar{
 .promotion .contractor-details h6{
     font-size: 16px;
     font-weight: bold;
+    margin-bottom: 5px;
 }
 .promotion .contractor-details .main{
     margin-top: 0;
@@ -732,6 +733,12 @@ body.promotion.video .vjs-control-bar{
     position: absolute;
     top: -28px;
     left: -118px;
+}
+.promotion .reviews{
+    margin-bottom: 5px;
+}
+.promotion .reviews p{
+    margin: 0;
 }
 
 /*

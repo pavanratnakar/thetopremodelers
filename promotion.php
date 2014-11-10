@@ -66,7 +66,7 @@
             <div class="contractor-details">
                 <div class="container main">
                     <div class="row">
-                        <div class="col-md-7 col-xs-12 col-sm-7">
+                        <div class="col-md-8 col-xs-12 col-sm-8">
                             <h4>Get estimates today</h4>
                             <div class="row contractor-detail">
                                 <div class="col-md-4 col-xs-6 col-sm-4">
@@ -75,6 +75,10 @@
                                 <div class="col-md-6 col-xs-6 col-sm-6">
                                     <h5>Joe</h5>
                                     <h6>45$ to 50$ per 100 square feet install</h6>
+                                    <div class="reviews">
+                                        <p><i class="rating-static rating-50"></i></p>
+                                        <p>4 certified reviews</p>
+                                    </div>
                                     <a class="btn btn-orange" href="<?php echo Config::$site_url ?>contact-us">Get Quotes</a>
                                 </div>
                             </div>
@@ -85,6 +89,10 @@
                                 <div class="col-md-6 col-xs-6 col-sm-6">
                                     <h5>Oscar</h5>
                                     <h6>42$ to 60$ per 100 square feet install</h6>
+                                    <div class="reviews">
+                                        <p><i class="rating-static rating-50"></i></p>
+                                        <p>2 certified reviews</p>
+                                    </div>
                                     <a class="btn btn-orange" href="<?php echo Config::$site_url ?>contact-us">Get Quotes</a>
                                 </div>
                             </div>
@@ -95,11 +103,20 @@
                                 <div class="col-md-6 col-xs-6 col-sm-6">
                                     <h5>Raphale</h5>
                                     <h6>45$ to 70$ per 100 square feet install</h6>
+                                    <div class="reviews">
+                                        <p><i class="rating-static rating-50"></i></p>
+                                        <p>2 certified reviews</p>
+                                    </div>
                                     <a class="btn btn-orange" href="<?php echo Config::$site_url ?>contact-us">Get Quotes</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-5 hidden-xs col-sm-5">
+                        <div class="col-md-4 hidden-xs col-sm-4">
+                            <img alt="" src="<?php echo Config::$site_url.'images/home/stamp_final.png' ?>" />
+                        </div>
+                    </div>
+                    <div class="row contractor-detail-footer">
+                        <div class="col-md-8 col-xs-12 col-sm-8 left">
                             <h4>Our Green Commitment</h4>
                             <div class="contractor-callout-content">
                                 <div class="holder">
@@ -110,12 +127,7 @@
                                 <p>Our green commitment With the Threat of global warming on the rise, one of our goal in the next 12 month is to become a carbon neutral company, and in the next 2 years to become A carbon negative company, meaning we will be removing more carbon co 2 that we are responsible for creating. We believe companies should play a large role in fighting global warming, and consumers should start buying from carbon negative companies. We hope to set a new trend, and that over will follow us.</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="row contractor-detail-footer">
-                        <div class="col-md-6 col-xs-12 col-sm-6 left">
-                            <img alt="" src="<?php echo Config::$site_url.'images/home/stamp_final.png' ?>" />
-                        </div>
-                        <div class="col-md-6 hidden-xs col-sm-6 right">
+                        <div class="col-md-4 hidden-xs col-sm-4 right">
                             <img alt="" src="<?php echo Config::$site_url.'images/global/logo.png' ?>" />
                         </div>
                     </div>
