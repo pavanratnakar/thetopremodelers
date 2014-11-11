@@ -1,5 +1,5 @@
 var herve = {
-    navigation : function () {
+    navigation: function () {
         var hover = false;
         $("body").delegate(".nav-sidebar li",{
             mouseenter: function(){
@@ -15,8 +15,13 @@ var herve = {
                 hover = false;
             }
         });
+        $("body").delegate(".navbar-icon",{
+            click: function(){
+                $('.navbar .navbar-nav').toggle();
+            }
+        });
     },
-    getNth : function (s, c, n) {
+    getNth: function (s, c, n) {
         var idx;
         var i = 0;
         var newS = '';

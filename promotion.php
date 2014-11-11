@@ -43,7 +43,7 @@
                     <?php echo $pageController->printLogoContainer(); ?>
                 </div>
                 <div class="container main">
-                    <div class="curl">
+                    <div class="curl hidden-xs">
                         <div class="curl-content">
                             <h3>Unlimited time offer</h3>
                             <p>Get estimate from our contractors<br/> And enter to win our <b>10k</b> solar systems</p>
@@ -111,7 +111,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 hidden-xs col-sm-4">
+                        <div class="col-md-4 col-xs-12 col-sm-4 certified-reviews-container">
+                            <h4>Certified Reviews</h4>
+                            <p>With so many companies providing online reviews, it becoming difficult to trust any of them, your friend can post a review or you enemy can a post review.</p>
+                            <p>We are going on step further, in order to get is review certified the contractor must provide a proof of the job completion (building permit, proof of payment, etc)</p>
                             <img alt="" src="<?php echo Config::$site_url.'images/home/stamp_final.png' ?>" />
                         </div>
                     </div>

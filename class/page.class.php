@@ -134,6 +134,9 @@ class Page{
     }
     public function printNavigation(){
         $return = '
+        <button type="button" class="btn btn-default dropdown-toggle visible-xs-block navbar-icon">
+            <span class="glyphicon glyphicon-align-justify"></span>
+        </button>
         <ul class="nav navbar-nav navbar-right">';
         foreach ($this->pages as $page) {
             if($page->navigation==1){
@@ -149,7 +152,7 @@ class Page{
             <div class="navbar navbar-default" role="navigation">
                 <div class="container-fluid">
                     <div class="navbar-collapse">
-                        <div class="nav-contact">
+                        <div class="nav-contact hidden-xs">
                             <h4 class="gold">Need immediate service</h4>
                             <h5>CALL US : <a href="tel:1-214-303-9771">1(214)303 9771</a></h5>
                         </div>';
