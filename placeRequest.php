@@ -26,7 +26,7 @@ $params['contractorName'] = $utils->checkValues($_GET['contractor']);
                 <?php echo $pageController->printLogoContainer(); ?>
             </div>
             <div class="regular-main main">
-                <h1>I'am Interested! Please contact Me with Free Estimates!</h1>
+                <h1>Don't like forms !! call us 24/7   1(214) 303 97 71</h1>
                 <div class="row">
                     <div class="col-md-8 col-xs-12 col-sm-8">
                         <form id="contactForm">

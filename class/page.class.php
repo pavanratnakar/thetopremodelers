@@ -229,7 +229,9 @@ class Page{
         $return="
         <script type=\"text/javascript\">
         var _gaq = _gaq || [];
+
         _gaq.push(['_setAccount', 'UA-30287515-1']);
+        //_gaq.push(['_setSiteSpeedSampleRate', 90]);
         _gaq.push(['_trackPageview']);
 
         (function() {
