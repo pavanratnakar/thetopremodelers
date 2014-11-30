@@ -25,6 +25,9 @@ body {
 .error{
     color: red;
 }
+.list li{
+    margin-bottom: 10px;
+}
 
 /*
  * Buttons
@@ -51,6 +54,7 @@ body {
 }
 .main-container {
     margin: 0 auto;
+    padding: 0;
 }
 .container-fluid {
     position: relative;
@@ -850,10 +854,13 @@ body.place-request {
  * Footer
  */
 
- footer .container {
+footer .container {
     margin: 0 auto;
     color: #FFF;
- }
+}
+.footer-container{
+    margin: 0;
+}
 .footer-top-container {
     background-color: #333638;
     font-size: 13px;
@@ -876,7 +883,7 @@ body.place-request {
     padding-left: 5px;
 }
 .footer-top-container li {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 .footer-top-container li i{
     padding-right: 5px;
@@ -886,7 +893,7 @@ body.place-request {
 }
 .footer-bottom-container {
     font-size: 13px;
-    padding: 10px 0 0;
+    padding: 10px 1px 0;
     background-color: #000;
 }
 
@@ -921,11 +928,7 @@ body.place-request {
 
     .main-container {
         min-width: 997px;
-    }
-
-    .container-fluid {
-        padding-left: 15px;
-        padding-right: 15px;
+        padding: 0 15px;
     }
 
     .sidebar {

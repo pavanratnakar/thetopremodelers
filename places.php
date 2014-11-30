@@ -33,7 +33,7 @@
                                 $placesArray[2] = array_slice($places, $placesCount*2,$placesCount);
                                 $placesArray[3] = array_slice($places, $placesCount*3,$placesCount);
                                 foreach ($placesArray as $placesArrayKey => $placesArrayValue) {
-                                    echo '<ul class="col-xs-12 col-sm-3 col-md-3 col-lg-3">';
+                                    echo '<ul class="col-xs-12 col-sm-3 col-md-3 col-lg-3 list">';
                                     foreach ($placesArrayValue as $key => $value) {
                                         echo '<li><a href="'.Config::$site_url.'place/'.$value['place_name'].'" title="'.$value['place_title'].'">'.$value['place_title'].'</a></li>';
                                     }

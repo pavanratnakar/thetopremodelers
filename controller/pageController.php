@@ -46,7 +46,7 @@ class PageController{
         $summary = 'Free service that compiles certified ratings from local service companies and contractors in multiple cities';
         $image = Config::$site_url."images/global/logo.png";
         $return='
-        <div class="row">
+        <div class="footer-container row">
             <footer>
                 <div class="footer-top-container">
                     <div class="container row">
