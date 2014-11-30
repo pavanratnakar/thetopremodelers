@@ -123,6 +123,7 @@
                             <h4>Our Green Commitment</h4>
                             <div class="contractor-callout-content">
                                 <div class="holder">
+                                    <img src="<?php echo Config::$site_url.'images/promotion/holder.png' ?>" alt="" />
                                     <div class="leaf hidden-xs">
                                         <img src="<?php echo Config::$site_url.'images/promotion/leaf.png' ?>" alt="" />
                                     </div>

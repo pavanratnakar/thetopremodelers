@@ -77,8 +77,10 @@ body {
     /* IE8 */
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF, endColorstr=#CCFFFFFF)";
 }
-.navbar-collapse {
+.navbar-collapse,
+.container-fluid > .navbar-collapse {
     position: relative;
+    margin: 0;
 }
 .navbar-icon {
     position: absolute;
@@ -639,6 +641,7 @@ body.promotion.video .vjs-control-bar{
     color: #FFF;
     text-transform: uppercase;
     margin-bottom: 100px;
+    text-shadow: -3px -1px 6px #000;
 }
 .promotion .main .header-content{
     text-align: center;
@@ -752,11 +755,12 @@ body.promotion.video .vjs-control-bar{
     margin-top: 20px;
 }
 .promotion .contractor-callout-content .holder{
-    background-repeat: no-repeat;
-    background-image: url("../images/promotion/holder.png");
-    height: 124px;
-    width: 393px;
     position: relative;
+    width: 100%;
+    max-width: 393px;
+}
+.promotion .contractor-callout-content .holder img{
+    width: 100%;
 }
 .promotion .contractor-callout-content .holder .leaf{
     position: absolute;

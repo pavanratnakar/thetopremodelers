@@ -7,11 +7,15 @@ var herve_promotion = {
     showVideo: function() {
         var BV = new $.BigVideo();
         BV.init();
-        BV.show('/videos/promotion/promotion_1.mp4', {
-            ambient: true,
-            doLoop: true,
-            controls: false
-        });
+        if ('ontouchstart' in window || navigator.msMaxTouchPoints) {
+            BV.show('/images/home/home_bg.jpg');
+        } else {
+            BV.show('/videos/promotion/promotion_1.mp4', {
+                ambient: true,
+                doLoop: true,
+                controls: false
+            });
+        }
     }
 };
 $(document).ready(function(){

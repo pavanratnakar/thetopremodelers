@@ -149,7 +149,7 @@ class Page{
     }
     public function printHeaderMenu(){
        $return = '
-            <div class="navbar navbar-default hidden-xs" role="navigation">
+            <div class="navbar navbar-default" role="navigation">
                 <div class="container-fluid">
                     <div class="navbar-collapse">
                         <div class="nav-contact hidden-xs">
