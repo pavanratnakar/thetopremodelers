@@ -121,7 +121,13 @@
                     <div class="row contractor-detail-footer">
                         <div class="col-md-12 col-xs-12 col-sm-12">
                             <h4>Our promotion include</h4>
-                            <div>
+                            <div class="contractor-callout-content">
+                                <div class="holder">
+                                    <img src="<?php echo Config::$site_url.'images/promotion/holder.png' ?>" alt="" />
+                                    <div class="leaf hidden-xs">
+                                        <img src="<?php echo Config::$site_url.'images/promotion/leaf.png' ?>" alt="" />
+                                    </div>
+                                </div>
                                 <ul>
                                     <li>10 Astronergy 255-watt Solar Panels</li>
                                     <li>10 Solar Edge Power Boxes</li>

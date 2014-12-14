@@ -740,6 +740,27 @@ body.promotion.video .vjs-control-bar{
     border-top: 1px solid #69a3d5;
     text-align: left;
 }
+.promotion .contractor-callout-content{
+    margin-top: 10px;
+    text-align: left;
+    font-size: 16px;
+}
+.promotion .contractor-callout-content ul{
+    margin-top: 20px;
+}
+.promotion .contractor-callout-content .holder{
+    position: relative;
+    width: 100%;
+    max-width: 393px;
+}
+.promotion .contractor-callout-content .holder img{
+    width: 100%;
+}
+.promotion .contractor-callout-content .holder .leaf{
+    position: absolute;
+    top: -28px;
+    left: -118px;
+}
 .promotion .reviews{
     margin-bottom: 5px;
 }
