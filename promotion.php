@@ -119,20 +119,19 @@
                         </div>
                     </div>
                     <div class="row contractor-detail-footer">
-                        <div class="col-md-8 col-xs-12 col-sm-8 left">
-                            <h4>Our Green Commitment</h4>
-                            <div class="contractor-callout-content">
-                                <div class="holder">
-                                    <img src="<?php echo Config::$site_url.'images/promotion/holder.png' ?>" alt="" />
-                                    <div class="leaf hidden-xs">
-                                        <img src="<?php echo Config::$site_url.'images/promotion/leaf.png' ?>" alt="" />
-                                    </div>
-                                </div>
-                                <p>Our green commitment With the Threat of global warming on the rise, one of our goal in the next 12 month is to become a carbon neutral company, and in the next 2 years to become A carbon negative company, meaning we will be removing more carbon co 2 that we are responsible for creating. We believe companies should play a large role in fighting global warming, and consumers should start buying from carbon negative companies. We hope to set a new trend, and that over will follow us.</p>
+                        <div class="col-md-12 col-xs-12 col-sm-12">
+                            <h4>Our promotion include</h4>
+                            <div>
+                                <ul>
+                                    <li>10 Astronergy 255-watt Solar Panels</li>
+                                    <li>10 Solar Edge Power Boxes</li>
+                                    <li>1 SolarEdge 5KW Gridtied Inverter</li>
+                                    <li>UL Listed Disconnects and Safety Fuses</li>
+                                    <li>UL Listed Cables and Connectors</li>
+                                    <li>Building permits</li>
+                                    <li>Full  installation by professional company</li>
+                                </ul>
                             </div>
-                        </div>
-                        <div class="col-md-4 hidden-xs col-sm-4 right">
-                            <img alt="" src="<?php echo Config::$site_url.'images/global/logo.png' ?>" />
                         </div>
                     </div>
                 </div>
