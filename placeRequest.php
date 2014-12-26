@@ -2,7 +2,6 @@
 include_once($_SERVER['DOCUMENT_ROOT'].'/config.class.php');
 include_once(Config::$site_path.'controller/pageController.php');
 $pageController=new PageController(4);
-echo $pageController->printHeader();
 $utils = $pageController->getUtils();
 if (sizeof($_POST) > 0) {
     foreach ($_POST as $key => $value) {
@@ -18,6 +17,13 @@ $params['placeName'] = $utils->checkValues($_GET['place']);
 $params['categoryName'] = $utils->checkValues($_GET['category']);
 $params['sectionName'] = $utils->checkValues($_GET['section']);
 $params['contractorName'] = $utils->checkValues($_GET['contractor']);
+if ($params['placeName'] && $params['categoryName'] && $params['sectionName']) {
+    $contractor = $pageController->getContractor();
+    $contractorDetails = $contractor->getContractors($params['placeName'], $params['categoryName'], $params['sectionName'], '', '');
+    echo $pageController->printHeader($contractor->getContractorsMeta($contractorDetails),false,1,$contractorDetails[0]['background_id']);
+} else {
+    echo $pageController->printHeader();
+}
 ?>
 <?php echo $pageController->printHeaderMenu(); ?>
     <div class="container-fluid">

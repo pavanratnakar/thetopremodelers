@@ -23,10 +23,10 @@ if ($_GET['contractor']) {
 }
 if ($contractorDetails) {
     $back = Config::$site_url.$placeName.'/'.$categoryName.'/'.$sectionName.'/contractors/';
-    $submit = Config::$site_url.'placeRequest?place='.$placeName.'&amp;category='.$categoryName.'&amp;section='.$sectionName.'&amp;contractor='.$contractorName;
+    $submit = Config::$site_url.'placeRequest?place='.$placeName.'&category='.$categoryName.'&section='.$sectionName.'&contractor='.$contractorName;
 } else {
     $back = Config::$site_url.$placeName.'/category/'.$categoryName;
-    $submit = Config::$site_url.'placeRequest?place='.$placeName.'&amp;category='.$categoryName.'&amp;section='.$sectionName;
+    $submit = Config::$site_url.'placeRequest?place='.$placeName.'&category='.$categoryName.'&section='.$sectionName;
 }
 $formatQuestions = $pageController->formatNewQuestions($placeName,$categoryName,$sectionName);
 if (!$formatQuestions) {

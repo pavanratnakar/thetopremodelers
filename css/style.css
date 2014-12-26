@@ -6,6 +6,10 @@ body {
     color: #505050;
 }
 
+body.place-request {
+    background: url(../images/global/bg/bg-2.jpg) no-repeat no-repeat center top;
+}
+
 body.background1 {
     background:url(../images/global/bg/bg-1.jpg) no-repeat repeat center 0;
 }
@@ -795,9 +799,6 @@ body.promotion.video .vjs-control-bar{
  * Place Request
  */
 
-body.place-request {
-    background: url(../images/global/bg/bg-2.jpg) no-repeat no-repeat center top;
-}
 .place-request .art-person {
     background-repeat: no-repeat;
     background-image: url("../images/global/person/person1.png");

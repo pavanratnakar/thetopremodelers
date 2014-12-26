@@ -120,13 +120,11 @@ echo $pageController->printHeader($contractor->getContractorsMeta($contractorDet
                                 <div class="entry-body">
                                     <div class="row">
                                         <div class="col-md-4 col-xs-4 col-sm-4">
-                                            <?php if ($value['image_id']) { ?>
                                             <div class="entry-image">
                                                 <a title="<?php echo $value['contractor_title'] ?>" href="<?php echo Config::$site_url.'contractor/'. $value['contractor_name']?>">
-                                                    <img alt="<?php echo $value['contractor_title'] ?>" src="<?php echo Config::$site_url ?>/images/contractors/<?php echo $value['image_id']?>.jpg" />
+                                                    <img alt="<?php echo $value['contractor_title'] ?>" src="<?php echo Config::$site_url ?>/images/contractors/<?php echo $value['image_id'] ? $value['image_id'] : 'roof_0'?>.jpg" />
                                                 </a>
                                             </div>
-                                            <?php } ?>
                                         </div>
                                         <div class="col-md-3 col-xs-3 col-sm-3">
                                             <div class="reviews">
