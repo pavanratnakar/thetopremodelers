@@ -18,6 +18,14 @@ body.background3 {
     background:url(../images/global/bg/bg-3.jpg) no-repeat repeat center 0;
 }
 
+body.background4 {
+    background:url(../images/global/bg/bg-4.jpg) no-repeat repeat center 0;
+}
+
+body.background5 {
+    background:url(../images/global/bg/bg-5.jpg) no-repeat repeat center 0;
+}
+
 /*
  * Text colors
  */
