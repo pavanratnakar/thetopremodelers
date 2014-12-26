@@ -16,7 +16,7 @@ class Page{
     public function getPages(){
         return $this->pages;
     }
-    public function printHeader($meta=null, $avoidCrawl=false, $theme=0){
+    public function printHeader($meta=null, $avoidCrawl=false, $theme=0, $background=2){
         $return='
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -33,7 +33,10 @@ class Page{
         }
         $backgroundClass = '';
         if ($theme == 1) {
-            $backgroundClass = 'background2';
+            if ($background == 0) {
+                $background = 2;
+            }
+            $backgroundClass = 'background'.$background;
         }
         if ($theme == 99) {
             $backgroundClass = 'video';

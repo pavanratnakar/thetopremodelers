@@ -19,7 +19,7 @@ $jumpListData['profile'] = array('title'=>'Profile');
 if ($contractorRatingDetails) {
     $jumpListData['ratings-reviews'] = array('title'=>'Ratings & Reviews');
 }
-echo $pageController->printHeader($contractor->getMeta($contractorDetails));
+echo $pageController->printHeader($contractor->getMeta($contractorDetails), false, 1, $contractorDetails->background_id);
 ?>
 <?php echo $pageController->printHeaderMenu(); ?>
     <div class="container-fluid">

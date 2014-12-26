@@ -6,6 +6,18 @@ body {
     color: #505050;
 }
 
+body.background1 {
+    background:url(../images/global/bg/bg-1.jpg) no-repeat repeat center 0;
+}
+
+body.background2 {
+    background:url(../images/global/bg/bg-2.jpg) no-repeat repeat center 0;
+}
+
+body.background3 {
+    background:url(../images/global/bg/bg-3.jpg) no-repeat repeat center 0;
+}
+
 /*
  * Text colors
  */

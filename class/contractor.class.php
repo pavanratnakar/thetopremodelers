@@ -24,7 +24,7 @@ class Contractor{
             $allContractors = $this->getAllContractors($placeName,$categoryName,$sectionName);
             $start = min(Config::$paginationLimit*$page,$allContractors['total_count']);
         }
-        $query="SELECT ROUND(SUM(score)/COUNT(score),1) as average_score,COUNT(review) as review_count,a.contractor_title,a.contractor_description,a.contractor_phone,a.contractor_address,a.contractor_name,c.categorySection_id,f.section_title,g.place_title,g.place_geo,g.place_geo_placename,h.category_title,i.image_id,d.meta_id
+        $query="SELECT ROUND(SUM(score)/COUNT(score),1) as average_score,COUNT(review) as review_count,a.contractor_title,a.contractor_description,a.contractor_phone,a.contractor_address,a.contractor_name,c.categorySection_id,f.section_title,g.place_title,g.place_geo,g.place_geo_placename,h.category_title,i.image_id,d.meta_id,d.background_id
         FROM 
         ".Config::$tables['contractor_table']." a
         LEFT JOIN
@@ -75,6 +75,7 @@ class Contractor{
                 $response[$i]['review_count']=$row->review_count;
                 $response[$i]['image_id']=$row->image_id;
                 $response[$i]['meta_id']=$row->meta_id;
+                $response[$i]['background_id']=$row->background_id;
                 $i++;
             }
         }

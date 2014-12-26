@@ -23,7 +23,7 @@ class categorySectionController{
     public function details(){
         if(isset($_REQUEST['_search']) && $this->searchOn!='false') {
             $fld =  $this->utils->checkValues($_REQUEST['searchField']);
-            if( $fld=='place_title' || $fld=='category_title' || $fld=='section_title' || $fld=='categorysection_order' || $fld=='meta_id' || $fld=='active') {
+            if( $fld=='place_title' || $fld=='category_title' || $fld=='section_title' || $fld=='categorysection_order' || $fld=='meta_id' || $fld=='background_id' || $fld=='active') {
                 $fldata =  $this->utils->checkValues($_REQUEST['searchString']);
                 $foper =  $this->utils->checkValues($_REQUEST['searchOper']);
                 // costruct where
@@ -109,6 +109,7 @@ class categorySectionController{
                 $this->utils->checkValues($_POST['section_title']),
                 $this->utils->checkValues($_POST['categorysection_order']),
                 $this->utils->checkValues($_POST['meta_id']),
+                $this->utils->checkValues($_POST['background_id']),
                 $this->utils->checkValues($_POST['active'])
             );
             if($response){
@@ -128,6 +129,7 @@ class categorySectionController{
                 $this->utils->checkValues($_POST['section_title']),
                 $this->utils->checkValues($_POST['categorysection_order']),
                 $this->utils->checkValues($_POST['meta_id']),
+                $this->utils->checkValues($_POST['background_id']),
                 $this->utils->checkValues($_POST['active']),
                 $this->utils->checkValues($_POST['id'])
             );

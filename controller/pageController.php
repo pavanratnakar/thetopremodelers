@@ -16,8 +16,8 @@ class PageController{
         $this->page=new Page($pageNumber);
         $this->utils=new Utils();
     }
-    public function printHeader($meta=null, $avoidCrawl=false, $theme=0){
-        return $this->page->printHeader($meta, $avoidCrawl, $theme);
+    public function printHeader($meta=null, $avoidCrawl=false, $theme=0, $background=2){
+        return $this->page->printHeader($meta, $avoidCrawl, $theme, $background);
     }
     public function printCss($name){
         return $this->page->printCss($name);
