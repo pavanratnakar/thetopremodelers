@@ -38,6 +38,18 @@ body.background7 {
     background:url(../images/global/bg/bg-7.jpg) no-repeat repeat center 0;
 }
 
+body.background8 {
+    background:url(../images/global/bg/bg-8.jpg) no-repeat repeat center 0;
+}
+
+body.background9 {
+    background:url(../images/global/bg/bg-9.jpg) no-repeat repeat center 0;
+}
+
+body.background10 {
+    background:url(../images/global/bg/bg-10.jpg) no-repeat repeat center 0;
+}
+
 /*
  * Text colors
  */
