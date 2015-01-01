@@ -298,7 +298,7 @@ function getMappingForContractor($id) {
             AND f.delete_flag=FALSE
             AND g.delete_flag=FALSE
             AND e.active=TRUE
-            ORDER BY place_title";
+            ORDER BY place_title, category_title, section_title";
     try {
         $db = getConnection();
         $stmt = $db->prepare($sql);
@@ -561,7 +561,7 @@ function getCategorySections() {
             AND d.delete_flag=FALSE
             AND e.delete_flag=FALSE
             AND e.active=TRUE
-            ORDER BY place_title";
+            ORDER BY place_title, category_title, section_title";
     try {
         $db = getConnection();
         $stmt = $db->prepare($sql);

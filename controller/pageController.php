@@ -240,11 +240,9 @@ class PageController{
         <div class="entry-body">
         <div class="row">
         <div class="col-md-5 col-xs-5 col-sm-5">';
-        if ($contractorDetails['image_id']) {
         $return .= '<div class="entry-image">
-        <img alt="'.$contractorDetails['contractor_title'].'" src="/images/contractors/'.$contractorDetails['image_id'].'.jpg" />
+        <img alt="'.$contractorDetails['contractor_title'].'" src="/images/contractors/'.($contractorDetails['image_id'] ? $contractorDetails['image_id'] : 'roof_0').'.jpg" />
         </div>';
-        }
         $return .= '</div>
         <div class="reviews col-md-3 col-xs-3 col-sm-3">';
         if ($contractorDetails['average_score']) {

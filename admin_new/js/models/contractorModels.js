@@ -47,7 +47,6 @@ window.Contractor = Backbone.Model.extend({
             prevPlace;
 
         _.each(this.get('mappings'), function(mapping){
-            console.log(mapping);
             if (mapping.place_title !== prevPlace) {
                 i++;
                 o[i] = {};
