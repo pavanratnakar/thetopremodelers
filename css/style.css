@@ -10,6 +10,10 @@ body.place-request {
     background: url(../images/global/bg/bg-2.jpg) no-repeat no-repeat center top;
 }
 
+body.background0 {
+    background:url(../images/home/home_bg.jpg) no-repeat repeat center 0;
+}
+
 body.background1 {
     background:url(../images/global/bg/bg-1.jpg) no-repeat repeat center 0;
 }

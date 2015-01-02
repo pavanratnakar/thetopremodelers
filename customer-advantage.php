@@ -2,13 +2,11 @@
     include_once($_SERVER['DOCUMENT_ROOT'].'/config.class.php');
     include_once(Config::$site_path.'controller/pageController.php');
     $pageController=new PageController(1);
-    echo $pageController->printHeader();
-?>
-        <?php echo $pageController->printHeaderMenu(); ?>
-        <div class="container-fluid">
+    echo $pageController->minifyHTML($pageController->printHeader().$pageController->printHeaderMenu().
+        '<div class="container-fluid">
             <div class="row main-container">
                 <div class="col-md-3 col-xs-12 col-sm-3 sidebar">
-                    <?php echo $pageController->printLogoContainer(); ?>
+                    '.$pageController->printLogoContainer().'
                 </div>
                 <div class="container full-main">
                     <h1>Do you know how to find the most reliable and competent home improvement? We do.</h1>
@@ -30,6 +28,5 @@
                 </div>
             </div>
             <!-- FOOTER -->
-            <?php echo $pageController->printFooterLinks(); ?>
-        </div>
-        <?php echo $pageController->printFooter(); ?>
+            '.$pageController->printFooterLinks().'
+        </div>'.$pageController->printFooter());
