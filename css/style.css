@@ -58,6 +58,10 @@ body.background12 {
     background:url(../images/global/bg/bg-12.jpg) no-repeat repeat center 0;
 }
 
+body.background13 {
+    background:url(../images/global/bg/bg-13.jpg) no-repeat repeat center 0;
+}
+
 /*
  * Text colors
  */
