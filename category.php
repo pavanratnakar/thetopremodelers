@@ -17,23 +17,21 @@
         header( 'Location: '.Config::$site_url.'404.php');
         exit;
     }
-    echo $pageController->printHeader($category->getMeta($categoryName,$placeDetails['place_title']), true);
-?>
-            <?php echo $pageController->printNavigation(); ?>
-            <div class="main-content-container clearfix">
+    echo $pageController->minifyHTML($pageController->printHeader($category->getMeta($categoryName,$placeDetails['place_title']), true).$pageController->printNavigation().
+            '<div class="main-content-container clearfix">
                 <div class="header">
-                    <?php echo $pageController->printUserStepsText(1); ?>
+                    '.$pageController->printUserStepsText(1).'
                     <div class="back-button clearfix">
-                        <a class="button orange small rounded" title="Back" href="<?php echo Config::$site_url.'place/'.$placeName ?>">
+                        <a class="button orange small rounded" title="Back" href="'.Config::$site_url.'place/'.$placeName.'">
                             Back
                         </a>
                     </div>
                 </div>
                 <div class="content clearfix">
                     <div class="main left">
-                        <h2>Get Matched to Top-Rated <?php echo $categoryDetails[0]['category_title']?> for <?php echo $placeDetails['place_title']; ?></h2>
+                        <h2>Get Matched to Top-Rated '.$categoryDetails[0]['category_title'].' for '.$placeDetails['place_title'].'</h2>
                         <ul>
-                            <?php echo $formatedSection; ?>
+                            '.$formatedSection.'
                         </ul>
                     </div>
                     <div class="sidebar right">
@@ -42,13 +40,12 @@
                                 <h3>Roofing Library</h3>
                             </div>
                             <div class="sidebar-content">
-                                <?php echo $pageController->getArticles(); ?>
+                                '.$pageController->getArticles().'
                             </div>
                         </div>
                     </div>
                 </div>
-                <?php echo $pageController->printFooterLinks(); ?>
+                '.$pageController->printFooterLinks().'
             </div>
             <div class="clear"></div>
-        </div>
-<?php echo $pageController->printFooter(); ?>
+        </div>'.$pageController->printFooter());

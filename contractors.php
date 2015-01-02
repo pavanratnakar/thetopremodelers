@@ -19,15 +19,15 @@ if (!$_GET['section']) {
     $sectionName = $getAllSections[0]['section_name'];
 } else {
     $sectionName = $pageController->getUtils()->checkValues($_GET['section']);
+    $sectionDetails = $section->getSectionDetails($sectionName);
 }
-$sectionDetails = $section->getSectionDetails($sectionName);
 $contractor = $pageController->getContractor();
 $sort = $pageController->getUtils()->checkValues($_GET['sort']);
 $page = $pageController->getUtils()->checkValues($_GET['page']) ? $pageController->getUtils()->checkValues($_GET['page']) : 1;
 $contractorDetails = $contractor->getContractors($placeName,$categoryName,$sectionName,$sort,$page);
 $allContractorDetails = $contractor->getAllContractors($placeName,$categoryName,$sectionName);
 if (sizeof($contractorDetails) == 0) {
-    header( 'Location: '.Config::$site_url.'404.php');
+    header( 'Location: '.Config::$site_url.'contact-us');
     exit;
 }
 $avoidCrawl = false;
@@ -55,7 +55,7 @@ echo $pageController->printHeader($contractor->getContractorsMeta($contractorDet
                 </div>
             </div>
             <div class="col-md-9 col-xs-12 col-sm-9 main top">
-                <h2><?php echo $categoryDetails[0]['category_title'].' in '.$placeDetails['place_title'].' with '.$sectionDetails['section_title'].' speciality'?></h2>
+                <h2><?php echo $categoryDetails[0]['category_title'].' in '.$placeDetails['place_title'].($sectionDetails ? ' with '.$sectionDetails['section_title'].' speciality' : '')?></h2>
                 <div class="row">
                     <div class="col-md-8 col-xs-12 col-sm-8">
                         <ul class="nobullet contractors-list input-group">
@@ -189,7 +189,7 @@ echo $pageController->printHeader($contractor->getContractorsMeta($contractorDet
                             </li>
                             <?php } else { ?>
                             <li class="last-child options">
-                                <p class="not-found">We dont have contractors for selected <b><?php echo $placeDetails['place_title']?></b> place under <b><?php echo $categoryDetails[0]['category_title']?></b> category working on <b><?php echo $sectionDetails['section_title']?></b> task.</p>
+                                <p class="not-found">We dont have contractors for selected <b><?php echo $placeDetails['place_title']?></b> place under <b><?php echo $categoryDetails[0]['category_title']?></b><?php echo $sectionDetails ? ' category working on <b>'.$sectionDetails['section_title'].'</b> task' : ''?>.</p>
                             </li>
                             <?php } ?>
                         </ul>

@@ -2,15 +2,13 @@
     include_once($_SERVER['DOCUMENT_ROOT'].'/config.class.php');
     include_once(Config::$site_path.'controller/pageController.php');
     $pageController=new PageController(0);
-    echo $pageController->printHeader();
-?>
-        <?php echo $pageController->printHeaderMenu(); ?>
-        <div class="container-fluid">
+    echo $pageController->minifyHTML($pageController->printHeader().$pageController->printHeaderMenu().
+        '<div class="container-fluid">
             <div class="row main-container">
                 <div class="col-md-3 col-xs-12 col-sm-3 sidebar">
-                    <?php echo $pageController->printLogoContainer(); ?>
+                    '.$pageController->printLogoContainer().'
                     <ul class="nav nav-sidebar hidden-xs">
-                        <?php echo $pageController->getFormatedCategories(1); ?>
+                        '.$pageController->getFormatedCategories(1).'
                     </ul>
                     <div class="sidebar-container certifed-container hidden-xs">
                         <img src="images/home/stamp_final.png" alt=""/>
@@ -23,21 +21,18 @@
                 </div>
                 <div class="sidebar sub-sidebar hidden-xs">
                     <ul class="nav nav-sidebar">
-                        <?php echo $pageController->getFormatedCategories(2); ?>
+                        '.$pageController->getFormatedCategories(2).'
                     </ul>
                 </div>
                 <div class="col-md-9 col-xs-12 col-sm-9 main bottom">
                     <h1>Matching you with our <span class="blue">Prescreened contractors</span></h1>
-<!--                     <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p> -->
                     <div class="hidden-xs">
-                        <?php echo $pageController->printUserStepsText(); ?>
+                        '.$pageController->printUserStepsText().'
                     </div>
                     <div class="process-container">
                         <div class="col-md-7 col-xs-12 col-sm-7 process-sub-container">
                             <h2>What <span class="blue">Client</span> Says</h2>
-                            <?php echo $pageController->printReviewContainer(); ?>
+                            '.$pageController->printReviewContainer().'
                         </div>
                         <div class="col-md-5 hidden-xs col-sm-5">
                             <i class="person"></i>
@@ -46,6 +41,5 @@
                 </div>
             </div>
             <!-- FOOTER -->
-            <?php echo $pageController->printFooterLinks(); ?>
-        </div>
-        <?php echo $pageController->printFooter(); ?>
+            '.$pageController->printFooterLinks().'
+        </div>'.$pageController->printFooter());

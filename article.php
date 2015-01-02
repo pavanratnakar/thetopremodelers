@@ -13,32 +13,29 @@
         header( 'Location: '.Config::$site_url.'404.php');
         exit;
     }
-    echo $pageController->printHeader($pageController->getMeta('article',$articleName));
-?>
-        <?php echo $pageController->printHeaderMenu(); ?>
-        <div class="container-fluid">
+    echo $pageController->minifyHTML($pageController->printHeader($pageController->getMeta('article',$articleName)).$pageController->printHeaderMenu().
+        '<div class="container-fluid">
             <div class="row main-container">
                 <div class="col-md-3 col-xs-12 col-sm-3 sidebar">
-                    <?php echo $pageController->printLogoContainer(); ?>
+                    '.$pageController->printLogoContainer().'
                 </div>
                 <div class="container full-main">
                     <div class="sub">
-                        <h1><?php echo $articleContent['title']; ?></h1>
-                        <?php echo $articleContent['content']; ?>
+                        <h1>'.$articleContent['title'].'</h1>
+                        '.$articleContent['content'].'
                     </div>
                     <div class="comment-box hidden-xs">
                         <h1>Comment</h1>
                         <div class="comment-section">
-                            <?php echo $pageController->facebookComment(array(
+                            '.$pageController->facebookComment(array(
                                 'href' => Config::$site_url.'article/'. $articleName,
                                 'width' => '900',
                                 'posts' => '10'
-                            )); ?>
+                            )).'
                         </div>
                     </div>
                 </div>
             </div>
             <!-- FOOTER -->
-            <?php echo $pageController->printFooterLinks(); ?>
-        </div>
-        <?php echo $pageController->printFooter(); ?>
+            '.$pageController->printFooterLinks().'
+        </div>'.$pageController->printFooter());

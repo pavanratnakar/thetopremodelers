@@ -10,11 +10,15 @@ class PageController{
     protected $page;
     public function __construct($pageNumber){
         include_once($_SERVER['DOCUMENT_ROOT'].'/config.class.php');
+        require_once($_SERVER['DOCUMENT_ROOT'].'/min/lib/Minify/HTML.php');
         include_once($_SERVER['DOCUMENT_ROOT'].'/min/utils.php');
         include_once(Config::$site_path.'/global/Class/utils.class.php');
         include_once(Config::$site_path.'/class/page.class.php');
         $this->page=new Page($pageNumber);
         $this->utils=new Utils();
+    }
+    public function minifyHTML($buffer){
+        return Minify_HTML::minify($buffer);
     }
     public function printHeader($meta=null, $avoidCrawl=false, $theme=0, $background=2){
         return $this->page->printHeader($meta, $avoidCrawl, $theme, $background);
