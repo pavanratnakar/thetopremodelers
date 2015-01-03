@@ -20,19 +20,18 @@ $params['contractorName'] = $utils->checkValues($_GET['contractor']);
 if ($params['placeName'] && $params['categoryName'] && $params['sectionName']) {
     $contractor = $pageController->getContractor();
     $contractorDetails = $contractor->getContractors($params['placeName'], $params['categoryName'], $params['sectionName'], '', '');
-    echo $pageController->printHeader($contractor->getContractorsMeta($contractorDetails),false,1,$contractorDetails[0]['background_id']);
+    echo $pageController->minifyHTML($pageController->printHeader($contractor->getContractorsMeta($contractorDetails),false,1,$contractorDetails[0]['background_id']));
 } else {
-    echo $pageController->printHeader();
+    echo $pageController->minifyHTML($pageController->printHeader());
 }
-?>
-<?php echo $pageController->printHeaderMenu(); ?>
-    <div class="container-fluid">
+    echo $pageController->minifyHTML($pageController->printHeaderMenu().
+    '<div class="container-fluid">
         <div class="row main-container">
             <div class="col-md-3 col-xs-12 col-sm-3 sidebar">
-                <?php echo $pageController->printLogoContainer(); ?>
+                '.$pageController->printLogoContainer().'
             </div>
             <div class="regular-main main">
-                <h1>Don't like forms !! call us 24/7   1(214) 303 97 71</h1>
+                <h1>Don\'t like forms !! call us 24/7   1(214) 303 97 71</h1>
                 <div class="row">
                     <div class="col-md-8 col-xs-12 col-sm-8">
                         <form id="contactForm">
@@ -74,18 +73,17 @@ if ($params['placeName'] && $params['categoryName'] && $params['sectionName']) {
                                 </p>
                                 <p class="subscribe">
                                     <label>
-                                        <input type="checkbox" name="subscribe" id="subscribe"/> Yes, I'm interested in receiving remodeling news and special offers from Thetopremodelers.com
+                                        <input type="checkbox" name="subscribe" id="subscribe"/> Yes, I\'m interested in receiving remodeling news and special offers from Thetopremodelers.com
                                     </label>
                                 </p>
-                                <p>
-                                    <?php
+                                <p>');
                                     foreach ($params as $key=>$value) {
                                         if ($value) {
-                                            echo '<input id="'.$key.'" type="hidden" value="'.$value.'" />';
+                                            echo $pageController->minifyHTML('<input id="'.$key.'" type="hidden" value="'.$value.'" />');
                                         }
                                     }
-                                    ?>
-                                    <input class="submit btn btn-success" type="submit" value="Submit" />  
+                                echo $pageController->minifyHTML('
+                                    <input class="submit btn btn-success" type="submit" value="Submit" />
                                 </p>
                             </div>
                         </form>
@@ -105,6 +103,5 @@ if ($params['placeName'] && $params['categoryName'] && $params['sectionName']) {
             </div>
         </div>
         <!-- FOOTER -->
-    <?php echo $pageController->printFooterLinks(); ?>
-    </div>
-<?php echo $pageController->printFooter(); ?>
+    '.$pageController->printFooterLinks().'
+    </div>'.$pageController->printFooter()); ?>

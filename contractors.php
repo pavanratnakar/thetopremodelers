@@ -34,66 +34,65 @@ $avoidCrawl = false;
 // if ($placeDetails['place_id'] != 2 && $placeDetails['place_id'] != 1 && $placeDetails['place_id'] != 5 && $placeDetails['place_id'] != 36 && $placeDetails['place_id'] != 38 && $placeDetails['place_id'] != 45) {
 //     $avoidCrawl = true;
 // }
-echo $pageController->printHeader($contractor->getContractorsMeta($contractorDetails),$avoidCrawl,1,$contractorDetails[0]['background_id']);
-?>
-<?php echo $pageController->printHeaderMenu(); ?>
-    <div class="container-fluid">
+echo $pageController->minifyHTML($pageController->printHeader($contractor->getContractorsMeta($contractorDetails),$avoidCrawl,1,$contractorDetails[0]['background_id']).$pageController->printHeaderMenu().
+    '<div class="container-fluid">
         <div class="row main-container">
             <div class="col-md-3 col-xs-12 col-sm-3 sidebar">
-                <?php echo $pageController->printLogoContainer(); ?>
+                '.$pageController->printLogoContainer().'
                 <div class="sidebar-container certifed-container hidden-xs">
-                    <img src="<?php echo Config::$site_url ?>images/home/stamp_final.png" alt=""/>
+                    <img src="'.Config::$site_url.'images/home/stamp_final.png" alt=""/>
                 </div>
                 <ul class="nav nav-sidebar hidden-xs">
-                    <?php echo $pageController->getFormatedCategories(1); ?>
-                    <?php echo $pageController->getFormatedCategories(2); ?>
+                    '.$pageController->getFormatedCategories(1).'
+                    '.$pageController->getFormatedCategories(2).'
                 </ul>
                 <div class="sidebar-container service-container hidden-xs">
-                    <img src="<?php echo Config::$site_url ?>images/home/service.jpg" alt=""/>
+                    <img src="'.Config::$site_url.'images/home/service.jpg" alt=""/>
                     <h4 class="gold">Need immediate service</h4>
                     <h5>CALL US : 1(214)303 9771</h5>
                 </div>
             </div>
             <div class="col-md-9 col-xs-12 col-sm-9 main top">
-                <h2><?php echo $categoryDetails[0]['category_title'].' in '.$placeDetails['place_title'].($sectionDetails ? ' with '.$sectionDetails['section_title'].' speciality' : '')?></h2>
+                <h2>'.$categoryDetails[0]['category_title'].' in '.$placeDetails['place_title'].($sectionDetails ? ' with '.$sectionDetails['section_title'].' speciality' : '').'</h2>
                 <div class="row">
                     <div class="col-md-8 col-xs-12 col-sm-8">
-                        <ul class="nobullet contractors-list input-group">
-<!--                                 <li class="option row">
-                                <form method="post" class="find-contractors" action="#">
-                                    <div class="col-md-10 col-xs-10 col-sm-10" >
-                                        <select class="place_select form-control" name="place_select">
-                                            <?php
-                                            $places = $place->getPlaces();
-                                            echo '<option value="">Choose Place</option>';
-                                            foreach ($places as $key => $value) {
-                                                echo '<option '.($value['place_name']==$placeName ? 'selected="selected"' : "").'value="'.$value['place_name'].'">'.$value['place_title'].'</option>';
-                                            }
-                                            ?>
-                                        </select>
-                                        <select class="category_select form-control" name="category_select">
-                                          <?php
-                                          echo '<option value="">Choose Category</option>';
-                                          foreach ($categoryDetails as $key => $value) {
-                                            echo '<option '.($value['category_name']==$categoryName ? 'selected="selected"' : "").'value="'.$value['category_name'].'">'.$value['category_title'].'</option>';
-                                        }
-                                        ?>
-                                        </select>
-                                        <select class="section_select form-control" name="section_select">
-                                          <?php
-                                          echo '<option value="">Choose Task</option>';
-                                          foreach ($section->getSections() as $key => $value) {
-                                            echo '<option '.($value['section_name']==$sectionName ? 'selected="selected"' : "").'value="'.$value['section_name'].'">'.$value['section_title'].'</option>';
-                                        }
-                                        ?>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-2 col-xs-2 col-sm-2">
-                                        <button class="btn btn-success submit " type="submit">Select</button>
-                                    </div>
-                                </form>
-                            </li> -->
-                            <?php if ($contractorDetails) { ?>
+                        <ul class="nobullet contractors-list input-group">');
+//                            <li class="option row">
+//                                 <form method="post" class="find-contractors" action="#">
+//                                     <div class="col-md-10 col-xs-10 col-sm-10" >
+//                                         <select class="place_select form-control" name="place_select">');
+//                                             $output = '';
+//                                             $places = $place->getPlaces();
+//                                             $output .= '<option value="">Choose Place</option>';
+//                                             foreach ($places as $key => $value) {
+//                                                 $output .= '<option '.($value['place_name']==$placeName ? "selected='selected'" : "").' value="'.$value['place_name'].'">'.$value['place_title'].'</option>';
+//                                             }
+//                                             echo $pageController->minifyHTML($output.'
+//                                         </select>
+//                                         <select class="category_select form-control" name="category_select">');
+//                                             $output = '';
+//                                             $output .= '<option value="">Choose Category</option>';
+//                                             foreach ($categoryDetails as $key => $value) {
+//                                                 $output .= '<option '.($value['category_name']==$categoryName ? "selected='selected'" : "").' value="'.$value['category_name'].'">'.$value['category_title'].'</option>';
+//                                             }
+//                                             echo $pageController->minifyHTML($output.'
+//                                         </select>
+//                                         <select class="section_select form-control" name="section_select">');
+//                                             $output = '';
+//                                             $output .= '<option value="">Choose Task</option>';
+//                                             foreach ($section->getSections() as $key => $value) {
+//                                                 $output .= '<option '.($value['section_name']==$sectionName ? "selected='selected'" : "").' value="'.$value['section_name'].'">'.$value['section_title'].'</option>';
+//                                             }
+//                                             echo $pageController->minifyHTML($output.'
+//                                         </select>
+//                                     </div>
+//                                     <div class="col-md-2 col-xs-2 col-sm-2">
+//                                         <button class="btn btn-success submit " type="submit">Select</button>
+//                                     </div>
+//                                 </form>
+//                             </li>');
+                            if ($contractorDetails) {
+                            echo $pageController->minifyHTML('
                             <li class="option row">
                                 <div class="col-md-8 col-xs-8 col-sm-8">
                                     <form class="contractorsSort" method="get" action="#">
@@ -101,75 +100,72 @@ echo $pageController->printHeader($contractor->getContractorsMeta($contractorDet
                                             <div class="input-group">
                                                 <select class="form-control" name="sort">
                                                     <option value="average_score">Ratings : Highest to Lowest</option>
-                                                    <option <?php echo ($sort=="review_count") ? 'selected="selected"' : ''?> value="review_count">Ratings : Most to Least</option>
+                                                    <option '.($sort=="review_count" ? "selected=selected" : "").' value="review_count">Ratings : Most to Least</option>
                                                 </select>
                                             </div>
                                         </fieldset>
                                     </form>
                                 </div>
                                 <div class="col-md-4 col-xs-4 col-sm-4">
-                                    <?php $pageController->getUtils()->paginate($allContractorDetails['total_count'],Config::$paginationLimit,$page) ?>
+                                    '.$pageController->getUtils()->paginate($allContractorDetails['total_count'],Config::$paginationLimit,$page).'
                                 </div>
-                            </li>
-                        <?php
+                            </li>');
                         $i = 0;
                         foreach($contractorDetails as $key => $value) {
-                            ?>
-                            <li class="<?php echo ($i%2 == 0) ? 'even' : 'odd';?>" >
-                                <h3><a href="<?php echo Config::$site_url.'contractor/'. $value['contractor_name']?>"><?php echo $value['contractor_title'] ?></a></h3>
+                            echo $pageController->minifyHTML('
+                            <li class="'.($i%2 == 0 ? "even" : "odd").'" >
+                                <h3><a href="'.Config::$site_url.'contractor/'.$value['contractor_name'].'">'.$value['contractor_title'].'</a></h3>
                                 <div class="entry-body">
                                     <div class="row">
                                         <div class="col-md-4 col-xs-4 col-sm-4">
                                             <div class="entry-image">
-                                                <a title="<?php echo $value['contractor_title'] ?>" href="<?php echo Config::$site_url.'contractor/'. $value['contractor_name']?>">
-                                                    <img alt="<?php echo $value['contractor_title'] ?>" src="<?php echo Config::$site_url ?>/images/contractors/<?php echo $value['image_id'] ? $value['image_id'] : 'roof_0'?>.jpg" />
+                                                <a title="'.$value['contractor_title'].'" href="'.Config::$site_url.'contractor/'. $value['contractor_name'].'">
+                                                    <img alt="'.$value['contractor_title'].'" src="'.Config::$site_url.'/images/contractors/'.($value['image_id'] ? $value['image_id'] : 'roof_0').'.jpg" />
                                                 </a>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-xs-3 col-sm-3">
-                                            <div class="reviews">
-                                                <?php
+                                            <div class="reviews">');
+                                                $output = '';
                                                 if ($value['average_score']) {
-                                                    echo '<p><i class="rating-static rating-'.($value['average_score']*10).'"></i></p>';
-                                                    echo '<p><span class="rating-score">'.$value['average_score'].'</span></p>';
+                                                    $output .= '<p><i class="rating-static rating-'.($value['average_score']*10).'"></i></p>';
+                                                    $output .= '<p><span class="rating-score">'.$value['average_score'].'</span></p>';
                                                 }
                                                 if ($value['review_count']) {
-                                                    echo '<p>'.$value['review_count'].' Reviews</p>';
-                                                    echo '<p><a href="'.Config::$site_url.'contractor/'. $value['contractor_name'].'#ratings-reviews" title="See all reviews">See all reviews</a></p>';
+                                                    $output .= '<p>'.$value['review_count'].' Reviews</p>';
+                                                    $output .= '<p><a href="'.Config::$site_url.'contractor/'. $value['contractor_name'].'#ratings-reviews" title="See all reviews">See all reviews</a></p>';
                                                 }
                                                 if (!$value['average_score'] && !$value['review_count']) {
-                                                    echo '<p><i>Yet to be rated</i></p>';
+                                                    $output .= '<p><i>Yet to be rated</i></p>';
                                                 }
-                                                ?>
+                                                echo $pageController->minifyHTML($output.'
                                             </div>
                                         </div>
                                         <div class="col-md-5 col-xs-5 col-sm-5">
-                                            <div class="contact-details">
-                                            <?php
+                                            <div class="contact-details">');
                                             if ($value['contractor_phone']) {
-                                                echo '<span class="telephone">'.$value['contractor_phone'].'</span>';
+                                                echo $pageController->minifyHTML('<span class="telephone">'.$value['contractor_phone'].'</span>');
                                             }
                                             if ($value['contractor_address']) {
-                                                echo '<div class="address">'.$value['contractor_address'].'</div>';
+                                                echo $pageController->minifyHTML('<div class="address">'.$value['contractor_address'].'</div>');
                                             }
-                                            ?>
+                                            echo $pageController->minifyHTML('
                                             </div>
-                                            <a href="<?php echo Config::$site_url.$placeName.'/'.$categoryName.'/'.$sectionName.'/'.$value['contractor_name'].'/need' ?>" class="get-quote btn btn-info">Get a Quote</a>
+                                            <a href="'.Config::$site_url.$placeName.'/'.$categoryName.'/'.$sectionName.'/'.$value['contractor_name'].'/need" class="get-quote btn btn-info">Get a Quote</a>
                                         </div>
                                     </div>
                                     <div class="row more-details">
                                         <div class="col-md-12 col-xs-12 col-sm-12">
                                             <div class="description">
-                                                <p><?php echo $value['contractor_description'] ?></p>
+                                                <p>'.$value['contractor_description'].'</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </li>
-                        <?php
+                            </li>');
                         $i++;
                         }
-                        ?>
+                        echo $pageController->minifyHTML('
                             <li class="last-child option row">
                                 <div class="col-md-8 col-xs-8 col-sm-8">
                                     <form class="contractorsSort" method="get" action="#">
@@ -177,21 +173,23 @@ echo $pageController->printHeader($contractor->getContractorsMeta($contractorDet
                                             <div class="input-group">
                                                 <select class="form-control" name="sort">
                                                     <option value="average_score">Ratings : Highest to Lowest</option>
-                                                    <option <?php echo ($sort=="review_count") ? 'selected="selected"' : ''?> value="review_count">Ratings : Most to Least</option>
+                                                    <option '.($sort=="review_count" ? "selected=selected" : "").' value="review_count">Ratings : Most to Least</option>
                                                 </select>
                                             </div>
                                         </fieldset>
                                     </form>
                                 </div>
                                 <div class="col-md-4 col-xs-4 col-sm-4">
-                                    <?php $pageController->getUtils()->paginate($allContractorDetails['total_count'],Config::$paginationLimit,$page) ?>
+                                    '.$pageController->getUtils()->paginate($allContractorDetails['total_count'], Config::$paginationLimit, $page).'
                                 </div>
-                            </li>
-                            <?php } else { ?>
+                            </li>');
+                            } else {
+                            echo $pageController->minifyHTML('
                             <li class="last-child options">
-                                <p class="not-found">We dont have contractors for selected <b><?php echo $placeDetails['place_title']?></b> place under <b><?php echo $categoryDetails[0]['category_title']?></b><?php echo $sectionDetails ? ' category working on <b>'.$sectionDetails['section_title'].'</b> task' : ''?>.</p>
-                            </li>
-                            <?php } ?>
+                                <p class="not-found">We dont have contractors for selected <b>'.$placeDetails['place_title'].'</b> place under <b>'.$categoryDetails[0]['category_title'].'</b>'.$sectionDetails ? ' category working on <b>'.$sectionDetails['section_title'].'</b> task' : ''.'.</p>
+                            </li>');
+                            }
+                            echo $pageController->minifyHTML('
                         </ul>
                     </div>
                     <div class="col-md-4 hidden-xs col-sm-4">
@@ -200,7 +198,7 @@ echo $pageController->printHeader($contractor->getContractorsMeta($contractorDet
                                 <h3>Today&rsquo;s Best Offers</h3>
                             </div>
                             <div class="sb-content">
-                                <img src="<?php echo Config::$site_url.'images/global/sidebar/solar_system.png' ?>" title="Hire our pros and win 6000 watt solar system" alt="Hire our pros and win 6000 watt solar system" />
+                                <img src="'.Config::$site_url.'images/global/sidebar/solar_system.png" title="Hire our pros and win 6000 watt solar system" alt="Hire our pros and win 6000 watt solar system" />
                             </div>
                         </div>
                         <div class="sb-container">
@@ -208,7 +206,7 @@ echo $pageController->printHeader($contractor->getContractorsMeta($contractorDet
                                 <h3>Roofing Library</h3>
                             </div>
                             <div class="sb-content">
-                                <?php echo $pageController->getArticles(); ?>
+                                '.$pageController->getArticles().'
                             </div>
                         </div>
                     </div>
@@ -216,6 +214,5 @@ echo $pageController->printHeader($contractor->getContractorsMeta($contractorDet
             </div>
         </div>
         <!-- FOOTER -->
-    <?php echo $pageController->printFooterLinks(); ?>
-    </div>
-<?php echo $pageController->printFooter(); ?>
+        '.$pageController->printFooterLinks().'
+    </div>'.$pageController->printFooter()); ?>

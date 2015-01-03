@@ -36,43 +36,43 @@ if (!$formatQuestions) {
 $metaDetails = $section->getMeta($contractorTitle);
 $metaDetails['geo'] = $placeDetails['place_geo'];
 $metaDetails['geo_placename'] = $placeDetails['place_geo_placename'];
-echo $pageController->printHeader($metaDetails,true);
-?>
-<?php echo $pageController->printHeaderMenu(); ?>
-    <div class="container-fluid">
+echo $pageController->minifyHTML($pageController->printHeader($metaDetails,true).$pageController->printHeaderMenu().
+    '<div class="container-fluid">
         <div class="row main-container">
             <div class="col-md-3 col-xs-12 col-sm-3 sidebar">
-                <?php echo $pageController->printLogoContainer(); ?>
+                '.$pageController->printLogoContainer().'
             </div>
             <div class="regular-main">
                 <div class="row options-container">
                     <div class="col-md-9 col-sm-9 hidden-xs">
-                        <?php echo $pageController->printUserStepsText(2); ?>
+                        '.$pageController->printUserStepsText(2).'
                     </div>
                     <div class="col-md-3 col-xs-12 col-sm-3 secondary-options-container">
-                        <a class="btn btn-warning" title="Back" href="<?php echo Config::$site_url ?>places">
+                        <a class="btn btn-warning" title="Back" href="'.Config::$site_url.'places">
                             Back
                         </a>
                     </div>
                 </div>
                 <div class="row sub">
-                    <div class="col-md-8 col-xs-12 col-sm-8">
-                        <?php
-                        if ($contractorDetails) { ?>
+                    <div class="col-md-8 col-xs-12 col-sm-8">');
+                        if ($contractorDetails) {
+                        echo $pageController->minifyHTML('
                         <div id="top" class="top">
-                            <?php echo $pageController->getContractorDetails($contractorDetails,false); ?>
+                            '.$pageController->getContractorDetails($contractorDetails,false).'
                         </div>
                     </div>
                 </div>
                 <div class="row form-container">
                     <div class="col-md-12 col-xs-12 col-sm-12">
-                        <h3>Request a Quote: <?php echo $sectionDetails['section_title']?> for <?php echo $placeDetails['place_title']; ?></h3>
-                        <?php } else { ?>
-                        <h3>Submit and Get Matched to Prescreened <?php echo $sectionDetails['section_title']?> for <?php echo $placeDetails['place_title']; ?></h3>
-                        <?php } ?>
-                        <form id="questionForm" action="<?php echo $submit ?>" method="post" role="form">
+                        <h3>Request a Quote: '.$sectionDetails['section_title'].' for '.$placeDetails['place_title'].'</h3>');
+                        } else {
+                        echo $pageController->minifyHTML('
+                        <h3>Submit and Get Matched to Prescreened '.$sectionDetails['section_title'].' for '.$placeDetails['place_title'].'</h3>');
+                        }
+                        echo $pageController->minifyHTML('
+                        <form id="questionForm" action="'.$submit.'" method="post" role="form">
                             <fieldset>
-                                <?php echo $formatQuestions; ?>
+                                '.$formatQuestions.'
                                 <input class="submit btn btn-success" type="submit" value="Continue"/>
                             </fieldset>
                         </form>
@@ -81,6 +81,5 @@ echo $pageController->printHeader($metaDetails,true);
             </div>
         </div>
         <!-- FOOTER -->
-    <?php echo $pageController->printFooterLinks(); ?>
-    </div>
-<?php echo $pageController->printFooter(); ?>
+    '.$pageController->printFooterLinks().'
+    </div>'.$pageController->printFooter()); ?>
