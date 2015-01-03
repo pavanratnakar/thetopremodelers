@@ -56,41 +56,41 @@ echo $pageController->minifyHTML($pageController->printHeader($contractor->getCo
                 <h2>'.$categoryDetails[0]['category_title'].' in '.$placeDetails['place_title'].($sectionDetails ? ' with '.$sectionDetails['section_title'].' speciality' : '').'</h2>
                 <div class="row">
                     <div class="col-md-8 col-xs-12 col-sm-8">
-                        <ul class="nobullet contractors-list input-group">');
-//                            <li class="option row">
-//                                 <form method="post" class="find-contractors" action="#">
-//                                     <div class="col-md-10 col-xs-10 col-sm-10" >
-//                                         <select class="place_select form-control" name="place_select">');
-//                                             $output = '';
-//                                             $places = $place->getPlaces();
-//                                             $output .= '<option value="">Choose Place</option>';
-//                                             foreach ($places as $key => $value) {
-//                                                 $output .= '<option '.($value['place_name']==$placeName ? "selected='selected'" : "").' value="'.$value['place_name'].'">'.$value['place_title'].'</option>';
-//                                             }
-//                                             echo $pageController->minifyHTML($output.'
-//                                         </select>
-//                                         <select class="category_select form-control" name="category_select">');
-//                                             $output = '';
-//                                             $output .= '<option value="">Choose Category</option>';
-//                                             foreach ($categoryDetails as $key => $value) {
-//                                                 $output .= '<option '.($value['category_name']==$categoryName ? "selected='selected'" : "").' value="'.$value['category_name'].'">'.$value['category_title'].'</option>';
-//                                             }
-//                                             echo $pageController->minifyHTML($output.'
-//                                         </select>
-//                                         <select class="section_select form-control" name="section_select">');
-//                                             $output = '';
-//                                             $output .= '<option value="">Choose Task</option>';
-//                                             foreach ($section->getSections() as $key => $value) {
-//                                                 $output .= '<option '.($value['section_name']==$sectionName ? "selected='selected'" : "").' value="'.$value['section_name'].'">'.$value['section_title'].'</option>';
-//                                             }
-//                                             echo $pageController->minifyHTML($output.'
-//                                         </select>
-//                                     </div>
-//                                     <div class="col-md-2 col-xs-2 col-sm-2">
-//                                         <button class="btn btn-success submit " type="submit">Select</button>
-//                                     </div>
-//                                 </form>
-//                             </li>');
+                        <ul class="nobullet contractors-list input-group">
+                           <li class="option row" style="display:none;">
+                                <form method="post" class="find-contractors" action="#">
+                                    <div class="col-md-10 col-xs-10 col-sm-10" >
+                                        <select class="place_select form-control" name="place_select">');
+                                            $output = '';
+                                            $places = $place->getPlaces();
+                                            $output .= '<option value="">Choose Place</option>';
+                                            foreach ($places as $key => $value) {
+                                                $output .= '<option '.($value['place_name']==$placeName ? "selected='selected'" : "").' value="'.$value['place_name'].'">'.$value['place_title'].'</option>';
+                                            }
+                                            echo $pageController->minifyHTML($output.'
+                                        </select>
+                                        <select class="category_select form-control" name="category_select">');
+                                            $output = '';
+                                            $output .= '<option value="">Choose Category</option>';
+                                            foreach ($categoryDetails as $key => $value) {
+                                                $output .= '<option '.($value['category_name']==$categoryName ? "selected='selected'" : "").' value="'.$value['category_name'].'">'.$value['category_title'].'</option>';
+                                            }
+                                            echo $pageController->minifyHTML($output.'
+                                        </select>
+                                        <select class="section_select form-control" name="section_select">');
+                                            $output = '';
+                                            $output .= '<option value="">Choose Task</option>';
+                                            foreach ($section->getSections() as $key => $value) {
+                                                $output .= '<option '.($value['section_name']==$sectionName ? "selected='selected'" : "").' value="'.$value['section_name'].'">'.$value['section_title'].'</option>';
+                                            }
+                                            echo $pageController->minifyHTML($output.'
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2 col-xs-2 col-sm-2">
+                                        <button class="btn btn-success submit " type="submit">Select</button>
+                                    </div>
+                                </form>
+                            </li>');
                             if ($contractorDetails) {
                             echo $pageController->minifyHTML('
                             <li class="option row">

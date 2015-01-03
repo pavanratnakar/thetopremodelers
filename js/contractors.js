@@ -62,12 +62,12 @@ var herve_contractors = {
         });
         $('.contractorsSort select').live('change', function(event){
             t.findSelection({
-                sortType : $(this).val()
+                sortType: $(this).val()
             });
         });
         $('.paginate button').live('click', function(event){
             t.findSelection({
-                pageNumber : $(this).data('page')
+                pageNumber: $(this).data('page')
             });
         });
     },
