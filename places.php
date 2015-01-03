@@ -3,20 +3,18 @@
     include_once(Config::$site_path.'controller/pageController.php');
     $pageController=new PageController(9);
     $place = $pageController->getPlace();
-    echo $pageController->printHeader();
-?>
-        <?php echo $pageController->printHeaderMenu(); ?>
-        <div class="container-fluid">
+    echo $pageController->minifyHTML($pageController->printHeader().$pageController->printHeaderMenu().
+        '<div class="container-fluid">
             <div class="row main-container">
                 <div class="col-md-3 col-xs-12 col-sm-3 sidebar">
-                    <?php echo $pageController->printLogoContainer(); ?>
+                    '.$pageController->printLogoContainer().'
                     <ul class="nav nav-sidebar hidden-xs">
-                        <?php echo $pageController->getFormatedCategories(1); ?>
+                        '.$pageController->getFormatedCategories(1).'
                     </ul>
                 </div>
                 <div class="sidebar sub-sidebar hidden-xs">
                     <ul class="nav nav-sidebar">
-                        <?php echo $pageController->getFormatedCategories(2); ?>
+                        '.$pageController->getFormatedCategories(2).'
                     </ul>
                 </div>
                 <div class="col-md-9 col-xs-12 col-sm-9 container main top">
@@ -24,8 +22,8 @@
                     <div class="sub">
                         <h2>Find Contractors for cities within Dallas County</h2>
                         <div class="content-container">
-                            <div class="place-container">
-                                <?php
+                            <div class="place-container">');
+                                $output = '';
                                 $places = $place->getPlaces();
                                 $placesCount = ceil(sizeof($places)/4);
                                 $placesArray[0] = array_slice($places, 0,$placesCount);
@@ -33,19 +31,18 @@
                                 $placesArray[2] = array_slice($places, $placesCount*2,$placesCount);
                                 $placesArray[3] = array_slice($places, $placesCount*3,$placesCount);
                                 foreach ($placesArray as $placesArrayKey => $placesArrayValue) {
-                                    echo '<ul class="col-xs-12 col-sm-3 col-md-3 col-lg-3 list">';
+                                    $output .= '<ul class="col-xs-12 col-sm-3 col-md-3 col-lg-3 list">';
                                     foreach ($placesArrayValue as $key => $value) {
-                                        echo '<li><a href="'.Config::$site_url.'place/'.$value['place_name'].'" title="'.$value['place_title'].'">'.$value['place_title'].'</a></li>';
+                                        $output .= '<li><a href="'.Config::$site_url.'place/'.$value['place_name'].'" title="'.$value['place_title'].'">'.$value['place_title'].'</a></li>';
                                     }
-                                    echo '</ul>';
+                                    $output .= '</ul>';
                                 }
-                                ?>
-                            </div>
+                            echo $pageController->minifyHTML($output.
+                            '</div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- FOOTER -->
-            <?php echo $pageController->printFooterLinks(); ?>
-        </div>
-        <?php echo $pageController->printFooter(); ?>
+            '.$pageController->printFooterLinks().'
+        </div>'.$pageController->printFooter());
