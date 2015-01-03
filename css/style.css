@@ -69,6 +69,34 @@ body.background13 {
     background:url(../images/global/bg/bg-13.jpg) no-repeat repeat center 0;
 }
 
+body.background14 {
+    background:url(../images/global/bg/bg-14.jpg) no-repeat repeat center 0;
+}
+
+body.background15 {
+    background:url(../images/global/bg/bg-15.jpg) no-repeat repeat center 0;
+}
+
+body.background16 {
+    background:url(../images/global/bg/bg-16.jpg) no-repeat repeat center 0;
+}
+
+body.background17 {
+    background:url(../images/global/bg/bg-17.jpg) no-repeat repeat center 0;
+}
+
+body.background18 {
+    background:url(../images/global/bg/bg-18.jpg) no-repeat repeat center 0;
+}
+
+body.background19 {
+    background:url(../images/global/bg/bg-19.jpg) no-repeat repeat center 0;
+}
+
+body.background20 {
+    background:url(../images/global/bg/bg-20.jpg) no-repeat repeat center 0;
+}
+
 /*
  * Text colors
  */
@@ -1024,6 +1052,34 @@ footer .container {
         background:url(../images/global/bg/medium/bg-13.jpg) no-repeat repeat center 0;
     }
 
+    body.background14 {
+        background:url(../images/global/bg/medium/bg-14.jpg) no-repeat repeat center 0;
+    }
+
+    body.background15 {
+        background:url(../images/global/bg/medium/bg-15.jpg) no-repeat repeat center 0;
+    }
+
+    body.background16 {
+        background:url(../images/global/bg/medium/bg-16.jpg) no-repeat repeat center 0;
+    }
+
+    body.background17 {
+        background:url(../images/global/bg/medium/bg-17.jpg) no-repeat repeat center 0;
+    }
+
+    body.background18 {
+        background:url(../images/global/bg/medium/bg-18.jpg) no-repeat repeat center 0;
+    }
+
+    body.background19 {
+        background:url(../images/global/bg/medium/bg-19.jpg) no-repeat repeat center 0;
+    }
+
+    body.background20 {
+        background:url(../images/global/bg/medium/bg-20.jpg) no-repeat repeat center 0;
+    }
+
     .logo-container {
         padding: 20px 0px;
         text-decoration: none;
@@ -1218,5 +1274,33 @@ footer .container {
 
     body.background13 {
         background:url(../images/global/bg/large/bg-13.jpg) no-repeat repeat center 0;
+    }
+
+    body.background14 {
+        background:url(../images/global/bg/large/bg-14.jpg) no-repeat repeat center 0;
+    }
+
+    body.background15 {
+        background:url(../images/global/bg/large/bg-15.jpg) no-repeat repeat center 0;
+    }
+
+    body.background16 {
+        background:url(../images/global/bg/large/bg-16.jpg) no-repeat repeat center 0;
+    }
+
+    body.background17 {
+        background:url(../images/global/bg/large/bg-17.jpg) no-repeat repeat center 0;
+    }
+
+    body.background18 {
+        background:url(../images/global/bg/large/bg-18.jpg) no-repeat repeat center 0;
+    }
+
+    body.background19 {
+        background:url(../images/global/bg/large/bg-19.jpg) no-repeat repeat center 0;
+    }
+
+    body.background20 {
+        background:url(../images/global/bg/large/bg-20.jpg) no-repeat repeat center 0;
     }
 }

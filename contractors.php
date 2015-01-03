@@ -34,7 +34,7 @@ $avoidCrawl = false;
 // if ($placeDetails['place_id'] != 2 && $placeDetails['place_id'] != 1 && $placeDetails['place_id'] != 5 && $placeDetails['place_id'] != 36 && $placeDetails['place_id'] != 38 && $placeDetails['place_id'] != 45) {
 //     $avoidCrawl = true;
 // }
-echo $pageController->minifyHTML($pageController->printHeader($contractor->getContractorsMeta($contractorDetails),$avoidCrawl,1,$contractorDetails[0]['background_id']).$pageController->printHeaderMenu().
+echo $pageController->minifyHTML($pageController->printHeader($contractor->getContractorsMeta($contractorDetails, $categoryDetails[0]['category_title'], $sectionDetails ? $sectionDetails['section_title'] : ''),$avoidCrawl,1,$contractorDetails[0]['background_id']).$pageController->printHeaderMenu().
     '<div class="container-fluid">
         <div class="row main-container">
             <div class="col-md-3 col-xs-12 col-sm-3 sidebar">

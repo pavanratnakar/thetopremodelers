@@ -405,8 +405,8 @@ var herve_grid = {
                         {name:'background_id',index:'background_id', width:herve_grid.theme.note_width,formoptions:{label: 'Background Id'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"textarea", editoptions:{rows:"2",cols:"20"}},
                         {name:'active',index:'active', width:herve_grid.theme.note_width,formoptions:{label: 'Active'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"select",editoptions:{value:"1:True;0:False"}}
                     ],
-                    rowNum:100,
-                    rowList:[100,500,1000,1500,2000,2500,3000],
+                    rowNum:5000,
+                    rowList:[5000, 10000],
                     pager: herve_grid.jqgrid.categorySection.page,
                     sortname: 'categorysection_order',
                     viewrecords: true,

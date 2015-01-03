@@ -348,7 +348,7 @@ class Contractor{
         }
         return $response;
     }
-    public function getContractorsMeta($details){
+    public function getContractorsMeta ($details, $categoryTitle=null, $sectionTitle=null) {
         $keywords = false;
         $query="SELECT *
                     FROM 
@@ -358,8 +358,8 @@ class Contractor{
 
         $placeTitle = explode(' (',$details[0]['place_title']);
         $placeTitle = $placeTitle[0];
-        $suffix = strrchr($placeTitle, ","); 
-        $pos = strpos($placeTitle,$suffix); 
+        $suffix = strrchr($placeTitle, ",");
+        $pos = strpos($placeTitle,$suffix);
         $name = substr_replace ($placeTitle,"", $pos);
         $result = $this->mysqli->query($query);
         $totalRowcount = $result->num_rows;
@@ -371,10 +371,27 @@ class Contractor{
             }
         } else {
             $keywords = ($placeName==='dallas_texas') ? 'dallas general contractors' : false;
-            $title = $name.' Roofing Company - '.$name.' Roofing Contractors - TX Roofers';
+            $title = 'Voted 12 best '.$name.' contractors in '.$placeTitle.' thetopremodelers';
+            if ($categoryTitle) {
+                if ($sectionTitle) {
+                    $title = 'Voted 12 best '.$categoryTitle.' contractors for '.$sectionTitle.' in '.$placeTitle.' thetopremodelers';
+                } else {
+                    $title = 'Voted 12 best '.$categoryTitle.' contractors in '.$placeTitle.' thetopremodelers';
+                }
+            } else {
+                $title = $name.' Roofing Company - '.$name.' Roofing Contractors - TX Roofers';
+            }
         }
         if (!trim($desciprtion)) {
-            $desciprtion = 'We are the only company providing roofing contractors in '.$name.', with 5 Stars certified ratings, giving you the confidence in choosing the right company.';
+            if ($categoryTitle) {
+                if ($sectionTitle) {
+                    $desciprtion = 'We are the only company providing '.$categoryTitle.' contractors for '.$sectionTitle.' in '.$placeTitle.', with 5 Stars certified reviews, Your trusted source to choose the right company.';
+                } else {
+                    $desciprtion = 'We are the only company providing '.$categoryTitle.' contractors in '.$placeTitle.', with 5 Stars certified reviews, Your trusted source to choose the right company.';
+                }
+            } else {
+                $desciprtion = 'We are the only company providing roofing contractors in '.$name.', with 5 Stars certified ratings, giving you the confidence in choosing the right company.';
+            }
         }
         return array(
             'keywords'=>$keywords,
