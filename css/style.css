@@ -2,48 +2,51 @@
  * Base structure
  */
 body {
-    background:url(../images/home/home_bg.jpg) no-repeat no-repeat center -150px;
     color: #505050;
 }
 
+body {
+    background:url(../images/global/bg/small/bg-0.jpg) no-repeat no-repeat center -150px;
+}
+
 body.place-request {
-    background: url(../images/global/bg/bg-2.jpg) no-repeat no-repeat center top;
+    background: url(../images/global/bg/small/bg-2.jpg) no-repeat no-repeat center top;
 }
 
 body.background0 {
-    background:url(../images/home/home_bg.jpg) no-repeat repeat center 0;
+    background:url(../images/global/bg/small/bg-0.jpg) no-repeat repeat center 0;
 }
 
 body.background1 {
-    background:url(../images/global/bg/bg-1.jpg) no-repeat repeat center 0;
+    background:url(../images/global/bg/small/bg-1.jpg) no-repeat repeat center 0;
 }
 
 body.background2 {
-    background:url(../images/global/bg/bg-2.jpg) no-repeat repeat center 0;
+    background:url(../images/global/bg/small/bg-2.jpg) no-repeat repeat center 0;
 }
 
 body.background3 {
-    background:url(../images/global/bg/bg-3.jpg) no-repeat repeat center 0;
+    background:url(../images/global/bg/small/bg-3.jpg) no-repeat repeat center 0;
 }
 
 body.background4 {
-    background:url(../images/global/bg/bg-4.jpg) no-repeat repeat center 0;
+    background:url(../images/global/bg/small/bg-4.jpg) no-repeat repeat center 0;
 }
 
 body.background5 {
-    background:url(../images/global/bg/bg-5.jpg) no-repeat repeat center 0;
+    background:url(../images/global/bg/small/bg-5.jpg) no-repeat repeat center 0;
 }
 
 body.background6 {
-    background:url(../images/global/bg/bg-6.jpg) no-repeat repeat center 0;
+    background:url(../images/global/bg/small/bg-6.jpg) no-repeat repeat center 0;
 }
 
 body.background7 {
-    background:url(../images/global/bg/bg-7.jpg) no-repeat repeat center 0;
+    background:url(../images/global/bg/small/bg-7.jpg) no-repeat repeat center 0;
 }
 
 body.background8 {
-    background:url(../images/global/bg/bg-8.jpg) no-repeat repeat center 0;
+    background:url(../images/global/bg/small/bg-8.jpg) no-repeat repeat center 0;
 }
 
 body.background9 {
@@ -957,6 +960,70 @@ footer .container {
         min-width: 1010px;
     }
 
+    body {
+        background:url(../images/global/bg/medium/bg-0.jpg) no-repeat no-repeat center -150px;
+    }
+
+    body.place-request {
+        background: url(../images/global/bg/medium/bg-2.jpg) no-repeat no-repeat center top;
+    }
+
+    body.background0 {
+        background:url(../images/global/bg/medium/bg-0.jpg) no-repeat repeat center 0;
+    }
+
+    body.background1 {
+        background:url(../images/global/bg/medium/bg-1.jpg) no-repeat repeat center 0;
+    }
+
+    body.background2 {
+        background:url(../images/global/bg/medium/bg-2.jpg) no-repeat repeat center 0;
+    }
+
+    body.background3 {
+        background:url(../images/global/bg/medium/bg-3.jpg) no-repeat repeat center 0;
+    }
+
+    body.background4 {
+        background:url(../images/global/bg/medium/bg-4.jpg) no-repeat repeat center 0;
+    }
+
+    body.background5 {
+        background:url(../images/global/bg/medium/bg-5.jpg) no-repeat repeat center 0;
+    }
+
+    body.background6 {
+        background:url(../images/global/bg/medium/bg-6.jpg) no-repeat repeat center 0;
+    }
+
+    body.background7 {
+        background:url(../images/global/bg/medium/bg-7.jpg) no-repeat repeat center 0;
+    }
+
+    body.background8 {
+        background:url(../images/global/bg/medium/bg-8.jpg) no-repeat repeat center 0;
+    }
+
+    body.background9 {
+        background:url(../images/global/bg/medium/bg-9.jpg) no-repeat repeat center 0;
+    }
+
+    body.background10 {
+        background:url(../images/global/bg/medium/bg-10.jpg) no-repeat repeat center 0;
+    }
+
+    body.background11 {
+        background:url(../images/global/bg/medium/bg-11.jpg) no-repeat repeat center 0;
+    }
+
+    body.background12 {
+        background:url(../images/global/bg/medium/bg-12.jpg) no-repeat repeat center 0;
+    }
+
+    body.background13 {
+        background:url(../images/global/bg/medium/bg-13.jpg) no-repeat repeat center 0;
+    }
+
     .logo-container {
         padding: 20px 0px;
         text-decoration: none;
@@ -1087,5 +1154,69 @@ footer .container {
 @media (min-width: 1200px) {
     .main {
         width: 75%;
+    }
+
+    body {
+        background:url(../images/global/bg/large/bg-0.jpg) no-repeat no-repeat center -150px;
+    }
+
+    body.place-request {
+        background: url(../images/global/bg/large/bg-2.jpg) no-repeat no-repeat center top;
+    }
+
+    body.background0 {
+        background:url(../images/global/bg/large/bg-0.jpg) no-repeat repeat center 0;
+    }
+
+    body.background1 {
+        background:url(../images/global/bg/large/bg-1.jpg) no-repeat repeat center 0;
+    }
+
+    body.background2 {
+        background:url(../images/global/bg/large/bg-2.jpg) no-repeat repeat center 0;
+    }
+
+    body.background3 {
+        background:url(../images/global/bg/large/bg-3.jpg) no-repeat repeat center 0;
+    }
+
+    body.background4 {
+        background:url(../images/global/bg/large/bg-4.jpg) no-repeat repeat center 0;
+    }
+
+    body.background5 {
+        background:url(../images/global/bg/large/bg-5.jpg) no-repeat repeat center 0;
+    }
+
+    body.background6 {
+        background:url(../images/global/bg/large/bg-6.jpg) no-repeat repeat center 0;
+    }
+
+    body.background7 {
+        background:url(../images/global/bg/large/bg-7.jpg) no-repeat repeat center 0;
+    }
+
+    body.background8 {
+        background:url(../images/global/bg/large/bg-8.jpg) no-repeat repeat center 0;
+    }
+
+    body.background9 {
+        background:url(../images/global/bg/large/bg-9.jpg) no-repeat repeat center 0;
+    }
+
+    body.background10 {
+        background:url(../images/global/bg/large/bg-10.jpg) no-repeat repeat center 0;
+    }
+
+    body.background11 {
+        background:url(../images/global/bg/large/bg-11.jpg) no-repeat repeat center 0;
+    }
+
+    body.background12 {
+        background:url(../images/global/bg/large/bg-12.jpg) no-repeat repeat center 0;
+    }
+
+    body.background13 {
+        background:url(../images/global/bg/large/bg-13.jpg) no-repeat repeat center 0;
     }
 }
