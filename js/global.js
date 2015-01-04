@@ -31,9 +31,27 @@ var herve = {
             s = s.substring(idx+1);
         } while (++i < n && (newS += c))
             return newS;
+    },
+    backgroundRotate: function () {
+        var backgrounds = $("body").data('bg').split(','),
+            random = 0;
+
+        setInterval(function () {
+            random = backgrounds[Math.floor(Math.random()*backgrounds.length)];
+            $.each(backgrounds, function(index, value) {
+                if (random === value) {
+                    $("body").addClass('background' + value);
+                } else {
+                    $("body").removeClass('background' + value);
+                }
+            });
+        }, 3000);
     }
 };
 $(document).ready(function () {
     herve.navigation();
     herve_social.sharethis();
+    if ($("body").hasClass("background-rotate")) {
+        herve.backgroundRotate();
+    }
 });

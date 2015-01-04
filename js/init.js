@@ -1,11 +1,11 @@
 var herve = {
-    navigation : function(){
+    navigation: function () {
         $('.art-hmenu li').last().addClass('last');
     },
-    footer : function(){
+    footer: function () {
         $('#footer p a').last().addClass('last');
     },
-    button : function(){
+    button: function () {
         $("body").delegate(".back-button",{
             "mouseenter":function(){
                 $(this).find('a img').attr({
@@ -19,7 +19,7 @@ var herve = {
             }
         });
     },
-    getNth : function(s, c, n) {
+    getNth: function (s, c, n) {
         var idx;
         var i = 0;
         var newS = '';

@@ -32,18 +32,23 @@ class Page{
             $return.=$this->printCss('herve_'.$this->currentPage->class.'_css');
         }
         $backgroundClass = '';
+        $multipleClass = '';
         if ($theme == 1) {
             if ($background == 0) {
                 $background = 2;
             }
-            $backgroundClass = 'background'.$background;
+            $backgroundArray = explode(',', $background);
+            if (sizeof($backgroundArray) > 1) {
+                $multipleClass = 'background-rotate';
+            }
+            $backgroundClass = 'background'.$backgroundArray[array_rand($backgroundArray)];
         }
         if ($theme == 99) {
             $backgroundClass = 'video';
         }
         $return.='
         </head>
-        <body class="'.$this->currentPage->class.' '.$this->currentPage->template.' '.$backgroundClass.'">
+        <body data-bg="'.$background.'" class="'.$this->currentPage->class.' '.$this->currentPage->template.' '.$backgroundClass.' '.$multipleClass.'">
         <div id="fb-root"></div>
         ';
         return $return;

@@ -3,6 +3,10 @@
  */
 body {
     color: #505050;
+    transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    -webkit-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
 }
 
 body {
