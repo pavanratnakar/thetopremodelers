@@ -112,7 +112,7 @@ class Page{
         <!-- OG META TAGS -->
         <meta property="og:title" content="'.$title.'" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="http://www.thetopremodelers.com/images/global/logo.png" />
+        <meta property="og:image" content="http://www.topremodelers.com/images/global/logo.png" />
         <meta property="og:description" content="'.$description.'" />
         <meta property="og:site_name" content="The Top Remodelers" />
         <meta property="fb:admins" content="100000417819011" />
@@ -120,7 +120,7 @@ class Page{
         <!-- GOOGLE PLUS TAGS -->
         <meta itemprop="name" content="'.$title.'" />
         <meta itemprop="description" content="'.$description.'" />
-        <meta itemprop="image" content="http://www.thetopremodelers.com/images/global/logo.png" />
+        <meta itemprop="image" content="http://www.topremodelers.com/images/global/logo.png" />
         <!-- END OF GOOGLE PLUS TAGS -->
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="HandheldFriendly" content="true" />
@@ -174,7 +174,7 @@ class Page{
         $return = '
             <div class="nav-logo-container">
                 <div class="logo-container">
-                    <a href="http://www.thetopremodelers.com">
+                    <a href="http://www.topremodelers.com">
                         <img src="'.Config::$site_url.'/images/global/logo.png" alt="The Top Remodelers"/>
                     </a>
                 </div>

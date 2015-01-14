@@ -1,4 +1,4 @@
 // <![CDATA[
-$.url = 'http://www.thetopremodelers.com';
+$.url = 'http://www.topremodelers.com';
 var switchTo5x=true;
 // ]]>

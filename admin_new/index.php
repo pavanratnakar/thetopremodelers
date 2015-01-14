@@ -6,7 +6,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Thetopremodelers admin</title>
+        <title>Topremodelers admin</title>
         <meta name="description" content="">
         <meta name="author" content="">
         <link type="text/css" rel="stylesheet" media="screen" href="<?php echo Minify_getUri('herve_new_admin_css') ?>"/>
