@@ -11,3 +11,4 @@ Disallow: /admin/
 Disallow: /controller/
 Disallow: /class/
 Disallow: /xml/
+Disallow: /admin_new/

@@ -1,9 +1,9 @@
 <?php
 class Config{
-    static $root_path  = '/var/chroot/home/content/02/7362402/html/';
-    static $admin_path = '/var/chroot/home/content/02/7362402/html/admin/';
-    static $site_path  = '/var/chroot/home/content/02/7362402/html/';
-    static $site_url  = 'http://www.thetopremodelers.com/';
+    static $root_path  = '/home/manuela6264/public_html/';
+    static $admin_path = '/home/manuela6264/public_html/admin/';
+    static $site_path  = '/home/manuela6264/public_html/';
+    static $site_url  = 'http://www.topremodelers.com/';
 
     // static $root_path  = 'H:/WEB/WEBSITE/thetopremodelers/thetopremodelers/';
     // static $admin_path = 'H:/WEB/WEBSITE/thetopremodelers/thetopremodelers/admin/';
