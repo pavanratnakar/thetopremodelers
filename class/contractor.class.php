@@ -371,12 +371,12 @@ class Contractor{
             }
         } else {
             $keywords = ($placeName==='dallas_texas') ? 'dallas general contractors' : false;
-            $title = 'Voted 12 best '.$name.' contractors in '.$placeTitle.' thetopremodelers';
+            $title = 'Voted 12 best '.$name.' contractors in '.$placeTitle.' Topremodelers';
             if ($categoryTitle) {
                 if ($sectionTitle) {
-                    $title = 'Voted 12 best '.$categoryTitle.' contractors for '.$sectionTitle.' in '.$placeTitle.' thetopremodelers';
+                    $title = 'Voted 12 best '.$categoryTitle.' contractors for '.$sectionTitle.' in '.$placeTitle.' Topremodelers';
                 } else {
-                    $title = 'Voted 12 best '.$categoryTitle.' contractors in '.$placeTitle.' thetopremodelers';
+                    $title = 'Voted 12 best '.$categoryTitle.' contractors in '.$placeTitle.' Topremodelers';
                 }
             } else {
                 $title = $name.' Roofing Company - '.$name.' Roofing Contractors - TX Roofers';

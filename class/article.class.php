@@ -40,7 +40,7 @@ class Article{
         return array(
             'keywords'=>$keywords,
             'description'=>$description,
-            'title'=>'Thetopremodelers: articles on '.$title
+            'title'=>'Topremodelers: articles on '.$title
         );
     }
     public function __destruct(){

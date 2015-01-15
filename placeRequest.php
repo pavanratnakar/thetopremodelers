@@ -37,7 +37,7 @@ if ($params['placeName'] && $params['categoryName'] && $params['sectionName']) {
                         <form id="contactForm">
                             <ul style="display:none;" class="formStatus alert-warning nobullet"></ul>
                             <div class="email-header">
-                                <span class="bold">To:&nbsp;TheTopRemodelers.com</span><br/>
+                                <span class="bold">To:&nbsp;TopRemodelers.com</span><br/>
                                 <label for="emailId"><span class="bold">From:</span></label>
                                 <input type="text" name="emailId" id="emailId" class="prepopulate form-control" rel="my email address" />
                             </div>
@@ -73,7 +73,7 @@ if ($params['placeName'] && $params['categoryName'] && $params['sectionName']) {
                                 </p>
                                 <p class="subscribe">
                                     <label>
-                                        <input type="checkbox" name="subscribe" id="subscribe"/> Yes, I\'m interested in receiving remodeling news and special offers from Thetopremodelers.com
+                                        <input type="checkbox" name="subscribe" id="subscribe"/> Yes, I\'m interested in receiving remodeling news and special offers from Topremodelers.com
                                     </label>
                                 </p>
                                 <p>');

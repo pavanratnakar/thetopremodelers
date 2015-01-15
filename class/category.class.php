@@ -183,7 +183,7 @@ class Category{
         );
     }
     public function getDescription($category_title,$place_title) {
-        return ' We are only certified roofing company and providing dallas based roofers. We are 5 star rating company and giving you the confidence to hiring the right contractor in your area.';
+        return 'We are only certified roofing company and providing dallas based roofers. We are 5 star rating company and giving you the confidence to hiring the right contractor in your area.';
     }
     public function __destruct() {
         $this->mysqli->close();

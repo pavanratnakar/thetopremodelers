@@ -7,7 +7,7 @@
         <link>index.php</link>
         <navigation>1</navigation>
         <template></template>
-        <title>Thetopremodelers</title>
+        <title>Topremodelers</title>
         <description>Free service that compiles certified ratings from local service companies and contractors in multiple cities</description>
         <keywords></keywords>
         <breadcrum>0</breadcrum>
@@ -21,7 +21,7 @@
         <link>customer-advantage.php</link>
         <template>layout-1</template>
         <navigation>1</navigation>
-        <title>Advantages a Local Business, great ratings thetopremodelers</title>
+        <title>Advantages a Local Business, great ratings Topremodelers</title>
         <description>Free service and the avantages of certified ratings from local service companies and contractors in multiple cities.</description>
         <keywords></keywords>
         <breadcrum>0</breadcrum>
@@ -63,7 +63,7 @@
         <link>contact-us</link>
         <template></template>
         <navigation>1</navigation>
-        <title>Contact Local Business, great ratings thetopremodelers</title>
+        <title>Contact Local Business, great ratings Topremodelers</title>
         <description>Contact contractors with certified ratings from local in multiple cities</description>
         <keywords></keywords>
         <breadcrum>0</breadcrum>
