@@ -472,6 +472,13 @@ body li {
     font-size: 28px;
     font-weight: 400;
 }
+.main .header-content .btn{
+    font-size: 14px;
+    font-weight: bold;
+    width: 250px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+}
 
 /*
  * sb
@@ -764,17 +771,6 @@ body.promotion.video .vjs-control-bar{
     text-align: center;
     background: transparent;
 }
-.promotion .main .header-content .btn{
-    font-size: 14px;
-    font-weight: bold;
-    width: 250px;
-    height: 40px;
-}
-.promotion .main .btn{
-    text-transform: uppercase;
-    padding: 10px 20px;
-    font-size: 24px;
-}
 .promotion .curl h3{
     color: #fe0000;
     font-size: 22px;
@@ -877,6 +873,11 @@ body.promotion.video .vjs-control-bar{
 }
 .promotion .certified-reviews-container{
     text-align: left;
+}
+.promotion .main .btn{
+    text-transform: uppercase;
+    padding: 10px 20px;
+    font-size: 24px;
 }
 
 /*

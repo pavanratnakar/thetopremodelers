@@ -14,12 +14,14 @@ $categoryName = $pageController->getUtils()->checkValues($_GET['category']);
 $category = $pageController->getCategory();
 $categoryDetails = $category->getCategory($categoryName);
 $section = $pageController->getSection($categoryName,$placeName);
+$contactUs = 'placeRequest?place='.$placeName.'&category='.$categoryDetails[0]['category_name'];
 if (!$_GET['section']) {
     $getAllSections =  $section->getSections();
     $sectionName = $getAllSections[0]['section_name'];
 } else {
     $sectionName = $pageController->getUtils()->checkValues($_GET['section']);
     $sectionDetails = $section->getSectionDetails($sectionName);
+    $contactUs .= '$section='.$sectionDetails['section_name'];
 }
 $contractor = $pageController->getContractor();
 $sort = $pageController->getUtils()->checkValues($_GET['sort']);
@@ -62,6 +64,7 @@ echo $pageController->minifyHTML($pageController->printHeader($contractor->getCo
                 <div class="header-content">
                     <h1>'.$promotion.'</h1>
                     <h2>Immediate service 24/7 call 1(214)303 9771</h2>
+                    <a class="btn btn-orange" href="'.Config::$site_url.$contactUs.'">Get Quotes</a>
                 </div>
                 <div class="bottom">
                     <h2>'.$categoryDetails[0]['category_title'].' in '.$placeDetails['place_title'].($sectionDetails ? ' with '.$sectionDetails['section_title'].' speciality' : '').'</h2>
