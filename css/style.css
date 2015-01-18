@@ -397,12 +397,21 @@ body li {
     padding: 20px;
     background: #FFF;
 }
+.main.no-bg {
+    background: none;
+    padding: 0;
+}
 .main.top {
     margin-top: 10px;
     min-height: 100px;
 }
-.main.bottom {
+.main.bottom,
+.main .bottom {
     margin-top: 10px;
+}
+.main .bottom {
+    background: #FFF;
+    padding: 10px;
 }
 .regular-main {
     margin: 105px auto 0;
@@ -431,6 +440,37 @@ body li {
     height: 483px;
     width: 320px;
     display: block;
+}
+.main .header-content h1{
+    border: none;
+    font-size: 24px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.main .header-content h2{
+    font-size: 24px;
+    font-weight: 700;
+}
+.main .header-content h1,
+.main .header-content h2{
+    margin-top: 100px;
+    color: #FFF;
+    text-transform: uppercase;
+    margin-bottom: 100px;
+    text-shadow: -3px -1px 6px #000;
+}
+.main .header-content{
+    text-align: center;
+}
+.main .header-content h1{
+    margin: 50px 0 10px 0;
+    width: auto;
+    font-size: 36px;
+}
+.main .header-content h2{
+    margin: 0 0 40px;
+    font-size: 28px;
+    font-weight: 400;
 }
 
 /*
@@ -723,37 +763,6 @@ body.promotion.video .vjs-control-bar{
     min-height: 470px;
     text-align: center;
     background: transparent;
-}
-.promotion .main h1{
-    border: none;
-    font-size: 24px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.promotion .main h2{
-    font-size: 24px;
-    font-weight: 700;
-}
-.promotion .main h1,
-.promotion .main h2{
-    margin-top: 100px;
-    color: #FFF;
-    text-transform: uppercase;
-    margin-bottom: 100px;
-    text-shadow: -3px -1px 6px #000;
-}
-.promotion .main .header-content{
-    text-align: center;
-}
-.promotion .main .header-content h1{
-    margin: 50px 0 10px 0;
-    width: auto;
-    font-size: 36px;
-}
-.promotion .main .header-content h2{
-    margin: 0 0 40px;
-    font-size: 28px;
-    font-weight: 400;
 }
 .promotion .main .header-content .btn{
     font-size: 14px;
@@ -1103,8 +1112,12 @@ footer .container {
         min-height: 500px;
     }
 
-    .main.bottom {
+    .main.bottom{
         margin-top: 638px;
+    }
+
+    .main .bottom {
+        margin-top: 200px;
     }
 
     .regular-main,
@@ -1174,6 +1187,15 @@ footer .container {
         top: 10px;
         left: 284px;
     }
+
+    /*
+     * Contractors
+     */
+
+    .contractors .header-content {
+        margin-top: 300px;
+    }
+
     /*
      * Promotion
      */
@@ -1200,9 +1222,6 @@ footer .container {
     .promotion .main-container .main{
         max-width: 58%;
     }
-    .promotion .main .header-content{
-        text-align: left;
-    }
     .promotion .main{
         margin-top: 200px;
     }
@@ -1212,6 +1231,9 @@ footer .container {
     }
     .promotion .main h1{
         width: 360px;
+    }
+    .promotion .main .header-content{
+        text-align: left;
     }
 }
 
