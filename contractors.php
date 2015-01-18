@@ -31,6 +31,12 @@ if (sizeof($contractorDetails) == 0) {
     exit;
 }
 $avoidCrawl = false;
+$promotion = '';
+if ($categoryDetails[0]['category_title'] === 'Roofing Contractors') {
+    $promotion = 'Get multiple free roofing quotes';
+} else {
+    $promotion = 'Get multiple free quotes';
+}
 // if ($placeDetails['place_id'] != 2 && $placeDetails['place_id'] != 1 && $placeDetails['place_id'] != 5 && $placeDetails['place_id'] != 36 && $placeDetails['place_id'] != 38 && $placeDetails['place_id'] != 45) {
 //     $avoidCrawl = true;
 // }
@@ -54,7 +60,7 @@ echo $pageController->minifyHTML($pageController->printHeader($contractor->getCo
             </div>
             <div class="col-md-9 col-xs-12 col-sm-9 main no-bg">
                 <div class="header-content">
-                    <h1>Get multiple free roofing quotes</h1>
+                    <h1>'.$promotion.'</h1>
                     <h2>Immediate service 24/7 call 1(214)303 9771</h2>
                 </div>
                 <div class="bottom">
