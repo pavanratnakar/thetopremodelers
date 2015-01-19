@@ -15,7 +15,15 @@ if (sizeof($_POST) > 0) {
 }
 $params['placeName'] = $utils->checkValues($_GET['place']);
 $params['categoryName'] = $utils->checkValues($_GET['category']);
-$params['sectionName'] = $utils->checkValues($_GET['section']);
+if ($params['placeName'] && $params['categoryName']) {
+    $section = $pageController->getSection($params['categoryName'], $params['placeName']);
+    if (!$_GET['section']) {
+        $getAllSections =  $section->getSections();
+        $params['sectionName'] = $getAllSections[0]['section_name'];
+    } else {
+        $params['sectionName']= $pageController->getUtils()->checkValues($_GET['section']);
+    }
+}
 $params['contractorName'] = $utils->checkValues($_GET['contractor']);
 if ($params['placeName'] && $params['categoryName'] && $params['sectionName']) {
     $contractor = $pageController->getContractor();

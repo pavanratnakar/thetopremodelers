@@ -34,9 +34,6 @@ class Page{
         $backgroundClass = '';
         $multipleClass = '';
         if ($theme == 1) {
-            if ($background == 0) {
-                $background = 2;
-            }
             $backgroundArray = explode(',', $background);
             if (sizeof($backgroundArray) > 1) {
                 $multipleClass = 'background-rotate';
