@@ -98,7 +98,35 @@ body.background19 {
 }
 
 body.background20 {
-    background:url(../images/global/bg/bg-20.jpg) no-repeat repeat center 0;
+    background:url(../images/global/bg/small/bg-20.jpg) no-repeat repeat center 0;
+}
+
+body.background21 {
+    background:url(../images/global/bg/small/bg-21.jpg) no-repeat repeat center 0;
+}
+
+body.background22 {
+    background:url(../images/global/bg/small/bg-22.jpg) no-repeat repeat center 0;
+}
+
+body.background23 {
+    background:url(../images/global/bg/small/bg-23.jpg) no-repeat repeat center 0;
+}
+
+body.background24 {
+    background:url(../images/global/bg/small/bg-24.jpg) no-repeat repeat center 0;
+}
+
+body.background25 {
+    background:url(../images/global/bg/small/bg-25.jpg) no-repeat repeat center 0;
+}
+
+body.background26 {
+    background:url(../images/global/bg/small/bg-26.jpg) no-repeat repeat center 0;
+}
+
+body.background27 {
+    background:url(../images/global/bg/small/bg-27.jpg) no-repeat repeat center 0;
 }
 
 body li {
@@ -1098,6 +1126,34 @@ footer .container {
         background:url(../images/global/bg/medium/bg-20.jpg) no-repeat repeat center 0;
     }
 
+    body.background21 {
+        background:url(../images/global/bg/medium/bg-21.jpg) no-repeat repeat center 0;
+    }
+
+    body.background22 {
+        background:url(../images/global/bg/medium/bg-22.jpg) no-repeat repeat center 0;
+    }
+
+    body.background23 {
+        background:url(../images/global/bg/medium/bg-23.jpg) no-repeat repeat center 0;
+    }
+
+    body.background24 {
+        background:url(../images/global/bg/medium/bg-24.jpg) no-repeat repeat center 0;
+    }
+
+    body.background25 {
+        background:url(../images/global/bg/medium/bg-25.jpg) no-repeat repeat center 0;
+    }
+
+    body.background26 {
+        background:url(../images/global/bg/medium/bg-26.jpg) no-repeat repeat center 0;
+    }
+
+    body.background27 {
+        background:url(../images/global/bg/medium/bg-27.jpg) no-repeat repeat center 0;
+    }
+
     .logo-container {
         padding: 20px 0px;
         text-decoration: none;
@@ -1333,5 +1389,33 @@ footer .container {
 
     body.background20 {
         background:url(../images/global/bg/large/bg-20.jpg) no-repeat repeat center 0;
+    }
+
+    body.background21 {
+        background:url(../images/global/bg/large/bg-21.jpg) no-repeat repeat center 0;
+    }
+
+    body.background22 {
+        background:url(../images/global/bg/large/bg-22.jpg) no-repeat repeat center 0;
+    }
+
+    body.background23 {
+        background:url(../images/global/bg/large/bg-23.jpg) no-repeat repeat center 0;
+    }
+
+    body.background24 {
+        background:url(../images/global/bg/large/bg-24.jpg) no-repeat repeat center 0;
+    }
+
+    body.background25 {
+        background:url(../images/global/bg/large/bg-25.jpg) no-repeat repeat center 0;
+    }
+
+    body.background26 {
+        background:url(../images/global/bg/large/bg-26.jpg) no-repeat repeat center 0;
+    }
+
+    body.background27 {
+        background:url(../images/global/bg/large/bg-27.jpg) no-repeat repeat center 0;
     }
 }
