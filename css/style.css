@@ -106,11 +106,11 @@ body.background21 {
 }
 
 body.background22 {
-    background:url(../images/global/bg/small/bg-22.jpg) no-repeat repeat center 0;
+    background:url(../images/global/bg/small/bg-22.jpg) no-repeat repeat center -90px;
 }
 
 body.background23 {
-    background:url(../images/global/bg/small/bg-23.jpg) no-repeat repeat center 0;
+    background:url(../images/global/bg/small/bg-23.jpg) no-repeat repeat center -90px;
 }
 
 body.background24 {
@@ -1131,11 +1131,11 @@ footer .container {
     }
 
     body.background22 {
-        background:url(../images/global/bg/medium/bg-22.jpg) no-repeat repeat center 0;
+        background:url(../images/global/bg/medium/bg-22.jpg) no-repeat repeat center -100px;
     }
 
     body.background23 {
-        background:url(../images/global/bg/medium/bg-23.jpg) no-repeat repeat center 0;
+        background:url(../images/global/bg/medium/bg-23.jpg) no-repeat repeat center -100px;
     }
 
     body.background24 {
@@ -1396,11 +1396,11 @@ footer .container {
     }
 
     body.background22 {
-        background:url(../images/global/bg/large/bg-22.jpg) no-repeat repeat center 0;
+        background:url(../images/global/bg/large/bg-22.jpg) no-repeat repeat center -300px;
     }
 
     body.background23 {
-        background:url(../images/global/bg/large/bg-23.jpg) no-repeat repeat center 0;
+        background:url(../images/global/bg/large/bg-23.jpg) no-repeat repeat center -300px;
     }
 
     body.background24 {
