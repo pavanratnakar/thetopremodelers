@@ -7,283 +7,808 @@
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 <url>
-  <loc>http://www.thetopremodelers.com/</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/</loc>
+  <changefreq>weekly</changefreq>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/index.php</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/index.php</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/customer-advantage.php</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/customer-advantage.php</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/contact-us</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/contact-us</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/dallas_texas/roofing_contractors/contractors</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/dallas_texas/additions_general/contractors</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/places</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/dallas_texas/architects_and_engineers/contractors</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/place/dallas_texas</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/dallas_texas/bathrooms/contractors</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/place/arlington_texas</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/dallas_texas/cabinets_and_countertops/contractors</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/place/irving_texas</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/dallas_texas/carpentry/contractors</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/place/frisco_texas</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/dallas_texas/cleaning_and_maid_service/contractors</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/place/carrollton_texas</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/dallas_texas/concrete_brick_and_stone/contractors</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/place/garland_texas</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/dallas_texas/decks_and_porches/contractors</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/place/grand%20prairie_texas</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/dallas_texas/driveways_patios_walks_and_steps/contractors</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/place/richardson_texas</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/dallas_texas/drywall_and_insulation/contractors</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/contractor/astrotech_Contractors</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/dallas_texas/electrical/contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/dallas_texas/fences/contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/dallas_texas/flooring_and_hardwood/contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/dallas_texas/heating_and_cooling/contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/dallas_texas/kitchens/contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/dallas_texas/landscape/contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/dallas_texas/lawncare_and_sprinklers/contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/dallas_texas/painting_and_staining/contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/dallas_texas/plumbing/contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/dallas_texas/remodels/contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/dallas_texas/roofing_contractors/contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/dallas_texas/siding/contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/dallas_texas/swimming_pools_spas_and_saunas/contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/dallas_texas/tile_and_Stone/contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/dallas_texas/walls_and_ceilings/contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/dallas_texas/windows_and_doors/contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/dallas_texas/garages_doors_openers/contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/places</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/place/dallas_texas</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/place/arlington_texas</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/place/irving_texas</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/place/frisco_texas</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/place/carrollton_texas</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/place/garland_texas</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/place/grand_prairie_texas</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/place/richardson_texas</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=additions_general</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/contractor/olvera_construction_roofing</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/contractor/astrotech_Contractors</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/contractor/j_back_roofing_construction</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=additions_general&amp;section=major_renovation_multiple_rooms&amp;contractor=astrotech_Contractors</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/contractor/rooftops</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/article/having_right_contract</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/contractor/atlas_roofing</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/article/roofings_warranty</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/contractor/double_e_inc</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/article/pvc_roofs</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/contractor/landmark_energy_solutions</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/article/rubber_membrane_usage</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/contractor/pacesetter_contracting_llc</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/article/built_up_flat_roofs</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/contractor/nielco_roofing_and_sheet_metal</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/article/tpo_roofing</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/contractor/c_and_j_roofing_co</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/article/metal_roof</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/article/having_right_contract</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/article/benefits_of_asphalt_tiles</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/article/roofings_warranty</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/article/green_roofing</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/article/pvc_roofs</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/article/standing_seam_roof</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/article/rubber_membrane_usage</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/article/steel_roofing</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/article/built_up_flat_roofs</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/article/natural_slate_roofing</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/article/tpo_roofing</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/article/cooper_roofing</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/article/metal_roof</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/article/clay_roofing</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/article/benefits_of_asphalt_tiles</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/article/dallas_under_dangerous_threat_hailstorm</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/article/green_roofing</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/article/3_ways_your_roof_can_save_you</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/article/standing_seam_roof</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=architects_and_engineers</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/article/steel_roofing</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=architects_and_engineers&amp;section=architect&amp;contractor=astrotech_Contractors</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/article/natural_slate_roofing</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=bathrooms</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/article/cooper_roofing</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/contractor/avila_electric</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/article/clay_roofing</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=bathrooms&amp;section=bathroom_renovation_and_half_bath_construction&amp;contractor=avila_electric</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/article/dallas_under_dangerous_threat_hailstorm</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=cabinets_and_countertops</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/article/3_ways_your_roof_can_save_you</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=cabinets_and_countertops&amp;section=stone_granite_marble_quartz&amp;contractor=astrotech_Contractors</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/place/mesquite_texas</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=carpentry</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/place/plano_texas</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=carpentry&amp;section=finish_carpentry&amp;contractor=astrotech_Contractors</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/place/mckinney_texas</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=cleaning_and_maid_service</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/place/denton_texas</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=cleaning_and_maid_service&amp;section=interior_home_and_maid_service&amp;contractor=astrotech_Contractors</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/place/keller_texas</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=concrete_brick_and_stone</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/irving_texas/roofing_contractors/contractors</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=concrete_brick_and_stone&amp;section=concrete_foundation_install&amp;contractor=astrotech_Contractors</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/frisco_texas/roofing_contractors/contractors</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=decks_and_porches</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/carrollton_texas/roofing_contractors/contractors</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=decks_and_porches&amp;section=deck_or_porch_build_or_replace_woods&amp;contractor=astrotech_Contractors</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/garland_texas/roofing_contractors/contractors</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=driveways_patios_walks_and_steps</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/grand%20prairie_texas/roofing_contractors/contractors</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=driveways_patios_walks_and_steps&amp;section=brick_and_stone_driveways_and_floors_install&amp;contractor=astrotech_Contractors</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/richardson_texas/roofing_contractors/contractors</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=drywall_and_insulation</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/mesquite_texas/roofing_contractors/contractors</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=drywall_and_insulation&amp;section=drywall_install&amp;contractor=astrotech_Contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=electrical</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=electrical&amp;section=electrical_switches_outlets_and_fixtures_installing_or_repairing&amp;contractor=astrotech_Contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/contractor/next_genelectric</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=electrical&amp;section=electrical_switches_outlets_and_fixtures_installing_or_repairing&amp;contractor=next_genelectric</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=electrical&amp;section=electrical_switches_outlets_and_fixtures_installing_or_repairing&amp;contractor=avila_electric</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=fences</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=fences&amp;section=vinyl_or_pvc_fence_installation&amp;contractor=astrotech_Contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/contractor/all-about-fences</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=fences&amp;section=vinyl_or_pvc_fence_installation&amp;contractor=all-about-fences</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=flooring_and_hardwood</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=flooring_and_hardwood&amp;section=carpet_installing&amp;contractor=astrotech_Contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=heating_and_cooling</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=heating_and_cooling&amp;section=heat_pump_installation_or_replacement&amp;contractor=astrotech_Contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/contractor/ur-acsolutions</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=heating_and_cooling&amp;section=heat_pump_installation_or_replacement&amp;contractor=ur-acsolutions</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/contractor/Air-Force-One</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=heating_and_cooling&amp;section=heat_pump_installation_or_replacement&amp;contractor=Air-Force-One</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=kitchens</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=kitchens&amp;section=kitchen_remodeling&amp;contractor=astrotech_Contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=landscape</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=landscape&amp;section=dumpster_service&amp;contractor=astrotech_Contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=lawncare_and_sprinklers</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=lawncare_and_sprinklers&amp;section=service_a_lawn_and_garden_sprinkler_system&amp;contractor=astrotech_Contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=painting_and_staining</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=painting_and_staining&amp;section=exterior_home_paint_or_stain&amp;contractor=astrotech_Contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=plumbing</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=plumbing&amp;section=drain_clearing&amp;contractor=astrotech_Contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=remodels</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=remodels&amp;section=major_renovation_multiple_rooms&amp;contractor=astrotech_Contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=roofing_contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/contractor/olvera_construction_roofing</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/contractor/j_back_roofing_construction</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/contractor/rooftops</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/contractor/atlas_roofing</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/contractor/double_e_inc</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/contractor/landmark_energy_solutions</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/contractor/pacesetter_contracting_llc</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/contractor/nielco_roofing_and_sheet_metal</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/contractor/c_and_j_roofing_co</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=siding</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=siding&amp;section=installing_or_completely_replace_metal_siding&amp;contractor=astrotech_Contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=swimming_pools_spas_and_saunas</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=swimming_pools_spas_and_saunas&amp;section=swimming_pool_repair_and_maintain&amp;contractor=astrotech_Contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=tile_and_Stone</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=tile_and_Stone&amp;section=ceramic_and_porcelain_installing&amp;contractor=astrotech_Contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=walls_and_ceilings</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=walls_and_ceilings&amp;section=acoustic_ceiling_tiles_install&amp;contractor=astrotech_Contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=windows_and_doors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=windows_and_doors&amp;section=doors_exterior_install_or_replace&amp;contractor=astrotech_Contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=garages_doors_openers</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=dallas_texas&amp;category=garages_doors_openers&amp;section=garage_door_install_or_replace&amp;contractor=astrotech_Contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/place/mesquite_texas</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/place/plano_texas</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/place/mckinney_texas</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/place/denton_texas</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/place/keller_texas</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/arlington_texas/roofing_contractors/contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/irving_texas/roofing_contractors/contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/frisco_texas/roofing_contractors/contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/carrollton_texas/roofing_contractors/contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/garland_texas/flooring_and_hardwood/contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/garland_texas/roofing_contractors/contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/grand_prairie_texas/roofing_contractors/contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/richardson_texas/roofing_contractors/contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/mesquite_texas/roofing_contractors/contractors</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/plano_texas/roofing_contractors/contractors</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/plano_texas/roofing_contractors/contractors</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/mckinney_texas/roofing_contractors/contractors</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/mckinney_texas/roofing_contractors/contractors</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/denton_texas/roofing_contractors/contractors</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/denton_texas/roofing_contractors/contractors</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>http://www.thetopremodelers.com/keller_texas/roofing_contractors/contractors</loc>
-  <changefreq>monthly</changefreq>
+  <loc>http://www.topremodelers.com/keller_texas/roofing_contractors/contractors</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=arlington_texas&amp;category=roofing_contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=irving_texas&amp;category=roofing_contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=frisco_texas&amp;category=roofing_contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=carrollton_texas&amp;category=roofing_contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=garland_texas&amp;category=flooring_and_hardwood</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=garland_texas&amp;category=flooring_and_hardwood&amp;section=carpet_installing&amp;contractor=astrotech_Contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=garland_texas&amp;category=roofing_contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=grand_prairie_texas&amp;category=roofing_contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=richardson_texas&amp;category=roofing_contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=mesquite_texas&amp;category=roofing_contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=plano_texas&amp;category=roofing_contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=mckinney_texas&amp;category=roofing_contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=denton_texas&amp;category=roofing_contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>http://www.topremodelers.com/placeRequest?place=keller_texas&amp;category=roofing_contractors</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.41</priority>
 </url>
 </urlset>
