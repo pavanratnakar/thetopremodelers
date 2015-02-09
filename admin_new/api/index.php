@@ -27,17 +27,12 @@ $app->delete('/contractorReview/:id', 'deleteContractorReview');
 $app->get('/place/:id', 'getPlace');
 $app->get('/places', 'getPlaces');
 
-$app->get('/placeCategory/:id', 'getPlaceCategory');
-$app->get('/placeCategories/:id', 'getPlaceCategories');
-
-$app->get('/categorySection/:id', 'getCategorySection');
-$app->get('/categorySections/:id', 'getCategorySectionsById');
-$app->get('/categorySections', 'getCategorySections');
-
 $app->get('/contractorMapping', 'getContractorMapping');
 $app->get('/contractorMapping/:id', 'getContractorMapping');
 $app->post('/contractorMapping', 'addContractorMapping');
 $app->delete('/contractorMapping/:id', 'deleteContractorMapping');
+
+$app->get('/sections', 'getSections');
 
 $app->run();
 
@@ -273,21 +268,17 @@ function getReviewsForContractor($id) {
 }
 
 function getMappingForContractor($id) {
-    $sql = "SELECT a.contractorMapping_id,g.contractor_title as contractor_title,d.category_title as category_title,f.section_title as section_title,e.place_title as place_title,a.active, b.categorySection_id
+    $sql = "SELECT a.contractorMapping_id, e.contractor_title as contractor_title, d.category_title as category_title, c.section_title as section_title, b.place_title as place_title, a.active
             FROM
             rene_contractor_mapping a
             LEFT JOIN
-            rene_categorysection_mapping b ON a.categorySection_id=b.categorySection_id
+            rene_place b ON b.place_id=a.place_id
             LEFT JOIN
-            rene_placecategory_mapping c ON b.placeCategory_id=c.placeCategory_id
+            rene_section c ON c.section_id=a.section_id
             LEFT JOIN
             rene_category d ON c.category_id=d.category_id
             LEFT JOIN
-            rene_place e ON e.place_id=c.place_id
-            LEFT JOIN
-            rene_section f ON f.section_id=b.section_id
-            LEFT JOIN
-            rene_contractor g ON g.contractor_id=a.contractor_id
+            rene_contractor e ON a.contractor_id=e.contractor_id
             WHERE
             a.contractor_id=:id
             AND a.delete_flag=FALSE
@@ -295,9 +286,7 @@ function getMappingForContractor($id) {
             AND c.delete_flag=FALSE
             AND d.delete_flag=FALSE
             AND e.delete_flag=FALSE
-            AND f.delete_flag=FALSE
-            AND g.delete_flag=FALSE
-            AND e.active=TRUE
+            AND a.active=TRUE
             ORDER BY place_title, category_title, section_title";
     try {
         $db = getConnection();
@@ -440,165 +429,25 @@ function getPlaces() {
     }
 }
 
-function getPlaceCategory($id){
-    $sql = "SELECT a.placeCategory_id, a.active, a.category_id, a.place_id, a.delete_flag
-            FROM
-            rene_placecategory_mapping a
-            WHERE
-            a.delete_flag=FALSE
-            AND a.placeCategory_id=:id";
-    try {
-        $db = getConnection();
-        $stmt = $db->prepare($sql);
-        $stmt->bindParam("id", $id);
-        $stmt->execute();
-        $placeCategory = $stmt->fetchObject();
-        $db = null;
-        echo json_encode($placeCategory);
-    } catch(PDOException $e) {
-        echo '{"error":{"text":'. $e->getMessage() .'}}';
-    }
-}
-
-function getPlaceCategories($id) {
-    $sql = "SELECT a.placeCategory_id,c.category_title as category_title,a.active
-            FROM
-            rene_placecategory_mapping a
-            LEFT JOIN
-            rene_place b ON b.place_id=a.place_id
-            LEFT JOIN
-            rene_category c ON a.category_id=c.category_id
-            WHERE
-            a.delete_flag=FALSE
-            AND b.delete_flag=FALSE
-            AND c.delete_flag=FALSE
-            AND b.place_id=:id
-            AND b.active=TRUE
-            ORDER BY category_title";
-    try {
-        $db = getConnection();
-        $stmt = $db->prepare($sql);
-        $stmt->bindParam("id", $id);
-        $stmt->execute();
-        $placeCategories = $stmt->fetchAll(PDO::FETCH_OBJ);
-        $db = null;
-        echo json_encode($placeCategories);
-    } catch(PDOException $e) {
-        echo '{"error":{"text":'. $e->getMessage() .'}}';
-    }
-}
-
-function getCategorySection($id) {
-    $sql = "SELECT a.categorySection_id, a.placeCategory_id, a.section_id, a.categorysection_order, a.active,a.meta_id
-            FROM
-            rene_categorysection_mapping a
-            WHERE
-            a.delete_flag=FALSE
-            AND a.categorySection_id=:id";
-    try {
-        $db = getConnection();
-        $stmt = $db->prepare($sql);
-        $stmt->bindParam("id", $id);
-        $stmt->execute();
-        $categorySection = $stmt->fetchObject();
-        $db = null;
-        echo json_encode($categorySection);
-    } catch(PDOException $e) {
-        echo '{"error":{"text":'. $e->getMessage() .'}}';
-    }
-}
-
-function getCategorySectionsById($id) {
-    $sql = "SELECT a.categorySection_id, a.placeCategory_id, a.section_id, e.place_title as place_title, d.category_title as category_title, c.section_title as section_title, a.categorysection_order, a.active,a.meta_id
-            FROM
-            rene_categorysection_mapping a
-            LEFT JOIN
-            rene_placecategory_mapping b ON b.placeCategory_id=a.placeCategory_id
-            LEFT JOIN
-            rene_section c ON c.section_id=a.section_id
-            LEFT JOIN
-            rene_category d ON b.category_id=d.category_id
-            LEFT JOIN
-            rene_place e ON e.place_id=b.place_id
-            WHERE
-            a.delete_flag=FALSE
-            ANd b.delete_flag=FALSE
-            AND c.delete_flag=FALSE
-            AND d.delete_flag=FALSE
-            AND e.delete_flag=FALSE
-            AND b.placeCategory_id=:id
-            AND e.active=TRUE
-            ORDER BY section_title";
-    try {
-        $db = getConnection();
-        $stmt = $db->prepare($sql);
-        $stmt->bindParam("id", $id);
-        $stmt->execute();
-        $categorySections = $stmt->fetchAll(PDO::FETCH_OBJ);
-        $db = null;
-        echo json_encode($categorySections);
-    } catch(PDOException $e) {
-        echo '{"error":{"text":'. $e->getMessage() .'}}';
-    }
-}
-
-function getCategorySections() {
-    $sql = "SELECT a.categorySection_id, a.placeCategory_id, a.section_id, e.place_title as place_title, d.category_title as category_title, c.section_title as section_title, a.categorysection_order, a.active,a.meta_id
-            FROM
-            rene_categorysection_mapping a
-            LEFT JOIN
-            rene_placecategory_mapping b ON b.placeCategory_id=a.placeCategory_id
-            LEFT JOIN
-            rene_section c ON c.section_id=a.section_id
-            LEFT JOIN
-            rene_category d ON b.category_id=d.category_id
-            LEFT JOIN
-            rene_place e ON e.place_id=b.place_id
-            WHERE
-            a.delete_flag=FALSE
-            ANd b.delete_flag=FALSE
-            AND c.delete_flag=FALSE
-            AND d.delete_flag=FALSE
-            AND e.delete_flag=FALSE
-            AND e.active=TRUE
-            ORDER BY place_title, category_title, section_title";
-    try {
-        $db = getConnection();
-        $stmt = $db->prepare($sql);
-        $stmt->execute();
-        $categorySections = $stmt->fetchAll(PDO::FETCH_OBJ);
-        $db = null;
-        echo json_encode($categorySections);
-    } catch(PDOException $e) {
-        echo '{"error":{"text":'. $e->getMessage() .'}}';
-    }
-}
-
 function getContractorMapping($id) {
-    $sql = "SELECT a.contractorMapping_id, a.contractor_id, a.categorySection_id, a.active, a.delete_flag, g.contractor_title as contractor_title, d.category_title as category_title, f.section_title as section_title,e.place_title as place_title, a.active
+    $sql = "SELECT a.contractorMapping_id, a.contractor_id, a.active, a.delete_flag, e.contractor_title as contractor_title, d.category_title as category_title, c.section_title as section_title, b.place_title as place_title, a.active
             FROM
             rene_contractor_mapping a
             LEFT JOIN
-            rene_categorysection_mapping b ON a.categorySection_id=b.categorySection_id
+            rene_place b ON b.place_id=a.place_id
             LEFT JOIN
-            rene_placecategory_mapping c ON b.placeCategory_id=c.placeCategory_id
+            rene_section c ON c.section_id=a.section_id
             LEFT JOIN
             rene_category d ON c.category_id=d.category_id
             LEFT JOIN
-            rene_place e ON e.place_id=c.place_id
-            LEFT JOIN
-            rene_section f ON f.section_id=b.section_id
-            LEFT JOIN
-            rene_contractor g ON g.contractor_id=a.contractor_id
+            rene_contractor e ON e.contractor_id=a.contractor_id
             WHERE
             a.delete_flag=FALSE
             AND b.delete_flag=FALSE
             AND c.delete_flag=FALSE
             AND d.delete_flag=FALSE
             AND e.delete_flag=FALSE
-            AND f.delete_flag=FALSE
-            AND g.delete_flag=FALSE
-            AND e.active=TRUE
+            AND a.active=TRUE
             AND a.contractorMapping_id = :id";
     try {
         $db = getConnection();
@@ -617,12 +466,13 @@ function addContractorMapping(){
     error_log('addContractorMapping\n', 3, '/var/tmp/php.log');
     $request = Slim::getInstance()->request();
     $contractorMapping = json_decode($request->getBody());
-    $sql = "INSERT INTO rene_contractor_mapping (contractor_id, categorySection_id, active, delete_flag) VALUES (:contractor_id, :categorySection_id, :active, :delete_flag)";
+    $sql = "INSERT INTO rene_contractor_mapping (contractor_id, section_id, place_id, active, delete_flag) VALUES (:contractor_id, :section_id, :place_id, :active, :delete_flag)";
     try {
         $db = getConnection();
         $stmt = $db->prepare($sql);
         $stmt->bindParam("contractor_id", $contractorMapping->contractor_id);
-        $stmt->bindParam("categorySection_id", $contractorMapping->categorySection_id);
+        $stmt->bindParam("section_id", $contractorMapping->section_id);
+        $stmt->bindParam("place_id", $contractorMapping->place_id);
         $stmt->bindParam("active", $contractorMapping->active);
         $stmt->bindParam("delete_flag", $contractorMapping->delete_flag);
         $stmt->execute();
@@ -643,6 +493,19 @@ function deleteContractorMapping($id) {
         $stmt->bindParam("id", $id);
         $stmt->execute();
         $db = null;
+    } catch(PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+}
+
+function getSections() {
+    $sql = "select * FROM rene_section ORDER BY section_title";
+    try {
+        $db = getConnection();
+        $stmt = $db->query($sql);
+        $places = $stmt->fetchAll(PDO::FETCH_OBJ);
+        $db = null;
+        echo json_encode($places);
     } catch(PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';
     }

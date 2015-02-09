@@ -31,27 +31,16 @@ class Section {
         return $response[0];
     }
     public function getSections() {
-        $query="SELECT c.section_id, c.section_name, c.section_title , a.active
+        $query="SELECT a.section_id, a.section_name, a.section_title , a.active
                     FROM
-                    ".Config::$tables['categorySection_table']." a
+                    ".Config::$tables['section_table']." a ON a.category_id=b.category_id
                     LEFT JOIN
-                    ".Config::$tables['placeCategory_table']." b ON b.placeCategory_id=a.placeCategory_id
-                    LEFT JOIN 
-                    ".Config::$tables['section_table']." c ON c.section_id=a.section_id
-                    LEFT JOIN
-                    ".Config::$tables['category_table']." d ON b.category_id=d.category_id
-                    LEFT JOIN
-                    ".Config::$tables['place_table']." e ON e.place_id=b.place_id
+                    ".Config::$tables['category_table']." b
                     WHERE 
                     a.delete_flag=FALSE 
                     AND b.delete_flag=FALSE 
-                    AND c.delete_flag=FALSE 
-                    AND d.delete_flag=FALSE 
-                    AND e.delete_flag=FALSE 
-                    AND e.active=TRUE 
-                    AND d.category_name='".$this->categoryName."' 
-                    AND e.place_name='".$this->placeName."' 
-                    ORDER BY a.categorysection_order ASC";
+                    AND b.category_name='".$this->categoryName."'
+                    ORDER BY a.category_name ASC";
         if ($result = $this->mysqli->query($query)) {
             $i=0;
             while ($row = $result->fetch_object()) {

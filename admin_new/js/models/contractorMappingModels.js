@@ -7,10 +7,6 @@ window.ContractorMapping = Backbone.Model.extend({
             return value.length > 0 ? {isValid: true} : {isValid: false, message: "You must enter a Contractor"};
         };
 
-        this.validators.categorySection_id = function (value) {
-            return value.length > 0 ? {isValid: true} : {isValid: false, message: "You must enter a Category Section Mapping"};
-        };
-
     },
     validateItem: function (key) {
         return (this.validators[key]) ? this.validators[key](this.get(key)) : {isValid: true};
@@ -34,7 +30,8 @@ window.ContractorMapping = Backbone.Model.extend({
     defaults: {
         contractorMapping_id: null,
         contractor_id: "",
-        categorySection_id: "",
+        place_id: "",
+        section_id: "",
         active: 1,
         delete_flag: 0
     }

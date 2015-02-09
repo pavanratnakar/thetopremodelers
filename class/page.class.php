@@ -232,7 +232,7 @@ class Page{
         return $return;
     }
     public function printFooter(){
-        $return.=$this->printJS('herve_global_js');
+        $return=$this->printJS('herve_global_js');
         if($this->currentPage->js == 1){
             $return.=$this->printJS('herve_'.$this->currentPage->class.'_js');
         }

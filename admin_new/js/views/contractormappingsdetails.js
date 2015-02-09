@@ -2,10 +2,21 @@ window.ContractorMappingsView = Backbone.View.extend({
     initialize: function (e) {
         e = e || {};
         this.contractorModel = e.contractorModel || null;
+        this.placeModel = e.placeModel;
+        this.sectionModel = e.sectionModel;
     },
     render: function () {
         $(this.el).html(this.template(_.extend(
             this.model.toJSON(),
+            {
+                placeModel: this.placeModel.models
+            },
+            {
+                sectionModel: this.sectionModel.models
+            },
+            {
+                contractorModel: this.contractorModel
+            },
             this.contractorModel.mappingGroupedByPlace
         )));
         return this;
@@ -70,12 +81,14 @@ window.ContractorMappingsView = Backbone.View.extend({
     },
     mappingCheckChange: function(e) {
         var target = $(e.target),
-            categorySection_id = target.data('catsecid'),
+            section_id = target.data('secid'),
             contractor_id = this.contractorModel.get('contractor_id'),
+            place_id = target.data('placeid'),
             contractorMapping_id = target.data('mapid');
 
         var cm = new ContractorMapping({
-            categorySection_id: categorySection_id,
+            section_id: section_id,
+            place_id: place_id,
             contractor_id: contractor_id,
             active: 1,
             delete_flag: 0

@@ -27,7 +27,6 @@ class Place {
         return $response[0];
     }
     public function getPlaces($limit=null){
-        $placeName=$this->mysqli->real_escape_string($placeName);
         if ($limit) {
             $limit = "LIMIT 0,".$limit;
         } else {

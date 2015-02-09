@@ -274,55 +274,6 @@ var herve_grid = {
                 });
             }
         },
-        placeCategory: {
-            id      :   "#placeCategory",
-            page    :   "#p_placeCategory",
-            select  :   "#placeCategory_select",
-            init    :   function() {
-                this.setup();
-                herve_grid.jqgrid.crud(herve_grid.jqgrid.placeCategory.id,herve_grid.jqgrid.placeCategory.page);
-            },
-            setup   :   function() {
-                this.categories=$.ajax({url: $.url+"/admin/controller/categoryController.php?ref=select&type=category", dataType: "json", cache: true, async: false, success: function(data, result) {if (!result) alert('Failure to retrieve the Category.');}}).responseText;
-                this.places=$.ajax({url: $.url+"/admin/controller/placeController.php?ref=select&type=place", dataType: "json", cache: true, async: false, success: function(data, result) {if (!result) alert('Failure to retrieve the Place.');}}).responseText;
-                $(herve_grid.jqgrid.placeCategory.id).jqGrid({
-                    url:$.url+'/admin/controller/placeCategoryController.php?ref=details',
-                    datatype: "json",
-                    height: 'auto',
-                    width: herve_grid.theme.width,
-                    colNames:['Id', 'Place Name', 'Category Name', 'Active'],
-                    colModel:[
-                        {name:'placeCategory_id',index:'placeCategory_id',hidden:true,align:'center',editable:false, sorttype:'int',key:true},
-                        {name:'place_title',index:'place_title', width:herve_grid.theme.note_width,formoptions:{label: 'Place'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"select",editoptions: {value: (this.places.replace('"','')).replace('"','') } },
-                        {name:'category_title',index:'categocategory_titlery_name', width:herve_grid.theme.note_width,formoptions:{label: 'Category'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"select",editoptions: {value: ('All:All;'+this.categories.replace('"','')).replace('"','') } },
-                        {name:'active',index:'active', width:herve_grid.theme.note_width,formoptions:{label: 'Active'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"select",editoptions:{value:"1:True;0:False"}}
-                    ],
-                    rowNum:100,
-                    rowList:[100,500,1000,1500,2000,2500,3000],
-                    pager: herve_grid.jqgrid.placeCategory.page,
-                    sortname: 'place_title',
-                    viewrecords: true,
-                    sortorder: "asc",
-                    multiselect: false,
-                    subGrid: false,
-                    caption: "Category - Place Mapping",
-                    editurl:$.url+"/admin/controller/placeCategoryController.php?ref=operation",
-                    grouping: true,
-                    groupingView : {
-                        groupField : ['place_title'],
-                        groupColumnShow : [true],
-                        groupText : ['<b>{0} - {1} Item(s)</b>'],
-                        groupCollapse : false,
-                        groupOrder: ['desc'],
-                        groupSummary : [true],
-                        showSummaryOnHide: true,
-                        groupDataSorted : true
-                    },
-                    footerrow: true,
-                    userDataOnFooter: true
-                });
-            }
-        },
         section: {
             id      :   "#section",
             page    :   "#p_section",
@@ -332,16 +283,20 @@ var herve_grid = {
                 herve_grid.jqgrid.crud(herve_grid.jqgrid.section.id,herve_grid.jqgrid.section.page);
             },
             setup   :   function() {
+                this.categories=$.ajax({url: $.url+"/admin/controller/categoryController.php?ref=select&type=category", dataType: "json", cache: true, async: false, success: function(data, result) {if (!result) alert('Failure to retrieve the Category.');}}).responseText;
+
                 $(herve_grid.jqgrid.section.id).jqGrid({
                     url:$.url+'/admin/controller/sectionController.php?ref=details',
                     datatype: "json",
                     height: 'auto',
                     width: herve_grid.theme.width,
-                    colNames:['Id', 'Section Name', 'Section Title'],
+                    colNames:['Id', 'Section Name', 'Section Title', 'Category Title', 'Background Id'],
                     colModel:[
                         {name:'section_id',index:'section_id',hidden:true,align:'center',editable:false, sorttype:'int',key:true},
                         {name:'section_name',index:'section_name', width:herve_grid.theme.note_width,formoptions:{label: 'Section Name'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"textarea", editoptions:{rows:"2",cols:"20"}},
-                        {name:'section_title',index:'section_title', width:herve_grid.theme.note_width,formoptions:{label: 'Section Title'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"textarea", editoptions:{rows:"2",cols:"20"}}
+                        {name:'section_title',index:'section_title', width:herve_grid.theme.note_width,formoptions:{label: 'Section Title'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"textarea", editoptions:{rows:"2",cols:"20"}},
+                        {name:'category_id',index:'category_id', width:herve_grid.theme.note_width,formoptions:{label: 'Category'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"select", editoptions: { value: (this.categories.replace('"','')).replace('"','') } },
+                        {name:'background_id',index:'background_id', width:herve_grid.theme.note_width,formoptions:{label: 'Background Id'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"textarea", editoptions:{rows:"2",cols:"20"}}
                     ],
                     rowNum:100,
                     rowList:[100,500,1000,1500,2000,2500,3000],
@@ -359,68 +314,6 @@ var herve_grid = {
                         groupColumnShow : [true],
                         groupText : ['<b>{0}</b>'],
                         groupCollapse : false,
-                        groupOrder: ['desc'],
-                        groupSummary : [true],
-                        showSummaryOnHide: true,
-                        groupDataSorted : true
-                    },
-                    footerrow: true,
-                    userDataOnFooter: true
-                });
-            }
-        },
-        categorySection: {
-            id      :   "#categorySection",
-            page    :   "#p_categorySection",
-            select  :   "#categorySection_select",
-            init    :   function() {
-                this.setup();
-                herve_grid.jqgrid.crud(herve_grid.jqgrid.categorySection.id,herve_grid.jqgrid.categorySection.page);
-            },
-            setup   :   function() {
-                // $('#TblGrid_categorySection #place_title').live('change', function(event){
-                //     $.ajax({url: $.url+"/admin/controller/placeCategoryController.php?ref=select&type=placeCategory&place_id="+$('#TblGrid_categorySection #place_title').val(), dataType: "json", cache: true, async: false, success: function(data, result) {
-                //         if (!result) alert('Failure to retrieve the Answers.');
-                //         //$(herve_grid.jqgrid.categorySection.id).jqGrid.setColProp('category_name', {editoptions : data});
-                //         herve_grid.lib.selectRefresh($('#TblGrid_categorySection #tr_category_title select'),data);
-                //     }}).responseText;
-                // });
-                this.places=$.ajax({url: $.url+"/admin/controller/placeController.php?ref=select&type=place", dataType: "json", cache: true, async: false, success: function(data, result) {if (!result) alert('Failure to retrieve the Answers.');}}).responseText;
-                this.sections=$.ajax({url: $.url+"/admin/controller/sectionController.php?ref=select&type=section", dataType: "json", cache: true, async: false, success: function(data, result) {if (!result) alert('Failure to retrieve the Questions.');}}).responseText;
-                this.categories=$.ajax({url: $.url+"/admin/controller/categoryController.php?ref=select&type=category", dataType: "json", cache: true, async: false, success: function(data, result) {if (!result) alert('Failure to retrieve the Category.');}}).responseText;
-
-                $(herve_grid.jqgrid.categorySection.id).jqGrid({
-                    url:$.url+'/admin/controller/categorySectionController.php?ref=details',
-                    datatype: "json",
-                    height: 'auto',
-                    width: herve_grid.theme.width,
-                    colNames:['Id', 'Place Name','Category Name', 'Section Name', 'Order', 'Meta Id', 'Background Id', 'Active'],
-                    colModel:[
-                        {name:'categorySection_id',index:'categorySection_id',hidden:true,align:'center',editable:false, sorttype:'int',key:true},
-                        {name:'place_title',index:'place_title', width:herve_grid.theme.note_width,formoptions:{label: 'Place'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"select",editoptions: { value: (this.places.replace('"','')).replace('"','') } },
-                        {name:'category_title',index:'category_title', width:herve_grid.theme.note_width,formoptions:{label: 'Category'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"select", editoptions: { value: (this.categories.replace('"','')).replace('"','') } },
-                        {name:'section_title',index:'section_title', width:herve_grid.theme.note_width,formoptions:{label: 'Section'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"select",editoptions: { value: ('All:All;'+this.sections.replace('"','')).replace('"','') } },
-                        {name:'categorysection_order',index:'categorysection_order', width:herve_grid.theme.note_width,formoptions:{label: 'Order'},align:"center", sortable:true,editable: true,editrules: { required: false } ,edittype:"textarea", editoptions:{rows:"2",cols:"20"}},
-                        {name:'meta_id',index:'meta_id', width:herve_grid.theme.note_width,formoptions:{label: 'Meta Id'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"textarea", editoptions:{rows:"2",cols:"20"}},
-                        {name:'background_id',index:'background_id', width:herve_grid.theme.note_width,formoptions:{label: 'Background Id'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"textarea", editoptions:{rows:"2",cols:"20"}},
-                        {name:'active',index:'active', width:herve_grid.theme.note_width,formoptions:{label: 'Active'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"select",editoptions:{value:"1:True;0:False"}}
-                    ],
-                    rowNum:5000,
-                    rowList:[5000, 10000],
-                    pager: herve_grid.jqgrid.categorySection.page,
-                    sortname: 'categorysection_order',
-                    viewrecords: true,
-                    sortorder: "asc",
-                    multiselect: false,
-                    subGrid: false,
-                    caption: "Task Mapping",
-                    editurl:$.url+"/admin/controller/categorySectionController.php?ref=operation",
-                    grouping: true,
-                    groupingView : {
-                        groupField : ['place_title'],
-                        groupColumnShow : [true],
-                        groupText : ['<b>{0} - {1} Item(s)</b>'],
-                        groupCollapse : true,
                         groupOrder: ['desc'],
                         groupSummary : [true],
                         showSummaryOnHide: true,

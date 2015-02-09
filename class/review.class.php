@@ -7,7 +7,7 @@ class Review{
         $this->utils=new Utils();
     }
     public function getReviews(){
-        $query="SELECT a.project, a.date, a.region, a.description, a.rating
+        $query="SELECT a.project, a.date, a.region, a.description, a.rating, a.id
                     FROM
                     ".Config::$tables['review_table']." a
                     WHERE

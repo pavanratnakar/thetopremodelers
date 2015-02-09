@@ -138,12 +138,12 @@ class PageController{
         }
         return $return;
     }
-    public function getFormatedCategories($position,$placeName='dallas_texas'){
+    public function getFormatedCategories($position, $placeName = 'dallas_texas'){
         include_once(Config::$site_path.'class/category.class.php');
         $this->category = new Category();
-        return $this->category->getFormatedCategories($position,$placeName);
+        return $this->category->getFormatedCategories($position, $placeName);
     }
-    public function getFormatedSections($categoryName,$placeName){
+    public function getFormatedSections($categoryName, $placeName){
         include_once(Config::$site_path.'class/section.class.php');
         $this->section = new Section($categoryName,$placeName);
         return $this->section->getFormatedSections();

@@ -101,8 +101,6 @@ return array(
         '//admin_new/js/models/contractorReviewModels.js',
         '//admin_new/js/models/contractorMappingModels.js',
         '//admin_new/js/models/sectionModels.js',
-        '//admin_new/js/models/placeCategoryModels.js',
-        '//admin_new/js/models/categorySectionModels.js',
         '//admin_new/js/views/paginator.js',
         '//admin_new/js/views/header.js',
         '//admin_new/js/views/reviewlist.js',

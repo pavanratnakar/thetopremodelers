@@ -30,7 +30,7 @@
                                 <button class="fm-button ui-button ui-button-text ui-state-default ui-corner-all fm-button-icon-left" id="purge-hard">
                                     <span class="ui-icon ui-icon-trash"></span>
                                     Purge Hard
-                                </button>                        
+                                </button>
                             </div>
                         </div>
                     </div>

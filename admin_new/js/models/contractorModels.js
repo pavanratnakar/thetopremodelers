@@ -61,20 +61,20 @@ window.Contractor = Backbone.Model.extend({
         });
         return o;
     },
-    getMappingIdForCategorySectionId: function(id){
+    getMappingIdForSectionId: function(id){
         var c = false;
 
         _.some(this.get('mappings'), function(mapping){
-            if (mapping.categorySection_id === id) {
-                c = mapping.contractorMapping_id;
+            if (mapping.section_id === id) {
+                c = mapping.section_id;
                 return true;
             }
         });
         return c;
     },
-    isMappedToCategorySectionId: function(id){
+    isMappedToSectionPlaceId: function(section_title, place_title){
         return _.some(this.get('mappings'), function(mapping){
-            if (mapping.categorySection_id === id) {
+            if (mapping.section_title === section_title && mapping.place_title === place_title) {
                 return true;
             }
             return;

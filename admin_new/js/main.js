@@ -18,7 +18,8 @@ var AppRouter = Backbone.Router.extend({
 
         "contractorMapping/add/:id": "addContractorMapping",
         "contractorMappings/add/:id": "addContractorMappings",
-        "contractorMapping/:id": "contractorMappingDetails",
+        "contractorMapping/:id": "contractorMappingDetails"
+
     },
 
     initialize: function () {
@@ -127,48 +128,66 @@ var AppRouter = Backbone.Router.extend({
         // TODO MAKE THIS PARALLEL USING ASYNC
         placeList.fetch({
             success: function(){
-                var placeCategoryList = new PlaceCategoryCollection([], {
-                    id: placeList.models[0].get('place_id')
-                });
-                placeCategoryList.fetch({
-                    success: function(){
-                        var categorySectionList = new CategorySectionCollection([], {
-                            id: placeCategoryList.models[0].get('placeCategory_id')
-                        });
-                        categorySectionList.fetch({
-                            success: function(){
-                                $('#content').html(new ContractorMappingView({
-                                    model: contractorMapping,
-                                    placeModels: placeList,
-                                    placeCategoryModels: placeCategoryList,
-                                    categorySectionModels: categorySectionList
-                                }).render().el);
-                            }
-                        });
-                    }
-                });
+                // var placeCategoryList = new PlaceCategoryCollection([], {
+                //     id: placeList.models[0].get('place_id')
+                // });
+                // placeCategoryList.fetch({
+                //     success: function(){
+                //         var categorySectionList = new CategorySectionCollection([], {
+                //             id: placeCategoryList.models[0].get('placeCategory_id')
+                //         });
+                //         categorySectionList.fetch({
+                //             success: function(){
+                //                 $('#content').html(new ContractorMappingView({
+                //                     model: contractorMapping,
+                //                     placeModels: placeList,
+                //                     placeCategoryModels: placeCategoryList,
+                //                     categorySectionModels: categorySectionList
+                //                 }).render().el);
+                //             }
+                //         });
+                //     }
+                // });
             }
         });
         this.headerView.selectMenuItem();
     },
 
     addContractorMappings: function(id) {
-        var contractor = new Contractor({id: id});
+        var contractor = new Contractor({id: id}),
+            placeList = new PlaceCollection(),
+            sectionList = new SectionCollection();
 
-        contractor.fetch({
+        placeList.fetch({
             success: function(){
-                var categorySectionList = new CategorySectionCollection();
-
-                categorySectionList.fetch({
+                sectionList.fetch({
                     success: function(){
-                        $('#content').html(new ContractorMappingsView({
-                            model: categorySectionList,
-                            contractorModel: contractor
-                        }).render().el);
+                        contractor.fetch({
+                            success: function(){
+                                // var categorySectionList = new CategorySectionCollection();
+
+                                var contractorMapping = new ContractorMapping({id: id});
+
+                                contractorMapping.fetch({
+                                    success: function () {
+                                        $('#content').html(new ContractorMappingsView({
+                                            model: contractorMapping,
+                                            contractorModel: contractor,
+                                            placeModel: placeList,
+                                            sectionModel: sectionList
+                                        }).render().el);
+                                    }
+                                });
+                            }
+                        });
                     }
                 });
             }
         });
+
+
+
+
         this.headerView.selectMenuItem();
     },
 
@@ -177,33 +196,33 @@ var AppRouter = Backbone.Router.extend({
 
         contractorMapping.fetch({
             success: function(){
-                var categorySection = new CategorySection({
-                    id: contractorMapping.get('categorySection_id')
-                });
-                categorySection.fetch({
-                    success: function(){
-                        var placeCategory = new PlaceCategory({
-                            id: categorySection.get('placeCategory_id')
-                        });
-                        placeCategory.fetch({
-                            success: function(){
-                                var place = new Place({
-                                    id: placeCategory.get('place_id')
-                                });
-                                place.fetch({
-                                    success: function(){
-                                        $('#content').html(new ContractorMappingView({
-                                            model: contractorMapping,
-                                            placeModel: place,
-                                            placeCategoryModel: placeCategory,
-                                            categorySectionModel: categorySection
-                                        }).render().el);
-                                    }
-                                });
-                            }
-                        });
-                    }
-                });
+                // var categorySection = new CategorySection({
+                //     id: contractorMapping.get('categorySection_id')
+                // });
+                // categorySection.fetch({
+                //     success: function(){
+                //         var placeCategory = new PlaceCategory({
+                //             id: categorySection.get('placeCategory_id')
+                //         });
+                //         placeCategory.fetch({
+                //             success: function(){
+                //                 var place = new Place({
+                //                     id: placeCategory.get('place_id')
+                //                 });
+                //                 place.fetch({
+                //                     success: function(){
+                //                         $('#content').html(new ContractorMappingView({
+                //                             model: contractorMapping,
+                //                             placeModel: place,
+                //                             placeCategoryModel: placeCategory,
+                //                             categorySectionModel: categorySection
+                //                         }).render().el);
+                //                     }
+                //                 });
+                //             }
+                //         });
+                //     }
+                // });
             }
         });
         this.headerView.selectMenuItem();

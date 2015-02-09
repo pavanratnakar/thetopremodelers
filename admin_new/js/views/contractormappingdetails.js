@@ -2,27 +2,17 @@ window.ContractorMappingView = Backbone.View.extend({
     initialize: function (e) {
         e = e || {};
         this.placeModel = e.placeModel || null;
-        this.placeCategoryModel = e.placeCategoryModel || null;
-        this.categorySectionModel = e.categorySectionModel || null;
-
         this.placeModels = e.placeModels || null;
-        this.placeCategoryModels = e.placeCategoryModels || null;
-        this.categorySectionModels = e.categorySectionModels || null;
+        this.sectionModels = e.sectionModels || null;
     },
     render: function () {
         $(this.el).html(this.template(_.extend(
             this.model.toJSON(),{
                 placeModels: this.placeModels && this.placeModels.models
             },{
-                placeCategoryModels: this.placeCategoryModels && this.placeCategoryModels.models
-            },{
-                categorySectionModels: this.categorySectionModels && this.categorySectionModels.models
+                sectionModels: this.sectionModels && this.sectionModels.models
             },{
                 placeModel: this.placeModel
-            },{
-                placeCategoryModel: this.placeCategoryModel
-            },{
-                categorySectionModel: this.categorySectionModel
             }
         )));
         return this;

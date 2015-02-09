@@ -8,10 +8,8 @@
     <row><cell>061</cell><cell>Place Code</cell><cell>controller/ajaxController.php?submodule=placeCode</cell><cell>1</cell><cell>072</cell><cell>075</cell><cell>true</cell><cell>true</cell></row>
     <row><cell>000</cell><cell>Category Module</cell><cell></cell><cell>0</cell><cell>001</cell><cell>019</cell><cell>false</cell><cell>false</cell></row>
     <row><cell>001</cell><cell>Category Operation</cell><cell>controller/ajaxController.php?submodule=category</cell><cell>1</cell><cell>012</cell><cell>015</cell><cell>true</cell><cell>true</cell></row>
-    <row><cell>002</cell><cell>Place Mapping</cell><cell>controller/ajaxController.php?submodule=placeCategory</cell><cell>1</cell><cell>016</cell><cell>017</cell><cell>true</cell><cell>true</cell></row>
     <row><cell>020</cell><cell>Task Module</cell><cell></cell><cell>0</cell><cell>021</cell><cell>049</cell><cell>false</cell><cell>false</cell></row>
     <row><cell>021</cell><cell>Task Operation</cell><cell>controller/ajaxController.php?submodule=section</cell><cell>1</cell><cell>022</cell><cell>025</cell><cell>true</cell><cell>true</cell></row>
-    <row><cell>022</cell><cell>Task Mapping</cell><cell>controller/ajaxController.php?submodule=categorySection</cell><cell>1</cell><cell>026</cell><cell>027</cell><cell>true</cell><cell>true</cell></row>
     <row><cell>100</cell><cell>Contractors Module</cell><cell></cell><cell>0</cell><cell>101</cell><cell>199</cell><cell>false</cell><cell>false</cell></row>
     <row><cell>101</cell><cell>Contractors Operation</cell><cell>controller/ajaxController.php?submodule=contractor</cell><cell>1</cell><cell>112</cell><cell>115</cell><cell>true</cell><cell>true</cell></row>
     <row><cell>111</cell><cell>Contractors Mapping</cell><cell>controller/ajaxController.php?submodule=contractorMapping</cell><cell>1</cell><cell>122</cell><cell>125</cell><cell>true</cell><cell>true</cell></row>

@@ -78,6 +78,7 @@ class Category extends General{
     }
     public function getSelect() {
         $i=1;
+        $return_array = '';
         $query="SELECT category_id,category_value
                     FROM 
                     ".$this->table." a 
@@ -86,15 +87,11 @@ class Category extends General{
                     AND category_value IS NOT NULL";
         if ($result = $this->mysqli->query($query)){
             while ($row = $result->fetch_object()){
-                if ($type=='json') {
-                    $return_array[$row->category_id] = $row->category_value;
-                } else {
-                    $return_array .= $row->category_id.':'.$row->category_value;
-                    if($result->num_rows!=$i){
-                        $return_array .=';';
-                    }
-                    $i++;
+                $return_array .= $row->category_id.':'.$row->category_value;
+                if($result->num_rows!=$i){
+                    $return_array .=';';
                 }
+                $i++;
             }
         }
         return $return_array;

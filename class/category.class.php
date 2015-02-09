@@ -13,15 +13,8 @@ class Category{
         $query="SELECT a.category_title,a.category_name,a.active
                     FROM 
                     ".Config::$tables['category_table']." a
-                    LEFT JOIN 
-                    ".Config::$tables['placeCategory_table']." b ON a.category_id=b.category_id
-                    LEFT JOIN 
-                    ".Config::$tables['place_table']." c ON c.place_id=b.place_id
                     WHERE 
                     a.delete_flag=FALSE
-                    AND b.delete_flag=FALSE
-                    AND c.delete_flag=FALSE
-                    AND c.active=TRUE
                     AND a.active=1 
                     AND a.category_name='".$categoryName."'";
         if ($result = $this->mysqli->query($query)) {
@@ -35,35 +28,18 @@ class Category{
         }
         return $response;
     }
-    public function getCategories($position=null, $placeName=null){
+    public function getCategories($position=null){
         $position_query='';
         if($position){
             $position_query = 'AND position='.$position;
         }
-        if (!$placeName) {
-            $query="SELECT a.category_id, a.category_name, a.category_value, a.active
-                        FROM
-                        ".Config::$tables['category_table']." a
-                        WHERE
-                        a.delete_flag=FALSE
-                        ".$position_query."
-                        ORDER BY a.category_order ASC";
-        } else {
-            $query="SELECT c.category_id, c.category_name, c.category_value, c.active
-                        FROM
-                        ".Config::$tables['placeCategory_table']." a
-                        LEFT JOIN
-                        ".Config::$tables['place_table']." b ON b.place_id=a.place_id
-                        LEFT JOIN
-                        ".Config::$tables['category_table']." c ON a.category_id=c.category_id
-                        WHERE
-                        a.delete_flag=FALSE
-                        AND b.delete_flag=FALSE
-                        AND c.delete_flag=FALSE
-                        AND b.place_name='".$placeName."'
-                        ".$position_query."
-                        ORDER BY c.category_order ASC";
-        }
+        $query="SELECT a.category_id, a.category_name, a.category_value, a.active
+                    FROM
+                    ".Config::$tables['category_table']." a
+                    WHERE
+                    a.delete_flag=FALSE
+                    ".$position_query."
+                    ORDER BY a.category_order ASC";
 
         if ($result = $this->mysqli->query($query)) {
             $i=0;
@@ -77,8 +53,8 @@ class Category{
         }
         $this->categories = $response;
     }
-    public function getFormatedCategories($position,$placeName){
-        $this->getCategories($position, $placeName);
+    public function getFormatedCategories($position, $placeName){
+        $this->getCategories($position);
         $response = '';
         for ($i=0;$i<sizeof($this->categories);$i++) {
             $href= ($this->categories[$i]['active']) ? Config::$site_url.$placeName.'/'.$this->categories[$i]['category_name'].'/contractors' : Config::$site_url.'contact-us';

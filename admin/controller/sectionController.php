@@ -26,7 +26,7 @@ class sectionController
     {
         if(isset($_REQUEST['_search']) && $this->searchOn!='false') {
             $fld =  $this->utils->checkValues($_REQUEST['searchField']);
-            if( $fld=='section_id' || $fld=='section_name' || $fld=='section_title') {
+            if( $fld=='section_id' || $fld=='section_name' || $fld=='section_title' || $fld=='category_id' || $fld=='background_id') {
                 $fldata =  $this->utils->checkValues($_REQUEST['searchString']);
                 $foper =  $this->utils->checkValues($_REQUEST['searchOper']);
                 // costruct where
@@ -109,7 +109,9 @@ class sectionController
         if($oper=='add'){
             $response=$this->section->addDetails(
                 $this->utils->checkValues($_POST['section_name']),
-                $this->utils->checkValues($_POST['section_title'])
+                $this->utils->checkValues($_POST['section_title']),
+                $this->utils->checkValues($_POST['category_id']),
+                $this->utils->checkValues($_POST['background_id'])
             );
             if($response){
                 $status=TRUE;
@@ -125,6 +127,8 @@ class sectionController
             $response=$this->section->editDetails(
                 $this->utils->checkValues($_POST['section_name']),
                 $this->utils->checkValues($_POST['section_title']),
+                $this->utils->checkValues($_POST['category_id']),
+                $this->utils->checkValues($_POST['background_id']),
                 $this->utils->checkValues($_POST['id'])
             );
             if($response){

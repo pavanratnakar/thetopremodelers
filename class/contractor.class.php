@@ -8,9 +8,8 @@ class Contractor{
         $this->mysqli=new mysqli(Config::$db_server,Config::$db_username,Config::$db_password,Config::$db_database);
         $this->utils=new Utils();
     }
-    public function getContractors($placeName,$categoryName,$sectionName,$sort,$page){
+    public function getContractors($placeName, $sectionName, $sort, $page){
         $placeName=$this->mysqli->real_escape_string($placeName);
-        $categoryName=$this->mysqli->real_escape_string($categoryName);
         $sectionName=$this->mysqli->real_escape_string($sectionName);
         $sort=$this->mysqli->real_escape_string($sort);
         $orderBy='';
@@ -21,10 +20,10 @@ class Contractor{
         if ($page == 1) {
             $start = 1;
         } else {
-            $allContractors = $this->getAllContractors($placeName,$categoryName,$sectionName);
+            $allContractors = $this->getAllContractors($placeName, $sectionName);
             $start = min(Config::$paginationLimit*$page,$allContractors['total_count']);
         }
-        $query="SELECT ROUND(SUM(score)/COUNT(score),1) as average_score,COUNT(review) as review_count,a.contractor_title,a.contractor_description,a.contractor_phone,a.contractor_address,a.contractor_name,c.categorySection_id,f.section_title,g.place_title,g.place_geo,g.place_geo_placename,h.category_title,i.image_id,d.meta_id,d.background_id
+        $query="SELECT ROUND(SUM(score)/COUNT(score),1) as average_score,COUNT(review) as review_count,a.contractor_title,a.contractor_description,a.contractor_phone,a.contractor_address,a.contractor_name,d.section_title,e.place_title,e.place_geo,e.place_geo_placename,f.category_title,g.image_id,d.background_id
         FROM 
         ".Config::$tables['contractor_table']." a
         LEFT JOIN
@@ -32,29 +31,23 @@ class Contractor{
         LEFT JOIN
         ".Config::$tables['contractorMapping_table']." c ON c.contractor_id=a.contractor_id
         LEFT JOIN
-        ".Config::$tables['categorySection_table']." d ON d.categorySection_id=c.categorySection_id
+        ".Config::$tables['section_table']." d ON c.section_id=d.section_id
         LEFT JOIN
-        ".Config::$tables['placeCategory_table']." e ON e.placeCategory_id=d.placeCategory_id
+        ".Config::$tables['place_table']." e ON c.place_id=e.place_id
         LEFT JOIN
-        ".Config::$tables['section_table']." f ON f.section_id=d.section_id
+        ".Config::$tables['category_table']." f ON f.category_id=d.category_id
         LEFT JOIN
-        ".Config::$tables['place_table']." g ON g.place_id=e.place_id
-        LEFT JOIN
-        ".Config::$tables['category_table']." h ON h.category_id=e.category_id
-        LEFT JOIN
-        ".Config::$tables['contractorImage_table']." i ON i.contractor_id=a.contractor_id
+        ".Config::$tables['contractorImage_table']." g ON g.contractor_id=a.contractor_id
         WHERE
         a.delete_flag=FALSE
+        AND b.delete_flag=FALSE 
         AND c.delete_flag=FALSE 
         AND d.delete_flag=FALSE 
         AND e.delete_flag=FALSE 
         AND f.delete_flag=FALSE 
-        AND g.delete_flag=FALSE 
-        AND g.active=TRUE 
-        AND h.delete_flag=FALSE 
-        AND f.section_name='".$sectionName."'
-        AND g.place_name='".$placeName."' 
-        AND h.category_name='".$categoryName."' 
+        AND c.active=TRUE 
+        AND d.delete_flag=FALSE 
+        AND e.delete_flag=FALSE 
         GROUP BY a.contractor_id
         ".$orderBy."";
                     //LIMIT ".$start.", ".Config::$paginationLimit."";
@@ -74,16 +67,14 @@ class Contractor{
                 $response[$i]['average_score']=$row->average_score;
                 $response[$i]['review_count']=$row->review_count;
                 $response[$i]['image_id']=$row->image_id;
-                $response[$i]['meta_id']=$row->meta_id;
                 $response[$i]['background_id']=$row->background_id;
                 $i++;
             }
         }
         return $response;
     }
-    public function getAllContractors($placeName,$categoryName,$sectionName){
+    public function getAllContractors($placeName, $sectionName){
         $placeName=$this->mysqli->real_escape_string($placeName);
-        $categoryName=$this->mysqli->real_escape_string($categoryName);
         $sectionName=$this->mysqli->real_escape_string($sectionName);
         $query="SELECT COUNT(*) as total_count
         FROM 
@@ -93,27 +84,20 @@ class Contractor{
         LEFT JOIN
         ".Config::$tables['contractorMapping_table']." c ON c.contractor_id=a.contractor_id
         LEFT JOIN
-        ".Config::$tables['categorySection_table']." d ON d.categorySection_id=c.categorySection_id
+        ".Config::$tables['section_table']." d ON d.section_id=c.section_id
         LEFT JOIN
-        ".Config::$tables['placeCategory_table']." e ON e.placeCategory_id=d.placeCategory_id
+        ".Config::$tables['place_id']." e ON e.place_id=c.place_id
         LEFT JOIN
-        ".Config::$tables['section_table']." f ON f.section_id=d.section_id
-        LEFT JOIN
-        ".Config::$tables['place_table']." g ON g.place_id=e.place_id
-        LEFT JOIN
-        ".Config::$tables['category_table']." h ON h.category_id=e.category_id
+        ".Config::$tables['category_table']." f ON f.category_id=d.category_id
         WHERE
         a.delete_flag=FALSE
+        AND b.delete_flag=FALSE 
         AND c.delete_flag=FALSE 
         AND d.delete_flag=FALSE 
         AND e.delete_flag=FALSE 
         AND f.delete_flag=FALSE 
-        AND g.delete_flag=FALSE 
-        AND g.active=TRUE 
-        AND h.delete_flag=FALSE 
-        AND f.section_name='".$sectionName."'
-        AND g.place_name='".$placeName."' 
-        AND h.category_name='".$categoryName."' 
+        AND d.section_name='".$sectionName."'
+        AND e.place_name='".$placeName."'
         GROUP BY a.contractor_id";
         if ($result = $this->mysqli->query($query)) {
             $i=0;
@@ -156,26 +140,23 @@ class Contractor{
         return $response[0];
     }
     public function getSectionsForContractor($details){
-        $query="SELECT f.category_title,e.section_title,e.section_id,e.section_name,c.categorysection_order
+        $query="SELECT e.category_title, c.section_title, c.section_id, c.section_name
         FROM 
         ".Config::$tables['contractor_table']." a
         LEFT JOIN
         ".Config::$tables['contractorMapping_table']." b ON b.contractor_id=a.contractor_id
         LEFT JOIN
-        ".Config::$tables['categorySection_table']." c ON c.categorySection_id=b.categorySection_id
+        ".Config::$tables['section_table']." c ON c.section_id=b.section_id
         LEFT JOIN
-        ".Config::$tables['placeCategory_table']." d ON d.placeCategory_id=c.placeCategory_id
+        ".Config::$tables['place_table']." d ON d.place_id=b.place_id
         LEFT JOIN
-        ".Config::$tables['section_table']." e ON e.section_id=c.section_id
-        LEFT JOIN
-        ".Config::$tables['category_table']." f ON f.category_id=d.category_id
+        ".Config::$tables['category_table']." e ON e.category_id=c.category_id
         WHERE
         a.delete_flag=FALSE
         AND b.delete_flag=FALSE
         AND c.delete_flag=FALSE
         AND d.delete_flag=FALSE
-        AND e.delete_flag=FALSE
-        AND f.delete_flag=FALSE ";
+        AND e.delete_flag=FALSE ";
         if ($details['contractor_id']) {
             $contractor_id=$this->mysqli->real_escape_string($details['contractor_id']);
             $query .= "AND a.contractor_id='".$contractor_id."' ";
@@ -193,8 +174,7 @@ class Contractor{
             $query .= "AND f.category_id='".$category_id."' ";
         }
         $query .= "
-        GROUP BY e.section_title
-        ORDER BY c.categorysection_order ASC";
+        GROUP BY c.section_title";
         if ($result = $this->mysqli->query($query)) {
             $i=0;
             while ($row = $result->fetch_object()) {
@@ -214,21 +194,15 @@ class Contractor{
         LEFT JOIN
         ".Config::$tables['contractorMapping_table']." b ON b.contractor_id=a.contractor_id
         LEFT JOIN
-        ".Config::$tables['categorySection_table']." c ON c.categorySection_id=b.categorySection_id
+        ".Config::$tables['section_table']." c ON c.section_id=b.section_id
         LEFT JOIN
-        ".Config::$tables['placeCategory_table']." d ON d.placeCategory_id=c.placeCategory_id
-        LEFT JOIN
-        ".Config::$tables['section_table']." e ON e.section_id=c.section_id
-        LEFT JOIN
-        ".Config::$tables['place_table']." f ON f.place_id=d.place_id
+        ".Config::$tables['place_table']." d ON d.place_id=c.place_id
         WHERE
         a.delete_flag=FALSE
         AND b.delete_flag=FALSE
         AND c.delete_flag=FALSE
         AND d.delete_flag=FALSE
-        AND e.delete_flag=FALSE
-        AND f.delete_flag=FALSE
-        AND f.active=TRUE ";
+        AND b.active=TRUE ";
         if ($details['contractor_id']) {
             $contractor_id=$this->mysqli->real_escape_string($details['contractor_id']);
             $query .= "AND a.contractor_id='".$contractor_id."' ";
@@ -256,24 +230,19 @@ class Contractor{
         LEFT JOIN
         ".Config::$tables['contractorMapping_table']." b ON b.contractor_id=a.contractor_id
         LEFT JOIN
-        ".Config::$tables['categorySection_table']." c ON c.categorySection_id=b.categorySection_id
+        ".Config::$tables['section_table']." c ON c.section_id=b.section_id
         LEFT JOIN
-        ".Config::$tables['placeCategory_table']." d ON d.placeCategory_id=c.placeCategory_id
+        ".Config::$tables['place_table']." d ON d.place_id=b.place_id
         LEFT JOIN
-        ".Config::$tables['section_table']." e ON e.section_id=c.section_id
-        LEFT JOIN
-        ".Config::$tables['place_table']." f ON f.place_id=d.place_id
-        LEFT JOIN
-        ".Config::$tables['category_table']." g ON g.category_id=d.category_id
+        ".Config::$tables['category_table']." e ON e.category_id=c.category_id
         WHERE
         a.delete_flag=FALSE
         AND b.delete_flag=FALSE
         AND c.delete_flag=FALSE
         AND d.delete_flag=FALSE
         AND e.delete_flag=FALSE
-        AND f.delete_flag=FALSE
-        AND f.active=TRUE 
-        AND g.delete_flag=FALSE ";
+        AND b.active=TRUE 
+        AND c.delete_flag=FALSE ";
         if ($details['contractor_id']) {
             $contractor_id=$this->mysqli->real_escape_string($details['contractor_id']);
             $query .= "AND a.contractor_id='".$contractor_id."' ";

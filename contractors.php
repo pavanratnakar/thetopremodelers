@@ -4,7 +4,6 @@ if (!$_GET['place'] || !$_GET['category']) {
     header( 'Location: '.Config::$site_url.'index.php');
     exit;
 }
-include_once($_SERVER['DOCUMENT_ROOT'].'/config.class.php');
 include_once(Config::$site_path.'controller/pageController.php');
 $pageController=new PageController(8);
 $placeName = $pageController->getUtils()->checkValues($_GET['place']);
@@ -13,7 +12,7 @@ $placeDetails = $place->getPlaceDetails($placeName);
 $categoryName = $pageController->getUtils()->checkValues($_GET['category']);
 $category = $pageController->getCategory();
 $categoryDetails = $category->getCategory($categoryName);
-$section = $pageController->getSection($categoryName,$placeName);
+$section = $pageController->getSection($categoryName, $placeName);
 $contactUs = 'placeRequest?place='.$placeName.'&category='.$categoryDetails[0]['category_name'];
 if (!$_GET['section']) {
     $getAllSections =  $section->getSections();
@@ -26,8 +25,8 @@ if (!$_GET['section']) {
 $contractor = $pageController->getContractor();
 $sort = $pageController->getUtils()->checkValues($_GET['sort']);
 $page = $pageController->getUtils()->checkValues($_GET['page']) ? $pageController->getUtils()->checkValues($_GET['page']) : 1;
-$contractorDetails = $contractor->getContractors($placeName,$categoryName,$sectionName,$sort,$page);
-$allContractorDetails = $contractor->getAllContractors($placeName,$categoryName,$sectionName);
+$contractorDetails = $contractor->getContractors($placeName,$sectionName,$sort,$page);
+$allContractorDetails = $contractor->getAllContractors($placeName,$sectionName);
 if (sizeof($contractorDetails) == 0) {
     header( 'Location: '.Config::$site_url.'contact-us');
     exit;

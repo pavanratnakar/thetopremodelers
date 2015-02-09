@@ -37,7 +37,7 @@
                             <li><h2>Additions &amp; Remodels</h2></li>
                         </ul>
                         <ul class="list">
-                            '.$pageController->getFormatedCategories(1,$placeName).'
+                            '.$pageController->getFormatedCategories(1, $placeName).'
                         </ul>
                     </div>
                     <div class="col-md-6 col-xs-12 col-sm-6">
@@ -45,7 +45,7 @@
                             <li><h2>Handyman Services</h2></li>
                         </ul>
                         <ul class="list">
-                            '.$pageController->getFormatedCategories(2,$placeName).'
+                            '.$pageController->getFormatedCategories(2, $placeName).'
                         </ul>
                     </div>
                 </div>

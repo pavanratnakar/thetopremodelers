@@ -12,28 +12,26 @@
             <br/>
             <div class="row">
                 <%
-                var i = 0,
-                    c = this.model,
-                    j = 0,
-                    cm = this.contractorModel;
-                _.each(c.models, function(m) {
+                var c = this.model,
+                    cm = this.contractorModel,
+                    j = 0;
+
+                _.each(placeModel, function(m) {
+                    j = 0;
                     %>
-                    <% if (i === 0 || (m.get('place_title') !== c.at(i-1).get('place_title'))) { %>
                     <div class="col-xs-4 col-sm-4 col-md-4 form-module">
                         <h4><%= m.get('place_title') %></h4>
-                    <% j = 0;} else {j = 1;}
-                    %>
-                        <% if (j === 0 || (m.get('category_title') !== c.at(i-1).get('category_title'))) { %>
-                        <h5><%= m.get('category_title') %></h5>
-                        <% } %>
-                        <label>
-                            <input class="mapping-check" data-mapid="<%= cm.getMappingIdForCategorySectionId(m.get('categorySection_id')) %>" data-catsecid="<%= m.get('categorySection_id') %>" <%= cm.isMappedToCategorySectionId(m.get('categorySection_id')) ? 'checked=checked' : ''%> type="checkbox"> <%= m.get('section_title') %>
-                        </label>
-                    <% if (i !== c.length-1 && (m.get('place_title') !== c.at(i+1).get('place_title'))) { %>
+                        <% _.each(sectionModel, function(sm) {
+                            %>
+                            <h5><%= sm.get('category_id') %></h5>
+                            <label>
+                                <input class="mapping-check" data-placeid="<%= m.get('place_id') %>" data-secid="<%= sm.get('section_id') %>" <%= contractorModel.isMappedToSectionPlaceId(sm.get('section_title'), m.get('place_title')) ? 'checked=checked' : ''%> type="checkbox"> <%= sm.get('section_title') %>
+                            </label>
+                        <%
+                        j++;
+                        });
+                        %>
                     </div>
-                    <% }
-                    i++;
-                    %>
                 <% }); %>
             </div>
         </fieldset>

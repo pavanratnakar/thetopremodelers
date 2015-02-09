@@ -21,29 +21,23 @@ class ContractorMapping extends General{
                 if ($start<0) {
                     $start = 0;
                 }
-                $query="SELECT a.contractorMapping_id,g.contractor_title as contractor_title,d.category_title as category_title,f.section_title as section_title,e.place_title as place_title,a.active
+                $query="SELECT a.contractorMapping_id, e.contractor_title as contractor_title, d.category_title as category_title, c.section_title as section_title, b.place_title as place_title, a.active
                     FROM 
                     ".$this->table." a
                     LEFT JOIN
-                    ".Config::$tables['categorySection_table']." b ON a.categorySection_id=b.categorySection_id
+                    ".Config::$tables['place_table']." b ON a.place_id=b.place_id
                     LEFT JOIN
-                    ".Config::$tables['placeCategory_table']." c ON b.placeCategory_id=c.placeCategory_id
+                    ".Config::$tables['section_table']." c ON a.section_id=c.section_id
                     LEFT JOIN
                     ".Config::$tables['category_table']." d ON c.category_id=d.category_id
                     LEFT JOIN
-                    ".Config::$tables['place_table']." e ON e.place_id=c.place_id
-                    LEFT JOIN
-                    ".Config::$tables['section_table']." f ON f.section_id=b.section_id
-                    LEFT JOIN
-                    ".Config::$tables['contractor_table']." g ON g.contractor_id=a.contractor_id
+                    ".Config::$tables['contractor_table']." e ON a.contractor_id=e.contractor_id
                     WHERE 
                     a.delete_flag=FALSE 
                     AND b.delete_flag=FALSE 
                     AND c.delete_flag=FALSE 
                     AND d.delete_flag=FALSE 
                     AND e.delete_flag=FALSE 
-                    AND f.delete_flag=FALSE 
-                    AND g.delete_flag=FALSE 
                     ".$wh."
                     ORDER BY ".$sidx." ". $sord." LIMIT ".$start." , ".$limit;
                 $result1 = $this->mysqli->query($query);
@@ -62,14 +56,14 @@ class ContractorMapping extends General{
             }
         }
     }
-    public function getCategorySections($placeCategory_id) {
-        $placeCategory_id=$this->mysqli->real_escape_string($placeCategory_id);
+    public function getCategorySections($section_id) {
+        $section_id=$this->mysqli->real_escape_string($section_id);
         $query="SELECT categorySection_id
                     FROM 
                     ".Config::$tables['categorySection_table']." a
                     WHERE
                     a.delete_flag=FALSE 
-                    AND a.placeCategory_id=".$placeCategory_id."";
+                    AND a.section_id=".$section_id."";
         $result1 = $this->mysqli->query($query);
         if ($result1) {
             $i=0;
@@ -98,15 +92,14 @@ class ContractorMapping extends General{
             return $responce;
         }
     }
-    public function addDetails($place_id,$category_id,$section_id,$contractor_id,$active){
+    public function addDetails($place_id,$section_id,$contractor_id,$active){
         $place_id=$this->mysqli->real_escape_string($place_id);
-        $category_id=$this->mysqli->real_escape_string($category_id);
         $section_id=$this->mysqli->real_escape_string($section_id);
         $contractor_id=$this->mysqli->real_escape_string($contractor_id);
         $active=$this->mysqli->real_escape_string($active);
 
         if ($this->getPlaceChildren($place_id)) {
-            $placeIds = $this->getPlaceChildren($place_id);  
+            $placeIds = $this->getPlaceChildren($place_id);
         } else {
             $placeIds = array(
                 $place_id => $place_id
