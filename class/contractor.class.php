@@ -46,8 +46,7 @@ class Contractor{
         AND e.delete_flag=FALSE 
         AND f.delete_flag=FALSE 
         AND c.active=TRUE 
-        AND d.delete_flag=FALSE 
-        AND e.delete_flag=FALSE 
+        AND e.place_name='".$placeName."'
         GROUP BY a.contractor_id
         ".$orderBy."";
                     //LIMIT ".$start.", ".Config::$paginationLimit."";
@@ -174,7 +173,7 @@ class Contractor{
             $query .= "AND f.category_id='".$category_id."' ";
         }
         $query .= "
-        GROUP BY c.section_title";
+        GROUP BY e.category_id, c.section_title";
         if ($result = $this->mysqli->query($query)) {
             $i=0;
             while ($row = $result->fetch_object()) {
@@ -188,7 +187,7 @@ class Contractor{
         return $response;
     }
     public function getPlacesForContractor($details){
-        $query="SELECT f.place_title,f.place_id,f.place_name
+        $query="SELECT d.place_title, d.place_id, d.place_name
         FROM 
         ".Config::$tables['contractor_table']." a
         LEFT JOIN
@@ -196,7 +195,7 @@ class Contractor{
         LEFT JOIN
         ".Config::$tables['section_table']." c ON c.section_id=b.section_id
         LEFT JOIN
-        ".Config::$tables['place_table']." d ON d.place_id=c.place_id
+        ".Config::$tables['place_table']." d ON d.place_id=b.place_id
         WHERE
         a.delete_flag=FALSE
         AND b.delete_flag=FALSE
@@ -211,7 +210,7 @@ class Contractor{
             $contractor_name=$this->mysqli->real_escape_string($details['contractor_name']);
             $query .= "AND a.contractor_name='".$contractor_name."' ";
         }
-        $query .= "GROUP BY f.place_id";
+        $query .= "GROUP BY d.place_id";
         if ($result = $this->mysqli->query($query)) {
             $i=0;
             while ($row = $result->fetch_object()) {
