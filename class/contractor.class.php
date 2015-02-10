@@ -40,7 +40,6 @@ class Contractor{
         ".Config::$tables['contractorImage_table']." g ON g.contractor_id=a.contractor_id
         WHERE
         a.delete_flag=FALSE
-        AND b.delete_flag=FALSE 
         AND c.delete_flag=FALSE 
         AND d.delete_flag=FALSE 
         AND e.delete_flag=FALSE 
@@ -88,7 +87,7 @@ class Contractor{
         LEFT JOIN
         ".Config::$tables['section_table']." d ON d.section_id=c.section_id
         LEFT JOIN
-        ".Config::$tables['place_id']." e ON e.place_id=c.place_id
+        ".Config::$tables['place_table']." e ON e.place_id=c.place_id
         LEFT JOIN
         ".Config::$tables['category_table']." f ON f.category_id=d.category_id
         WHERE
