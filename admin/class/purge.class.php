@@ -7,10 +7,18 @@ class Purge {
     public function softDelete() {
         $queries = array(
             "UPDATE ".Config::$tables['placeCode_table']." SET delete_flag=TRUE WHERE place_id not in (SELECT place_id from ".Config::$tables['place_table']." WHERE delete_flag=FALSE)",
+
+            "UPDATE ".Config::$tables['section_table']." SET delete_flag=TRUE WHERE category_id not in (SELECT category_id from ".Config::$tables['category_table']." WHERE delete_flag=FALSE)",
+
             "UPDATE ".Config::$tables['contractorMapping_table']." SET delete_flag=TRUE WHERE contractor_id not in (SELECT contractor_id from ".Config::$tables['contractor_table']." WHERE delete_flag=FALSE)",
-            "UPDATE ".Config::$tables['contractorMapping_table']." SET delete_flag=TRUE WHERE categorySection_id not in (SELECT categorySection_id from ".Config::$tables['categorySection_table']." WHERE delete_flag=FALSE)",
+            "UPDATE ".Config::$tables['contractorMapping_table']." SET delete_flag=TRUE WHERE section_id not in (SELECT section_id from ".Config::$tables['section_table']." WHERE delete_flag=FALSE)",
+            "UPDATE ".Config::$tables['contractorMapping_table']." SET delete_flag=TRUE WHERE place_id not in (SELECT place_id from ".Config::$tables['place_table']." WHERE delete_flag=FALSE)",
+
             "UPDATE ".Config::$tables['contractorRating_table']." SET delete_flag=TRUE WHERE contractor_id not in (SELECT contractor_id from ".Config::$tables['contractor_table']." WHERE delete_flag=FALSE)",
-            "UPDATE ".Config::$tables['contractorRating_table']." SET delete_flag=TRUE WHERE place_id not in (SELECT place_id from ".Config::$tables['place_table']." WHERE delete_flag=FALSE)"
+            "UPDATE ".Config::$tables['contractorRating_table']." SET delete_flag=TRUE WHERE place_id not in (SELECT place_id from ".Config::$tables['place_table']." WHERE delete_flag=FALSE)",
+
+            "UPDATE ".Config::$tables['contractorRating_table']." SET delete_flag=TRUE WHERE contractor_id not in (SELECT contractor_id from ".Config::$tables['contractor_table']." WHERE delete_flag=FALSE)",
+            "UPDATE ".Config::$tables['contractorImage_table']." SET delete_flag=TRUE WHERE contractor_id not in (SELECT contractor_id from ".Config::$tables['contractor_table']." WHERE delete_flag=FALSE)"
         );
         foreach($queries as $key=>$value) {
             echo $value;
