@@ -61,12 +61,12 @@ window.Contractor = Backbone.Model.extend({
         });
         return o;
     },
-    getMappingIdForSectionId: function(id){
+    getMappingIdForSectionPlaceId: function(section_title, place_title){
         var c = false;
 
         _.some(this.get('mappings'), function(mapping){
-            if (mapping.section_id === id) {
-                c = mapping.section_id;
+            if (mapping.section_title === section_title && mapping.place_title === place_title) {
+                c = mapping.contractorMapping_id;
                 return true;
             }
         });

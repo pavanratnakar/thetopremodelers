@@ -20,7 +20,10 @@
                     i = 0;
                     %>
                     <div class="col-xs-4 col-sm-4 col-md-4 form-module">
-                        <input class="place-check" type="checkbox" />
+                        <label>
+                            <input class="place-check" type="checkbox" />
+                            SELECT ALL
+                        </label>
                         <h4><%= m.get('place_title') %></h4>
                         <% _.each(sectionModel, function(sm) {
                             %>
@@ -28,7 +31,7 @@
                                 <h5><%= sm.get('category_title') %></h5>
                             <% } %>
                             <label>
-                                <input class="mapping-check" data-placeid="<%= m.get('place_id') %>" data-secid="<%= sm.get('section_id') %>" <%= contractorModel.isMappedToSectionPlaceId(sm.get('section_title'), m.get('place_title')) ? 'checked=checked' : ''%> type="checkbox"> <%= sm.get('section_title') %>
+                                <input class="mapping-check" data-mapid="<%= contractorModel.getMappingIdForSectionPlaceId(sm.get('section_title'), m.get('place_title')) %>" data-placeid="<%= m.get('place_id') %>" data-secid="<%= sm.get('section_id') %>" <%= contractorModel.isMappedToSectionPlaceId(sm.get('section_title'), m.get('place_title')) ? 'checked=checked' : ''%> type="checkbox"> <%= sm.get('section_title') %>
                             </label>
                         <%
                         i++;

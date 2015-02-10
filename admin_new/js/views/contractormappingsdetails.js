@@ -111,6 +111,7 @@ window.ContractorMappingsView = Backbone.View.extend({
             active: 1,
             delete_flag: 0
         });
+        console.log(cm);
         if (contractorMapping_id) {
             cm.set('id', contractorMapping_id);
             cm.set('contractorMapping_id', contractorMapping_id);
@@ -138,24 +139,24 @@ window.ContractorMappingsView = Backbone.View.extend({
         }
     },
     mappingCheckChange: function(e) {
-        this.mappingClick(e.target);
+        this.mappingClick($(e.target));
     },
     placeCheckChange: function (e) {
         var t = this,
             target = $(e.target);
 
         if ($(e.target).is(':checked')) {
-            $(e.target).closest('div').find('.mapping-check').each(function() { //loop through each checkbox
-                if (!this.checked) {
-                    this.checked = true;
-                    t.mappingClick($(this));
+            $(e.target).closest('div').find('.mapping-check').each(function(i, n) { //loop through each checkbox
+                if (!n.checked) {
+                    n.checked = true;
+                    t.mappingClick($(n));
                 }
             });
         } else {
-            $(e.target).closest('div').find('.mapping-check').each(function() { //loop through each checkbox
-                if (this.checked) {
-                    this.checked = false;
-                    t.mappingClick($(this));
+            $(e.target).closest('div').find('.mapping-check').each(function(i, n) { //loop through each checkbox
+                if (n.checked) {
+                    n.checked = false;
+                    t.mappingClick($(n));
                 }
             });
         }
