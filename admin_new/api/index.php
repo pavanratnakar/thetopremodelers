@@ -448,7 +448,8 @@ function getContractorMapping($id) {
             AND d.delete_flag=FALSE
             AND e.delete_flag=FALSE
             AND a.active=TRUE
-            AND a.contractorMapping_id = :id";
+            AND a.contractorMapping_id = :id
+            ORDER BY category_title";
     try {
         $db = getConnection();
         $stmt = $db->prepare($sql);
@@ -499,7 +500,12 @@ function deleteContractorMapping($id) {
 }
 
 function getSections() {
-    $sql = "select * FROM rene_section ORDER BY section_title";
+    $sql = "select a.section_id, a.section_title, a.section_name, a.category_id, b.category_title
+            FROM
+            rene_section a
+            LEFT JOIN
+            rene_category b ON b.category_id=a.category_id
+            ORDER BY a.category_id";
     try {
         $db = getConnection();
         $stmt = $db->query($sql);

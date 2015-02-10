@@ -24,6 +24,7 @@ window.ContractorMappingsView = Backbone.View.extend({
     events: {
         "click .delete": "deleteMapping",
         "change .mapping-check": "mappingCheckChange",
+        "change .place-check": "placeCheckChange"
     },
     change: function (event) {
         // Remove any existing alert message
@@ -79,9 +80,8 @@ window.ContractorMappingsView = Backbone.View.extend({
         });
         return false;
     },
-    mappingCheckChange: function(e) {
-        var target = $(e.target),
-            section_id = target.data('secid'),
+    mappingClick: function(target) {
+        var section_id = target.data('secid'),
             contractor_id = this.contractorModel.get('contractor_id'),
             place_id = target.data('placeid'),
             contractorMapping_id = target.data('mapid');
@@ -98,7 +98,7 @@ window.ContractorMappingsView = Backbone.View.extend({
             cm.set('contractorMapping_id', contractorMapping_id);
         }
 
-        if ($(e.target).is(':checked')) {
+        if (target.is(':checked')) {
             // add
             cm.save(null, {
                 success: function(model){
@@ -115,6 +115,22 @@ window.ContractorMappingsView = Backbone.View.extend({
                 success: function () {
                     target.data('mapid', '');
                     utils.showAlert('Success!', 'Mapping deleted successfully', 'alert-success');
+                }
+            });
+        }
+    },
+    mappingCheckChange: function(e) {
+        this.mappingClick(e.target);
+    },
+    placeCheckChange: function (e) {
+        var t = this,
+            target = $(e.target);
+
+        if ($(e.target).is(':checked')) {
+            $(e.target).closest('div').find('input[type="checkbox"]').each(function(i) { //loop through each checkbox
+                if (!this.checked) {
+                    this.checked = true;
+                    t.mappingClick($(this));
                 }
             });
         }

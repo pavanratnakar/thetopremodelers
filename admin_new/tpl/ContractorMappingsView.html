@@ -14,21 +14,24 @@
                 <%
                 var c = this.model,
                     cm = this.contractorModel,
-                    j = 0;
+                    i = 0;
 
                 _.each(placeModel, function(m) {
-                    j = 0;
+                    i = 0;
                     %>
                     <div class="col-xs-4 col-sm-4 col-md-4 form-module">
+                        <input class="place-check" type="checkbox" />
                         <h4><%= m.get('place_title') %></h4>
                         <% _.each(sectionModel, function(sm) {
                             %>
-                            <h5><%= sm.get('category_id') %></h5>
+                            <% if (i === 0 || (sm.get('category_id') !== sm.collection.at(i-1).get('category_id'))) {%>
+                                <h5><%= sm.get('category_title') %></h5>
+                            <% } %>
                             <label>
                                 <input class="mapping-check" data-placeid="<%= m.get('place_id') %>" data-secid="<%= sm.get('section_id') %>" <%= contractorModel.isMappedToSectionPlaceId(sm.get('section_title'), m.get('place_title')) ? 'checked=checked' : ''%> type="checkbox"> <%= sm.get('section_title') %>
                             </label>
                         <%
-                        j++;
+                        i++;
                         });
                         %>
                     </div>
