@@ -25,28 +25,31 @@ class Section {
             $i=0;
             while ($row = $result->fetch_object()) {
                 $response[$i]['section_title']=$row->section_title;
+                $response[$i]['background_id']=$row->background_id;
                 $i++;
             }
         }
         return $response[0];
     }
     public function getSections() {
-        $query="SELECT a.section_id, a.section_name, a.section_title , a.active
+        $query="SELECT a.section_id, a.section_name, a.section_title , b.active, a.background_id
                     FROM
-                    ".Config::$tables['section_table']." a ON a.category_id=b.category_id
+                    ".Config::$tables['section_table']." a
                     LEFT JOIN
-                    ".Config::$tables['category_table']." b
+                    ".Config::$tables['category_table']." b ON a.category_id=b.category_id
                     WHERE 
                     a.delete_flag=FALSE 
                     AND b.delete_flag=FALSE 
                     AND b.category_name='".$this->categoryName."'
-                    ORDER BY a.category_name ASC";
+                    ORDER BY b.category_name ASC";
+
         if ($result = $this->mysqli->query($query)) {
             $i=0;
             while ($row = $result->fetch_object()) {
                 $response[$i]['section_id']=$row->section_id;
                 $response[$i]['section_name']=$row->section_name;
                 $response[$i]['section_title']=$row->section_title;
+                $response[$i]['background_id']=$row->background_id;
                 $response[$i]['active']=$row->active;
                 $i++;
             }

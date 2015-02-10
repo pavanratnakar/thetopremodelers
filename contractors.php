@@ -17,10 +17,12 @@ $contactUs = 'placeRequest?place='.$placeName.'&category='.$categoryDetails[0]['
 if (!$_GET['section']) {
     $getAllSections =  $section->getSections();
     $sectionName = $getAllSections[0]['section_name'];
+    $background_id = $getAllSections[0]['background_id'];
 } else {
     $sectionName = $pageController->getUtils()->checkValues($_GET['section']);
     $sectionDetails = $section->getSectionDetails($sectionName);
     $contactUs .= '$section='.$sectionDetails['section_name'];
+    $background_id = $sectionDetails['background_id'];
 }
 $contractor = $pageController->getContractor();
 $sort = $pageController->getUtils()->checkValues($_GET['sort']);
@@ -41,7 +43,7 @@ if ($categoryDetails[0]['category_title'] === 'Roofing Contractors') {
 // if ($placeDetails['place_id'] != 2 && $placeDetails['place_id'] != 1 && $placeDetails['place_id'] != 5 && $placeDetails['place_id'] != 36 && $placeDetails['place_id'] != 38 && $placeDetails['place_id'] != 45) {
 //     $avoidCrawl = true;
 // }
-echo $pageController->minifyHTML($pageController->printHeader($contractor->getContractorsMeta($contractorDetails, $categoryDetails[0]['category_title'], $sectionDetails ? $sectionDetails['section_title'] : ''),$avoidCrawl,1,$contractorDetails[0]['background_id']).$pageController->printHeaderMenu().
+echo $pageController->minifyHTML($pageController->printHeader($contractor->getContractorsMeta($contractorDetails, $categoryDetails[0]['category_title'], $sectionDetails ? $sectionDetails['section_title'] : ''), $avoidCrawl, 1, $background_id).$pageController->printHeaderMenu().
     '<div class="container-fluid">
         <div class="row main-container">
             <div class="col-md-3 col-xs-12 col-sm-3 sidebar">

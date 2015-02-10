@@ -17,18 +17,22 @@ $params['placeName'] = $utils->checkValues($_GET['place']);
 $params['categoryName'] = $utils->checkValues($_GET['category']);
 if ($params['placeName'] && $params['categoryName']) {
     $section = $pageController->getSection($params['categoryName'], $params['placeName']);
+
     if (!$_GET['section']) {
         $getAllSections =  $section->getSections();
         $params['sectionName'] = $getAllSections[0]['section_name'];
+        $background_id = $getAllSections[0]['background_id'];
     } else {
         $params['sectionName']= $pageController->getUtils()->checkValues($_GET['section']);
+        $sectionDetails = $section->getSectionDetails($params['sectionName']);
+        $background_id = $sectionDetails['background_id'];
     }
 }
 $params['contractorName'] = $utils->checkValues($_GET['contractor']);
 if ($params['placeName'] && $params['categoryName'] && $params['sectionName']) {
     $contractor = $pageController->getContractor();
     $contractorDetails = $contractor->getContractors($params['placeName'], $params['categoryName'], $params['sectionName'], '', '');
-    echo $pageController->minifyHTML($pageController->printHeader($contractor->getContractorsMeta($contractorDetails),false,1,$contractorDetails[0]['background_id']));
+    echo $pageController->minifyHTML($pageController->printHeader($contractor->getContractorsMeta($contractorDetails), false, 1, $background_id));
 } else {
     echo $pageController->minifyHTML($pageController->printHeader());
 }
