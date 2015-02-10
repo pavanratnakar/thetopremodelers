@@ -52,8 +52,8 @@ echo $pageController->minifyHTML($pageController->printHeader($contractor->getCo
                     <img src="'.Config::$site_url.'images/home/stamp_final.png" alt=""/>
                 </div>
                 <ul class="nav nav-sidebar hidden-xs">
-                    '.$pageController->getFormatedCategories(1).'
-                    '.$pageController->getFormatedCategories(2).'
+                    '.$pageController->getFormatedCategories(1, $placeName).'
+                    '.$pageController->getFormatedCategories(2, $placeName).'
                 </ul>
                 <div class="sidebar-container service-container hidden-xs">
                     <img src="'.Config::$site_url.'images/home/service.jpg" alt=""/>

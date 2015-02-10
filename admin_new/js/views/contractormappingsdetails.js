@@ -6,6 +6,8 @@ window.ContractorMappingsView = Backbone.View.extend({
         this.sectionModel = e.sectionModel;
     },
     render: function () {
+        var check = true;
+
         $(this.el).html(this.template(_.extend(
             this.model.toJSON(),
             {
@@ -19,6 +21,22 @@ window.ContractorMappingsView = Backbone.View.extend({
             },
             this.contractorModel.mappingGroupedByPlace
         )));
+
+        setTimeout(function () {
+            $('.place-check').each(function(i, sn) {
+                check = true;
+                $(sn).closest('div').find('.mapping-check').each(function(j, n) {
+                    if (!n.checked) {
+                        check = false;
+                        return false;
+                    }
+                });
+                if (check) {
+                    sn.checked = true;
+                }
+            });
+        }, 100);
+
         return this;
     },
     events: {
@@ -127,9 +145,16 @@ window.ContractorMappingsView = Backbone.View.extend({
             target = $(e.target);
 
         if ($(e.target).is(':checked')) {
-            $(e.target).closest('div').find('input[type="checkbox"]').each(function(i) { //loop through each checkbox
+            $(e.target).closest('div').find('.mapping-check').each(function() { //loop through each checkbox
                 if (!this.checked) {
                     this.checked = true;
+                    t.mappingClick($(this));
+                }
+            });
+        } else {
+            $(e.target).closest('div').find('.mapping-check').each(function() { //loop through each checkbox
+                if (this.checked) {
+                    this.checked = false;
                     t.mappingClick($(this));
                 }
             });
