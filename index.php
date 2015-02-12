@@ -8,7 +8,7 @@
                 <div class="col-md-3 col-xs-12 col-sm-3 sidebar">
                     '.$pageController->printLogoContainer().'
                     <button type="button" class="btn btn-default dropdown-toggle visible-xs-block navbar-sidebar-icon">
-                        <span class="glyphicon glyphicon-th-list"></span>
+                        <span class="glyphicon glyphicon-tasks"></span>
                     </button>
                     <ul class="nav nav-sidebar hidden-xs">
                         '.$pageController->getFormatedCategories(1).'

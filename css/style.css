@@ -210,10 +210,15 @@ body li {
     margin: 0;
 }
 .navbar-icon {
-    position: absolute;
     right: 10px;
+}
+.navbar-icon,
+.navbar-sidebar-icon {
+    position: absolute;
     top: 22px;
     z-index: 4;
+    height: 38px;
+    width: 38px;
 }
 .navbar-nav {
     margin: 0 0 0;
@@ -307,6 +312,7 @@ body li {
     top: 58px;
     left: 10px;
     border: 1px solid #eee;
+    z-index: 3;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px; /* future proofing */
@@ -341,10 +347,7 @@ body li {
     -webkit-box-shadow: none;
 }
 .navbar-sidebar-icon {
-    position: absolute;
     left: 10px;
-    top: 22px;
-    z-index: 4;
 }
 
 /*

@@ -52,7 +52,7 @@ echo $pageController->minifyHTML($pageController->printHeader($contractor->getCo
                     <img src="'.Config::$site_url.'images/home/stamp_final.png" alt=""/>
                 </div>
                 <button type="button" class="btn btn-default dropdown-toggle visible-xs-block navbar-sidebar-icon">
-                    <span class="glyphicon glyphicon-th-list"></span>
+                    <span class="glyphicon glyphicon-tasks"></span>
                 </button>
                 <ul class="nav nav-sidebar hidden-xs">
                     '.$pageController->getFormatedCategories(1, $placeName).'

@@ -151,7 +151,7 @@ class Page{
     public function printNavigation(){
         $return = '
         <button type="button" class="btn btn-default dropdown-toggle visible-xs-block navbar-icon">
-            <span class="glyphicon glyphicon-align-justify"></span>
+            <span class="glyphicon glyphicon-cog"></span>
         </button>
         <ul class="nav navbar-nav navbar-right">';
         foreach ($this->pages as $page) {

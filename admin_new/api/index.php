@@ -172,7 +172,7 @@ function addContractor() {
     error_log('addContractor\n', 3, '/var/tmp/php.log');
     $request = Slim::getInstance()->request();
     $contractor = json_decode($request->getBody());
-    $sql = "INSERT INTO rene_contractor (contractor_title, contractor_description, contractor_phone, contractor_address, contractor_name, delete_flag) VALUES (:contractor_title, :contractor_description, :contractor_phone, :contractor_address, :contractor_name, :delete_flag)";
+    $sql = "INSERT INTO rene_contractor (contractor_title, contractor_description, contractor_phone, contractor_address, contractor_name, contractor_addition_info, delete_flag) VALUES (:contractor_title, :contractor_description, :contractor_phone, :contractor_address, :contractor_name, :contractor_additional_info, :delete_flag)";
     try {
         $db = getConnection();
         $stmt = $db->prepare($sql);
@@ -181,6 +181,7 @@ function addContractor() {
         $stmt->bindParam("contractor_phone", $contractor->contractor_phone);
         $stmt->bindParam("contractor_address", $contractor->contractor_address);
         $stmt->bindParam("contractor_name", $contractor->contractor_name);
+        $stmt->bindParam("contractor_additional_info", $contractor->contractor_additional_info);
         $stmt->bindParam("delete_flag", $contractor->delete_flag);
         $stmt->execute();
         $contractor->id = $db->lastInsertId();
@@ -196,7 +197,7 @@ function updateContractor($id) {
     $request = Slim::getInstance()->request();
     $body = $request->getBody();
     $contractor = json_decode($body);
-    $sql = "UPDATE rene_contractor SET contractor_title=:contractor_title, contractor_description=:contractor_description, contractor_phone=:contractor_phone, contractor_address=:contractor_address, contractor_name=:contractor_name, delete_flag=:delete_flag WHERE contractor_id=:contractor_id";
+    $sql = "UPDATE rene_contractor SET contractor_title=:contractor_title, contractor_description=:contractor_description, contractor_phone=:contractor_phone, contractor_address=:contractor_address, contractor_name=:contractor_name, contractor_additional_info=:contractor_additional_info, delete_flag=:delete_flag WHERE contractor_id=:contractor_id";
     try {
         $db = getConnection();
         $stmt = $db->prepare($sql);
@@ -205,6 +206,7 @@ function updateContractor($id) {
         $stmt->bindParam("contractor_phone", $contractor->contractor_phone);
         $stmt->bindParam("contractor_address", $contractor->contractor_address);
         $stmt->bindParam("contractor_name", $contractor->contractor_name);
+        $stmt->bindParam("contractor_additional_info", $contractor->contractor_additional_info);
         $stmt->bindParam("delete_flag", $contractor->delete_flag);
         $stmt->bindParam("contractor_id", $id);
         $stmt->execute();
