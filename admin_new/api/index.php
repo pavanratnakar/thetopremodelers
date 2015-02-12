@@ -172,7 +172,7 @@ function addContractor() {
     error_log('addContractor\n', 3, '/var/tmp/php.log');
     $request = Slim::getInstance()->request();
     $contractor = json_decode($request->getBody());
-    $sql = "INSERT INTO rene_contractor (contractor_title, contractor_description, contractor_phone, contractor_address, contractor_name, contractor_addition_info, delete_flag) VALUES (:contractor_title, :contractor_description, :contractor_phone, :contractor_address, :contractor_name, :contractor_additional_info, :delete_flag)";
+    $sql = "INSERT INTO rene_contractor (contractor_title, contractor_description, contractor_phone, contractor_address, contractor_name, contractor_additional_info, delete_flag) VALUES (:contractor_title, :contractor_description, :contractor_phone, :contractor_address, :contractor_name, :contractor_additional_info, :delete_flag)";
     try {
         $db = getConnection();
         $stmt = $db->prepare($sql);
