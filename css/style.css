@@ -301,36 +301,30 @@ body li {
     right: 10px;
     top: 30%;
 }
+.nav-sidebar {
+    width: 200px;
+    position: absolute;
+    top: 58px;
+    left: 10px;
+    border: 1px solid #eee;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; /* future proofing */
+    -khtml-border-radius: 5px; /* for old Konqueror browsers */
+}
 .nav-sidebar > li,
 .dropdown-menu li {
-    margin-bottom: 2px;
     color: #fff;
     font-weight: bold;
 }
 .nav-sidebar > li > a {
-    background-color: #333638;
+    background-color: #FFF;
 }
 .nav-sidebar > li > a,
 .dropdown-menu li > a {
     font-size: 13px;
-    color: #fff;
-    padding-right: 20px;
-    padding-left: 20px;
-}
-.dropdown-menu li > a {
-    padding: 10px 20px;
-}
-.nav-sidebar > .active > a,
-.nav-sidebar > .open > a,
-.nav-sidebar > .open > a:hover,
-.nav-sidebar > .open > a:focus,
-.nav-sidebar > li > a:hover,
-.nav-sidebar > li > a:focus,
-.dropdown-menu li > a,
-.dropdown-menu li > a:hover,
-.dropdown-menu li > a:focus {
-    background-color: #494c4d;
-    color: #FFF;
+    color: #000;
+    padding: 10px 5px;
 }
 .dropdown-menu li > a:hover,
 .dropdown-menu li > a:focus {
@@ -346,6 +340,12 @@ body li {
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
 }
+.navbar-sidebar-icon {
+    position: absolute;
+    left: 10px;
+    top: 22px;
+    z-index: 4;
+}
 
 /*
  * Logo content
@@ -354,7 +354,7 @@ body li {
 .logo-container {
     background-color: #FFF;
     padding: 10px 0px 10px 10px;
-    text-align: left;
+    text-align: center;
 }
 
 .logo-container img{
@@ -1157,7 +1157,6 @@ footer .container {
     .logo-container {
         padding: 20px 0px;
         text-decoration: none;
-        text-align: center;
     }
 
     .logo-container img{
@@ -1200,7 +1199,8 @@ footer .container {
         padding: 0 0 20px 0;
     }
 
-    .navbar-icon {
+    .navbar-icon,
+    .navbar-sidebar-icon {
         display: none;
     }
 
@@ -1229,6 +1229,46 @@ footer .container {
     .navbar-nav > li.active {
         background-repeat: no-repeat;
         background-image: url("../images/global/nav/link_hover.png");
+    }
+
+    .nav-sidebar {
+        width: auto;
+        position: relative;
+        top: 0;
+        left: 0;
+        border: none;
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        border-radius: 0; /* future proofing */
+        -khtml-border-radius: 0; /* for old Konqueror browsers */
+    }
+
+    .nav-sidebar > li > a {
+        background-color: #333638;
+    }
+
+    .nav-sidebar > li,
+    .dropdown-menu li {
+        margin-bottom: 2px;
+    }
+
+    .nav-sidebar > li > a,
+    .dropdown-menu li > a {
+        color: #FFF;
+        padding: 10px 20px;
+    }
+
+    .nav-sidebar > .active > a,
+    .nav-sidebar > .open > a,
+    .nav-sidebar > .open > a:hover,
+    .nav-sidebar > .open > a:focus,
+    .nav-sidebar > li > a:hover,
+    .nav-sidebar > li > a:focus,
+    .dropdown-menu li > a,
+    .dropdown-menu li > a:hover,
+    .dropdown-menu li > a:focus {
+        background-color: #494c4d;
+        color: #FFF;
     }
 
     .nav-logo-container {

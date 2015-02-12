@@ -20,6 +20,11 @@ var herve = {
                 $('.navbar .navbar-nav').toggle();
             }
         });
+        $("body").delegate(".navbar-sidebar-icon",{
+            click: function(){
+                $('.nav-sidebar').toggleClass('hidden-xs');
+            }
+        });
     },
     getNth: function (s, c, n) {
         var idx;
