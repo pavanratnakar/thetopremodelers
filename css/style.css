@@ -218,6 +218,7 @@ body li {
     top: 22px;
     height: 38px;
     width: 38px;
+    z-index: 4;
 }
 .navbar-nav {
     margin: 0 0 0;
@@ -226,7 +227,7 @@ body li {
     right: 10px;
     background: #FFF;
     padding: 0 10px;
-    z-index: 3;
+    z-index: 4;
     border: 1px solid #eee;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
