@@ -85,6 +85,31 @@ class Section {
         }
         return $response[0]['section_title'];
     }
+    public function getMetaData ($categoryId, $placeId, $sectionId=NULL) {
+        $query="SELECT a.id, a.title, a.description , a.keywords
+                FROM
+                ".Config::$tables['meta_table']." a
+                WHERE";
+
+        if ($sectionName) {
+            $query .= " a.match='{\"sectionId\":\"".$sectionId."\"}'";
+        } else {
+            $query .= " a.match='{\"categoryId\":\"".$categoryId."\",\"placeId\":\"".$placeId."\"}'";
+        }
+
+        if ($result = $this->mysqli->query($query)) {
+            $i=0;
+            while ($row = $result->fetch_object()) {
+                $response[$i]['id']=$row->id;
+                $response[$i]['title']=$row->title;
+                $response[$i]['description']=$row->description;
+                $response[$i]['keywords']=$row->keywords;
+                $i++;
+            }
+            return $response[0];
+        }
+        return NULL;
+    }
     public function getMeta($contractorTitle) {
         return array(
             'keywords'=>false,

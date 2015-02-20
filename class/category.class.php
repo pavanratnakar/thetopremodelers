@@ -10,7 +10,7 @@ class Category{
     }
     public function getCategory($categoryName){
         $categoryName=$this->mysqli->real_escape_string($categoryName);
-        $query="SELECT a.category_title,a.category_name,a.active
+        $query="SELECT a.category_id,a.category_title,a.category_name,a.active
                     FROM 
                     ".Config::$tables['category_table']." a
                     WHERE 
@@ -20,6 +20,7 @@ class Category{
         if ($result = $this->mysqli->query($query)) {
             $i=0;
             while ($row = $result->fetch_object()) {
+                $response[$i]['category_id']=$row->category_id;
                 $response[$i]['category_title']=$row->category_title;
                 $response[$i]['category_name']=$row->category_name;
                 $response[$i]['active']=$row->active;

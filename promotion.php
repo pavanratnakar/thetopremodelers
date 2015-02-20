@@ -125,7 +125,7 @@
                             <h4>Our promotion include</h4>
                             <div class="contractor-callout-content">
                                 <div class="holder">
-                                    <img src="'.Config::$site_url.'images/promotion/holder.png" alt="" />
+                                    <img src="'.Config::$site_url.'images/promotion/holder.png" alt="" width="310"/>
                                     <div class="leaf hidden-xs">
                                         <img src="'.Config::$site_url.'images/promotion/leaf.png" alt="" />
                                     </div>
