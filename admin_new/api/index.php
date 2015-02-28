@@ -34,6 +34,14 @@ $app->delete('/contractorMapping/:id', 'deleteContractorMapping');
 
 $app->get('/sections', 'getSections');
 
+$app->get('/article', 'getArticle');
+$app->get('/article/:id', 'getArticle');
+$app->get('/articles', 'getArticles');
+
+$app->post('/articleMapping', 'addArticleMapping');
+
+$app->get('/categories', 'getCategories');
+
 $app->run();
 
 function getReviews() {
@@ -508,6 +516,73 @@ function getSections() {
             LEFT JOIN
             rene_category b ON b.category_id=a.category_id
             ORDER BY a.category_id";
+    try {
+        $db = getConnection();
+        $stmt = $db->query($sql);
+        $places = $stmt->fetchAll(PDO::FETCH_OBJ);
+        $db = null;
+        echo json_encode($places);
+    } catch(PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+}
+
+function getArticle($id) {
+    $sql = "SELECT * FROM rene_article WHERE article_id=:id";
+    try {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam("id", $id);
+        $stmt->execute();
+        $article = $stmt->fetchObject();
+        $db = null;
+        echo json_encode($article);
+    } catch(PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+}
+
+function getArticles() {
+    $sql = "select a.article_id, a.title, a.name
+            FROM
+            rene_article a
+            ORDER BY a.title";
+    try {
+        $db = getConnection();
+        $stmt = $db->query($sql);
+        $places = $stmt->fetchAll(PDO::FETCH_OBJ);
+        $db = null;
+        echo json_encode($places);
+    } catch(PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+}
+
+function addArticleMapping() {
+    error_log('addArticleMapping\n', 3, '/var/tmp/php.log');
+    $request = Slim::getInstance()->request();
+    $articleMapping = json_decode($request->getBody());
+    $sql = "INSERT INTO rene_article_mapping (article_id, category_id) VALUES (:article_id, :category_id)";
+    try {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam("article_id", $articleMapping->article_id);
+        $stmt->bindParam("category_id", $articleMapping->category_id);
+        $stmt->execute();
+        $articleMapping->id = $db->lastInsertId();
+        $db = null;
+        echo json_encode($articleMapping);
+    } catch(PDOException $e) {
+        error_log($e->getMessage(), 3, '/var/tmp/php.log');
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+}
+
+function getCategories() {
+    $sql = "select a.category_id, a.category_title, a.category_date, a.delete_flag, a.category_name, a.category_value, a.category_order, a.position, a.active
+            FROM
+            rene_category a
+            ORDER BY a.category_title";
     try {
         $db = getConnection();
         $stmt = $db->query($sql);

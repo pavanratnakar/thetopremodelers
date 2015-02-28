@@ -95,12 +95,15 @@ return array(
         '//global/js/backbone.min.js',
         '//global/js/bootstrap.min.js',
         '//admin_new/js/utils.js',
+        '//admin_new/js/models/articleModels.js',
+        '//admin_new/js/models/categoryModels.js',
         '//admin_new/js/models/placeModels.js',
         '//admin_new/js/models/reviewModels.js',
         '//admin_new/js/models/contractorModels.js',
         '//admin_new/js/models/contractorReviewModels.js',
         '//admin_new/js/models/contractorMappingModels.js',
         '//admin_new/js/models/sectionModels.js',
+        '//admin_new/js/models/articleMappingModels.js',
         '//admin_new/js/views/paginator.js',
         '//admin_new/js/views/header.js',
         '//admin_new/js/views/reviewlist.js',
@@ -111,6 +114,7 @@ return array(
         '//admin_new/js/views/contractorreviewdetails.js',
         '//admin_new/js/views/contractormappingdetails.js',
         '//admin_new/js/views/contractormappingsdetails.js',
+        '//admin_new/js/views/articlemappingsdetails.js',
         '//admin_new/js/main.js'
     ),
     'herve_new_admin_css' => array(

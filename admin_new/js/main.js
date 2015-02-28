@@ -18,7 +18,11 @@ var AppRouter = Backbone.Router.extend({
 
         "contractorMapping/add/:id": "addContractorMapping",
         "contractorMappings/add/:id": "addContractorMappings",
-        "contractorMapping/:id": "contractorMappingDetails"
+        "contractorMapping/:id": "contractorMappingDetails",
+
+        "articles": "acticlesList",
+
+        "articleMappings": "addArticleMappings"
 
     },
 
@@ -185,9 +189,6 @@ var AppRouter = Backbone.Router.extend({
             }
         });
 
-
-
-
         this.headerView.selectMenuItem();
     },
 
@@ -226,6 +227,35 @@ var AppRouter = Backbone.Router.extend({
             }
         });
         this.headerView.selectMenuItem();
+    },
+
+    articlesList: function(page) {
+        var p = page ? parseInt(page, 10) : 1,
+            articleList = new ArticleCollection();
+
+        articleList.fetch({success: function(){
+            $("#content").html(new ArticleListView({model: articleList, page: p}).el);
+        }});
+        this.headerView.selectMenuItem('list-articles');
+    },
+
+    addArticleMappings: function() {
+        var articleList = new ArticleCollection(),
+            categoryList = new CategoryCollection();
+
+        categoryList.fetch({
+            success: function(){
+                articleList.fetch({
+                    success: function(){
+                        $('#content').html(new ArticleMappingsView({
+                            articleModel: articleList,
+                            categoryModel: categoryList
+                        }).render().el);
+                    }
+                });
+            }
+        });
+        this.headerView.selectMenuItem('list-articles');
     }
 
 });
@@ -239,7 +269,8 @@ utils.loadTemplate([
         'ContractorReviewView',
         'ContractorReviewListItemView',
         'ContractorMappingView',
-        'ContractorMappingsView'
+        'ContractorMappingsView',
+        'ArticleMappingsView'
     ], function() {
     app = new AppRouter();
     Backbone.history.start();

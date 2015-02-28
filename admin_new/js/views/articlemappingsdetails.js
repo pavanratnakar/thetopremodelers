@@ -1,48 +1,27 @@
-window.ContractorMappingsView = Backbone.View.extend({
+window.ArticleMappingsView = Backbone.View.extend({
     initialize: function (e) {
         e = e || {};
-        this.contractorModel = e.contractorModel || null;
-        this.placeModel = e.placeModel;
-        this.sectionModel = e.sectionModel;
+        this.articleModel = e.articleModel || null;
+        this.categoryModel = e.categoryModel;
     },
     render: function () {
         var check = true;
 
         $(this.el).html(this.template(_.extend(
-            this.model.toJSON(),
+            //this.model.toJSON(),
             {
-                placeModel: this.placeModel.models
+                articleModel: this.articleModel.models
             },
             {
-                sectionModel: this.sectionModel.models
-            },
-            {
-                contractorModel: this.contractorModel
-            },
-            this.contractorModel.mappingGroupedByPlace
+                categoryModel: this.categoryModel.models
+            }
         )));
-
-        setTimeout(function () {
-            $('.place-check').each(function(i, sn) {
-                check = true;
-                $(sn).closest('div').find('.mapping-check').each(function(j, n) {
-                    if (!n.checked) {
-                        check = false;
-                        return false;
-                    }
-                });
-                if (check) {
-                    sn.checked = true;
-                }
-            });
-        }, 100);
 
         return this;
     },
     events: {
         "click .delete": "deleteMapping",
-        "change .mapping-check": "mappingCheckChange",
-        "change .place-check": "placeCheckChange"
+        "change .mapping-check": "mappingCheckChange"
     },
     change: function (event) {
         // Remove any existing alert message
@@ -81,7 +60,7 @@ window.ContractorMappingsView = Backbone.View.extend({
         this.model.save(null, {
             success: function (model) {
                 self.render();
-                app.navigate('contractors/' + model.get('contractor_id'), true);
+                app.navigate('articles/' + model.get('id'), true);
                 utils.showAlert('Success!', 'Mapping saved successfully', 'alert-success');
             },
             error: function () {
@@ -99,28 +78,20 @@ window.ContractorMappingsView = Backbone.View.extend({
         return false;
     },
     mappingClick: function(target) {
-        var section_id = target.data('secid'),
-            contractor_id = this.contractorModel.get('contractor_id'),
-            place_id = target.data('placeid'),
-            contractorMapping_id = target.data('mapid');
+        var category_id = target.data('catid'),
+            article_id = target.data('articleid'),
+            id = target.data('id');
 
-        var cm = new ContractorMapping({
-            section_id: section_id,
-            place_id: place_id,
-            contractor_id: contractor_id,
-            active: 1,
-            delete_flag: 0
+        var am = new ArticleMapping({
+            category_id: category_id,
+            article_id: article_id
         });
-        if (contractorMapping_id) {
-            cm.set('id', contractorMapping_id);
-            cm.set('contractorMapping_id', contractorMapping_id);
-        }
 
         if (target.is(':checked')) {
             // add
-            cm.save(null, {
+            am.save(null, {
                 success: function(model){
-                    target.data('mapid', model.get('id'));
+                    target.data('id', model.get('id'));
                     utils.showAlert('Success!', 'Mapping saved successfully', 'alert-success');
                 },
                 error: function(){
@@ -131,7 +102,7 @@ window.ContractorMappingsView = Backbone.View.extend({
             // delete
             cm.destroy({
                 success: function () {
-                    target.data('mapid', '');
+                    target.data('id', '');
                     utils.showAlert('Success!', 'Mapping deleted successfully', 'alert-success');
                 }
             });
@@ -139,25 +110,5 @@ window.ContractorMappingsView = Backbone.View.extend({
     },
     mappingCheckChange: function(e) {
         this.mappingClick($(e.target));
-    },
-    placeCheckChange: function (e) {
-        var t = this,
-            target = $(e.target);
-
-        if ($(e.target).is(':checked')) {
-            $(e.target).closest('div').find('.mapping-check').each(function(i, n) { //loop through each checkbox
-                if (!n.checked) {
-                    n.checked = true;
-                    t.mappingClick($(n));
-                }
-            });
-        } else {
-            $(e.target).closest('div').find('.mapping-check').each(function(i, n) { //loop through each checkbox
-                if (n.checked) {
-                    n.checked = false;
-                    t.mappingClick($(n));
-                }
-            });
-        }
     }
 });

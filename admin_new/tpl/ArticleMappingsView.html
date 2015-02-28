@@ -1,0 +1,32 @@
+<div class="row status-bar">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="alert alert-success" style="display: none">
+            <b>Success!</b> Mapping saved successfully
+        </div>
+    </div>
+</div>
+<div class="row">
+    <form class="form-horizontal col-xs-12 col-sm-12 col-md-12" role="form">
+        <fieldset>
+            <legend>Article Mapping Details</legend>
+            <br/>
+            <div class="row">
+                <% _.each(categoryModel, function(cm) { %>
+                <div class="col-xs-4 col-sm-4 col-md-4 form-module">
+                    <h5><%= cm.get('category_title') %></h5>
+                    <% _.each(articleModel, function(am) {
+                    %>
+                    <label>
+                        <input class="mapping-check" data-catid="<%= cm.get('category_id') %>"  data-articleid="<%= am.get('article_id') %>" type="checkbox"> <%= am.get('title') %>
+                    </label>
+                    <%
+                    });
+                    %>
+                </div>
+                <%
+                });
+                %>
+            </div>
+        </fieldset>
+    </form>
+</div>
