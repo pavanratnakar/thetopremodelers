@@ -40,6 +40,7 @@ class Config{
         'answer_table' => 'rene_answers',
         'questionAnswer_table' => 'rene_questionanwer_mapping',
         'article_table' => 'rene_article',
+        'articleCategory_table' => 'rene_article_mapping',
         'contractor_table' => 'rene_contractor',
         'contractorMapping_table' => 'rene_contractor_mapping',
         'contractorRating_table' => 'rene_contractor_rating',

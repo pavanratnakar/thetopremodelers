@@ -8,7 +8,6 @@ window.ArticleMappingsView = Backbone.View.extend({
         var check = true;
 
         $(this.el).html(this.template(_.extend(
-            //this.model.toJSON(),
             {
                 articleModel: this.articleModel.models
             },
@@ -20,7 +19,6 @@ window.ArticleMappingsView = Backbone.View.extend({
         return this;
     },
     events: {
-        "click .delete": "deleteMapping",
         "change .mapping-check": "mappingCheckChange"
     },
     change: function (event) {
@@ -68,30 +66,23 @@ window.ArticleMappingsView = Backbone.View.extend({
             }
         });
     },
-    deleteMapping: function () {
-        this.model.destroy({
-            success: function () {
-                utils.showAlert('Success!', 'Mapping deleted successfully', 'alert-success');
-                window.history.back();
-            }
-        });
-        return false;
-    },
     mappingClick: function(target) {
         var category_id = target.data('catid'),
             article_id = target.data('articleid'),
-            id = target.data('id');
+            id = target.data('mapid');
 
         var am = new ArticleMapping({
             category_id: category_id,
             article_id: article_id
         });
 
+        if (id) {
+            am.set('id', id);
+        }
         if (target.is(':checked')) {
             // add
             am.save(null, {
                 success: function(model){
-                    target.data('id', model.get('id'));
                     utils.showAlert('Success!', 'Mapping saved successfully', 'alert-success');
                 },
                 error: function(){
@@ -100,9 +91,9 @@ window.ArticleMappingsView = Backbone.View.extend({
             });
         } else {
             // delete
-            cm.destroy({
+            am.destroy({
                 success: function () {
-                    target.data('id', '');
+                    target.data('mapid', '');
                     utils.showAlert('Success!', 'Mapping deleted successfully', 'alert-success');
                 }
             });

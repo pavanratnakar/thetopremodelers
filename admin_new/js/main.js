@@ -16,9 +16,7 @@ var AppRouter = Backbone.Router.extend({
         "contractorReview/:id": "contractorReviewDetails",
         "contractorReviews/add/:id": "addContractorReview",
 
-        "contractorMapping/add/:id": "addContractorMapping",
         "contractorMappings/add/:id": "addContractorMappings",
-        "contractorMapping/:id": "contractorMappingDetails",
 
         "articles": "acticlesList",
 
@@ -123,40 +121,6 @@ var AppRouter = Backbone.Router.extend({
         this.headerView.selectMenuItem();
     },
 
-    addContractorMapping: function(id) {
-        var placeList = new PlaceCollection(),
-            contractorMapping = new ContractorMapping({
-                contractor_id: id
-            });
-
-        // TODO MAKE THIS PARALLEL USING ASYNC
-        placeList.fetch({
-            success: function(){
-                // var placeCategoryList = new PlaceCategoryCollection([], {
-                //     id: placeList.models[0].get('place_id')
-                // });
-                // placeCategoryList.fetch({
-                //     success: function(){
-                //         var categorySectionList = new CategorySectionCollection([], {
-                //             id: placeCategoryList.models[0].get('placeCategory_id')
-                //         });
-                //         categorySectionList.fetch({
-                //             success: function(){
-                //                 $('#content').html(new ContractorMappingView({
-                //                     model: contractorMapping,
-                //                     placeModels: placeList,
-                //                     placeCategoryModels: placeCategoryList,
-                //                     categorySectionModels: categorySectionList
-                //                 }).render().el);
-                //             }
-                //         });
-                //     }
-                // });
-            }
-        });
-        this.headerView.selectMenuItem();
-    },
-
     addContractorMappings: function(id) {
         var contractor = new Contractor({id: id}),
             placeList = new PlaceCollection(),
@@ -168,8 +132,6 @@ var AppRouter = Backbone.Router.extend({
                     success: function(){
                         contractor.fetch({
                             success: function(){
-                                // var categorySectionList = new CategorySectionCollection();
-
                                 var contractorMapping = new ContractorMapping({id: id});
 
                                 contractorMapping.fetch({
@@ -189,43 +151,6 @@ var AppRouter = Backbone.Router.extend({
             }
         });
 
-        this.headerView.selectMenuItem();
-    },
-
-    contractorMappingDetails: function(id) {
-        var contractorMapping = new ContractorMapping({id: id});
-
-        contractorMapping.fetch({
-            success: function(){
-                // var categorySection = new CategorySection({
-                //     id: contractorMapping.get('categorySection_id')
-                // });
-                // categorySection.fetch({
-                //     success: function(){
-                //         var placeCategory = new PlaceCategory({
-                //             id: categorySection.get('placeCategory_id')
-                //         });
-                //         placeCategory.fetch({
-                //             success: function(){
-                //                 var place = new Place({
-                //                     id: placeCategory.get('place_id')
-                //                 });
-                //                 place.fetch({
-                //                     success: function(){
-                //                         $('#content').html(new ContractorMappingView({
-                //                             model: contractorMapping,
-                //                             placeModel: place,
-                //                             placeCategoryModel: placeCategory,
-                //                             categorySectionModel: categorySection
-                //                         }).render().el);
-                //                     }
-                //                 });
-                //             }
-                //         });
-                //     }
-                // });
-            }
-        });
         this.headerView.selectMenuItem();
     },
 

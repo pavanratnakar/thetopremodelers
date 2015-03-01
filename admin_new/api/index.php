@@ -39,6 +39,8 @@ $app->get('/article/:id', 'getArticle');
 $app->get('/articles', 'getArticles');
 
 $app->post('/articleMapping', 'addArticleMapping');
+$app->delete('/articleMapping/:id', 'deleteArticleMapping');
+
 
 $app->get('/categories', 'getCategories');
 
@@ -542,17 +544,44 @@ function getArticle($id) {
     }
 }
 
+function getMappingForArticle ($id) {
+    $sql = "SELECT a.id, c.category_id, b.article_id
+            FROM
+            rene_article_mapping a
+            LEFT JOIN
+            rene_article b ON b.article_id=a.article_id
+            LEFT JOIN
+            rene_category c ON c.category_id=a.category_id
+            WHERE
+            b.article_id=:id
+            AND c.delete_flag=FALSE";
+    try {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam("id", $id);
+        $stmt->execute();
+        $mappings = $stmt->fetchAll(PDO::FETCH_OBJ);
+        $db = null;
+        return $mappings;
+    } catch(PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+}
+
 function getArticles() {
-    $sql = "select a.article_id, a.title, a.name
+    $sql = "select a.article_id, a.title, a.name, a.category
             FROM
             rene_article a
-            ORDER BY a.title";
+            ORDER BY a.category, a.title";
     try {
         $db = getConnection();
         $stmt = $db->query($sql);
-        $places = $stmt->fetchAll(PDO::FETCH_OBJ);
+        $article = $stmt->fetchAll(PDO::FETCH_OBJ);
+        foreach ($article as $key => $value) {
+            $value->mappings = getMappingForArticle($value->article_id);
+        }
         $db = null;
-        echo json_encode($places);
+        echo json_encode($article);
     } catch(PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';
     }
@@ -589,6 +618,19 @@ function getCategories() {
         $places = $stmt->fetchAll(PDO::FETCH_OBJ);
         $db = null;
         echo json_encode($places);
+    } catch(PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+}
+
+function deleteArticleMapping ($id) {
+    $sql = "DELETE FROM rene_article_mapping WHERE id=:id";
+    try {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam("id", $id);
+        $stmt->execute();
+        $db = null;
     } catch(PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';
     }

@@ -286,8 +286,11 @@ class PageController{
         ";
         return $return;
     }
-    public function getArticles(){
-        return $this->page->getArticles();
+    public function getArticles($category_id=NULL){
+        include_once(Config::$site_path.'class/article.class.php');
+        $this->article = new Article();
+        $articles = $this->article->getArticlesByCategory($category_id);
+        return $this->page->getArticles($articles);
     }
 }
 ?>

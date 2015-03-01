@@ -51,6 +51,25 @@ window.Article = Backbone.Model.extend({
 
         return _.size(messages) > 0 ? {isValid: false, messages: messages} : {isValid: true};
     },
+    getMappingIdForCategoryId: function (categoryId) {
+        var c = false;
+
+        _.some(this.get('mappings'), function (mapping) {
+            if (mapping.category_id === categoryId) {
+                c = mapping.id;
+                return true;
+            }
+        });
+        return c;
+    },
+    isMappedToCategoryId: function (categoryId) {
+        return _.some(this.get('mappings'), function(mapping){
+            if (mapping.category_id === categoryId) {
+                return true;
+            }
+            return;
+        });
+    },
     defaults: {
         article_id: null,
         name: null,
@@ -58,7 +77,8 @@ window.Article = Backbone.Model.extend({
         keywords: null,
         description: null,
         active: null,
-        content: null
+        content: null,
+        mappings: []
     }
 });
 

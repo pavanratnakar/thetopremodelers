@@ -37,10 +37,10 @@
                     <div class="sidebar right">
                         <div class="sidebar-container">
                             <div class="sidebar-header">
-                                <h3>Roofing Library</h3>
+                                <h3>Library</h3>
                             </div>
                             <div class="sidebar-content">
-                                '.$pageController->getArticles().'
+                                '.$pageController->getArticles($categoryDetails[0]['category_id]).'
                             </div>
                         </div>
                     </div>

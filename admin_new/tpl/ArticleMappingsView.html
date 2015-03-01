@@ -17,7 +17,7 @@
                     <% _.each(articleModel, function(am) {
                     %>
                     <label>
-                        <input class="mapping-check" data-catid="<%= cm.get('category_id') %>"  data-articleid="<%= am.get('article_id') %>" type="checkbox"> <%= am.get('title') %>
+                        <input class="mapping-check" data-mapid="<%= am.getMappingIdForCategoryId(cm.get('category_id')) %>" data-catid="<%= cm.get('category_id') %>"  data-articleid="<%= am.get('article_id') %>" <%= am.isMappedToCategoryId(cm.get('category_id')) ? 'checked=checked' : ''%> type="checkbox"> <%= am.get('title') %>
                     </label>
                     <%
                     });

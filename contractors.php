@@ -233,10 +233,10 @@ echo $pageController->minifyHTML($pageController->printHeader($meta, $avoidCrawl
                             </div>
                             <div class="sb-container">
                                 <div class="sb-header">
-                                    <h3>Roofing Library</h3>
+                                    <h3>Library</h3>
                                 </div>
                                 <div class="sb-content">
-                                    '.$pageController->getArticles().'
+                                    '.$pageController->getArticles($categoryDetails[0]['category_id']).'
                                 </div>
                             </div>
                         </div>
