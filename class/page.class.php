@@ -308,7 +308,7 @@ class Page{
             if ($previousCategory !== $value['category']) {
                 $return .= '
                 <li>
-                <h4>A roofing contractor</h4>
+                <h4>'.$value['category'].'</h4>
                 <ul class="clearfix">
                 ';
             } else {

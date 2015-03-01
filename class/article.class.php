@@ -44,7 +44,7 @@ class Article{
         );
     }
     public function getArticlesByCategory ($categoryName=NULL) {
-        $query = "SELECT c.title, a.article_id, c.name, c.category
+        $query = "SELECT DISTINCT c.title, a.article_id, c.name, c.category
         FROM
         ".Config::$tables['article_table']." c
         LEFT JOIN
@@ -56,7 +56,6 @@ class Article{
         }
         $query .= " ORDER BY c.category, c.title";
         echo $query;
-
         if ($result = $this->mysqli->query($query)) {
             $i=0;
             while ($row = $result->fetch_object()) {
