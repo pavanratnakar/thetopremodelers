@@ -142,12 +142,14 @@ var herve_grid = {
                     datatype: "json",
                     height: 'auto',
                     width: herve_grid.theme.width,
-                    colNames:['Id', 'Place Name', 'Place Title', 'Parent' , 'Active'],
+                    colNames:['Id', 'Place Name', 'Place Title', 'Parent' , 'Geo', 'Geo Name', 'Active'],
                     colModel:[
                         {name:'place_id',index:'place_id',hidden:true,align:'center',editable:false, sorttype:'int',key:true},
                         {name:'place_name',index:'place_name', width:herve_grid.theme.note_width,formoptions:{label: 'Place Name'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"textarea", editoptions:{rows:"2",cols:"20"}},
                         {name:'place_title',index:'place_title', width:herve_grid.theme.note_width,formoptions:{label: 'Place Title'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"textarea", editoptions:{rows:"2",cols:"20"}},
                         {name:'under',index:'under', width:herve_grid.theme.note_width,formoptions:{label: 'Parent'},align:"center", sortable:true,editable: true,editrules: { required: false } ,edittype:"select",editoptions: {value: (":;"+this.places.replace('"','')).replace('"','') } },
+                        {name:'place_geo',index:'place_geo', width:herve_grid.theme.note_width,formoptions:{label: 'Place Geo'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"textarea", editoptions:{rows:"2",cols:"20"}},
+                        {name:'place_geo_placename',index:'place_geo_placename', width:herve_grid.theme.note_width,formoptions:{label: 'Place Geo Name'},align:"center", sortable:true,editable: true,editrules: { required: true } ,edittype:"textarea", editoptions:{rows:"2",cols:"20"}},
                         {name:'active',index:'active', width:herve_grid.theme.note_width,formoptions:{label: 'Active'},align:"left", sortable:true,editable: true,editrules: { required: false } ,edittype:'checkbox', editoptions: { value:"1:0" } }
                     ],
                     rowNum:100,

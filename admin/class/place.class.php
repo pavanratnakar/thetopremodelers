@@ -22,7 +22,7 @@ class Place extends General{
                 if ($start < 0) {
                     $start = 0;
                 }
-                $query="SELECT a.place_id,a.place_title,a.place_name,a.under,a.active
+                $query="SELECT a.place_id,a.place_title,a.place_name,a.under,a.place_geo,a.place_geo_placename,a.active
                     FROM 
                     ".$this->table." a 
                     WHERE 
@@ -37,7 +37,7 @@ class Place extends General{
                     $i=0;
                     while ($row1 = $result1->fetch_object()) {
                         $responce->rows[$i]['place_id']=$row1->place_id;
-                        $responce->rows[$i]['cell'] =array($row1->place_id,$row1->place_name,$row1->place_title,$row1->under,$row1->active);
+                        $responce->rows[$i]['cell'] =array($row1->place_id,$row1->place_name,$row1->place_title,$row1->under,$row1->place_geo,$row1->place_geo_placename,$row1->active);
                         $i++;
                     }
                     return $responce;
@@ -45,12 +45,14 @@ class Place extends General{
             }
         }
     }
-    public function addDetails($place_name,$place_title,$under,$active){
+    public function addDetails($place_name,$place_title,$under,$place_geo,$place_geo_placename,$active){
         $place_name=$this->mysqli->real_escape_string($place_name);
         $place_title=$this->mysqli->real_escape_string($place_title);
         $under=$this->mysqli->real_escape_string($under);
         $active=$this->mysqli->real_escape_string($active);
-        $result = $this->mysqli->query("INSERT INTO ".$this->table."(place_name,place_title,under,active) VALUES('$place_name','$place_title','$under','$active')");
+        $place_geo=$this->mysqli->real_escape_string($place_geo);
+        $place_geo_placename=$this->mysqli->real_escape_string($place_geo_placename);
+        $result = $this->mysqli->query("INSERT INTO ".$this->table."(place_name,place_title,under,place_geo,place_geo_placename,active) VALUES('$place_name','$place_title','$under','$place_geo','$place_geo_placename','$active')");
         if ($result) {
             if($this->mysqli->affected_rows>0){
                 return TRUE;
@@ -58,13 +60,15 @@ class Place extends General{
         }
         return FALSE;
     }
-    public function editDetails($place_name,$place_title,$under,$active,$id){
+    public function editDetails($place_name,$place_title,$under,$place_geo,$place_geo_placename,$active,$id){
         $place_name=$this->mysqli->real_escape_string($place_name);
         $place_title=$this->mysqli->real_escape_string($place_title);
         $under=$this->mysqli->real_escape_string($under);
         $active=$this->mysqli->real_escape_string($active);
         $id=$this->mysqli->real_escape_string($id);
-        $result = $this->mysqli->query("UPDATE ".$this->table." SET place_name='$place_name', place_title='$place_title',under='$under',active='$active' WHERE ".$this->id."='".$id."'");
+        $place_geo=$this->mysqli->real_escape_string($place_geo);
+        $place_geo_placename=$this->mysqli->real_escape_string($place_geo_placename);
+        $result = $this->mysqli->query("UPDATE ".$this->table." SET place_name='$place_name', place_title='$place_title',under='$under',place_geo='$place_geo',place_geo_placename='$place_geo_placename',active='$active' WHERE ".$this->id."='".$id."'");
         if ($result){
             if($this->mysqli->affected_rows>0){
                 return TRUE;

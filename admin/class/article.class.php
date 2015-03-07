@@ -50,7 +50,6 @@ class Article extends General
         $content=$this->mysqli->real_escape_string($content);
         $active=$this->mysqli->real_escape_string($active);
         $query = "INSERT INTO ".$this->table."(name,title,keywords,description,content,active) VALUES('$name','$title','$keywords','$description','$content','$active')";
-        echo $query;
         $result = $this->mysqli->query($query);
         if ($result) {
             if($this->mysqli->affected_rows>0)

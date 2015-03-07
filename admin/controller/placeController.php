@@ -107,6 +107,8 @@ class placeController {
                 $this->utils->checkValues($_POST['place_name']),
                 $this->utils->checkValues($_POST['place_title']),
                 $this->utils->checkValues($_POST['under']),
+                $this->utils->checkValues($_POST['place_geo']),
+                $this->utils->checkValues($_POST['place_geo_placename']),
                 $this->utils->checkValues($_POST['active'])
             );
             if($response){
@@ -124,6 +126,8 @@ class placeController {
                 $this->utils->checkValues($_POST['place_name']),
                 $this->utils->checkValues($_POST['place_title']),
                 $this->utils->checkValues($_POST['under']),
+                $this->utils->checkValues($_POST['place_geo']),
+                $this->utils->checkValues($_POST['place_geo_placename']),
                 $this->utils->checkValues($_POST['active']),
                 $this->utils->checkValues($_POST['id'])
             );

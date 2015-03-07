@@ -166,14 +166,7 @@ echo $pageController->minifyHTML($pageController->printHeader($contractor->getMe
                         </div>');
                         }
                         echo $pageController->minifyHTML('
-                        <div class="sb-container">
-                            <div class="sb-header">
-                                <h3>Library</h3>
-                            </div>
-                            <div class="sb-content">
-                                '.$pageController->getArticles().'
-                            </div>
-                        </div>
+                        '.$pageController->getArticles().'
                     </div>
                 </div>
             </div>

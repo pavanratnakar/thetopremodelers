@@ -231,14 +231,7 @@ echo $pageController->minifyHTML($pageController->printHeader($meta, $avoidCrawl
                                     <img src="'.Config::$site_url.'images/global/sidebar/solar_system.png" title="Hire our pros and win 6000 watt solar system" alt="Hire our pros and win 6000 watt solar system" />
                                 </div>
                             </div>
-                            <div class="sb-container">
-                                <div class="sb-header">
-                                    <h3>Library</h3>
-                                </div>
-                                <div class="sb-content">
-                                    '.$pageController->getArticles($categoryDetails[0]['category_id']).'
-                                </div>
-                            </div>
+                            '.$pageController->getArticles($categoryDetails[0]['category_id']).'
                         </div>
                     </div>
                 </div>

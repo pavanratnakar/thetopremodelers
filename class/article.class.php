@@ -55,7 +55,6 @@ class Article{
             $query .= " WHERE b.category_id='".$categoryName."'";
         }
         $query .= " ORDER BY c.category, c.title";
-        echo $query;
         if ($result = $this->mysqli->query($query)) {
             $i=0;
             while ($row = $result->fetch_object()) {

@@ -290,7 +290,43 @@ class PageController{
         include_once(Config::$site_path.'class/article.class.php');
         $this->article = new Article();
         $articles = $this->article->getArticlesByCategory($category_id);
-        return $this->page->getArticles($articles);
+        $return = '';
+        if (sizeof($articles) > 0) {
+            $return  = '
+            <div class="sb-container">
+                <div class="sb-header">
+                    <h3>Library</h3>
+                </div>
+                <div class="sb-content">';
+
+        }
+        $return .= $this->page->getArticles($articles);
+        if (sizeof($articles) > 0) {
+            $return  .= '</div></div>';
+
+        }
+        return $return;
+    }
+    public function getSidebarArticles($category_id=NULL){
+        include_once(Config::$site_path.'class/article.class.php');
+        $this->article = new Article();
+        $articles = $this->article->getArticlesByCategory($category_id);
+        $return = '';
+        if (sizeof($articles) > 0) {
+            $return  = '
+            <div class="sidebar-container">
+                <div class="sidebar-header">
+                    <h3>Library</h3>
+                </div>
+                <div class="sidebar-content">';
+
+        }
+        $return .= $this->page->getArticles($articles);
+        if (sizeof($articles) > 0) {
+            $return  .= '</div></div>';
+
+        }
+        return $return;
     }
 }
 ?>
