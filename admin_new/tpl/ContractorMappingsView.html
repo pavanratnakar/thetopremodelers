@@ -11,6 +11,7 @@
             <legend>Contractor Mapping Details</legend>
             <br/>
             <div class="row">
+                <div id="admin-map" class="contractor-map"></div>
                 <%
                 var c = this.model,
                     cm = this.contractorModel,
@@ -19,7 +20,7 @@
                 _.each(placeModel, function(m) {
                     i = 0;
                     %>
-                    <div class="col-xs-4 col-sm-4 col-md-4 form-module">
+                    <div class="col-xs-4 col-sm-4 col-md-4 form-module" id="place-<%= m.get('place_id') %>">
                         <label>
                             <input class="place-check" type="checkbox" />
                             SELECT ALL

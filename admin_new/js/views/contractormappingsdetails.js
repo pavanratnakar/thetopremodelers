@@ -4,9 +4,74 @@ window.ContractorMappingsView = Backbone.View.extend({
         this.contractorModel = e.contractorModel || null;
         this.placeModel = e.placeModel;
         this.sectionModel = e.sectionModel;
+        this.map = null;
+        this._markers = [],
+        this._overlays = [];
+    },
+    loadMaps: function (fn) {
+        // Load Google maps script
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp' + '&signed_in=false&callback='+fn;
+        document.body.appendChild(script);
+        // End of Load Google maps script
+    },
+    addMapData: function () {
+        var t = this,
+            minLat,
+            minLon,
+            maxLat,
+            maxLon,
+            southWest = new google.maps.LatLng(minLat, minLon),
+            northEast = new google.maps.LatLng(maxLat, maxLon),
+            geo = t.placeModel.models[0].get('place_geo').replace(';', ',').split(',')
+
+        t.map = new google.maps.Map(document.getElementById('admin-map'), {
+            center: {
+                lat: parseFloat(geo[0], 10),
+                lng: parseFloat(geo[1], 10)
+            },
+            zoom: 8
+        });
+        _.each(t.placeModel.models, function (m, index) {
+            geo = m.get('place_geo').replace(';', ',').split(',');
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(geo[0], geo[1]),
+                map: t.map,
+                title: m.get('place_title'),
+                content: m.get('place_title')
+            });
+            t._markers.push(marker);
+            var overlay = new google.maps.InfoWindow({
+                content: m.get('place_title')
+            });
+            t._overlays.push(overlay);
+            google.maps.event.addListener(marker, 'click', function() {
+                _.each(t._overlays, function (o) {
+                    o.close();
+                });
+                overlay.open(t.map, marker);
+                t.markerSelected(m);
+            });
+            if (!minLat || !maxLat) {
+                minLat = maxLat = geo[0];
+                minLon = maxLon = geo[1];
+            }
+            minLat = Math.min(minLat, geo[0]);
+            minLon = Math.min(minLon, geo[1]);
+            maxLat = Math.max(maxLat, geo[0]);
+            maxLon = Math.max(maxLon, geo[1]);
+        });
+        t.map.fitBounds(new google.maps.LatLngBounds(new google.maps.LatLng(minLat,minLon), new google.maps.LatLng(maxLat,maxLon)));
+    },
+    markerSelected: function (model) {
+        $('#place-' + model.get('place_id')).
+            show().
+            siblings('.form-module').hide();
     },
     render: function () {
-        var check = true;
+        var check = true,
+            t = this;
 
         $(this.el).html(this.template(_.extend(
             this.model.toJSON(),
@@ -21,6 +86,10 @@ window.ContractorMappingsView = Backbone.View.extend({
             },
             this.contractorModel.mappingGroupedByPlace
         )));
+        window.mapCallback = function () {
+            t.addMapData();
+        };
+        this.loadMaps('mapCallback');
 
         setTimeout(function () {
             $('.place-check').each(function(i, sn) {
