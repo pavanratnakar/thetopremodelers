@@ -1,4 +1,10 @@
 window.ContractorMappingsView = Backbone.View.extend({
+    events: {
+        "click .delete": "deleteMapping",
+        "change .mapping-check": "mappingCheckChange",
+        "change .place-check": "placeCheckChange",
+        "submit .search-form": "searchByDistance"
+    },
     initialize: function (e) {
         e = e || {};
         this.contractorModel = e.contractorModel || null;
@@ -6,7 +12,73 @@ window.ContractorMappingsView = Backbone.View.extend({
         this.sectionModel = e.sectionModel;
         this.map = null;
         this._markers = [],
-        this._overlays = [];
+        this._overlays = [],
+        this.contractorGeo = [],
+        this.circle,
+        this.minLat,
+        this.minLon,
+        this.maxLat,
+        this.maxLon;
+    },
+    searchByDistance: function (e) {
+        e.preventDefault();
+        if ($('.search-form').find('input').val()) {
+            this.loadResultsByDistance(parseFloat($('.search-form').find('input').val()));
+        }
+    },
+    loadResultsByDistance: function (distance) {
+        var t = this,
+            geo,
+            d,
+            populationOptions;
+
+        t.minLat = t.minLon = t.maxLat = t.maxLon = null;
+        _.each(t.placeModel.models, function (m, index) {
+            geo = m.get('place_geo').replace(';', ',').split(',');
+            d = window.utils.getDistanceFromLatLonInKm(geo[0], geo[1], t.contractorGeo[0], t.contractorGeo[1]);
+            if (d <= distance) {
+                $('#place-' + m.get('place_id')).show();
+                t._markers[index].setVisible(true);
+                $('#place-' + m.get('place_id')).find('.mapping-check').each(function (i, n) {
+                    if ($('.section-module-section').find('.section-check:eq(' + i + ')').is(':checked')) {
+                        if (!n.checked) {
+                            n.checked = true;
+                            t.mappingClick($(n));
+                        }
+                    } else {
+                        if (n.checked) {
+                            n.checked = false;
+                            t.mappingClick($(n));
+                        }
+                    }
+                });
+            } else {
+                $('#place-' + m.get('place_id')).hide();
+                t._markers[index].setVisible(false);
+                $('#place-' + m.get('place_id')).find('.mapping-check').each(function (i, n) {
+                    if (n.checked) {
+                        n.checked = false;
+                        t.mappingClick($(n));
+                    }
+                });
+            }
+            t.setBoundaryLatLon(geo[0], geo[1]);
+        });
+        if (t.circle) {
+            t.circle.setRadius(distance * 1609.3 * 4);
+        } else {
+            t.circle = new google.maps.Circle({
+                strokeColor: 'grey',
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: 'green',
+                fillOpacity: 0.35,
+                map: t.map,
+                center: new google.maps.LatLng(t.contractorGeo[0], t.contractorGeo[1]),
+                radius: distance  * 1609.3 * 4
+            });
+        }
+        t.map.fitBounds(new google.maps.LatLngBounds(new google.maps.LatLng(t.minLat, t.minLon), new google.maps.LatLng(t.maxLat, t.maxLon)));
     },
     loadMaps: function (fn) {
         // Load Google maps script
@@ -16,27 +88,43 @@ window.ContractorMappingsView = Backbone.View.extend({
         document.body.appendChild(script);
         // End of Load Google maps script
     },
-    addMapData: function () {
+    addContractorMarker: function (callback) {
         var t = this,
-            minLat,
-            minLon,
-            maxLat,
-            maxLon,
-            southWest = new google.maps.LatLng(minLat, minLon),
-            northEast = new google.maps.LatLng(maxLat, maxLon),
-            geo = t.placeModel.models[0].get('place_geo').replace(';', ',').split(',')
+            geocoder = new google.maps.Geocoder();
 
-        t.map = new google.maps.Map(document.getElementById('admin-map'), {
-            center: {
-                lat: parseFloat(geo[0], 10),
-                lng: parseFloat(geo[1], 10)
-            },
-            zoom: 8
+        geocoder.geocode({
+            address: t.contractorModel.get('contractor_address')
+        }, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                t.contractorGeo = [results[0].geometry.location.lat(), results[0].geometry.location.lng()];
+                t.map.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                    map: t.map,
+                    icon: {
+                        path: google.maps.SymbolPath.CIRCLE,
+                        fillColor: 'black',
+                        scale: 5,
+                        strokeColor: 'blue'
+                    },
+                    position: results[0].geometry.location
+                });
+                callback();
+            } else {
+              alert('Geocode was not successful for the following reason: ' + status);
+            }
         });
+    },
+    addPlaceMarkers: function () {
+        var t = this,
+            geo = t.placeModel.models[0].get('place_geo').replace(';', ',').split(','),
+            pos;
+
         _.each(t.placeModel.models, function (m, index) {
+            pos = new google.maps.LatLng(geo[0], geo[1]);
             geo = m.get('place_geo').replace(';', ',').split(',');
+            $('#place-' + m.get('place_id')).find('.distance').html(window.utils.getDistanceFromLatLonInKm(geo[0], geo[1], t.contractorGeo[0], t.contractorGeo[1]) + ' mi');
             var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(geo[0], geo[1]),
+                position: pos,
                 map: t.map,
                 title: m.get('place_title'),
                 content: m.get('place_title')
@@ -53,16 +141,34 @@ window.ContractorMappingsView = Backbone.View.extend({
                 overlay.open(t.map, marker);
                 t.markerSelected(m);
             });
-            if (!minLat || !maxLat) {
-                minLat = maxLat = geo[0];
-                minLon = maxLon = geo[1];
-            }
-            minLat = Math.min(minLat, geo[0]);
-            minLon = Math.min(minLon, geo[1]);
-            maxLat = Math.max(maxLat, geo[0]);
-            maxLon = Math.max(maxLon, geo[1]);
+            t.setBoundaryLatLon(geo[0], geo[1]);
         });
-        t.map.fitBounds(new google.maps.LatLngBounds(new google.maps.LatLng(minLat,minLon), new google.maps.LatLng(maxLat,maxLon)));
+        t.map.fitBounds(new google.maps.LatLngBounds(new google.maps.LatLng(this.minLat, this.minLon), new google.maps.LatLng(this.maxLat, this.maxLon)));
+    },
+    setBoundaryLatLon: function (lat, lon) {
+        if (!this.minLat || !this.maxLat) {
+            this.minLat = this.maxLat = lat;
+            this.minLon = this.maxLon = lon;
+        }
+        this.minLat = Math.min(this.minLat, lat);
+        this.minLon = Math.min(this.minLon, lon);
+        this.maxLat = Math.max(this.maxLat, lat);
+        this.maxLon = Math.max(this.maxLon, lon);
+    },
+    addMapData: function () {
+        var t = this;
+
+        var geo = t.placeModel.models[0].get('place_geo').replace(';', ',').split(',');
+        t.map = new google.maps.Map(document.getElementById('admin-map'), {
+            center: {
+                lat: parseFloat(geo[0], 10),
+                lng: parseFloat(geo[1], 10)
+            },
+            zoom: 8
+        });
+        t.addContractorMarker(function () {
+            t.addPlaceMarkers();
+        });
     },
     markerSelected: function (model) {
         $('#place-' + model.get('place_id')).
@@ -107,11 +213,6 @@ window.ContractorMappingsView = Backbone.View.extend({
         }, 100);
 
         return this;
-    },
-    events: {
-        "click .delete": "deleteMapping",
-        "change .mapping-check": "mappingCheckChange",
-        "change .place-check": "placeCheckChange"
     },
     change: function (event) {
         // Remove any existing alert message
