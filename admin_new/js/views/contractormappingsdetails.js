@@ -194,6 +194,7 @@ window.ContractorMappingsView = Backbone.View.extend({
         )));
         window.mapCallback = function () {
             t.addMapData();
+            t.checkSectionMapping();
         };
         this.loadMaps('mapCallback');
 
@@ -213,6 +214,22 @@ window.ContractorMappingsView = Backbone.View.extend({
         }, 100);
 
         return this;
+    },
+    checkSectionMapping: function () {
+        var checked = false;
+        $('.section-module-section').find('.section-check').each(function(i, n) { //loop through each checkbox
+            checked = false;
+            $('.form-module').each(function (j, f) {
+                if ($(f).find('.mapping-check:eq(' + i + ')').is(':checked')) {
+                    n.checked = true;
+                    checked = true;
+                    return;
+                }
+            });
+            if (!checked) {
+                n.checked = false;
+            }
+        });
     },
     change: function (event) {
         // Remove any existing alert message
