@@ -7,10 +7,7 @@
             <div class="row main-container">
                 <div class="col-md-3 col-xs-12 col-sm-3 sidebar">
                     '.$pageController->printLogoContainer().'
-                    <button type="button" class="btn btn-default dropdown-toggle visible-xs-block navbar-sidebar-icon">
-                        <span class="glyphicon glyphicon-tasks"></span>
-                    </button>
-                    <ul class="nav nav-sidebar hidden-xs">
+                    <ul class="nav nav-sidebar">
                         '.$pageController->getFormatedCategories(1).'
                     </ul>
                     <div class="sidebar-container certifed-container hidden-xs">

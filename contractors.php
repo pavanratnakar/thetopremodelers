@@ -63,9 +63,6 @@ echo $pageController->minifyHTML($pageController->printHeader($meta, $avoidCrawl
                 <div class="sidebar-container certifed-container hidden-xs">
                     <img src="'.Config::$site_url.'images/home/stamp_final.png" alt=""/>
                 </div>
-                <button type="button" class="btn btn-default dropdown-toggle visible-xs-block navbar-sidebar-icon">
-                    <span class="glyphicon glyphicon-tasks"></span>
-                </button>
                 <ul class="nav nav-sidebar hidden-xs">
                     '.$pageController->getFormatedCategories(1, $placeName).'
                     '.$pageController->getFormatedCategories(2, $placeName).'
