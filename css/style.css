@@ -306,12 +306,12 @@ body li {
     right: 10px;
     top: 30%;
 }
-.nav-sidebar {
+.main-container .main-sidebar {
     position: relative;
     top: 0;
     left: 0;
     z-index: 3;
-    margin: 268px 0 -90px 0;
+    margin-top: 268px;
 }
 .nav-sidebar > li,
 .dropdown-menu li {
@@ -356,6 +356,9 @@ body li {
 }
 .navbar-sidebar-icon {
     left: 10px;
+}
+.sub-sidebar{
+    margin-bottom: -90px;
 }
 
 /*
@@ -480,31 +483,29 @@ body li {
     width: 320px;
     display: block;
 }
-.main .header-content h1{
+.header-content h1{
     border: none;
     font-size: 24px;
     margin-left: auto;
     margin-right: auto;
+    margin: 50px 0 10px 0;
+    width: auto;
+    font-size: 36px;
 }
 .main .header-content h2{
     font-size: 24px;
     font-weight: 700;
 }
-.main .header-content h1,
+.header-content h1,
 .main .header-content h2{
-    margin-top: 100px;
+    margin-top: 80px;
     color: #FFF;
     text-transform: uppercase;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
     text-shadow: -3px -1px 6px #000;
 }
-.main .header-content{
+.header-content{
     text-align: center;
-}
-.main .header-content h1{
-    margin: 50px 0 10px 0;
-    width: auto;
-    font-size: 36px;
 }
 .main .header-content h2{
     margin: 0 0 40px;
@@ -569,13 +570,6 @@ body li {
     padding-bottom: 4px;
     border-bottom: 1px dotted #ffc24a;
 }
-.sub-sidebar {
-    position: absolute;
-    left: 270px;
-    top: 136px;
-    z-index: 1;
-    display: none;
-}
 
 /*
  * Full Main content
@@ -616,6 +610,15 @@ body li {
 }
 .home .match-options-container {
     margin-top: 30px;
+}
+.home .header-content{
+    position: absolute;
+    width: 100%;
+    top: 50px;
+}
+.home h1{
+    font-weight: bold;
+    line-height: 40px;
 }
 .match-options-container .second{
     margin-left: -25px;
@@ -1199,6 +1202,24 @@ footer .container {
 
     .sidebar {
         max-width: 252px;
+    }
+
+    .main-container .main-sidebar{
+        margin: 0;
+    }
+
+    .sub-sidebar {
+        position: absolute;
+        left: 270px;
+        top: 136px;
+        z-index: 1;
+        display: none;
+    }
+
+    .header-content h1,
+    .main .header-content h2{
+        margin-top: 100px;
+        margin-bottom: 100px;
     }
 
     /*

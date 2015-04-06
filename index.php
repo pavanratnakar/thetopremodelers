@@ -7,7 +7,10 @@
             <div class="row main-container">
                 <div class="col-md-3 col-xs-12 col-sm-3 sidebar">
                     '.$pageController->printLogoContainer().'
-                    <ul class="nav nav-sidebar">
+                    <div class="visible-xs header-content">
+                        <h1 class="header">Get multiple quotes for home improvement projects</h1>
+                    </div>
+                    <ul class="nav nav-sidebar main-sidebar">
                         '.$pageController->getFormatedCategories(1).'
                     </ul>
                     <div class="sidebar-container certifed-container hidden-xs">
@@ -19,7 +22,7 @@
                         <h5>CALL US : 1(214)303 9771</h5>
                     </div>
                 </div>
-                <div class="sidebar sub-sidebar hidden-xs">
+                <div class="sidebar sub-sidebar col-xs-12">
                     <ul class="nav nav-sidebar">
                         '.$pageController->getFormatedCategories(2).'
                     </ul>

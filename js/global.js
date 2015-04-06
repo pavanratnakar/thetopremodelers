@@ -2,14 +2,18 @@ var herve = {
     navigation: function () {
         var hover = false;
         $("body").delegate(".nav-sidebar li",{
-            mouseenter: function(){
-                hover = true;
-                $('.sub-sidebar').fadeIn("slow");
+            mouseenter: function () {
+                if ($(window).width() >= 768) {
+                    hover = true;
+                    $('.sub-sidebar').fadeIn("slow");
+                }
             },
             mouseleave: function(){
                 setTimeout(function() {
-                    if (!hover) {
-                        $('.sub-sidebar').fadeOut("slow");
+                    if ($(window).width() >= 768) {
+                        if (!hover) {
+                            $('.sub-sidebar').fadeOut("slow");
+                        }
                     }
                 }, 3000);
                 hover = false;

@@ -103,16 +103,16 @@ Header set Cache-Control "public"
 RewriteEngine On
 RewriteCond %{HTTP_HOST} !^www\.topremodelers\.com$ [NC]
 RewriteRule ^(.*)$ http://www.topremodelers.com/$1 [L,R=301]
-RewriteRule ^(dallas|dallas_texas)/category/roofing_contractors$ http://www.topremodelers.com/dallas_texas/roofing_contractors/contractors [R=301,L]
+RewriteRule ^(dallas|dallas_texas)/category/roofing_contractors$ dallas_texas/roofing_contractors/contractors [R=301,L]
 RewriteRule ^place/(.*)$ place.php?name=$1
 RewriteRule ^category/roofing_contractors$ dallas/category/roofing_contractors [R=301,L]
 RewriteRule ^category/dallas_roofing_company$ dallas/category/roofing_contractors [R=301,L]
 RewriteRule ^category/dallas_roofing_contractors$ dallas/category/roofing_contractors [R=301,L]
 RewriteRule ^(.*)/category/(.*)$ category.php?category=$2&place=$1
-RewriteRule ^article/benefits_of_metal_roofing$ http://www.topremodelers.com/article/benefits_of_asphalt_tiles [R=301,L]
+RewriteRule ^article/benefits_of_metal_roofing$ article/benefits_of_asphalt_tiles [R=301,L]
 RewriteRule ^article/(.*)$ article.php?article=$1
-RewriteRule ^need/roofing_contractors/asphalt_shingle_roofing_install_replace$ http://www.topremodelers.com/dallas_texas/roofing_contractors/need/asphalt_shingle_roofing_install_replace [R=301,L]
-RewriteRule ^need/dallas_roofing_contractors/asphalt_shingle_roofing_install_replace$ http://www.topremodelers.com/dallas_texas/roofing_contractors/need/asphalt_shingle_roofing_install_replace [R=301,L]
+RewriteRule ^need/roofing_contractors/asphalt_shingle_roofing_install_replace$ dallas_texas/roofing_contractors/need/asphalt_shingle_roofing_install_replace [R=301,L]
+RewriteRule ^need/dallas_roofing_contractors/asphalt_shingle_roofing_install_replace$ dallas_texas/roofing_contractors/need/asphalt_shingle_roofing_install_replace [R=301,L]
 RewriteRule ^(.*)/(.*)/need/(.*)$ need.php?place=$1&category=$2&section=$3
 RewriteRule ^(.*)/(.*)/(.*)/(.*)/need$ need.php?place=$1&category=$2&section=$3&contractor=$4
 RewriteRule ^(.*)/(.*)/contractors$ contractors.php?place=$1&category=$2
@@ -121,7 +121,7 @@ RewriteRule ^(.*)/(.*)/(.*)/contractors/$ contractors.php?place=$1&category=$2&s
 RewriteRule ^contractor/(.*)$ contractor.php?name=$1
 RewriteRule ^promotion/(.*)$ promotion.php?type=$1
 RewriteRule ^promotion$ promotion.php
-RewriteRule ^garland/roofers/promotion$ http://www.topremodelers.com/promotion [R=301,L]
+RewriteRule ^garland/roofers/promotion$ promotion [R=301,L]
 RewriteRule ^places$ places.php
 RewriteRule ^contact-us$ placeRequest.php
 RewriteRule ^placeRequest$ placeRequest.php

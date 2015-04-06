@@ -65,7 +65,7 @@ window.ContractorMappingsView = Backbone.View.extend({
             t.setBoundaryLatLon(geo[0], geo[1]);
         });
         if (t.circle) {
-            t.circle.setRadius(distance * 1609.3 * 4);
+            t.circle.setRadius(distance * 1609.3);
         } else {
             t.circle = new google.maps.Circle({
                 strokeColor: 'grey',
@@ -75,7 +75,7 @@ window.ContractorMappingsView = Backbone.View.extend({
                 fillOpacity: 0.35,
                 map: t.map,
                 center: new google.maps.LatLng(t.contractorGeo[0], t.contractorGeo[1]),
-                radius: distance  * 1609.3 * 4
+                radius: distance  * 1609.34
             });
         }
         t.map.fitBounds(new google.maps.LatLngBounds(new google.maps.LatLng(t.minLat, t.minLon), new google.maps.LatLng(t.maxLat, t.maxLon)));
@@ -120,8 +120,8 @@ window.ContractorMappingsView = Backbone.View.extend({
             pos;
 
         _.each(t.placeModel.models, function (m, index) {
-            pos = new google.maps.LatLng(geo[0], geo[1]);
             geo = m.get('place_geo').replace(';', ',').split(',');
+            pos = new google.maps.LatLng(geo[0], geo[1]);
             $('#place-' + m.get('place_id')).find('.distance').html(window.utils.getDistanceFromLatLonInKm(geo[0], geo[1], t.contractorGeo[0], t.contractorGeo[1]) + ' mi');
             var marker = new google.maps.Marker({
                 position: pos,
