@@ -207,7 +207,7 @@ function updateContractor($id) {
     $request = Slim::getInstance()->request();
     $body = $request->getBody();
     $contractor = json_decode($body);
-    $sql = "UPDATE rene_contractor SET contractor_title=:contractor_title, contractor_description=:contractor_description, contractor_phone=:contractor_phone, contractor_address=:contractor_address, contractor_name=:contractor_name, contractor_additional_info=:contractor_additional_info, delete_flag=:delete_flag WHERE contractor_id=:contractor_id";
+    $sql = "UPDATE rene_contractor SET contractor_title=:contractor_title, contractor_description=:contractor_description, contractor_phone=:contractor_phone, contractor_address=:contractor_address, contractor_name=:contractor_name, contractor_additional_info=:contractor_additional_info, contractor_distance=:contractor_distance, delete_flag=:delete_flag WHERE contractor_id=:contractor_id";
     try {
         $db = getConnection();
         $stmt = $db->prepare($sql);
@@ -217,6 +217,7 @@ function updateContractor($id) {
         $stmt->bindParam("contractor_address", $contractor->contractor_address);
         $stmt->bindParam("contractor_name", $contractor->contractor_name);
         $stmt->bindParam("contractor_additional_info", $contractor->contractor_additional_info);
+        $stmt->bindParam("contractor_distance", $contractor->contractor_distance);
         $stmt->bindParam("delete_flag", $contractor->delete_flag);
         $stmt->bindParam("contractor_id", $id);
         $stmt->execute();
@@ -442,7 +443,7 @@ function getPlaces() {
 }
 
 function getContractorMapping($id) {
-    $sql = "SELECT a.contractorMapping_id, a.contractor_id, a.active, a.delete_flag, e.contractor_title as contractor_title, d.category_title as category_title, c.section_title as section_title, b.place_title as place_title, a.active
+    $sql = "SELECT a.contractorMapping_id, a.contractor_id, a.active, a.delete_flag, e.contractor_title as contractor_title, d.category_title as category_title, c.section_title as section_title, b.place_title as place_title, a.active, e.contractor_distance as contractor_distance
             FROM
             rene_contractor_mapping a
             LEFT JOIN

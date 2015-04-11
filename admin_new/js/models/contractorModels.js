@@ -88,6 +88,7 @@ window.Contractor = Backbone.Model.extend({
         contractor_address: "",
         contractor_name: "",
         contractor_additional_info: "",
+        contractor_distance: "",
         delete_flag: "0",
         reviews: [],
         mappings: []

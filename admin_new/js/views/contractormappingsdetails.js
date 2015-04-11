@@ -26,12 +26,22 @@ window.ContractorMappingsView = Backbone.View.extend({
             this.loadResultsByDistance(parseFloat($('.search-form').find('input').val()));
         }
     },
-    loadResultsByDistance: function (distance) {
+    loadResultsByDistance: function (distance, mapping) {
+        mapping = mapping !== false ? true : false;
         var t = this,
             geo,
             d,
             populationOptions;
 
+        t.contractorModel.set('contractor_distance', distance.toString());
+        t.contractorModel.save(null, {
+            success: function(model){
+                utils.showAlert('Success!', 'Mapping saved successfully', 'alert-success');
+            },
+            error: function(){
+                utils.showAlert('Error', 'An error occurred while trying to save this item', 'alert-error');
+            }
+        });
         t.minLat = t.minLon = t.maxLat = t.maxLon = null;
         _.each(t.placeModel.models, function (m, index) {
             geo = m.get('place_geo').replace(';', ',').split(',');
@@ -39,28 +49,32 @@ window.ContractorMappingsView = Backbone.View.extend({
             if (d <= distance) {
                 $('#place-' + m.get('place_id')).show();
                 t._markers[index].setVisible(true);
-                $('#place-' + m.get('place_id')).find('.mapping-check').each(function (i, n) {
-                    if ($('.section-module-section').find('.section-check:eq(' + i + ')').is(':checked')) {
-                        if (!n.checked) {
-                            n.checked = true;
-                            t.mappingClick($(n));
+                if (mapping) {
+                    $('#place-' + m.get('place_id')).find('.mapping-check').each(function (i, n) {
+                        if ($('.section-module-section').find('.section-check:eq(' + i + ')').is(':checked')) {
+                            if (!n.checked) {
+                                n.checked = true;
+                                t.mappingClick($(n));
+                            }
+                        } else {
+                            if (n.checked) {
+                                n.checked = false;
+                                t.mappingClick($(n));
+                            }
                         }
-                    } else {
+                    });
+                }
+            } else {
+                $('#place-' + m.get('place_id')).hide();
+                t._markers[index].setVisible(false);
+                if (mapping) {
+                    $('#place-' + m.get('place_id')).find('.mapping-check').each(function (i, n) {
                         if (n.checked) {
                             n.checked = false;
                             t.mappingClick($(n));
                         }
-                    }
-                });
-            } else {
-                $('#place-' + m.get('place_id')).hide();
-                t._markers[index].setVisible(false);
-                $('#place-' + m.get('place_id')).find('.mapping-check').each(function (i, n) {
-                    if (n.checked) {
-                        n.checked = false;
-                        t.mappingClick($(n));
-                    }
-                });
+                    });
+                }
             }
             t.setBoundaryLatLon(geo[0], geo[1]);
         });
@@ -156,9 +170,10 @@ window.ContractorMappingsView = Backbone.View.extend({
         this.maxLon = Math.max(this.maxLon, lon);
     },
     addMapData: function () {
-        var t = this;
+        var t = this,
+            distance = parseFloat($('.search-form').find('input').val()),
+            geo = t.placeModel.models[0].get('place_geo').replace(';', ',').split(',');
 
-        var geo = t.placeModel.models[0].get('place_geo').replace(';', ',').split(',');
         t.map = new google.maps.Map(document.getElementById('admin-map'), {
             center: {
                 lat: parseFloat(geo[0], 10),
@@ -168,6 +183,9 @@ window.ContractorMappingsView = Backbone.View.extend({
         });
         t.addContractorMarker(function () {
             t.addPlaceMarkers();
+            if (distance) {
+                t.loadResultsByDistance(distance, false);
+            }
         });
     },
     markerSelected: function (model) {
