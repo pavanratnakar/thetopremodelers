@@ -130,10 +130,11 @@ echo $pageController->minifyHTML($pageController->printHeader($contractor->getMe
                         </div>
                         <div class="sb-container">
                             <div class="sb-header">
-                                <h3>Today&rsquo;s Best Offers</h3>
+                                <h3>Unlimited time offer</h3>
+                                <p>Get estimate from our contractors and enter to win our 10k solar systems</p>
                             </div>
                             <div class="sb-content">
-                                <img src="'.Config::$site_url.'images/global/sidebar/solar_system.png" title="Hire our pros and win 6000 watt solar system" alt="Hire our pros and win 6000 watt solar system" />
+                                <img src="'.Config::$site_url.'images/global/sidebar/solar_system.jpg" title="" />
                             </div>
                         </div>');
                         $contractorRatingDistribution = $contractor->getRatingDistributionForContractor(array('contractor_id'=>$contractorDetails['contractor_id']));

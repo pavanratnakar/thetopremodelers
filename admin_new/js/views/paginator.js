@@ -7,7 +7,8 @@ window.Paginator = Backbone.View.extend({
     render:function () {
         var items = this.model.models,
             len = items.length,
-            pageCount = Math.ceil(len / 8);
+            pagePage = 100,
+            pageCount = Math.ceil(len / pagePage);
 
         $(this.el).html('<ul/>');
         $('ul', this.el).addClass('pagination');

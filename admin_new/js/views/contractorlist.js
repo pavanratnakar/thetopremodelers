@@ -5,8 +5,9 @@ window.ContractorListView = Backbone.View.extend({
     render: function () {
         var contractors = this.model.models,
             len = contractors.length,
-            startPos = (this.options.page - 1) * 8,
-            endPos = Math.min(startPos + 8, len);
+            pagePage = 100,
+            startPos = (this.options.page - 1) * pagePage,
+            endPos = Math.min(startPos + pagePage, len);
 
         $(this.el).html('<ul class="list-group thumbnails"></ul>');
         for (var i = startPos; i < endPos; i++) {
