@@ -58,6 +58,7 @@ var herve = {
     }
 };
 $(document).ready(function () {
+    $("img").unveil();
     herve.navigation();
     herve_social.sharethis();
     if ($("body").hasClass("background-rotate")) {

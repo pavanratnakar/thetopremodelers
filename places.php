@@ -10,10 +10,6 @@
                     '.$pageController->printLogoContainer().'
                     <ul class="nav nav-sidebar hidden-xs">
                         '.$pageController->getFormatedCategories(1).'
-                    </ul>
-                </div>
-                <div class="sidebar sub-sidebar hidden-xs">
-                    <ul class="nav nav-sidebar">
                         '.$pageController->getFormatedCategories(2).'
                     </ul>
                 </div>

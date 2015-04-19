@@ -28,7 +28,20 @@ class Place {
     }
     public function getPlaces($limit=null){
         if ($limit) {
-            $limit = "LIMIT 0,".$limit;
+            $count = 0;
+            $query1 = "SELECT count(*) as count
+                        FROM
+                        ".Config::$tables['place_table']." a
+                        WHERE
+                        a.delete_flag=FALSE AND a.active=TRUE
+                        AND under!=0";
+            if ($result1 = $this->mysqli->query($query1)) {
+                while ($row1 = $result1->fetch_object()) {
+                    $count = $row1->count;
+                }
+            }
+            $random = rand ($limit - 1 , $count - 1);
+            $limit = "LIMIT " . $limit . " OFFSET " . ($random - $limit);
         } else {
             $limit = "";
         }
@@ -38,7 +51,7 @@ class Place {
                     WHERE
                     a.delete_flag=FALSE AND a.active=TRUE
                     AND under!=0
-                    ORDER BY place_id ASC ".$limit."";
+                    ORDER BY place_title ASC ".$limit."";
         if ($result = $this->mysqli->query($query)) {
             $i=0;
             while ($row = $result->fetch_object()) {

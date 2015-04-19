@@ -61,14 +61,14 @@ echo $pageController->minifyHTML($pageController->printHeader($meta, $avoidCrawl
             <div class="col-md-3 col-xs-12 col-sm-3 sidebar">
                 '.$pageController->printLogoContainer().'
                 <div class="sidebar-container certifed-container hidden-xs">
-                    <img src="'.Config::$site_url.'images/home/stamp_final.png" alt=""/>
+                    <img src="'.Config::$site_url.'images/home/stamp_final.png" data-src="'.Config::$site_url.'images/home/stamp_final.png" alt=""/>
                 </div>
                 <ul class="nav nav-sidebar hidden-xs">
                     '.$pageController->getFormatedCategories(1, $placeName).'
                     '.$pageController->getFormatedCategories(2, $placeName).'
                 </ul>
                 <div class="sidebar-container service-container hidden-xs">
-                    <img src="'.Config::$site_url.'images/home/service.jpg" alt=""/>
+                    <img src="'.Config::$site_url.'images/home/service.jpg" data-src="'.Config::$site_url.'images/home/service.jpg" alt=""/>
                     <h4 class="gold">Need immediate service</h4>
                     <h5>CALL US : 1(214)303 9771</h5>
                 </div>
@@ -147,7 +147,7 @@ echo $pageController->minifyHTML($pageController->printHeader($meta, $avoidCrawl
                                             <div class="col-md-4 col-xs-4 col-sm-4">
                                                 <div class="entry-image">
                                                     <a title="'.$value['contractor_title'].'" href="'.Config::$site_url.'contractor/'. $value['contractor_name'].'">
-                                                        <img alt="'.$value['contractor_title'].'" src="'.Config::$site_url.'/images/contractors/'.($value['image_id'] ? $value['image_id'] : 'roof_0').'.jpg" />
+                                                        <img alt="'.$value['contractor_title'].'" src="'.Config::$site_url.'images/contractors/'.($value['image_id'] ? $value['image_id'] : 'roof_0').'.jpg" data-src="'.Config::$site_url.'images/contractors/'.($value['image_id'] ? $value['image_id'] : 'roof_0').'.jpg" />
                                                     </a>
                                                 </div>
                                             </div>
@@ -226,7 +226,7 @@ echo $pageController->minifyHTML($pageController->printHeader($meta, $avoidCrawl
                                     <p>Get estimate from our contractors and enter to win our 10k solar systems</p>
                                 </div>
                                 <div class="sb-content">
-                                    <img src="'.Config::$site_url.'images/global/sidebar/solar_system.jpg" title="" />
+                                    <img src="'.Config::$site_url.'images/global/sidebar/solar_system.jpg" data-src="'.Config::$site_url.'images/global/sidebar/solar_system.jpg" title="" />
                                 </div>
                             </div>
                             '.$pageController->getArticles($categoryDetails[0]['category_id']).'

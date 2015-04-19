@@ -14,10 +14,10 @@
                         '.$pageController->getFormatedCategories(1).'
                     </ul>
                     <div class="sidebar-container certifed-container hidden-xs">
-                        <img src="images/home/stamp_final.png" alt=""/>
+                        <img src="images/home/stamp_final.png" data-src="images/home/stamp_final.png" alt=""/>
                     </div>
                     <div class="sidebar-container service-container hidden-xs">
-                        <img src="images/home/service.jpg" alt=""/>
+                        <img src="images/home/service.jpg" data-src="images/home/service.jpg" alt=""/>
                         <h4 class="gold">Need immediate service</h4>
                         <h5>CALL US : 1(214)303 9771</h5>
                     </div>

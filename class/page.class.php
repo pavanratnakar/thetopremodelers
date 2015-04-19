@@ -183,7 +183,7 @@ class Page{
             <div class="nav-logo-container">
                 <div class="logo-container">
                     <a href="http://www.topremodelers.com">
-                        <img src="'.Config::$site_url.'/images/global/logo.png" alt="The Top Remodelers"/>
+                        <img src="'.Config::$site_url.'images/global/logo.png" data-src="'.Config::$site_url.'images/global/logo.png" alt="The Top Remodelers"/>
                     </a>
                 </div>
             </div>';

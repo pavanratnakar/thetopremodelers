@@ -72,7 +72,7 @@
                             <h4>Get estimates today</h4>
                             <div class="row contractor-detail">
                                 <div class="col-md-4 col-xs-6 col-sm-4">
-                                    <img alt="" class="border" src="'.Config::$site_url.'images/promotion/person_1.png" />
+                                    <img alt="" class="border" src="'.Config::$site_url.'images/promotion/person_1.png" data-src="'.Config::$site_url.'images/promotion/person_1.png" />
                                 </div>
                                 <div class="col-md-6 col-xs-6 col-sm-6">
                                     <h5>Joe</h5>
@@ -86,7 +86,7 @@
                             </div>
                             <div class="row contractor-detail">
                                 <div class="col-md-4 col-xs-6 col-sm-4">
-                                    <img alt="" class="border" src="'.Config::$site_url.'images/promotion/person_2.png" />
+                                    <img alt="" class="border" src="'.Config::$site_url.'images/promotion/person_2.png" data-src="'.Config::$site_url.'images/promotion/person_2.png" />
                                 </div>
                                 <div class="col-md-6 col-xs-6 col-sm-6">
                                     <h5>Oscar</h5>
@@ -100,7 +100,7 @@
                             </div>
                             <div class="row contractor-detail">
                                 <div class="col-md-4 col-xs-6 col-sm-4">
-                                    <img alt="" class="border" src="'.Config::$site_url.'images/promotion/person_3.png" />
+                                    <img alt="" class="border" src="'.Config::$site_url.'images/promotion/person_3.png" data-src="'.Config::$site_url.'images/promotion/person_3.png" />
                                 </div>
                                 <div class="col-md-6 col-xs-6 col-sm-6">
                                     <h5>Raphale</h5>
@@ -117,7 +117,7 @@
                             <h4>Certified Reviews</h4>
                             <p>With so many companies providing online reviews, it becoming difficult to trust any of them, your friend can post a review or you enemy can a post review.</p>
                             <p>We are going on step further, in order to get is review certified the contractor must provide a proof of the job completion (building permit, proof of payment, etc)</p>
-                            <img alt="" src="'.Config::$site_url.'images/home/stamp_final.png" />
+                            <img alt="" src="'.Config::$site_url.'images/home/stamp_final.png" data-src="'.Config::$site_url.'images/home/stamp_final.png" />
                         </div>
                     </div>
                     <div class="row contractor-detail-footer">
@@ -125,9 +125,9 @@
                             <h4>Our promotion include</h4>
                             <div class="contractor-callout-content">
                                 <div class="holder">
-                                    <img src="'.Config::$site_url.'images/promotion/holder.png" alt="" width="310"/>
+                                    <img src="'.Config::$site_url.'images/promotion/holder.png" data-src="'.Config::$site_url.'images/promotion/holder.png" alt="" width="310"/>
                                     <div class="leaf hidden-xs">
-                                        <img src="'.Config::$site_url.'images/promotion/leaf.png" alt="" />
+                                        <img src="'.Config::$site_url.'images/promotion/leaf.png" data-src="'.Config::$site_url.'images/promotion/leaf.png" alt="" />
                                     </div>
                                 </div>
                                 <ul>

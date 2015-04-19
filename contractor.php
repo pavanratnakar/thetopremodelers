@@ -123,7 +123,7 @@ echo $pageController->minifyHTML($pageController->printHeader($contractor->getMe
                     <div class="col-md-4 hidden-xs col-sm-4">
                         <div class="sb-container sb-center" id="certified-rating">
                             <div class="sb-content">
-                                <img src="'.Config::$site_url.'images/contractor/stamp_final.png" title="Certified Ratings" alt="Certified Ratings" />
+                                <img src="'.Config::$site_url.'images/contractor/stamp_final.png" data-src="'.Config::$site_url.'images/contractor/stamp_final.png" title="Certified Ratings" alt="Certified Ratings" />
                                 <h4>Hire with Confidence</h4>
                                 <p>This service provider has passed our screening process including checks for criminal background and bankruptcy.</p>
                             </div>
@@ -134,7 +134,7 @@ echo $pageController->minifyHTML($pageController->printHeader($contractor->getMe
                                 <p>Get estimate from our contractors and enter to win our 10k solar systems</p>
                             </div>
                             <div class="sb-content">
-                                <img src="'.Config::$site_url.'images/global/sidebar/solar_system.jpg" title="" />
+                                <img src="'.Config::$site_url.'images/global/sidebar/solar_system.jpg" data-src="'.Config::$site_url.'images/global/sidebar/solar_system.jpg" title="" />
                             </div>
                         </div>');
                         $contractorRatingDistribution = $contractor->getRatingDistributionForContractor(array('contractor_id'=>$contractorDetails['contractor_id']));
