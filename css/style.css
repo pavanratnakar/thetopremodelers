@@ -773,6 +773,10 @@ body li {
 .contractors .get-quote{
     margin-top: 10px;
 }
+.contractors .serving-details{
+    margin-top: 10px;
+    font-size: 12px;
+}
 .contractors .contractors-list li{
     border-bottom: 1px solid #E0D5C8;
 }

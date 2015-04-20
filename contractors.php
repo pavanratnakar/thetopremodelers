@@ -179,6 +179,7 @@ echo $pageController->minifyHTML($pageController->printHeader($meta, $avoidCrawl
                                                 echo $pageController->minifyHTML('
                                                 </div>
                                                 <a href="'.Config::$site_url.$placeName.'/'.$categoryName.'/'.$sectionName.'/'.$value['contractor_name'].'/need" class="get-quote btn btn-info">Get a Quote</a>
+                                                <p class="serving-details">Serving '.$placeDetails['place_title'].'</p>
                                             </div>
                                         </div>
                                         <div class="row more-details">
@@ -229,7 +230,6 @@ echo $pageController->minifyHTML($pageController->printHeader($meta, $avoidCrawl
                                     <img src="'.Config::$site_url.'images/global/sidebar/solar_system.jpg" data-src="'.Config::$site_url.'images/global/sidebar/solar_system.jpg" title="" />
                                 </div>
                             </div>
-                            '.$pageController->getArticles($categoryDetails[0]['category_id']).'
                         </div>
                     </div>
                 </div>
