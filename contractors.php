@@ -230,6 +230,7 @@ echo $pageController->minifyHTML($pageController->printHeader($meta, $avoidCrawl
                                     <img src="'.Config::$site_url.'images/global/sidebar/solar_system.jpg" data-src="'.Config::$site_url.'images/global/sidebar/solar_system.jpg" title="" />
                                 </div>
                             </div>
+                            '.$pageController->getArticles($categoryDetails[0]['category_id']).'
                         </div>
                     </div>
                 </div>

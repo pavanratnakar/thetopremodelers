@@ -167,7 +167,6 @@ echo $pageController->minifyHTML($pageController->printHeader($contractor->getMe
                         </div>');
                         }
                         echo $pageController->minifyHTML('
-                        '.$pageController->getArticles().'
                     </div>
                 </div>
             </div>
