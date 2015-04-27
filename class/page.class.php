@@ -232,13 +232,15 @@ class Page{
         return $return;
     }
     public function printFooter(){
-        $return=$this->printJS('herve_global_js');
-        if($this->currentPage->js == 1){
-            $return.=$this->printJS('herve_'.$this->currentPage->class.'_js');
+        $return = '';
+        if ($this->currentPage->js == 1) {
+            $return .= $this->printJS('herve_'.$this->currentPage->class.'_js');
+        } else {
+            $return .= $this->printJS('herve_global_js');
         }
-        $return.=$this->printGA();
-        $return.=$this->zopimChat();
-        $return.='</body></html>';
+        $return .= $this->printGA();
+        $return .= $this->zopimChat();
+        $return .= '</body></html>';
         return $return;
     }
     public function printGA(){

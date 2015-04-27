@@ -10,6 +10,17 @@
  *
  * See http://code.google.com/p/minify/wiki/CustomSource for other ideas
  **/
+
+$herve_global_js = array(
+    '//global/js/jquery/jquery-1.7.1.min.js',
+    '//global/js/jquery/jquery.unveil.js',
+    '//global/js/bootstrap.min.js',
+    '//global/js/config.js',
+    '//global/js/sharethis/button.js',
+    '//js/social.js',
+    '//js/global.js'
+);
+
 return array(
     ///HERVE ///
     'herve_admin_css' => array(
@@ -42,15 +53,21 @@ return array(
         '//global/css/bootstrap/bootstrap.min.css',
         '//css/style.css'
     ),
-    'herve_place-request_js' => array(
-        '//global/js/jquery/jquery.ajax.js',
-        '//global/js/jquery/jquery.validate.min.js',
-        '//global/js/jquery/jquery.ajax.loader.js',
-        '//global/js/global.js',
-        '//js/contact.js'
+    'herve_place-request_js' => array_merge(
+        $herve_global_js,
+        array(
+            '//global/js/jquery/jquery.ajax.js',
+            '//global/js/jquery/jquery.validate.min.js',
+            '//global/js/jquery/jquery.ajax.loader.js',
+            '//global/js/global.js',
+            '//js/contact.js'
+        )
     ),
-    'herve_article_js' => array(
-        '//js/article.js'
+    'herve_article_js' => array_merge(
+        $herve_global_js,
+        array(
+            '//js/article.js'
+        )
     ),
     'herve_js' => array(
         '//global/js/jquery/jquery-1.7.1.min.js',
@@ -59,34 +76,38 @@ return array(
         '//js/social.js',
          '//js/init.js'
     ),
-    'herve_global_js' => array(
-        '//global/js/jquery/jquery-1.7.1.min.js',
-        '//global/js/jquery/jquery.unveil.js',
-        '//global/js/bootstrap.min.js',
-        '//global/js/config.js',
-        '//global/js/sharethis/button.js',
-        '//js/social.js',
-        '//js/global.js'
+    'herve_global_js' => $herve_global_js,
+    'herve_need_js' => array_merge(
+        $herve_global_js,
+        array(
+            '//global/js/jquery/jquery.validate.min.js',
+            '//js/question.js'
+        )
     ),
-    'herve_need_js' => array(
-        '//global/js/jquery/jquery.validate.min.js',
-        '//js/question.js'
-    ),
-    'herve_contractors_js' => array(
-        '//js/contractors.js'
+    'herve_contractors_js' => array_merge(
+        $herve_global_js,
+        array(
+            '//js/contractors.js'
+        )
     ),
     'herve_contractor_css' => array(
         '//global/js/plugins/boxy/stylesheets/boxy.css',
     ),
-    'herve_contractor_js' => array(
-        '//global/js/plugins/boxy/javascripts/jquery.boxy.js',
-        '//js/contractor.js'
+    'herve_contractor_js' => array_merge(
+        $herve_global_js,
+        array(
+            '//global/js/plugins/boxy/javascripts/jquery.boxy.js',
+            '//js/contractor.js'
+        )
     ),
-    'herve_promotion_js' => array(
-        '//global/js/plugins/bigvideo/lib/video.js',
-        '//global/js/plugins/bigvideo/lib/jquery-ui.js',
-        '//global/js/plugins/bigvideo/lib/bigvideo.js',
-        '//js/promotion.js'
+    'herve_promotion_js' => array_merge(
+        $herve_global_js,
+        array(
+            '//global/js/plugins/bigvideo/lib/video.js',
+            '//global/js/plugins/bigvideo/lib/jquery-ui.js',
+            '//global/js/plugins/bigvideo/lib/bigvideo.js',
+            '//js/promotion.js'
+        )
     ),
     /// HERVE ///
     /// NEW ADMIN ///
