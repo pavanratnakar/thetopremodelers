@@ -142,6 +142,10 @@ return array(
     'herve_new_admin_css' => array(
         '//global/css/bootstrap/bootstrap.min.css',
         '//admin_new/css/styles.css'
+    ),
+    'herve_admin_login_css' => array(
+        '//global/css/bootstrap/bootstrap.min.css',
+        '//admin_new/css/login.css'
     )
     /// NEW ADMIN ///
 );

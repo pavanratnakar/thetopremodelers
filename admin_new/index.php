@@ -1,6 +1,11 @@
 <?php
     include_once($_SERVER['DOCUMENT_ROOT'].'/config.class.php');
     include_once(Config::$site_path.'/min/utils.php');
+    include_once(Config::$site_path.'/global/Class/login.class.php');
+    Login::start($_GET["logoff"]);
+    if (!Login::checkIfLoggedIn()) {
+        header('Location: http://www.topremodelers.com/admin_new/login.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
