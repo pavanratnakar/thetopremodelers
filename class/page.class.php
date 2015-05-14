@@ -238,7 +238,6 @@ class Page{
         } else {
             $return .= $this->printJS('herve_global_js');
         }
-        $return .= $this->printGA();
         $return .= $this->zopimChat();
         $return .= '</body></html>';
         return $return;

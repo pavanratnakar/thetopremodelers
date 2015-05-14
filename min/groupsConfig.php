@@ -12,6 +12,7 @@
  **/
 
 $herve_global_js = array(
+    '//global/js/ga.js', // should be add it here?
     '//global/js/jquery/jquery-1.7.1.min.js',
     '//global/js/jquery/jquery.unveil.js',
     '//global/js/bootstrap.min.js',

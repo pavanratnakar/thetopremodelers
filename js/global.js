@@ -64,4 +64,6 @@ $(document).ready(function () {
     if ($("body").hasClass("background-rotate")) {
         herve.backgroundRotate();
     }
+    ga('create', 'UA-58561111-1', {'siteSpeedSampleRate': 100});
+    ga('send', 'pageview');
 });
