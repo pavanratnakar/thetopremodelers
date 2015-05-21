@@ -17,6 +17,9 @@ class PageController{
         $this->page=new Page($pageNumber);
         $this->utils=new Utils();
     }
+    public function isMobile(){
+        return $this->page->isMobile();
+    }
     public function minifyHTML($buffer){
         return Minify_HTML::minify($buffer);
     }

@@ -12,7 +12,9 @@
                     </div>
                     <ul class="nav nav-sidebar main-sidebar">
                         '.$pageController->getFormatedCategories(1).'
-                    </ul>
+                    </ul>');
+    if (!$pageController->isMobile()) {
+    echo $pageController->minifyHTML('
                     <div class="sidebar-container certifed-container hidden-xs">
                         <img src="images/home/stamp_final.png" data-src="images/home/stamp_final.png" alt=""/>
                     </div>
@@ -20,7 +22,9 @@
                         <img src="images/home/service.jpg" data-src="images/home/service.jpg" alt=""/>
                         <h4 class="gold">Need immediate service</h4>
                         <h5>CALL US : 1(214)303 9771</h5>
-                    </div>
+                    </div>');
+    }
+    echo $pageController->minifyHTML('
                 </div>
                 <div class="sidebar sub-sidebar col-xs-12">
                     <ul class="nav nav-sidebar">
