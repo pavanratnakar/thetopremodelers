@@ -59,19 +59,27 @@ echo $pageController->minifyHTML($pageController->printHeader($meta, $avoidCrawl
     '<div class="container-fluid">
         <div class="row main-container">
             <div class="col-md-3 col-xs-12 col-sm-3 sidebar">
-                '.$pageController->printLogoContainer().'
+                '.$pageController->printLogoContainer().'');
+                if (!$pageController->isMobile()) {
+                echo $pageController->minifyHTML('
                 <div class="sidebar-container certifed-container hidden-xs">
                     <img src="'.Config::$site_url.'images/home/stamp_final.png" data-src="'.Config::$site_url.'images/home/stamp_final.png" alt=""/>
-                </div>
+                </div>');
+                }
+                echo $pageController->minifyHTML('
                 <ul class="nav nav-sidebar hidden-xs">
                     '.$pageController->getFormatedCategories(1, $placeName).'
                     '.$pageController->getFormatedCategories(2, $placeName).'
-                </ul>
+                </ul>');
+                if (!$pageController->isMobile()) {
+                echo $pageController->minifyHTML('
                 <div class="sidebar-container service-container hidden-xs">
                     <img src="'.Config::$site_url.'images/home/service.jpg" data-src="'.Config::$site_url.'images/home/service.jpg" alt=""/>
                     <h4 class="gold">Need immediate service</h4>
                     <h5>CALL US : 1(214)303 9771</h5>
-                </div>
+                </div>');
+                }
+                echo $pageController->minifyHTML('
             </div>
             <div class="col-md-9 col-xs-12 col-sm-9 main no-bg">
                 <div class="header-content">
@@ -219,7 +227,9 @@ echo $pageController->minifyHTML($pageController->printHeader($meta, $avoidCrawl
                                 }
                                 echo $pageController->minifyHTML('
                             </ul>
-                        </div>
+                        </div>');
+                        if (!$pageController->isMobile()) {
+                        echo $pageController->minifyHTML('
                         <div class="col-md-4 hidden-xs col-sm-4">
                             <div class="sb-container">
                                 <div class="sb-header">
@@ -231,7 +241,9 @@ echo $pageController->minifyHTML($pageController->printHeader($meta, $avoidCrawl
                                 </div>
                             </div>
                             '.$pageController->getArticles($categoryDetails[0]['category_id']).'
-                        </div>
+                        </div>');
+                        }
+                        echo $pageController->minifyHTML('
                     </div>
                 </div>
             </div>

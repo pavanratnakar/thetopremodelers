@@ -43,7 +43,7 @@ class PageController{
     }
     public function printReviewContainer(){
         include_once(Config::$site_path.'/class/review.class.php');
-        return $this->page->printReviewContainer();
+        return $this->page->printReviewContainer($this->page->isMobile());
     }
     public function printUserStepsText($index=null){
         return $this->page->printUserStepsText($index);

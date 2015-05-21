@@ -119,7 +119,9 @@ echo $pageController->minifyHTML($pageController->printHeader($contractor->getMe
                         }
                         echo $pageController->minifyHTML('
                         '.$pageController->jumpList($jumpListData,'top').'
-                    </div>
+                    </div>');
+                    if (!$pageController->isMobile()) {
+                    echo $pageController->minifyHTML('
                     <div class="col-md-4 hidden-xs col-sm-4">
                         <div class="sb-container sb-center" id="certified-rating">
                             <div class="sb-content">
@@ -157,7 +159,9 @@ echo $pageController->minifyHTML($pageController->printHeader($contractor->getMe
                         </div>');
                         }
                         echo $pageController->minifyHTML('
-                    </div>
+                    </div>');
+                    }
+                    echo $pageController->minifyHTML('
                 </div>
             </div>
         </div>

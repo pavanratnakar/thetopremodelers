@@ -99,7 +99,9 @@ if ($params['placeName'] && $params['categoryName'] && $params['sectionName']) {
                                 </p>
                             </div>
                         </form>
-                    </div>
+                    </div>');
+                    if (!$pageController->isMobile()) {
+                    echo $pageController->minifyHTML('
                     <div class="col-md-4 hidden-xs col-sm-4">
                         <div class="sb-container">
                             <div class="sb-header">
@@ -110,7 +112,9 @@ if ($params['placeName'] && $params['categoryName'] && $params['sectionName']) {
                                 <div class="art-person"></div>
                             </div>
                         </div>
-                    </div>
+                    </div>');
+                    }
+                    echo $pageController->minifyHTML('
                 </div>
             </div>
         </div>

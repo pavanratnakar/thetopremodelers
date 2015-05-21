@@ -40,10 +40,14 @@
                         <div class="col-md-7 col-xs-12 col-sm-7 process-sub-container">
                             <h2>What <span class="blue">Client</span> Says</h2>
                             '.$pageController->printReviewContainer().'
-                        </div>
+                        </div>');
+    if (!$pageController->isMobile()) {
+    echo $pageController->minifyHTML('
                         <div class="col-md-5 hidden-xs col-sm-5">
                             <i class="person"></i>
-                        </div>
+                        </div>');
+    }
+    echo $pageController->minifyHTML('
                     </div>
                 </div>
             </div>

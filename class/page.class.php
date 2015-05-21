@@ -199,19 +199,24 @@ class Page{
             </div>';
         return $return;
     }
-    public function printReviewContainer(){
+    public function printReviewContainer($isMobile){
         $review = new Review();
         $reviews = $review->getReviews();
         $return = '';
         $i=1;
         foreach ($reviews as $r) {
             $return .= '
-            <div class="review">
-            <i class="quote_start hidden-xs"></i>
+            <div class="review">';
+            if (!$isMobile) {
+            $return .= '<i class="quote_start hidden-xs"></i>';
+            }
+            $return .= '
             <h4>Project : '.$r['project'].'</h4>
             <h5 class="blue">Customer in '.$r['region'].'</h5>
-            <p>'.$r['description'].'</p>
-            <i class="quote_end hidden-xs"></i>';
+            <p>'.$r['description'].'</p>';
+            if (!$isMobile) {
+            $return .= '<i class="quote_end hidden-xs"></i>';
+            }
             $return .= '</div>';
             $i++;
         }
