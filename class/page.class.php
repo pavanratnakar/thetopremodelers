@@ -155,7 +155,7 @@ class Page{
         return $return;
     }
     public function printJS($name){
-        $return='<script type="text/javascript" src="'.Minify_getUri($name).'"></script>';
+        $return='<script async type="text/javascript" src="'.Minify_getUri($name).'"></script>';
         return $return;
     }
     public function printNavigation(){

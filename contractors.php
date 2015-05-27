@@ -155,7 +155,7 @@ echo $pageController->minifyHTML($pageController->printHeader($meta, $avoidCrawl
                                             <div class="col-md-4 col-xs-4 col-sm-4">
                                                 <div class="entry-image">
                                                     <a title="'.$value['contractor_title'].'" href="'.Config::$site_url.'contractor/'. $value['contractor_name'].'">
-                                                        <img alt="'.$value['contractor_title'].'" src="'.Config::$site_url.'images/contractors/'.($value['image_id'] ? $value['image_id'] : 'roof_0').'.jpg" data-src="'.Config::$site_url.'images/contractors/'.($value['image_id'] ? $value['image_id'] : 'roof_0').'.jpg" />
+                                                        <img alt="'.$value['contractor_title'].'" src="'.Config::$site_url.'images/contractors/roof_0.jpg" data-src="'.Config::$site_url.'images/contractors/'.($value['image_id'] ? $value['image_id'] : 'roof_0').'.jpg" />
                                                     </a>
                                                 </div>
                                             </div>
