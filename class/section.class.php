@@ -92,11 +92,10 @@ class Section {
                 WHERE";
 
         if ($sectionName) {
-            $query .= " a.match='{\"sectionId\":\"".$sectionId."\"}'";
+            $query .= " a.matching='{\"sectionId\":\"".$sectionId."\"}'";
         } else {
-            $query .= " a.match='{\"categoryId\":\"".$categoryId."\",\"placeId\":\"".$placeId."\"}'";
+            $query .= " a.matching='{\"categoryId\":\"".$categoryId."\",\"placeId\":\"".$placeId."\"}'";
         }
-
         if ($result = $this->mysqli->query($query)) {
             $i=0;
             while ($row = $result->fetch_object()) {

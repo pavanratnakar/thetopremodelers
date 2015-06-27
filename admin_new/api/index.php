@@ -48,6 +48,11 @@ $app->get('/articles', 'getArticles');
 $app->post('/articleMapping', 'addArticleMapping');
 $app->delete('/articleMapping/:id', 'deleteArticleMapping');
 
+$app->get('/metas', 'getMetas');
+$app->get('/metas/:id', 'getMeta');
+$app->post('/metas', 'addMeta');
+$app->put('/metas/:id', 'updateMeta');
+$app->delete('/metas/:id', 'deleteMeta');
 
 $app->get('/categories', 'getCategories');
 
@@ -611,6 +616,90 @@ function addArticleMapping() {
         echo json_encode($articleMapping);
     } catch(PDOException $e) {
         error_log($e->getMessage(), 3, '/var/tmp/php.log');
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+}
+
+function getMetas() {
+    $sql = "select * FROM rene_meta ORDER BY matching";
+    try {
+        $db = getConnection();
+        $stmt = $db->query($sql);
+        $metas = $stmt->fetchAll(PDO::FETCH_OBJ);
+        $db = null;
+        echo json_encode($metas);
+    } catch(PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+}
+
+function getMeta($id) {
+    $sql = "SELECT * FROM rene_meta WHERE id=:id";
+    try {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam("id", $id);
+        $stmt->execute();
+        $meta = $stmt->fetchObject();
+        $db = null;
+        echo json_encode($meta);
+    } catch(PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+}
+
+function addMeta() {
+    error_log('addMeta\n', 3, '/var/tmp/php.log');
+    $request = Slim::getInstance()->request();
+    $meta = json_decode($request->getBody());
+    $sql = "INSERT INTO rene_meta (title, description, keywords, matching) VALUES (:title, :description, :keywords, :matching)";
+    try {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam("title", $meta->title);
+        $stmt->bindParam("description", $meta->description);
+        $stmt->bindParam("keywords", $meta->keywords);
+        $stmt->bindParam("matching", $meta->matching);
+        $stmt->execute();
+        $meta->id = $db->lastInsertId();
+        $db = null;
+        echo json_encode($meta);
+    } catch(PDOException $e) {
+        error_log($e->getMessage(), 3, '/var/tmp/php.log');
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+}
+
+function updateMeta($id) {
+    $request = Slim::getInstance()->request();
+    $body = $request->getBody();
+    $meta = json_decode($body);
+    $sql = "UPDATE rene_meta SET title=:title, description=:description, keywords=:keywords, matching=:matching WHERE id=:id";
+    try {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam("title", $meta->title);
+        $stmt->bindParam("description", $meta->description);
+        $stmt->bindParam("keywords", $meta->keywords);
+        $stmt->bindParam("matching", $meta->matching);
+        $stmt->bindParam("id", $id);
+        $stmt->execute();
+        $db = null;
+        echo json_encode($meta);
+    } catch(PDOException $e) {
+        echo '{"error":{"text":'. $e->getMessage() .'}}';
+    }
+}
+
+function deleteMeta($id) {
+    $sql = "DELETE FROM rene_meta WHERE id=:id";
+    try {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam("id", $id);
+        $stmt->execute();
+        $db = null;
+    } catch(PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}';
     }
 }

@@ -122,13 +122,7 @@ echo $pageController->minifyHTML($pageController->printHeader($contractor->getMe
                     </div>');
                     if (!$pageController->isMobile()) {
                     echo $pageController->minifyHTML('
-                    <div class="col-md-4 hidden-xs col-sm-4">
-                        <div class="sb-container sb-center" id="certified-rating">
-                            <div class="sb-content">
-                                <img src="'.Config::$site_url.'images/contractor/stamp_final.png" data-src="'.Config::$site_url.'images/contractor/stamp_final.png" title="Certified Ratings" alt="Certified Ratings" />
-                                <h4>Reviews you can trust</h4>
-                            </div>
-                        </div>');
+                    <div class="col-md-4 hidden-xs col-sm-4">');
                         $contractorRatingDistribution = $contractor->getRatingDistributionForContractor(array('contractor_id'=>$contractorDetails['contractor_id']));
                         if ($contractorRatingDistribution) {
                         echo $pageController->minifyHTML('

@@ -7,9 +7,6 @@
             <div class="row main-container">
                 <div class="col-md-3 col-xs-12 col-sm-3 sidebar">
                     '.$pageController->printLogoContainer().'
-                    <div class="visible-xs header-content">
-                        <h1 class="header">Get multiple quotes for home improvement projects</h1>
-                    </div>
                     <ul class="nav nav-sidebar main-sidebar">
                         '.$pageController->getFormatedCategories(1).'
                     </ul>');
@@ -32,6 +29,9 @@
                     </ul>
                 </div>
                 <div class="col-md-9 col-xs-12 col-sm-9 main bottom">
+                    <div class="header-content">
+                        <h2 class="header">Get multiple quotes<br/> for home improvement<br/> projects</h2>
+                    </div>
                     <h1>Matching you with our <span class="blue">Prescreened contractors</span></h1>
                     <div class="hidden-xs">
                         '.$pageController->printUserStepsText().'

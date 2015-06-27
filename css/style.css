@@ -485,7 +485,6 @@ body li {
 }
 .header-content h1{
     border: none;
-    font-size: 24px;
     margin-left: auto;
     margin-right: auto;
     margin: 50px 0 10px 0;
@@ -494,7 +493,8 @@ body li {
 }
 .main .header-content h2{
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 700 !important;
+    line-height: 42px;
 }
 .header-content h1,
 .main .header-content h2{
@@ -614,7 +614,10 @@ body li {
 .home .header-content{
     position: absolute;
     width: 100%;
-    top: 50px;
+    top: -400px;
+}
+.home .header-content h2{
+    font-size: 36px;
 }
 .home h1{
     font-weight: bold;
@@ -796,6 +799,13 @@ body li {
 .contractors a.morelink {
     margin: 5px 0 0 0;
     font-weight:normal;
+}
+.contractors h3.texas_green {
+    color: #13c613;
+    background-repeat: no-repeat;
+    background-image: url("../images/contractors/leaf.png");
+    background-position: 234px 6px;
+    border-bottom: 1px solid #13c613;
 }
 
 /*

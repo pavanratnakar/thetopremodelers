@@ -7,6 +7,11 @@ var AppRouter = Backbone.Router.extend({
         "reviews/add": "addReview",
         "reviews/:id": "reviewDetails",
 
+        "metas": "metasList",
+        "metas/page/:page": "metasList",
+        "metas/add": "addMeta",
+        "metas/:id": "metaDetails",
+
         "contractors": "contractorsList",
         "contractors/page/:page": "contractorsList",
         "contractors/add": "addContractor",
@@ -51,6 +56,75 @@ var AppRouter = Backbone.Router.extend({
         var review = new Review();
         $('#content').html(new ReviewView({model: review}).el);
         this.headerView.selectMenuItem('add-review');
+    },
+
+    metasList: function(page) {
+        var p = page ? parseInt(page, 10) : 1,
+            metaList = new MetaCollection(),
+            placeList = new PlaceCollection(),
+            categoryList = new CategoryCollection();
+
+        placeList.fetch({
+            success: function () {
+                categoryList.fetch({
+                    success: function () {
+                        metaList.fetch({success: function () {
+                            $("#content").html(new MetaListView({
+                                model: metaList,
+                                placeModel: placeList,
+                                categoryModel: categoryList,
+                                page: p
+                            }).el);
+                        }});
+                    }
+                });
+            }
+        });
+        this.headerView.selectMenuItem('list-metas');
+    },
+
+    metaDetails: function (id) {
+        var meta = new Meta({id: id}),
+            placeList = new PlaceCollection(),
+            categoryList = new CategoryCollection();
+
+        placeList.fetch({
+            success: function () {
+                categoryList.fetch({
+                    success: function () {
+                        meta.fetch({success: function(){
+                            $("#content").html(new MetaView({
+                                model: meta,
+                                placeModel: placeList,
+                                categoryModel: categoryList
+                            }).el);
+                        }});
+                    }
+                });
+            }
+        });
+        this.headerView.selectMenuItem();
+    },
+
+    addMeta: function() {
+        var meta = new Meta(),
+            placeList = new PlaceCollection(),
+            categoryList = new CategoryCollection();
+
+        placeList.fetch({
+            success: function () {
+                categoryList.fetch({
+                    success: function () {
+                        $('#content').html(new MetaView({
+                            model: meta,
+                            placeModel: placeList,
+                            categoryModel: categoryList
+                        }).el);
+                    }
+                });
+            }
+        });
+        this.headerView.selectMenuItem('add-meta');
     },
 
     contractorsList: function(page) {
@@ -189,6 +263,8 @@ utils.loadTemplate([
         'HeaderView',
         'ReviewView',
         'ReviewListItemView',
+        'MetaView',
+        'MetaListItemView',
         'ContractorView',
         'ContractorListItemView',
         'ContractorReviewView',

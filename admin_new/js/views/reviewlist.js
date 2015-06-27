@@ -5,8 +5,8 @@ window.ReviewListView = Backbone.View.extend({
     render: function () {
         var reviews = this.model.models,
             len = reviews.length,
-            startPos = (this.options.page - 1) * 8,
-            endPos = Math.min(startPos + 8, len);
+            startPos = (this.options.page - 1) * 100,
+            endPos = Math.min(startPos + 100, len);
 
         $(this.el).html('<ul class="list-group thumbnails"></ul>');
         for (var i = startPos; i < endPos; i++) {

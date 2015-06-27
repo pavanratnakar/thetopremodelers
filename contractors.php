@@ -35,7 +35,7 @@ if (sizeof($contractorDetails) == 0) {
     exit;
 }
 $meta = $contractor->getContractorsMeta($contractorDetails, $categoryDetails[0]['category_title'], $sectionDetails ? $sectionDetails['section_title'] : '');
-if ($sectionId) {
+// if ($sectionId) {
     $getMetaData = $section->getMetaData($categoryDetails[0]['category_id'], $placeDetails['place_id']);
     if ($getMetaData) {
         foreach (array('title', 'description', 'keywords') as $m) {
@@ -44,7 +44,7 @@ if ($sectionId) {
             }
         }
     }
-}
+// }
 $avoidCrawl = false;
 $promotion = '';
 if ($categoryDetails[0]['category_title'] === 'Roofing Contractors') {
@@ -233,8 +233,8 @@ echo $pageController->minifyHTML($pageController->printHeader($meta, $avoidCrawl
                         <div class="col-md-4 hidden-xs col-sm-4">
                             <div class="sb-container">
                                 <div class="sb-header">
-                                    <h3>Unlimited time offer</h3>
-                                    <p>Get estimate from our contractors and enter to win our 10k solar systems</p>
+                                    <h3 class="texas_green">Texas is going green</h3>
+                                    <p>Read more about our green project</p>
                                 </div>
                                 <div class="sb-content">
                                     <img src="'.Config::$site_url.'images/global/sidebar/solar_system.jpg" data-src="'.Config::$site_url.'images/global/sidebar/solar_system.jpg" title="" />
