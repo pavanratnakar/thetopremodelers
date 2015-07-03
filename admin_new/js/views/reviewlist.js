@@ -1,5 +1,6 @@
 window.ReviewListView = Backbone.View.extend({
-    initialize: function () {
+    initialize: function (options) {
+        this.options = options || {};
         this.render();
     },
     render: function () {

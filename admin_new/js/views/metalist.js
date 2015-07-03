@@ -1,5 +1,6 @@
 window.MetaListView = Backbone.View.extend({
-    initialize: function () {
+    initialize: function (options) {
+        this.options = options || {};
         this.render();
     },
     render: function () {
@@ -40,7 +41,8 @@ window.MetaListView = Backbone.View.extend({
 window.MetaListItemView = Backbone.View.extend({
     tagName: "li",
     className: "list-group-item",
-    initialize: function () {
+    initialize: function (options) {
+        this.options = options || {};
         this.model.bind("change", this.render, this);
         this.model.bind("destroy", this.close, this);
     },

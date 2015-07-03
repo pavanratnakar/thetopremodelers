@@ -14,7 +14,7 @@
 $herve_global_js = array(
     '//global/js/gtm.js', // should be add it here?
     '//global/js/ga.js', // should be add it here?
-    '//global/js/jquery/jquery-1.7.1.min.js',
+    '//global/js/jquery/jquery.min.js',
     '//global/js/jquery/jquery.unveil.js',
     '//global/js/bootstrap.min.js',
     '//global/js/config.js',
@@ -72,7 +72,7 @@ return array(
         )
     ),
     'herve_js' => array(
-        '//global/js/jquery/jquery-1.7.1.min.js',
+        '//global/js/jquery/jquery.min.js',
         '//global/js/config.js',
         '//global/js/sharethis/button.js',
         '//js/social.js',
@@ -114,7 +114,7 @@ return array(
     /// HERVE ///
     /// NEW ADMIN ///
     'herve_new_admin_js' => array(
-        '//global/js/jquery/jquery-1.7.1.min.js',
+        '//global/js/jquery/jquery.min.js',
         '//global/js/underscore.min.js',
         '//global/js/backbone.min.js',
         '//global/js/bootstrap.min.js',

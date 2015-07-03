@@ -534,12 +534,14 @@ body li {
     margin: 0;
     padding: 0;
 }
+.sb-container ul.bullet,
 .sb-container ul ul{
     padding-left: 20px;
 }
 .sb-container ul li{
     list-style-type: none;
 }
+.sb-container ul.bullet li,
 .sb-container ul li li{
     list-style-type: circle;
 }
@@ -806,6 +808,9 @@ body li {
     background-image: url("../images/contractors/leaf.png");
     background-position: 234px 6px;
     border-bottom: 1px solid #13c613;
+}
+.contractors .expand-content{
+    margin-bottom: 10px;
 }
 
 /*

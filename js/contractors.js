@@ -1,10 +1,11 @@
 var herve_contractors = {
     init : function(){
         this.initsEvents();
+        this.hideExpandContent();
     },
     initsEvents : function(){
         var t = this;
-        $('.place_select').live('change', function(event){
+        $('.place_select').live('change', function (event){
             $.ajax({url: "/controller/ajaxController.php?ref=categorySelect&place_name="+$('.place_select').val(), dataType: "json", cache: true, async: false, success: function(data, result) {
                 if (!result) {
                     alert('Failure to retrieve the Answers.');
@@ -36,7 +37,7 @@ var herve_contractors = {
                 }
             }});
         });
-        $('.category_select').live('change', function(event){
+        $('.category_select').live('change', function (event){
             $.ajax({url: "/controller/ajaxController.php?ref=sectionSelect&place_name="+$('.place_select').val()+"&category_name="+$('.category_select').val(), dataType: "json", cache: true, async: false, success: function(data1, result1) {
                 if (!result1) {
                     alert('Failure to retrieve the Categories.');
@@ -60,15 +61,20 @@ var herve_contractors = {
             }
             return false;
         });
-        $('.contractorsSort select').live('change', function(event){
+        $('.contractorsSort select').live('change', function (event){
             t.findSelection({
                 sortType: $(this).val()
             });
         });
-        $('.paginate button').live('click', function(event){
+        $('.paginate button').live('click', function (event){
             t.findSelection({
                 pageNumber: $(this).data('page')
             });
+        });
+        $('.expand-callout .expand').live('click', function (event) {
+            $(this).
+                hide().
+                closest('.expand-callout').find('.expand-content').show("slow");
         });
     },
     findSelection : function(e){
@@ -80,6 +86,9 @@ var herve_contractors = {
             url = $.url+'/'+place_name+'/'+category_name+'/'+section_name+'/contractors/';
 
         window.open(herve.getNth(url,'/','7')+'/'+sortType+'/'+pageNumber,'_self');
+    },
+    hideExpandContent: function () {
+        $('.expand-content').hide();
     }
 };
 $(document).ready(function(){

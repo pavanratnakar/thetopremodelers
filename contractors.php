@@ -231,12 +231,27 @@ echo $pageController->minifyHTML($pageController->printHeader($meta, $avoidCrawl
                         if (!$pageController->isMobile()) {
                         echo $pageController->minifyHTML('
                         <div class="col-md-4 hidden-xs col-sm-4">
-                            <div class="sb-container">
+                            <div class="sb-container expand-callout">
                                 <div class="sb-header">
                                     <h3 class="texas_green">Texas is going green</h3>
-                                    <p>Read more about our green project</p>
+                                    <p><a class="expand" href="javascript:void(0);">Read more about our green project</a></p>
                                 </div>
                                 <div class="sb-content">
+                                    <div class="expand-content">
+                                        <p>As a company we fell it every one responsibility to participate in the reduction of green house gases so we are pitching in.</p>
+                                        <p>Every time you hire a contractor thru our network we donate 5 $ toward our green project.</p>
+                                        <p>At the end we will donate a 10 k solar system to one of our participant</p>
+                                        <h4>Our promotion will include</h4>
+                                        <ul class="bullet">
+                                            <li>10 Astronergy 255-watt Solar Panels</li>
+                                            <li>10 Solar Edge Power Boxes</li>
+                                            <li>1 SolarEdge 5KW Gridtied Inverter</li>
+                                            <li>UL Listed Disconnects and Safety Fuses</li>
+                                            <li>UL Listed Cables and Connectors</li>
+                                            <li>Building permits</li>
+                                            <li>Full installation by professional company</li>
+                                        </ul>
+                                    </div>
                                     <img src="'.Config::$site_url.'images/global/sidebar/solar_system.jpg" data-src="'.Config::$site_url.'images/global/sidebar/solar_system.jpg" title="" />
                                 </div>
                             </div>
