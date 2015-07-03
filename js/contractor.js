@@ -6,13 +6,13 @@ var herve_contractor = {
         var contrator_name,
             place_name,
             category_name;
-        $('.get-quote').live('click', function(event){
+        $('body').delegate('.get-quote', 'click', function (event) {
             Boxy.load('/controller/ajaxController.php?ref=getContractorSelection&contractor_name='+$(this).attr('id').replace('contractorSelect-',''),{
                 modal : true,
                 title : 'Please Select Options for '+$("#top h2").html()
             });
         });
-        $('.contractorQuoteSelection .place_select').live('change', function(event){
+        $('.contractorQuoteSelection').delegate('.place_select', 'change', function (event) {
             var categorySelectContainer = $(this).next('.category_select'),
                 sectionSelectContainer = $(this).parent().children('.section_select');
             contrator_name = $(this).closest('form').attr('id').replace('contractorQuoteSelection-','')
@@ -45,7 +45,7 @@ var herve_contractor = {
                 }
             }});
         });
-        $('.contractorQuoteSelection .category').live('change', function(event){
+        $('.contractorQuoteSelection').delegate('.category', 'change', function (event) {
             var sectionSelectContainer = $(this).parent().children('.section_select'),
                 option;
             contrator_name = $(this).closest('form').attr('id').replace('contractorQuoteSelection-','')
@@ -65,7 +65,7 @@ var herve_contractor = {
                 }
             }});
         });
-        $('form.contractorQuoteSelection .submit').live('click', function(event){
+        $('.contractorQuoteSelection').delegate('.submit', 'click', function (event) {
             event.preventDefault();
             var placeName = $(this).closest('form').find('.place_select').val(),
                 categoryName = $(this).closest('form').find('.category_select').val(),

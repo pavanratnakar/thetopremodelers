@@ -5,7 +5,7 @@ var herve_contractors = {
     },
     initsEvents : function(){
         var t = this;
-        $('.place_select').live('change', function (event){
+        $('body').delegate('.place_select', 'change', function (event) {
             $.ajax({url: "/controller/ajaxController.php?ref=categorySelect&place_name="+$('.place_select').val(), dataType: "json", cache: true, async: false, success: function(data, result) {
                 if (!result) {
                     alert('Failure to retrieve the Answers.');
@@ -37,7 +37,7 @@ var herve_contractors = {
                 }
             }});
         });
-        $('.category_select').live('change', function (event){
+        $('body').delegate('.category_select', 'change', function (event) {
             $.ajax({url: "/controller/ajaxController.php?ref=sectionSelect&place_name="+$('.place_select').val()+"&category_name="+$('.category_select').val(), dataType: "json", cache: true, async: false, success: function(data1, result1) {
                 if (!result1) {
                     alert('Failure to retrieve the Categories.');
@@ -52,7 +52,7 @@ var herve_contractors = {
                 }
             }});
         });
-        $('.find-contractors').live('submit', function(event){
+        $('body').delegate('.find-contractors', 'submit', function (event) {
             var place_name = $('.place_select').val(),
                 category_name = $('.category_select').val(),
                 section_name = $('.section_select').val();
@@ -61,17 +61,17 @@ var herve_contractors = {
             }
             return false;
         });
-        $('.contractorsSort select').live('change', function (event){
+        $('.contractorsSort').delegate('select', 'change', function (event) {
             t.findSelection({
                 sortType: $(this).val()
             });
         });
-        $('.paginate button').live('click', function (event){
+        $('.paginate').delegate('button', 'click', function (event) {
             t.findSelection({
                 pageNumber: $(this).data('page')
             });
         });
-        $('.expand-callout .expand').live('click', function (event) {
+        $('.expand-callout').delegate('.expand', 'click', function (event) {
             $(this).
                 hide().
                 closest('.expand-callout').find('.expand-content').show("slow");
